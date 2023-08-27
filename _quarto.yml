@@ -16,7 +16,8 @@ website:
     contents: auto
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: Simplex
     css: styles.css
     code-fold: false
     code-line-numbers: true
