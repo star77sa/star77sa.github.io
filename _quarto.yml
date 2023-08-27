@@ -3,6 +3,8 @@ project:
 
 website:
   title: "star77sa.github.io"
+  site-url: https://star77sa.github.io
+  description: "blog"
   navbar:
     right:
       - about.qmd
