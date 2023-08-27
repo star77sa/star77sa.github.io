@@ -1,9 +1,11 @@
 ---
-title: "star77sa.github.io"
+title: "Time Series"
 listing:
   contents: posts
-  sort: "date desc"
-  type: default
+  sort: 
+    - "date desc"
+    - "title desc"
+  type: table
   categories: true
   feed: true
   sort-ui: false
