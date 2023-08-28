@@ -10,7 +10,44 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sun, 27 Aug 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 24 Aug 2023 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>[확률론] 1. Probability and counting</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/확률론/1_probability_and_counting.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/0b5e3d88-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Introduction to Probability Second Edition</figcaption>
+</figure>
+</div>
+<section id="probability-and-counting" class="level1">
+<h1>1.Probability and counting</h1>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/701c21ea-1-image.png" class="img-fluid"></p>
+<section id="why-study-probability" class="level2">
+<h2 class="anchored" data-anchor-id="why-study-probability">1.1 Why study probability?</h2>
+<p>수학은 확실성의 논리이며 확률은 불확실성의 논리이다.</p>
+<p>list of applications:</p>
+<ul>
+<li><p>statistics : 확률은 통계를 위한 기초이자 언어이다. 데이터를 사용하여 세상에 대해 배울 수 있는 다양한 강력한 방법을 가능하게 한다.</p></li>
+<li><p>computer science: Randomized algorithms은 실행되는 동안 무작위 선택을 하며, 많은 중요한 응용 분야에서 현재 알려진 결정론적 대안(deterministic alternatives)보다 더 간단하고 효율적이다. 확률은 또한 알고리즘의 성능을 연구하는 데 필수적인 역할을 하며, 머신러닝, 인공지능에서 중요한 역할을 한다.</p></li>
+<li><p>Life: 인생은 불확실하고 확률은 불확실성의 논리이다. 인생에서 결정되는 모든 결정에 대해 공식적인 확률 계산을 수행하는 것은 실용적이지 않지만, 확률에 대해 열심히 생각하는 것은 우리가 몇 가지 흔한 오류를 피하고, 우연을 조명하고, 더 나은 예측을 하는 데 도움이 될 수 있다.</p></li>
+<li><p>Physics, Biology, Meteorology, Gambling, Finance, Political science, Medicine….</p></li>
+</ul>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/확률론/1_probability_and_counting.html</guid>
+  <pubDate>Thu, 24 Aug 2023 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>2023.08.28 블로그 구축</title>
   <dc:creator>고경수 </dc:creator>
@@ -63,44 +100,7 @@
 
  ]]></description>
   <guid>https://star77sa.github.io/posts/etc/2023-08-28-블로그.html</guid>
-  <pubDate>Sun, 27 Aug 2023 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>[확률론] 1. Probability and counting</title>
-  <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/확률론/1_probability_and_counting.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/a8e650a3-1-image.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption margin-caption">Introduction to Probability Second Edition</figcaption>
-</figure>
-</div>
-<section id="probability-and-counting" class="level1">
-<h1>1.Probability and counting</h1>
-<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/673cfbb8-1-image.png" class="img-fluid"></p>
-<section id="why-study-probability" class="level2">
-<h2 class="anchored" data-anchor-id="why-study-probability">1.1 Why study probability?</h2>
-<p>수학은 확실성의 논리이며 확률은 불확실성의 논리이다.</p>
-<p>list of applications:</p>
-<ul>
-<li><p>statistics : 확률은 통계를 위한 기초이자 언어이다. 데이터를 사용하여 세상에 대해 배울 수 있는 다양한 강력한 방법을 가능하게 한다.</p></li>
-<li><p>computer science: Randomized algorithms은 실행되는 동안 무작위 선택을 하며, 많은 중요한 응용 분야에서 현재 알려진 결정론적 대안(deterministic alternatives)보다 더 간단하고 효율적이다. 확률은 또한 알고리즘의 성능을 연구하는 데 필수적인 역할을 하며, 머신러닝, 인공지능에서 중요한 역할을 한다.</p></li>
-<li><p>Life: 인생은 불확실하고 확률은 불확실성의 논리이다. 인생에서 결정되는 모든 결정에 대해 공식적인 확률 계산을 수행하는 것은 실용적이지 않지만, 확률에 대해 열심히 생각하는 것은 우리가 몇 가지 흔한 오류를 피하고, 우연을 조명하고, 더 나은 예측을 하는 데 도움이 될 수 있다.</p></li>
-<li><p>Physics, Biology, Meteorology, Gambling, Finance, Political science, Medicine….</p></li>
-</ul>
-
-
-</section>
-</section>
-
- ]]></description>
-  <guid>https://star77sa.github.io/posts/확률론/1_probability_and_counting.html</guid>
-  <pubDate>Wed, 23 Aug 2023 15:00:00 GMT</pubDate>
+  <pubDate>Tue, 31 Dec 2019 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
