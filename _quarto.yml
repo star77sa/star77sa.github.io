@@ -10,6 +10,8 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/star77sa
+      - icon: rss
+        href: index.xml
   sidebar:
     style: "docked"
     search: true

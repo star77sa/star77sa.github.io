@@ -7,7 +7,9 @@ listing:
     - "title desc"
   type: table
   categories: true
-  feed: true
+  feed:
+    items: 7
+    categories: [title, posts]
   sort-ui: false
   filter-ui: false
 page-layout: full
