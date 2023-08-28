@@ -10,7 +10,56 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Sat, 26 Aug 2023 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 07 Apr 2025 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>블로그 구축</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/etc/블로그.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="블로그-제작-quarto" class="level3">
+<h3 class="anchored" data-anchor-id="블로그-제작-quarto">블로그 제작 (Quarto)</h3>
+<ul>
+<li><a href="https://quarto.org/docs/websites/website-blog.html">Quarto</a></li>
+<li><a href="https://www.youtube.com/watch?v=YoKjBcuUP0s&amp;ab_channel=Crump%27sComputationalCognitionLab">참고영상</a></li>
+</ul>
+</section>
+<section id="rss-피드" class="level3">
+<h3 class="anchored" data-anchor-id="rss-피드">RSS 피드</h3>
+<ul>
+<li><a href="https://quarto.org/docs/websites/website-listings.html#feeds">quarto feed</a></li>
+<li><a href="https://pypi.org/project/feedparser/">feed parser</a></li>
+<li><a href="https://www.tutorialspoint.com/python/time_strptime.htm">날짜 포맷</a></li>
+</ul>
+</section>
+<section id="블로그-검색엔진-등록" class="level3">
+<h3 class="anchored" data-anchor-id="블로그-검색엔진-등록">블로그 검색엔진 등록</h3>
+<ul>
+<li><a href="https://1-woori.tistory.com/entry/%EB%82%B4-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%97%90-%EB%93%B1%EB%A1%9D%ED%95%98%EA%B8%B0-%EB%8B%A4%EC%9D%8C-%EB%84%A4%EC%9D%B4%EB%B2%84-%EA%B5%AC%EA%B8%80-%EB%B9%99-%EC%A4%8C">검색엔진 등록</a></li>
+</ul>
+</section>
+<section id="jupyter-notebook" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="jupyter-notebook">Jupyter Notebook</h3>
+<ul>
+<li>노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 <strong>RAW Cell</strong>이어야 한다. <a href="https://quarto.org/docs/tools/jupyter-lab.html">https://quarto.org/docs/tools/jupyter-lab.html</a></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://star77sa.github.io/posts/etc/블로그_files/figure-html/0caf1481-1-image-2.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">image-2.png</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/etc/블로그.html</guid>
+  <pubDate>Mon, 07 Apr 2025 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Post With Code</title>
   <dc:creator>Harlow Malloc</dc:creator>
