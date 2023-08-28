@@ -9,7 +9,7 @@ listing:
   categories: true
   feed:
     items: 7
-    categories: [title, posts]
+    categories: []
   sort-ui: false
   filter-ui: false
 page-layout: full
