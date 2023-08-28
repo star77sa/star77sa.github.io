@@ -46,6 +46,6 @@
     "href": "posts/etc/2023-08-28-블로그.html",
     "title": "블로그 구축",
     "section": "",
-    "text": "블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html\n\n\n\n\nimage-2.png"
+    "text": "블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\n설정가능 icon\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html\n\n\n\n\nimage-2.png"
   }
 ]

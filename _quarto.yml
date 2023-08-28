@@ -4,12 +4,15 @@ project:
 
 website:
   title: "Time Series"
+  favicon: <a href="https://adioma.com">Adioma</a>
   site-url: https://star77sa.github.io
   navbar:
     right:
       - about.qmd
       - icon: github
         href: https://github.com/star77sa
+      - icon: files
+        href: https://ksko.notion.site
   sidebar:
     style: "docked"
     search: true
