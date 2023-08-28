@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://star77sa.github.io/index.html</loc>
-    <lastmod>2023-08-28T10:23:42.860Z</lastmod>
+    <lastmod>2023-08-28T10:48:40.625Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/post-with-code/index.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/about.html</loc>
-    <lastmod>2023-08-28T10:22:18.366Z</lastmod>
+    <lastmod>2023-08-28T10:52:41.285Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/welcome/index.html</loc>
@@ -26,6 +26,14 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/etc/2023-08-28-블로그.html</loc>
-    <lastmod>2023-08-28T10:11:46.832Z</lastmod>
+    <lastmod>2023-08-28T10:52:42.338Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/확률론/2023-08-28-블로그.html</loc>
+    <lastmod>2023-08-28T10:47:27.828Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/확률론/1_probability_and_counting.html</loc>
+    <lastmod>2023-08-28T10:49:28.298Z</lastmod>
   </url>
 </urlset>

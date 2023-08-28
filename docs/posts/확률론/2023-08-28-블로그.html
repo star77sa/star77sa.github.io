@@ -6,10 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Harlow Malloc">
-<meta name="dcterms.date" content="2023-08-27">
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2023-08-24">
 
-<title>Time Series - Post With Code</title>
+<title>Time Series - [확률론] 1. Probability and counting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../time-series.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -66,7 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../index.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="https://ksko.notion.site" rel="" target=""><i class="bi bi-files" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -108,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../posts/post-with-code/index.html">Posts</a></li><li class="breadcrumb-item"><a href="../../posts/post-with-code/index.html">Post With Code</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/확률론/2023-08-28-블로그.html">확률론</a></li><li class="breadcrumb-item"><a href="../../posts/확률론/2023-08-28-블로그.html">[확률론] 1. Probability and counting</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -121,13 +122,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Post With Code</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">news</div>
-                <div class="quarto-category">code</div>
-                <div class="quarto-category">analysis</div>
-              </div>
-                  </div>
+      <h1 class="title">[확률론] 1. Probability and counting</h1>
+                      </div>
   </div>
     
   
@@ -136,14 +132,14 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Harlow Malloc </p>
+               <p>고경수 </p>
             </div>
     </div>
       
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">August 27, 2023</p>
+        <p class="date">August 24, 2023</p>
       </div>
     </div>
     
@@ -176,18 +172,6 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/post-with-code/index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Post With Code</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../posts/welcome/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Welcome To My Blog</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
@@ -199,8 +183,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/etc/블로그.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">블로그</span></a>
+  <a href="../../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2023.08.28 블로그 구축</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">확률론</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/확률론/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
       </ul>
@@ -212,16 +213,37 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
-<p>This is a post with executable code.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="2023-08-28-블로그_files/figure-html/b54035b8-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">Introduction to Probability Second Edition</figcaption>
+</figure>
+</div>
+<section id="probability-and-counting" class="level1">
+<h1>1.Probability and counting</h1>
+<p><img src="2023-08-28-블로그_files/figure-html/e9734b8b-1-image.png" class="img-fluid"></p>
+<section id="why-study-probability" class="level2">
+<h2 class="anchored" data-anchor-id="why-study-probability">1.1 Why study probability?</h2>
+<p>수학은 확실성의 논리이며 확률은 불확실성의 논리이다.</p>
+<p>list of applications: - statistics : 확률은 통계를 위한 기초이자 언어이다. 데이터를 사용하여 세상에 대해 배울 수 있는 다양한 강력한 방법을 가능하게 한다.</p>
+<ul>
+<li><p>computer science: Randomized algorithms은 실행되는 동안 무작위 선택을 하며, 많은 중요한 응용 분야에서 현재 알려진 결정론적 대안(deterministic alternatives)보다 더 간단하고 효율적이다. 확률은 또한 알고리즘의 성능을 연구하는 데 필수적인 역할을 하며, 머신러닝, 인공지능에서 중요한 역할을 한다.</p></li>
+<li><p>Life: 인생은 불확실하고 확률은 불확실성의 논리이다. 인생에서 결정되는 모든 결정에 대해 공식적인 확률 계산을 수행하는 것은 실용적이지 않지만, 확률에 대해 열심히 생각하는 것은 우리가 몇 가지 흔한 오류를 피하고, 우연을 조명하고, 더 나은 예측을 하는 데 도움이 될 수 있다.</p></li>
+<li><p>Physics, Biology, Meteorology, Gambling, Finance, Political science, Medicine….</p></li>
+</ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
