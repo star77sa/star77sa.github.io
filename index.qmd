@@ -16,4 +16,17 @@ page-layout: full
 title-block-banner: true
 ---
 
+통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.
 
+Email : star77sa@gmail.com
+
+**Link**
+
+- Github : [https://github.com/star77sa](https://github.com/star77sa)
+- Notion : [https://ksko.notion.site](https://ksko.notion.site)
+
+
+**이전 블로그**
+
+- fastpage : [https://star77sa.github.io/TIL-Blog](https://star77sa.github.io/TIL-Blog/)
+- Tistory: [https://ksko0424.tistory.com/](https://ksko0424.tistory.com/)

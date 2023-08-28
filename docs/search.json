@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Time Series",
     "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 28, 2023\n\n\n블로그 구축\n\n\n고경수 \n\n\n\n\nAug 27, 2023\n\n\nPost With Code\n\n\nHarlow Malloc\n\n\n\n\nAug 24, 2023\n\n\nWelcome To My Blog\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 28, 2023\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -44,8 +44,8 @@
   {
     "objectID": "posts/etc/2023-08-28-블로그.html",
     "href": "posts/etc/2023-08-28-블로그.html",
-    "title": "블로그 구축",
+    "title": "2023.08.28 블로그 구축",
     "section": "",
-    "text": "블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\n설정가능 icon\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html\n\n\n\n\nimage-2.png"
+    "text": "왜 옮겼는지?\n깃허브를 이용한 블로그, 네이버 블로그 등 다양한 블로그를 사용해보다가 fastpage 블로그에 정착을 했었습니다.\n주피터노트북 파일을 만들면 그대로 포스팅을 해주어서 용이하였기 때문이었는데,\n해당 블로그의 서비스가 종료되고 Quarto 사용을 권장한다고 하였으나 블로그 개설이 복잡한 것 같아 티스토리를 한동안 사용해보았습니다. 다만 역시 코드 기록이 불편하여 Quarto 블로그를 제작하여 이 블로그로 옮기게 되었습니다.\n다른 블로그들의 포스팅은 복습하는 겸 조금씩 옮길 예정입니다.\n\n\n블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\n설정가능 icon\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html"
   }
 ]
