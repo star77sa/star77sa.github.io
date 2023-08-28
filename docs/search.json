@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Time Series",
     "section": "",
-    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 25, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\n\nNo matching items"
+    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nAug 24, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -75,5 +75,12 @@
     "title": "[확률론] 1. Probability and counting",
     "section": "1.1 Why study probability?",
     "text": "1.1 Why study probability?\n수학은 확실성의 논리이며 확률은 불확실성의 논리이다.\nlist of applications:\n\nstatistics : 확률은 통계를 위한 기초이자 언어이다. 데이터를 사용하여 세상에 대해 배울 수 있는 다양한 강력한 방법을 가능하게 한다.\ncomputer science: Randomized algorithms은 실행되는 동안 무작위 선택을 하며, 많은 중요한 응용 분야에서 현재 알려진 결정론적 대안(deterministic alternatives)보다 더 간단하고 효율적이다. 확률은 또한 알고리즘의 성능을 연구하는 데 필수적인 역할을 하며, 머신러닝, 인공지능에서 중요한 역할을 한다.\nLife: 인생은 불확실하고 확률은 불확실성의 논리이다. 인생에서 결정되는 모든 결정에 대해 공식적인 확률 계산을 수행하는 것은 실용적이지 않지만, 확률에 대해 열심히 생각하는 것은 우리가 몇 가지 흔한 오류를 피하고, 우연을 조명하고, 더 나은 예측을 하는 데 도움이 될 수 있다.\nPhysics, Biology, Meteorology, Gambling, Finance, Political science, Medicine…."
+  },
+  {
+    "objectID": "posts/확률론/1_probability_and_counting.html#sample-spaces-and-pebble-world",
+    "href": "posts/확률론/1_probability_and_counting.html#sample-spaces-and-pebble-world",
+    "title": "[확률론] 1. Probability and counting",
+    "section": "1.2 Sample spaces and Pebble World",
+    "text": "1.2 Sample spaces and Pebble World\n\n\n\nFigure 1.1"
   }
 ]
