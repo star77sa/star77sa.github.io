@@ -12,7 +12,7 @@ about:
       href: https://github.com/star77sa
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com/in/경수-고-8b7781206
+      href: www.linkedin.com/in/star77sa
 ---
 **About this blog**
 
