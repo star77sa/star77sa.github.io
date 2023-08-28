@@ -22,13 +22,13 @@
 
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/f7959783-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/f1202fcc-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption margin-caption">Introduction to Probability Second Edition</figcaption>
 </figure>
 </div>
 <section id="probability-and-counting" class="level1 page-columns page-full">
 <h1>1.Probability and counting</h1>
-<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/a2fe62d7-1-image.png" class="img-fluid"></p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/dd1f3d88-1-image.png" class="img-fluid"></p>
 <section id="why-study-probability" class="level2">
 <h2 class="anchored" data-anchor-id="why-study-probability">1.1 Why study probability?</h2>
 <p>수학은 확실성의 논리이며 확률은 불확실성의 논리이다.</p>
@@ -44,10 +44,44 @@
 <h2 class="anchored" data-anchor-id="sample-spaces-and-pebble-world">1.2 Sample spaces and Pebble World</h2>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/f92c9a8d-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/ca229a45-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption margin-caption">Figure 1.1</figcaption>
 </figure>
 </div>
+<ul>
+<li><p>sample space S: 실험의 모든 가능한 경우의 집합</p></li>
+<li><p>event A: sample space S의 부분 집합</p></li>
+<li><p>표본 공간은 finite, countably infinite, uncountably infinite 할 수 있다. 표본공간이 finite(유한)할 때, 우리는 Pebble World로 시각화 할 수 있으며 Figure 1.1과 같이 나타낼 수 있다. 각각의 pebble은 결과를 나타내며 event는 pebbles의 집합이다.</p></li>
+<li><p>만약 모든 pebble이 같은 질량을 가지면 pebble은 동일한 확률로 선택되어진다. 이러한 특별한 경우가 다음 두 Section에서 다뤄지며 Section 1.6에서는 질량이 다른 경우에 대해 다룬다.</p></li>
+<li><p>집합 이론은 확률에서 매우 유용하다(각 사건을 표현). 이러한 방식은 사건을 한 가지 이상의 방법으로 표현 가능하게 해준다. 어떠한 한 가지 표현은 다른 표현보다 더 쉽다.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/82fc4646-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption margin-caption">ex) De Morgan’s laws</figcaption>
+</figure>
+</div>
+</section>
+<section id="naive-definition-of-probability" class="level2">
+<h2 class="anchored" data-anchor-id="naive-definition-of-probability">1.3 Naive definition of probability</h2>
+<p><strong>Naive definition of probability</strong></p>
+<ul>
+<li>A를 사건이라 하고 S를 유한한 표본공간이라 하자. 이때 The naive probability of A는</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/e000fc24-1-image.png" class="img-fluid"></p>
+<p>예시로, Figure 1.1의 상황에서</p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/07f9118e-1-image.png" class="img-fluid"></p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/1c796f9c-1-image.png" class="img-fluid"></p>
+<p><img src="https://star77sa.github.io/posts/확률론/1_probability_and_counting_files/figure-html/8cdd0864-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>The naive definition은 매우 제한적. S가 유한해야하며 각각의 pebble들의 질량이 동일해야 한다. 이것은 종종 잘못 적용되는데, justification 없이 그것이 50:50이라고 주장하는 것(예를 들어, 화성에 지적 생명체가 산다를 50:50이라고 함.)</p></li>
+<li><p>The naive difinition이 적용 가능한 중요한 케이스들이 존재한다.</p>
+<ol type="1">
+<li><p>문제에 symmetry(대칭)이 있는 경우 등확률이다. ex) 동전이 50% 확률로 앞면이 나올 수 있다. -&gt; 동전이 물리적으로 symmetry.</p></li>
+<li><p>설계에 의한 등확률. ex) N명의 인구 중 설문조사를 위해 n명의 사람을 랜덤하게 뽑는 경우. 성공한다면 나이브한 정의를 적용가능하지만, 다양한 문제로 인해 달성이 어려울 수 있다.</p></li>
+<li><p>영가설에서의 모형</p></li>
+</ol></li>
+</ul>
 
 
 </section>
