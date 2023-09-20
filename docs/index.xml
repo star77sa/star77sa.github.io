@@ -204,7 +204,7 @@
 <li>표본분산의 성질</li>
 </ul>
 <ol type="1">
-<li><p>$ s^2 $</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?s%5E2%20%5Cgeqq%200"></p></li>
 <li><p>모든 값이 같다면 0</p></li>
 <li><p>데이터 퍼짐 정도가 크면 <img src="https://latex.codecogs.com/png.latex?s%5E2">이 커짐</p></li>
 </ol>
@@ -226,6 +226,134 @@
 <li><p>스웜 플롯</p></li>
 <li><p>상자 수염 그림 + 스웜 플롯</p></li>
 </ul>
+<section id="p.-3장-나머지-정리-必" class="level3">
+<h3 class="anchored" data-anchor-id="p.-3장-나머지-정리-必">~ 67p. 3장 나머지 정리 必</h3>
+<hr>
+</section>
+</section>
+</section>
+<section id="추론통계-신뢰구간" class="level1">
+<h1>4. 추론통계 ~ 신뢰구간</h1>
+<ul>
+<li>데이터로 모집단의 성질을 추정한다.</li>
+</ul>
+<section id="추론통계를-배우기-전에" class="level2">
+<h2 class="anchored" data-anchor-id="추론통계를-배우기-전에">4.1 추론통계를 배우기 전에</h2>
+<p><code>-</code> 전수조사와 표본조사</p>
+<p>전수조사 : 모집단의 모든 요소를 조사</p>
+<p>표본조사 : 모집단의 일부인 표본으로 모집단의 성질을 추정</p>
+<p><code>-</code> 데이터를 얻는다는 것</p>
+<p>” 데이터(표본)를 얻는다는 것은 무엇인가? ” : 모집단에 포함된 전체 값으로 구성된 분포에서 일부를 추출하는 것</p>
+<p>모집단분포를 특징 짓는 양을 <strong>모수</strong> 또는 <strong>파라미터</strong> 라 부른다</p>
+<p>확률분포와 실현값의 관계는 모집단과 표본의 관계와 매우 비슷</p>
+<p>‘모집단 = 확률분포, 표본 = 확률분포를 따르는 실현값’ 이라고 생각하자</p>
+<p>” 얻은 실현값으로 이 값을 발생시킨 확률분포를 추정한다 ” 라는 목표로 바꾸어 말할 수 있다.</p>
+<ul>
+<li>모집단분포 모형화</li>
+</ul>
+<p>ex) 성인 남성 키의 분포는 정규분포와 매우 비슷하지만, 엄밀한 의미에서 정규분포가 되는 일은 있을 수 없다.</p>
+<p>그러나 있는 그대로를 바로 수학적으로 다룰 수 없을 때가 잦기 때문에, 3장에서 배운 것과 같은 <strong>수식</strong> 으로 기술하게 된다.</p>
+<p>그러면 수학적으로 다룰 수 있는 확률분포(모형)에 근사하여 작업을 진행할 수 있게 되어, 모집단의 추정이 용이해진다.</p>
+<p>수학적인 확률분포로 모집단 분포를 근사하는 것을 여기서는 <strong>모형화(modeling)</strong> 라 부르도록 하자</p>
+<p>예를 들어 정규분포로 근사할 수 있다면, 평균과 표준편차 같은 2가지 파라미터만으로 분포를 기술할 수 있으며, 다룰 수도 있게된다.</p>
+<p>이 장 후반에 등장하는 t분포는, 이와 같이 모집단이 정규분포라는 가정하에 이용할 수 있는 분포이다.</p>
+<ul>
+<li>무작위추출</li>
+</ul>
+<p>모집단에서 표본을 얻을 때 중요한 것이 <strong>무작위추출(random sampling)</strong> 이다.</p>
+<p>데이터를 얻을 때 모집단에 포함된 요소를 무작위로 선택하여 추출하는 방식</p>
+<p>독립적이지 않은 선택방식도 적절하지 않다.</p>
+<ul>
+<li>무작위추출 방법</li>
+</ul>
+<p>이상적인 무작위추출 방법은 표본에 있을 수 있는 모든 요소를 목록으로 만들고, 난수를 이용하여 표본을 정하는 것. 이를 <strong>단순무작위추출법</strong> 이라 한다.</p>
+<p>실제로 자주 사용하는 방법은 <strong>층화추출법</strong> 이다. 이는 모집단을 몇개의 층(집단)으로 미리 나눈 뒤, 각 층에서 필요한 수의 조사대상을 무작위로 추출하는 방법이다.</p>
+<p>그 밖에도 계통추출법, 군집추출법 등 다양한 방법이 있다.</p>
+<ul>
+<li>편향된 추출로는 올바른 추정이 어려움</li>
+</ul>
+</section>
+<section id="표본오차와-신뢰구간" class="level2">
+<h2 class="anchored" data-anchor-id="표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</h2>
+<p>모집단의 평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">나 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 등은 고정된 값이지만, 모집단분포에서 얻은 표본 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20x_n">은 확률적으로 변하는 확률변수라는 사실을 염두에 둘 것</p>
+<p><code>확률변수의 정확한 의미는?</code></p>
+<p>일반적으로 표본평균은 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하지 않는다. 즉 ’정말로 알고 싶은 것’과 ’실제로 손 안에 있는 데이터’에는 어긋남(오차)가 생기는 것. 이런 오차를 <strong>표본오차(표집오차, sampling error)</strong> 라고 한다.</p>
+<p>표본오차는 표본을 추출할 때의 인위적인 실수나 잘못으로 생기는 오차가 아니라, 데이터 퍼짐이 있는 모집단에서 확률적으로 무작위 표본을 고르는 데서 발생하는, 피할 수 없는 오차라는 점에 주의</p>
+<ul>
+<li>큰 수의 법칙</li>
+</ul>
+<p>표본평균과 모집단평균의 관계에는 <strong>큰 수의 법칙(law of large numbers)</strong> 이 성립한다.</p>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">가 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">에 한없이 가까워진다는 법칙.</p>
+<p>다시 말해 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">가 <img src="https://latex.codecogs.com/png.latex?0">에 한없이 가까워진다는 뜻이기도 하다.</p>
+<p><code>-</code> 표본오차의 확률분포</p>
+<p>표본오차의 확률분포를 알면 어느 정도 크기의 오차가, 어느 정도의 확률로 나타나는지를 알 수 있게 된다.</p>
+<ul>
+<li>중심극한정리</li>
+</ul>
+<p>표본오차의 분포에 관해 중요한 정보를 제공하는 것이 <strong>중심극한정리(central limit theorem)</strong> 이다.</p>
+<p>모집단이 어떤 분포이든 간에, 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 분포는 정규분포로 근사할 수 있다는 것을 의미</p>
+<p>’표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 분포? : 표본크기 <img src="https://latex.codecogs.com/png.latex?n">으로 표본을 추출하고 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">를 계산하는 작업을 몇 번이고 반복해서, 표본평균을 한데 모아 히스토그램을 그린다는 것.</p>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균의 분포는 다음과 같은 정규분포로 근사할 수 있다.</p>
+<p>평균 : 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu"></p>
+<p>표준편차 : <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D"></p>
+<blockquote class="blockquote">
+<p>Chat GPT : 중심극한정리와 대수의 법칙의 차이점이 뭐야?</p>
+</blockquote>
+<ol type="1">
+<li>중심극한정리 (Central Limit Theorem):</li>
+</ol>
+<p>중심극한정리는 확률론의 기본 개념 중 하나로, 독립적인 확률 변수들의 합 또는 평균이 정규분포에 근사하는 현상을 설명합니다. 중심극한정리는 다음과 같은 특징을 가집니다:</p>
+<p>독립적인 확률 변수들의 합 또는 평균은 표본 크기가 충분히 크면 정규분포에 근사한다.</p>
+<p>중심극한정리는 모집단의 분포에 상관 없이 적용될 수 있으며, 모집단이 어떤 분포를 따르더라도 표본 평균의 분포는 정규분포에 가까워진다.</p>
+<ol start="2" type="1">
+<li>대수의 법칙 (Law of Large Numbers):</li>
+</ol>
+<p>대수의 법칙은 표본 크기가 커질수록 표본 평균이 모집단의 평균에 가까워진다는 원리를 설명합니다. 대수의 법칙은 다음과 같은 특징을 가집니다:</p>
+<p>대수의 법칙은 표본 크기가 커질수록 표본 평균이 모집단 평균에 수렴한다.</p>
+<p>대수의 법칙은 표본 크기가 충분히 크다면 모집단의 분포에 상관 없이 적용될 수 있으며, 모집단이 어떤 분포를 따르더라도 표본 평균은 모집단 평균에 가까워진다.</p>
+<p>차이점:</p>
+<p>중심극한정리는 확률 변수들의 합 또는 평균의 분포에 대한 이론을 다루는 것이며, 주로 정규분포와 관련이 있습니다.</p>
+<p>대수의 법칙은 표본 크기가 커질 때 표본 평균이 모집단 평균으로 수렴하는 원리를 설명하며, 분포에 대한 특별한 가정이 필요하지 않습니다. 이는 큰 표본 크기를 가지고 있는 경우에는 표본의 평균이 모집단 평균과 거의 같아질 것이라는 것을 의미합니다.</p>
+<p>중심극한정리와 대수의 법칙은 통계 분석과 데이터 분석에서 중요한 개념으로 사용되며, 표본 크기와 확률 분포에 대한 이해를 높이는 데 도움을 줍니다.</p>
+<ul>
+<li>추정량</li>
+</ul>
+<p>모집단의 성질을 추정하는 데 사용하는 통계량을 <strong>추정량</strong> 이라 한다.</p>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">을 무한대로 했을 때, 모집단의 성질과 일치하는 추정량을 <strong>일치추정량</strong> 이라 하고, 추정량의 평균값(기댓값)이 모집단의 성질과 일치할 때의 추정량은 <strong>비편향추정량</strong> 이라 한다.</p>
+<p>비편향추정량은 매번 얻을 때마다 확률적으로 다른 값이 되지만, 평균으로 보면 모집단의 성질을 과대하지도 과소하지도 않게 나타내는 양을 뜻한다.</p>
+<p>모집단의 성질을 추정할 때 편향된 추정은 바람직하지 않다. 그러므로 비편향추정량은 바람직한 추정량이다.</p>
+<p><code>비편향추정량, 일치추정량 ??</code></p>
+<p>추정량 하나하나는 모집단의 성질(여기서는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">)에서 벗어나지만, 이를 모아 구한 평균값이 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하는 경우 이를 비편향추정량이라 부른다.</p>
+<p>중심극한정리에서 본 것 처럼 표본평균의 분포의 평균은 모집단의 성질인 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하므로, 표본평균은 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">를 편향되지 않게 추정하는 비편향추정량이다.</p>
+<p>한편 표본표준편차 <img src="https://latex.codecogs.com/png.latex?s">(또는 표본분산 <img src="https://latex.codecogs.com/png.latex?s%5E2">)는 사정이 조금 다르다.</p>
+<p>표본표준편차 <img src="https://latex.codecogs.com/png.latex?s">의 정의에서 루트 안의 분모는 <img src="https://latex.codecogs.com/png.latex?n">이었다. 기술통계에서 데이터 퍼짐 정도를 평가할 때는 문제가 없지만, 모집단의 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">를 과소평가한다는 문제가 있다.</p>
+<p>올바르게는 <img src="https://latex.codecogs.com/png.latex?n-1">로 나눈 다음 식이, 모집단 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">의 비편향추정량이 된다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?s%20=%20%5Csqrt%7Bs%5E2%7D%20=%20%5Csqrt%7B%5Cfrac%7B1%7D%7Bn-1%7D%5Csum%5En_%7Bi=1%7D(x_i-%5Cbar%7Bx%7D)%5E2%7D"></p>
+<blockquote class="blockquote">
+<p><img src="https://latex.codecogs.com/png.latex?n">으로 나누면 왜 과소평가가 되는가?</p>
+</blockquote>
+<p>각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 차이를 제곱하여 값이 얼마나 퍼졌는지를 측정하지만 원래 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cmu)%5E2">로 계산해야 하는 것을 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 미지수이므로 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cbar%7Bx%7D)%5E2">로 바꾼 것이다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하지 않으며, 각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 <img src="https://latex.codecogs.com/png.latex?%5Cmu">의 위치 관계 또는 각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 위치 관계를 생각하면 <img src="https://latex.codecogs.com/png.latex?x_i">는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">보다도 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">에 가까이 있을 것이다.</p>
+<p>그러므로 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cbar%7Bx%7D)%5E2">의 합은 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cmu)%5E2">보다도 작은 값이 된다.</p>
+<p>따라서 <img src="https://latex.codecogs.com/png.latex?n">으로 나누지 않고 <img src="https://latex.codecogs.com/png.latex?n-1">로 나누어 과소평가를 보정하는 것</p>
+<ul>
+<li>표본오차의 분포</li>
+</ul>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">의 분포는 다음 정규분포로 근사할 수 있다.</p>
+<p>평균 : 0</p>
+<p>표준편차 : <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D"></p>
+<p>표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">의 분포는 모집단의 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">와 표본크기 <img src="https://latex.codecogs.com/png.latex?n"> 등 2개의 값만 정해지면 알 수 있다는 것. 이 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D">을 <strong>표준오차(standard error)</strong> 라 한다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Csigma">는 모집단의 성질이므로 보통 우리로선 알 수 없는 미지의 숫자이다. 그러므로 앞서 살펴본 표본에서 추정한 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">를 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 대신 사용한 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">를 표준오차로 삼는다.</p>
+<p>이때 표본오차(단 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">으로 나눔)는 정규분포가 아니라 정규분포와 매우 닮은 t분포를 따르게 된다.</p>
+<p><code>-</code> 신뢰구간이란?</p>
+<p>표본오차의 확률분포는 얼마나 큰 오차가 어느 정도의 확률로 나타나는가를 알 수 있다.</p>
+<p>간단하게 오차를 정량화하기 위해서, <strong>신뢰구간(confidence interval)</strong> 이라는 개념을 도입</p>
+<blockquote class="blockquote">
+<p>정규분포의 성질에서 <img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%20%5Cpm"> 2 <img src="https://latex.codecogs.com/png.latex?%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"> 범위에 약 95%의 값을 포함하고 있었다. 즉, 정규분포에서 하나의 값을 무작위로 꺼내면 95%의 확률로 그 범위에 포함된다는 뜻……….이 아니었던거 같은데 100번 뽑았을 때 95번은 모평균을 포함한다 아니었나?.. 다시 확인해볼 것</p>
+</blockquote>
+<p>이 개념을 그대로 표본오차의 정규분포에 적용해보면</p>
+<p>표본오차의 약 95%는 <img src="https://latex.codecogs.com/png.latex?0-2%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cbar%7Bx%7D%20-%20%5Cmu%20%5Cleq%200%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D"> 에서 <img src="https://latex.codecogs.com/png.latex?%5Cmu"> 를 알고 싶기 때문에 이항하고 음수를 곱하면 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%20-%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cmu%20%5Cleq%20%5Cbar%7Bx%7D%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
 
 
 </section>
