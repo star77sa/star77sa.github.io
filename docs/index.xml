@@ -349,11 +349,50 @@
 <p>표본오차의 확률분포는 얼마나 큰 오차가 어느 정도의 확률로 나타나는가를 알 수 있다.</p>
 <p>간단하게 오차를 정량화하기 위해서, <strong>신뢰구간(confidence interval)</strong> 이라는 개념을 도입</p>
 <blockquote class="blockquote">
-<p>정규분포의 성질에서 <img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%20%5Cpm"> 2 <img src="https://latex.codecogs.com/png.latex?%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"> 범위에 약 95%의 값을 포함하고 있었다. 즉, 정규분포에서 하나의 값을 무작위로 꺼내면 95%의 확률로 그 범위에 포함된다는 뜻……….이 아니었던거 같은데 100번 뽑았을 때 95번은 모평균을 포함한다 아니었나?.. 다시 확인해볼 것</p>
+<p>정규분포의 성질에서 <img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%20%5Cpm"> 2 <img src="https://latex.codecogs.com/png.latex?%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"> 범위에 약 95%의 값을 포함하고 있었다. 즉, 정규분포에서 하나의 값을 무작위로 꺼내면 95%의 확률로 그 범위에 포함된다는 뜻</p>
 </blockquote>
 <p>이 개념을 그대로 표본오차의 정규분포에 적용해보면</p>
 <p>표본오차의 약 95%는 <img src="https://latex.codecogs.com/png.latex?0-2%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cbar%7Bx%7D%20-%20%5Cmu%20%5Cleq%200%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D"> 에서 <img src="https://latex.codecogs.com/png.latex?%5Cmu"> 를 알고 싶기 때문에 이항하고 음수를 곱하면 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%20-%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cmu%20%5Cleq%20%5Cbar%7Bx%7D%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
+<ul>
+<li>신뢰구간의 해석</li>
+</ul>
+<p>OO% 신뢰구간을 해석하면 “OO%의 확률로 이 구간에 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 있다.” 가 된다.</p>
+<p>단, 확률변수는 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 아니라 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">(또는 신뢰구간)이다.</p>
+<blockquote class="blockquote">
+<p>즉 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 확률적으로 변화하여 그 구간에 포함되는 것이 아니라, 모집단에서 표본을 추출하여 OO% 신뢰구간을 구하는 작업을 100번 반복했을 때 평균적으로 그 구간에 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 포함되는 것이 OO번이란 뜻.</p>
+</blockquote>
+<p>하나의 표본에서 얻은 신뢰구간은 <img src="https://latex.codecogs.com/png.latex?%5Cmu">를 포함하거나 포함하지 않거나 둘 중 하나이다.</p>
+<p>신뢰구간은 표본에서 구한 모집단 <img src="https://latex.codecogs.com/png.latex?%5Cmu">의 추정값을 어느 정도 신뢰할 수 있는지를 나타낸다고 할 수 있다.</p>
+<p>신뢰구간이 좁다면 추정값 가까이에 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 있다고 생각할 수 있으므로, 추정값은 신뢰할 수 있는 값이다. 반대로 신뢰구간이 넓다면 추정값과 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">사이의 오차는 커지는 경향이 있으므로 신뢰도는 낮다.</p>
+<p>OO% 신뢰구간에서 ’OO%’에는 일반적으로 95%를 사용한다. 이 숫자는 과학계에서 관례로 사용되어 온 것으로, 필연성은 없다.</p>
+<p>가설검정에서 유의수준 5%는 95% 신뢰구간과 동전의 양면과 같은 관계이다.</p>
+<p>95% 신뢰구간이란 평균적으로 20번 중 1번 정도 벗어난다는, 달리 말하면 20번 중 19번은 구간에 모집단평균을 포함한다는 뜻이다.</p>
+<p><code>-</code> t분포와 95% 신뢰구간</p>
+<p>정규분포의 성질을 “<img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%5Cpm%202%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8">”안에 95%라고 대략적으로 말해왔지만 정확하게는 “<img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%5Cpm%201.96%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8">”의 범위가 95%가 된다.</p>
+<p>문제가 되는 것은 중심극한정리는 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 근사적으로 성립하기에 실제 데이터 분석에서 볼 수 있는 작은 표본크기의 경우 표본오차가 정규분포를 따른다고 말할 수 없다는 것과 모집단의 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 대신 <img src="https://latex.codecogs.com/png.latex?s">를 써야만 한다는 것.</p>
+<p>이때 활약하는 것이 <strong><img src="https://latex.codecogs.com/png.latex?t">분포</strong></p>
+<p><strong><img src="https://latex.codecogs.com/png.latex?t">분포</strong>는 모집단이 정규분포라는 가정하에 미지의 모집단 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">를 표본으로 계산한 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">로 대용했을 때, <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">를 표준오차 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">로 나누어 표준화한 값이 따르는 분포이다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cbar%7Bx%7D-%5Cmu%7D%7B%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%7D"></p>
+<p>이 값은 표준오차 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">를 단위로 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">가 몇 개분인지를 나타낸다.(3장의 표준화와 마찬가지)</p>
+<p>복잡하다고 느낄 수도 있겠으나, <img src="https://latex.codecogs.com/png.latex?t">분포 자체는 정규분포와 매우 비슷한 형태이며 표본크기 <img src="https://latex.codecogs.com/png.latex?n">에 따라 모양이 조금 달라질 뿐, 신뢰구간을 구하는 논리는 그대로이다.</p>
+<p>95%라는 엄밀한 값을 얻고자 미세 조정하는 것으로 생각하면 된다.</p>
+<p>아울러 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커짐에 따라, <img src="https://latex.codecogs.com/png.latex?t">분포는 정규분포에 가까워진다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?t">분포에서 표본크기 <img src="https://latex.codecogs.com/png.latex?n=10">인 경우에는 평균 0, 표준편차 1인 정규분포보다 조금 넓어져 하위 2.5%, 상위 2.5%인 지점이 -2.26과 +2.26이 된다 (정규분포는 -1.96, +1.96)</p>
+<p>그러므로 신뢰구간을 구하는 식에서는 <img src="https://latex.codecogs.com/png.latex?%5Cpm%202">나 <img src="https://latex.codecogs.com/png.latex?%5Cpm%201.96">이 아닌 <img src="https://latex.codecogs.com/png.latex?%5Cpm%202.26">을 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">에 곱해 계산한다.</p>
+<ul>
+<li>정밀도를 높이려면</li>
+</ul>
+<p>보다 신뢰 가능한 평균값을 추정하고 싶을 때는 어떻게 할까?</p>
+<p>오차분포의 너비를 나타내는 <strong>표준오차 </strong>에 주목해보면 이를 작게 만들기 위해서는 분자인 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">를 작게 하거나, 분모인 표본크기 <img src="https://latex.codecogs.com/png.latex?n">을 크게 하는 두 가지 방법이 있다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?s">(또는 <img src="https://latex.codecogs.com/png.latex?%5Csigma">)는 모집단 데이터 퍼짐이라는 모집단 그 자체의 성질에서 유래하기에 작게 만들기 어렵지만, 측정한 데이터 퍼짐(변동) 정도를 줄일 수는 있다. 데이터 퍼짐이 증가하면 결과적으로 <img src="https://latex.codecogs.com/png.latex?s">(또는 <img src="https://latex.codecogs.com/png.latex?%5Csigma">)가 커지기 때문에, 측정을 한층 정밀하게 실시하는 식으로 대처 가능한 경우도 있다.</p>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">에 관해서는, <img src="https://latex.codecogs.com/png.latex?n">을 크게 만듦으로써 더 높은 정밀도로 추정할 수 있다.</p>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?t">분포를 사용할 때 주의할 점</li>
+</ul>
+<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 작아도 적용 가능한 %t$분포에는 ’정규분포에서 얻은 데이터’라는 가정이 필요하다. 즉, <img src="https://latex.codecogs.com/png.latex?t">분포는 데이터 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20,%20x_n">을 정규분포라는 모형에서 얻었을 때의 (표준화된) 표본오차가 따르는 분포이다. 데이터의 배경에 잇는 모집단분포가 완벽한 정규분포일 수는 없으므로, 얻은 95% 신뢰구간은 정확한 95%가 아니라는 점에 주의.</p>
+<p>특히 문제가 되는 것은 정규분포와 현저하게 다른 분포에서 데이터를 얻었을 때이다. 이 경우 95% 신뢰구간을 구해도 95%에서 벗어날 수 있어 주의해야 한다.</p>
+<p>단, 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 클 때는 중심극한정리에 따라 모집단이 정규분포가 아니더라도 표본평균을 정규분포로 근사할 수 있으므로 신뢰구간은 정확해진다.</p>
 
 
 </section>
