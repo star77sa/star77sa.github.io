@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -254,19 +283,57 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>특별한 이유를 제외하고는 양측검정 하는 것이 좋다.</p></li>
 <li><p>p-value가 크다는 것은 귀무가설에 반하는 증거가 불충분하다는 것이지 귀무가설을 증명하는 증거가 있다는 것이 아니다.</p></li>
+<li><p>1종 오류 : 귀무가설을 잘못 기각</p></li>
+<li><p>2종 오류 : 대립가설을 잘못 기각</p></li>
+<li><p>“유의수준 5%에서 유의하다” 라고만 하지말고 p-value 그 자체의 값도 알려야 한다.</p></li>
+<li><p>모수는 상수다.(빈도주의자 관점)</p></li>
+<li><p><code>높은 p-value를 귀무가설이 옳다는 증거로 이해하는 오류</code> : 높은 p-value는 대립가설을 입증하는 증거가 불충분함을 의미한다. 효과가 아주 강해도 데이터 관측치가 적으면 p-value가 높을 수 있다. 즉, 높은 p-value는 증거/데이터 불충분으로 이해해야 한다.</p></li>
+<li><p><code>낮은 p-value가 항상 의미있다고 이해하는 오류</code> : 만약 표본크기가 너무 크고, 표본퍙균의 증가값 자체가 너무 적다면 낮은 p-value 자체로는 의미가 없다.</p></li>
+<li><p>95% 신뢰구간의 정의 : 같은 모형에서 반복해서 표본을 얻고 신뢰구간을 얻을 때 신뢰구간이 참 모수값을 포함할 확률이 95%가 되도록 만들어진 구간</p></li>
+<li><p>중심극한정리 : 어떤 분포든 표본평균은 대략 종모양을 따른다. 정규분포에 기반.</p></li>
+<li><p>95% 신뢰구간의 크기는 <span class="math inline">\(\frac{1}{\sqrt{n}}\)</span> 이다. 즉, 표본의 크기가 커지면 커질수록 신뢰구간의 크기는 줄어들고 그 줄어드는 속도는 <span class="math inline">\(\sqrt{n}\)</span> 이다.</p></li>
+</ul>
+<section id="통계-인터뷰-질문" class="level3">
+<h3 class="anchored" data-anchor-id="통계-인터뷰-질문">통계 인터뷰 질문</h3>
+<ul>
+<li>p-value를 정의하라 : 귀무가설 하에서, 관찰된 통계량만큼 극단적인 값이 관찰될 확률</li>
+<li>비전문가들이 이해하기 쉽게 p-value를 설명하라.</li>
 </ul>
 <hr>
+</section>
+<section id="모집단-모수-표본" class="level3">
+<h3 class="anchored" data-anchor-id="모집단-모수-표본">모집단, 모수, 표본</h3>
 <ul>
+<li><p>모집단(population) : 데이터가 (랜덤하게) 표본화되었다고 가정하는 분포/집단</p></li>
+<li><p>모수(population parameter) : 모집단을 정의하는 값을 모르는 상수</p></li>
+<li><p>표본(sample) : 모집단으로부터 (랜덤하게) 추출된 일부 관측치</p></li>
+<li><p>통계량(statistics) : 모수를 추정하기 위해 데이터로부터 계산된 값</p></li>
+<li><p>귀무가설(null hypothesis) : 모수에 대한 기존(status quo)의 사실 혹은 디폴트 값</p></li>
+<li><p>대립가설(alternative hypothesis) : 모수에 대해 귀무가설과 대립하여 증명하고 싶은 사실</p></li>
+<li><p>가설검정(hypothesis testing) : 통계량을 사용해 귀무가설을 기각하는 절차</p></li>
+<li><p>타입 1 오류(Type 1 error) : 가설검정 절차가 참인 귀무가설을 기각하는 사건</p></li>
+<li><p>타입 2 오류(Type 2 error) : 가설검정 절차가 거짓인 귀무가설을 기각하지 않는 사건</p></li>
+<li><p>유의수준(significance level) : 타입 1 오류를 범할 확률의 허용치</p></li>
+<li><p>P-value : 만약 귀무가설이 참일 때 데이터가 보여준 정도로 특이한 값이 관측될 확률</p></li>
 <li><p>Gapminder(http://www.gapminder.org/) :스웨덴의 비영리 통계 분석 서비스. 틈새주의(mind the gap)라는 지하철 경고문에서 영감을 얻은 이름은 세계관과 사실/데이터 간의 간극을 조심하고 좁히자는 이상을 반영</p></li>
 <li><p>더미 변수 :</p></li>
 <li><p>SQL</p></li>
 <li><p>유닉스 쉘</p></li>
 <li><p>파이썬 코딩 스타일 : PEP 0008 (도움을 주는 pylint)</p></li>
-<li><p>t값 : $ $</p></li>
+<li><p>t값 : <span class="math inline">\(\frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}\)</span></p></li>
+<li><p>PCA</p></li>
+<li><p>랜덤프로세스, 확률변수, 포아송 프로세스, 포아송 어라이블, 센츄럴 리밋</p></li>
+<li><p>부트스트랩</p></li>
+<li><p>iid</p></li>
+<li><p>정보이론, 엔트로피</p></li>
+<li><p>통계적 패턴인식</p></li>
+<li><p>평가지표</p></li>
+<li><p>손실함수</p></li>
+<li><p>한계효용체감</p></li>
 </ul>
-<p>sss</p>
 
 
+</section>
 </section>
 </section>
 
