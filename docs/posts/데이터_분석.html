@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2024-01-11">
 
-<title>Time Series</title>
+<title>Time Series - 데이터 과학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./time-series.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../time-series.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
+<link rel="stylesheet" href="../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Time Series" href="index.xml" data-external="1"></head>
-
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Time Series</span>
     </a>
   </div>
@@ -150,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link active" href="../about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Time Series</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/데이터_분석.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/데이터_분석.html">데이터 과학</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,23 +126,35 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../posts/데이터_분석.html">Posts</a></li><li class="breadcrumb-item"><a href="../posts/데이터_분석.html">데이터 과학</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Time Series</h1>
+      <h1 class="title">데이터 과학</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>고경수 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 11, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -212,7 +166,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -227,7 +181,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/데이터_분석.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">데이터 과학</span></a>
   </div>
 </li>
@@ -242,13 +196,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/확률론/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/확률론/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/확률론/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/확률론/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">빅데이터 시대, 올바른 인사이트를 위한 통계 101 X 데이터분석</span></a>
   </div>
 </li>
@@ -265,7 +219,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+  <a href="../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023.08.28 블로그 구축</span></a>
   </div>
 </li>
@@ -278,99 +232,45 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.</p>
-<p>Email : star77sa@gmail.com</p>
-<p><strong>Link</strong></p>
+<section id="데이터-분석" class="level1">
+<h1>데이터 분석</h1>
 <ul>
-<li>Github : <a href="https://github.com/star77sa">https://github.com/star77sa</a></li>
-<li>Notion : <a href="https://ksko.notion.site">https://ksko.notion.site</a></li>
-<li>Linkedin : <a href="https://linkedin.com/in/star77sa">https://linkedin.com/in/star77sa</a></li>
+<li>데이터 과학 : 데이터를 사용하여 질문에 합리적인 답을 내릴 수 있게 해주는 활동</li>
 </ul>
-<p><strong>이전 블로그</strong></p>
+<p>데이터 분석에 있어 기초통계, 선형모형(회귀·분산 분석 포함)은 제대로 배울 것을 권장.</p>
+<p>중요한 요소 : 협업할 수 있는 태도, 소통능력, 폭넓은 독서(논픽션 양서)</p>
+<p>데이터 획득 : UCI, 머신러닝 리포, 캐글, 위키피디아 데이터 세트 리스트 등…</p>
+<p>분석 순서 : 데이터 취득·데이터 정리 → 탐색적 자료 분석 EDA : 시각화·기초통계량 계산(데이터의 패턴, 이상치 탐색) → 확증적 자료 분석 CDA : 통계적 가설·가설검정·신뢰구간(통계적 모형화 statistical modeling)</p>
+<section id="통계" class="level2">
+<h2 class="anchored" data-anchor-id="통계">통계</h2>
 <ul>
-<li>fastpage : <a href="https://star77sa.github.io/TIL-Blog/">https://star77sa.github.io/TIL-Blog</a></li>
-<li>Tistory: <a href="https://ksko0424.tistory.com/">https://ksko0424.tistory.com/</a></li>
+<li><p>특별한 이유를 제외하고는 양측검정 하는 것이 좋다.</p></li>
+<li><p>p-value가 크다는 것은 귀무가설에 반하는 증거가 불충분하다는 것이지 귀무가설을 증명하는 증거가 있다는 것이 아니다.</p></li>
 </ul>
+<hr>
+<ul>
+<li><p>Gapminder(http://www.gapminder.org/) :스웨덴의 비영리 통계 분석 서비스. 틈새주의(mind the gap)라는 지하철 경고문에서 영감을 얻은 이름은 세계관과 사실/데이터 간의 간극을 조심하고 좁히자는 이상을 반영</p></li>
+<li><p>더미 변수 :</p></li>
+<li><p>SQL</p></li>
+<li><p>유닉스 쉘</p></li>
+<li><p>파이썬 코딩 스타일 : PEP 0008 (도움을 주는 pylint)</p></li>
+<li><p>t값 : $ $</p></li>
+</ul>
+<p>sss</p>
 
 
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1704898800000" data-listing-file-modified-sort="1704948277104" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="138" data-listing-title-sort="데이터 과학" data-listing-filename-sort="데이터_분석.ipynb">
-<td>
-<span class="listing-date">Jan 11, 2024</span>
-</td>
-<td>
-<a href="./posts/데이터_분석.html" class="title listing-title">데이터 과학</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1694617200000" data-listing-file-modified-sort="1704847954892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2691" data-listing-title-sort="빅데이터 시대, 올바른 인사이트를 위한 통계 101 X 데이터분석" data-listing-filename-sort="통계_101_X_데이터_분석.ipynb">
-<td>
-<span class="listing-date">Sep 14, 2023</span>
-</td>
-<td>
-<a href="./posts/확률론/통계_101_X_데이터_분석.html" class="title listing-title">빅데이터 시대, 올바른 인사이트를 위한 통계 101 X 데이터분석</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1692802800000" data-listing-file-modified-sort="1704847954891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395" data-listing-title-sort="[확률론] 1. Probability and counting" data-listing-filename-sort="1_probability_and_counting.ipynb">
-<td>
-<span class="listing-date">Aug 24, 2023</span>
-</td>
-<td>
-<a href="./posts/확률론/1_probability_and_counting.html" class="title listing-title">[확률론] 1. Probability and counting</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1577804400000" data-listing-file-modified-sort="1704847954882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="90" data-listing-title-sort="2023.08.28 블로그 구축" data-listing-filename-sort="2023-08-28-블로그.ipynb">
-<td>
-<span class="listing-date">Jan 1, 2020</span>
-</td>
-<td>
-<a href="./posts/etc/2023-08-28-블로그.html" class="title listing-title">2023.08.28 블로그 구축</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
