@@ -40,7 +40,7 @@
 <li><p>“유의수준 5%에서 유의하다” 라고만 하지말고 p-value 그 자체의 값도 알려야 한다.</p></li>
 <li><p>모수는 상수다.(빈도주의자 관점)</p></li>
 <li><p><code>높은 p-value를 귀무가설이 옳다는 증거로 이해하는 오류</code> : 높은 p-value는 대립가설을 입증하는 증거가 불충분함을 의미한다. 효과가 아주 강해도 데이터 관측치가 적으면 p-value가 높을 수 있다. 즉, 높은 p-value는 증거/데이터 불충분으로 이해해야 한다.</p></li>
-<li><p><code>낮은 p-value가 항상 의미있다고 이해하는 오류</code> : 만약 표본크기가 너무 크고, 표본퍙균의 증가값 자체가 너무 적다면 낮은 p-value 자체로는 의미가 없다.</p></li>
+<li><p><code>낮은 p-value가 항상 의미있다고 이해하는 오류</code> : 만약 표본크기가 너무 크고, 표본평균의 증가값 자체가 너무 적다면 낮은 p-value 자체로는 의미가 없다.</p></li>
 <li><p>95% 신뢰구간의 정의 : 같은 모형에서 반복해서 표본을 얻고 신뢰구간을 얻을 때 신뢰구간이 참 모수값을 포함할 확률이 95%가 되도록 만들어진 구간</p></li>
 <li><p>중심극한정리 : 어떤 분포든 표본평균은 대략 종모양을 따른다. 정규분포에 기반.</p></li>
 <li><p>95% 신뢰구간의 크기는 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B%5Csqrt%7Bn%7D%7D"> 이다. 즉, 표본의 크기가 커지면 커질수록 신뢰구간의 크기는 줄어들고 그 줄어드는 속도는 <img src="https://latex.codecogs.com/png.latex?%5Csqrt%7Bn%7D"> 이다.</p></li>
@@ -81,6 +81,9 @@
 <p>랜덤 프로세스의 예시로는 브라운 운동(Brownian motion), 마코프 체인(Markov chain), 확률 과정(Stochastic process) 등이 있다. 이러한 랜덤 프로세스는 자연 현상, 금융 모델링, 통신 시스템 등에서 모델링과 분석에 활용된다.</p></li>
 <li><p>포아송 프로세스 :</p></li>
 <li><p>포아송 어라이블 :</p></li>
+<li><p>마르코프 과정 :</p></li>
+<li><p>정보이론 :</p></li>
+<li><p>신호 및 시스템 :</p></li>
 <li><p>표준화(Standardization) : 표준화는 데이터의 평균을 0으로, 표준 편차를 1로 만드는 변환을 의미. 표준화된 값은 Z 점수 또는 표준 점수로 불리며 다음의 공식으로 계산 <img src="https://latex.codecogs.com/png.latex?z=%5Cfrac%7Bx-%5Cmu%7D%7B%5Csigma%7D"></p></li>
 <li><p>정규화(Normalization) : 정규화는 데이터의 범위를 [0, 1] 또는 [-1, 1]로 조정하는 변환을 의미. Min-Max 정규화는 가장 일반적인 형태로 다음의 공식으로 계산 <img src="https://latex.codecogs.com/png.latex?x_%7Bnormalized%7D%20=%20%5Cfrac%7Bx-%5Cmin(X)%7D%7B%5Cmax(X)-%5Cmin(X)%7D"> 정규화는 다양한 변수 간의 스케일을 맞추어줌으로써 경사 하강법과 같은 최적화 알고리즘의 수렴 속도를 향상시키고, 학습 과정을 안정화 시킨다.</p></li>
 </ul>
@@ -117,7 +120,6 @@
 <li><p>한계효용체감</p></li>
 <li><p>Gapminder(http://www.gapminder.org/) :스웨덴의 비영리 통계 분석 서비스. 틈새주의(mind the gap)라는 지하철 경고문에서 영감을 얻은 이름은 세계관과 사실/데이터 간의 간극을 조심하고 좁히자는 이상을 반영</p></li>
 </ul>
-<p>mm</p>
 
 
 </section>
