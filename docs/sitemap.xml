@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://star77sa.github.io/index.html</loc>
-    <lastmod>2024-01-10T00:52:34.881Z</lastmod>
+    <lastmod>2024-01-18T02:32:34.449Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/post-with-code/index.html</loc>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/etc/2023-08-28-블로그.html</loc>
-    <lastmod>2024-01-12T10:10:48.747Z</lastmod>
+    <lastmod>2024-01-18T02:31:05.469Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/확률론/2023-08-28-블로그.html</loc>
@@ -47,5 +47,21 @@
   <url>
     <loc>https://star77sa.github.io/posts/데이터_분석.html</loc>
     <lastmod>2024-01-14T08:24:36.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/etc/NVIDIA초청강연.html</loc>
+    <lastmod>2024-01-18T02:27:18.617Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/통계, 데이터분석/데이터_분석.html</loc>
+    <lastmod>2024-01-14T08:24:36.705Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/통계, 데이터분석/1_probability_and_counting.html</loc>
+    <lastmod>2024-01-10T00:52:34.891Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/통계, 데이터분석/통계_101_X_데이터_분석.html</loc>
+    <lastmod>2024-01-10T00:52:34.892Z</lastmod>
   </url>
 </urlset>
