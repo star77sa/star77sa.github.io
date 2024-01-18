@@ -10,7 +10,7 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.540</generator>
-<lastBuildDate>Wed, 30 Apr 2025 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 16 Jan 2024 15:00:00 GMT</lastBuildDate>
 <item>
   <title>2024 GIST-NVAITC Korea 강연 내용</title>
   <dc:creator>고경수 </dc:creator>
@@ -116,7 +116,7 @@
 
  ]]></description>
   <guid>https://star77sa.github.io/posts/etc/NVIDIA초청강연.html</guid>
-  <pubDate>Wed, 30 Apr 2025 15:00:00 GMT</pubDate>
+  <pubDate>Tue, 16 Jan 2024 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>데이터 과학</title>
@@ -238,7 +238,7 @@
   <pubDate>Wed, 10 Jan 2024 15:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>빅데이터 시대, 올바른 인사이트를 위한 통계 101 X 데이터분석</title>
+  <title>통계 101 X 데이터분석</title>
   <dc:creator>고경수 </dc:creator>
   <link>https://star77sa.github.io/posts/통계, 데이터분석/통계_101_X_데이터_분석.html</link>
   <description><![CDATA[ 
@@ -459,7 +459,7 @@
 </section>
 </section>
 </section>
-<section id="추론통계-신뢰구간" class="level1">
+<section id="추론통계-신뢰구간" class="level1 page-columns page-full">
 <h1>4. 추론통계 ~ 신뢰구간</h1>
 <ul>
 <li>데이터로 모집단의 성질을 추정한다.</li>
@@ -500,7 +500,7 @@
 <li>편향된 추출로는 올바른 추정이 어려움</li>
 </ul>
 </section>
-<section id="표본오차와-신뢰구간" class="level2">
+<section id="표본오차와-신뢰구간" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</h2>
 <p>모집단의 평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">나 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 등은 고정된 값이지만, 모집단분포에서 얻은 표본 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20x_n">은 확률적으로 변하는 확률변수라는 사실을 염두에 둘 것</p>
 <p><code>확률변수의 정확한 의미는?</code></p>
@@ -620,6 +620,72 @@
 <p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 작아도 적용 가능한 %t$분포에는 ’정규분포에서 얻은 데이터’라는 가정이 필요하다. 즉, <img src="https://latex.codecogs.com/png.latex?t">분포는 데이터 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20,%20x_n">을 정규분포라는 모형에서 얻었을 때의 (표준화된) 표본오차가 따르는 분포이다. 데이터의 배경에 잇는 모집단분포가 완벽한 정규분포일 수는 없으므로, 얻은 95% 신뢰구간은 정확한 95%가 아니라는 점에 주의.</p>
 <p>특히 문제가 되는 것은 정규분포와 현저하게 다른 분포에서 데이터를 얻었을 때이다. 이 경우 95% 신뢰구간을 구해도 95%에서 벗어날 수 있어 주의해야 한다.</p>
 <p>단, 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 클 때는 중심극한정리에 따라 모집단이 정규분포가 아니더라도 표본평균을 정규분포로 근사할 수 있으므로 신뢰구간은 정확해진다.</p>
+<hr>
+<p>p.151 ~</p>
+<ul>
+<li><p>모수검정 : 모집단이 특정분포를 따른다는 가정을 둔 가설검정</p>
+<ul>
+<li><p>정규분포로부터 얻어졌다고 간주할 수 있는 성질 (정규성 normality를 가졌다.)</p></li>
+<li><p>반대는 특정분포로 가정을 못하는 경우가 있다. ex) 좌우 비대칭 분포, 이상값이 있는 분포라면 평균이나 표준편차는 도움이 되지 않음, 모수검정 이용이 적절하지 않다. 그 대신 평균, 표준펴나 등의 파라미터에 기반을 두지 않는 ’비모수 검정’으로 분류되는 방법을 이용</p></li>
+</ul></li>
+<li><p>정규성 조사 (귀무가설에 정규성 가정)</p>
+<p>모수검정에서는 각 집단의 데이터에 정규성이 있어야한다.</p>
+<ul>
+<li><p>정규성 조사법 :</p>
+<ul>
+<li>Q-Q플롯(분위수-분위수 그림)</li>
+<li>샤피로-윌크 검정 (가설검정으로 조사)</li>
+<li>콜모고로프-스미르노프 (K-S) 검정</li>
+</ul></li>
+</ul></li>
+<li><p>등분산성 조사 (귀무가설에 등분산 가정)</p>
+<p>t검정, 분산분석 =&gt; 분산이 같은 모집단으로부터 획득되었다는 가정이 필요</p>
+<ul>
+<li>등분산성 조사법 :
+<ul>
+<li>바틀렛 검정</li>
+<li>레빈 검정</li>
+</ul></li>
+</ul></li>
+<li><p>데이터에 정규성이 없는 경우? → 비모수검정 (평균값 대신 분포의 위치를 나타내는 대푯값에 주목하여 해석)</p>
+<ul>
+<li><strong>윌콕슨 순위합 검정</strong>(wil-coxon rank sum test) : 평균값 대신 각 데이터 값의 순위에 기반하여 검정</li>
+<li>맨-휘트니 U 검정
+<ul>
+<li>비교할 2개 집단의 분포 모양 자체가 같아야함</li>
+</ul></li>
+<li>플리그너-폴리셀로 검정</li>
+<li>브루너-문첼 검정</li>
+</ul></li>
+</ul>
+<blockquote class="blockquote">
+<p>여기까지는 2개 표본 비교</p>
+</blockquote>
+<ul>
+<li>분산분석(ANOVA, Analysis of variance) : 3개 집단 이상의 평균값 비교
+<ul>
+<li>귀무가설 : 모든 집단의 평균이 같다 (<img src="https://latex.codecogs.com/png.latex?%5Cmu_A%20=%20%5Cmu_B%20=%20%5Cmu_C">)</li>
+<li>대립가설 : 적어도 한 쌍에는 차이가 있다.</li>
+</ul></li>
+<li>F값 = (평균적인 집단간 변동) / (평균적인 집단 내 변동)
+<ul>
+<li>집단 내 변동 = 오차에 따른 변동</li>
+<li>집단 간 변동 = 효과에 따른 변동</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="https://star77sa.github.io/posts/통계, 데이터분석/통계_101_X_데이터_분석_files/figure-html/cell-82-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">image.png</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>자유도(degree of freedom) : 자유로이 움직일 수 있는 변수의 수</p>
+<p>ex) 표본크기가 n=10인 표본이라면 자유도는 10이지만 표본평균을 계산한 이후의 자유도는 9가 된다.</p>
+<p>표본평균이 확정되었기에 9개의 데이터가 정해지면 남은 1개의 값을 확정할 수 있기 때문</p></li>
+<li><p>일표본 t검정 (가정) vs 이표본 t검정</p></li>
+<li><p>정규분포 ㅡ t분포 ㅡ t검정 관계</p></li>
+</ul>
 
 
 </section>
