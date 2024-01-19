@@ -14,12 +14,14 @@
 <item>
   <title>[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</title>
   <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/Paper/Smart_Grid/smartgrid1.html</link>
+  <link>https://star77sa.github.io/posts/Paper/smartgrid1.html</link>
   <description><![CDATA[ 
 
 
 
 
+
+<hr>
 <p><a href="https://www.sciencedirect.com/science/article/pii/S0306261920307492">Machine learning driven smart electric power system: Current trends and new perspectives (2020)</a></p>
 <hr>
 <section id="abstract" class="level1">
@@ -47,23 +49,235 @@
 <ul>
 <li><p>AC(Alternating current), DC(Direct current) system</p></li>
 <li><p>conventional energy system → more efficient next-generation smart grid system.</p></li>
-<li><p>conventional energy system</p>
+<li><p><strong>conventional energy system</strong></p>
 <ul>
 <li>few centralized and large power generation sources</li>
 <li>mainly hydropower or fossil fuel based power generation system to the consumers via a distribution system</li>
 <li>uni-directional(단방향) power and communication flow ⇒ passive</li>
 </ul></li>
-<li><p>smart grid</p>
+<li><p><strong>smart grid</strong></p>
 <ul>
 <li>integration and contribution of every distributed and renewable energy resource</li>
 <li>two-way power and information flow ⇒ active —</li>
 <li>bi-directional flow of power and communication은 reliability, security, efficiency of power systems를 향상시킬 수 있다.</li>
 </ul></li>
+<li><p>스마트 그리드는 더 좋은 energy efficiency, cost-effectiveness, controlled <img src="https://latex.codecogs.com/png.latex?CO_2"> emission, reduced cost, improved utility로 인해 미래의 전력망으로 일컬어지고 있다.</p></li>
+<li><p>스마트 그리드는 conventional power grid와 비교하여 넓은 범위의 작업들을 수행한다. 많은 수의 기기 연결은 에너지 관련 작업을 특정 방식으로 수행하기 위한 명령과 정보 교환을 가능케 한다.</p></li>
+<li><p>grid infrastructure로의 IoT 기기들의 통합은 미래 스마트그리드로 향한 첫걸음이다.</p>
+<ul>
+<li>Smart meter는 실시간에서 에너지 소비를 측정할 수 있을 뿐만 아니라 양방향 통신을 통해 고객이 전력 유틸리티와 상호작용하고 advanced demand-side management operations를 수행할 수 있도록 한다.</li>
+<li>스마트그리드에서 IoT의 통합은 스마트그리드들의 관리에 추가적인 challenge들을 가져온다. 예를들어 the timely delivery of critical operational information, the efficient process of the vat amount of field data, and cyberspace security issues. 이러한 문제들은 적절한 접근 및 기술 사용이 필요 e.g., the phasor measurement unit placement, advanced analytical tools, and machine learning-based solutions.</li>
+</ul></li>
+<li><p>This paradigm-shift(conventional grid → smart grid) has equipped the power grid with many distributed generation(DG) systems, such as photovoltic(PV), wind energy, and electric vehicles(EV). 다시말해 스마트그리드는 processes, technologies, and distributed and renewable generation systems that makes the conventional power grid more intelligent and efficient의 통합이다.</p></li>
+<li><p>다양한 DGs의 통합은 수많은 challenge들을 소개한다. 예를들어 load forecast, fault and failure analysis, demand-side management, non-intrusive load monitoring(NILM), cyberspace security, electricity theft detection, and islanding detection among others.</p></li>
+<li><p>최근 몇년간 스마트 그리드에 독보적인 문제에 접근하는 머신러닝 기반 기술의 사용이 관측되는 트렌드이다.</p></li>
+<li><p>이 연구는 스마트 그리드에서 머신러닝 기술의 응용의 최근 진보 overview와 다양한 기술들의 한계점에 대해 토론하는것에 더해 future practice을 위한 가능한 솔루션에 초점을 맞춘다.</p></li>
 </ul>
+</section>
+<section id="an-overview-of-machine-learning" class="level1">
+<h1>2. An overview of machine learning</h1>
+<ul>
+<li><p>integration of advanced information and communication technologies, in particular IoT, in the power grid infrastructure is one of the primary steps towards the smart grid.</p></li>
+<li><p>Much research effort has been made to explore a variety of machine learning and deep learning-based solutions to address the challenges in various application domains of the smart gird.</p></li>
+<li><p>머신러닝 기술은 넓게 4가지 카테고리로 분류된다.</p>
+<ol type="1">
+<li>Supervised learning : 학습을 위해 인풋과 아웃풋 사이에 맵핑이 되어있고 많은 트레이닝 샘플들 인풋과 아웃풋 페어에 라벨이 주어진다.</li>
+<li>Unsupervised learning : 라벨이 없을 뿐만 아니라 분류도 되어있지 않다. similarity 나 difference를 기준으로 그룹핑한다. supervised보다 복잡한 task. 흔한 방식은 cluster analysis이며 이는 숨겨진 패턴 또는 데이터를 그룹핑할때 EDA를 사용한다.</li>
+<li>Reinforcement learning(RL) : <strong>agent</strong>가 환경과 상호작용 하고 action에 응답하여 받은 자극에 기반하여 액션을 수정한다. RL은 input/output 페어의 라벨을 요구하지 않고 환경에서 액션에 응답하여 에이전트에 reward or penalty를 받는다는점에서 supervised learning과 다르다. RL는 행동을 자동적으로 결정하는것이 가능하다. 인간이나 동물의 행동과 가장 유사한 방법</li>
+<li>Ensemble methods : 몇몇 머신러닝 알고리즘을 사용하여 한개의 알고리즘을 쓸때보다 성능을 향상시키기 위해 만든다. 싱글보다 일반화된 성능을 가짐.</li>
+</ol></li>
+<li><p>The inadequacy and limitations of conventional computational techniques bring forward the motivation of using machine learning techniques in addressing various smart grid challenges.</p></li>
+<li><p><strong>Limitations of existing solutions</strong></p>
+<ul>
+<li>Unable to handle large amounts of data</li>
+<li>Lacking robustness against uncertainty</li>
+<li>Lacking better optimization in the presence of constraints</li>
+<li>Lacking adaptive and autonomous operations</li>
+<li>Lacking intelligent decision making</li>
+<li>Lacking real-time processing</li>
+<li>Lacking complex systems modeling capability</li>
+<li>Unable to handle non-linear systems</li>
+</ul></li>
+<li><p><strong>Benefits of ML techniques</strong></p>
+<ul>
+<li>Mostly data-driven</li>
+<li>Feature selection and feature extraction ability</li>
+<li>Autonomous, adaptive, and intelligent operations and decision making</li>
+<li>Can perform real-time and/or near realtime operations</li>
+<li>Can effectively deal with non-linear systems</li>
+<li>Complex system modeling</li>
+</ul></li>
+</ul>
+</section>
+<section id="machine-learning-applications-in-smart-grid" class="level1">
+<h1>3. Machine learning applications in smart grid</h1>
+<section id="forecasting-in-smart-grid" class="level2">
+<h2 class="anchored" data-anchor-id="forecasting-in-smart-grid"><em>3.1. Forecasting in smart grid</em></h2>
+<section id="electric-load-and-price-forecasting" class="level3">
+<h3 class="anchored" data-anchor-id="electric-load-and-price-forecasting"><em>3.1.1. Electric load and price forecasting</em></h3>
+<ul>
+<li><p>Electric load forecasting is divided into three categories based on the forecasting horizons.</p>
+<ol type="1">
+<li>Short-term Load Forecasting</li>
+</ol>
+<ul>
+<li><p>short : generally involves load forecasting of a few minutes up to a few days</p></li>
+<li><p>…</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul>
+<ol start="2" type="1">
+<li>General (Medium-term and long-term) Load Forecasting</li>
+</ol>
+<ul>
+<li><p>medium : forecast of a few days up to a few months</p></li>
+<li><p>long : forecast of a few months up to a year</p></li>
+<li><p>…</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul>
+<ol start="3" type="1">
+<li>Electricity Price Forecast</li>
+</ol>
+<ul>
+<li><p>…</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="renewable-power-generation-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="renewable-power-generation-prediction"><em>3.1.2. Renewable power generation prediction</em></h3>
+<ul>
+<li><p>The integration of renewable energy systems poses many challenges due to their variable generation patterns caused by their <strong>geographical location, weather, and other factors</strong> which can impact the <strong>power quality and stability</strong>.</p></li>
+<li><p>…</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-13-1-image.png" class="img-fluid"></p></li>
+</ul>
+</section>
+</section>
+<section id="machine-learning-in-fault-and-failure-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-fault-and-failure-analysis"><em>3.2. Machine learning in fault and failure analysis</em></h2>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-14-1-image.png" class="img-fluid"></p>
+</section>
+<section id="machine-learning-in-demand-side-management" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-demand-side-management"><em>3.3. Machine learning in demand-side management</em></h2>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-15-1-image.png" class="img-fluid"></p>
+</section>
+<section id="machine-learning-in-cyberspace-security" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-cyberspace-security"><em>3.4. Machine learning in cyberspace security</em></h2>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-16-1-image.png" class="img-fluid"></p>
+</section>
+<section id="others" class="level2">
+<h2 class="anchored" data-anchor-id="others"><em>3.5. Others</em></h2>
+<ul>
+<li>…</li>
+</ul>
+</section>
+</section>
+<section id="discussion-and-remarks" class="level1">
+<h1>4. Discussion and remarks</h1>
+<section id="observations" class="level2">
+<h2 class="anchored" data-anchor-id="observations"><em>4.1. Observations</em></h2>
+<ul>
+<li>광범위한 문헌 조사는 다양한 smart grid challenges에 접근하는 머신러닝, 딥러닝 기법의 사용 증가를 보여준다.</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-19-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>Based on the comprehensive review of the literature, a collection of observations and insights are summarized as follows:</p>
+<ul>
+<li><p><strong>Electric Load Forecasting</strong> : 상대적으로 성숙한 분야. 머신러닝 기법이 중요한 역할을 하였다. 기상 데이터의 활용 및 다양한 지역의 계층적 예측을 활용하였다. 게다가, 기계학습 기반 단기 예측은 수요를 충족시키고 간헐적이고 재생 가능한 분산 발전 예측에도 크게 기여하였다.</p>
+<p>유명한 기계학습 기반 electric load forecast algorithms는 supervised neural networks, LSTM RNN, and Random forest among others를 포함한다</p></li>
+<li><p><strong>Fault diagnosis and detection :</strong> 머신러닝 기법은 고장 감지 및 진단에서 뛰어난 성과를 보인다. 이는 고장에 대한 깊은 이해나 전문 지식이 필요하지 않고, 데이터의 패턴에 민감하며, 필수적인 변수가 누락되어도 효율적으로 동작할 수 있다는 특성 때문이다. 반면에 베이지안 네트워크와 같은 지식 주도 방법(Knowledge-Driven Approach (↔︎ Data Driven Approach))은 도메인 및 전문 지식의 도입으로 불완전한 정보에 대한 문제를 해결할 수 있다.</p></li>
+<li><p><strong>Load management / demand-side management(DSM)</strong> : DSM frameworks or demand response programs are mainly based on classification where machine learning tools such as SVM, MLP, and RNN have shown promising performance.</p></li>
+<li><p><strong>NILM :</strong> use of deep learning and advanced multi-label classification methods such as ML-KNN and SVM where the need of prior feature extraction is diminished due to the automatic feature extraction ability of such methods, which was one of the challanges for the classic machine learning techniques.</p></li>
+<li><p><strong>Cyber-attack detection</strong> : 머신러닝 기반 방법은 flexibility towards scalability 때문에 높은 분류 정확도를 보인다. + dominance of supervised learning methods in attack detection.</p></li>
+<li><p><strong>Energy and economic dispatch :</strong> 대부분의 문헌들은 multi-agent theory를 사용. 이는 정확한 cost function의 수학적 모델을 요구하는 반면 최근의 몇 연구에서는 이 문제를 해결하기 위해 강화학습 알고리즘과 같은 머신러닝을 사용하는 경향이 있다.</p></li>
+</ul></li>
+<li><p>기존의 그리드에서 스마트 그리드로 전환하고 기존의 생산 시스템을 탈탄소화 하기 위해서는 현재의 전력망에 친환경적이고 재사용가능한 생산시스템의 더 많이 침투해야한다. 이러한 시스템의 침투는 최적의 전력 흐름과 수급 균형을 유지하면서 효과적이고 효율적인 계획 전략이 필요하며 이는 SVM, Q-learning, Decision trees 같은 기계 학습 도구가 효과적으로 사용될 수 있는 복잡한 비선형 문제로 모델링될 수 있다.</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-20-1-image.png" class="img-fluid"></p></li>
+<li><p>다양한 머신러닝 알고리즘(SVM, LSTM, DBN and CNN)이 많은 스마트 그리드 문제 해결에 사용되곤 한다.</p>
+<p>Neural network가 가장 많이 사용되고 높은 정확도를 보이며 non-linear mapping ability.</p>
+<p>Deep learning 은 forecasting과 cyberspace security에서 인기있는 기술이다.</p>
+<p>LSTM과 같은 RNN은 forecasting문제에서 사용이 증가하고있다.</p>
+<p><img src="https://star77sa.github.io/posts/Paper/smartgrid1_files/figure-html/cell-21-1-image.png" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="technical-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="technical-challenges"><em>4.2. Technical challenges</em></h2>
+<p>다양한 스마트 그리드 응용 분야에서 기계 학습 알고리즘 및 기술의 구현을 위한 몇 가지 도전요소와 권장 사항:</p>
+<ul>
+<li>Smart Grid Data Preprocessing:
+<ul>
+<li><p>데이터 전처리는 일반적으로 데이터 통합, 데이터 정제, 데이터 변환 세 가지 주요 단계로 이루어짐.</p></li>
+<li><p>스마트 그리드의 데이터 전처리 사이클은 다양한 데이터 소스로 인해 도전적이다.</p>
+<p>주요 데이터 소스에는</p>
+<ol type="1">
+<li><p>real and reactive powers, DR capacity, voltage 등의 operational data</p></li>
+<li><p>전력 품질 및 신뢰성과 관련된 non-operational data</p></li>
+<li><p>하루 중 시간, 평균, 최대 수요 값, 전력 사용과 관련된 스마트 미터 데이터</p></li>
+<li><p>voltage loss, fault detection event, security breach event를 포함하는 스마트 그리드 event data</p></li>
+<li><p>다른 유형의 데이터를 조직하고 해석하는 데 사용되는 메타데이터</p></li>
+</ol></li>
+<li><p>스마트 그리드의 데이터 전처리는 다양한 유형의 데이터 소스와 이에 따른 데이터로 인해 도전적이다.</p></li>
+</ul></li>
+<li>Data Availability:
+<ul>
+<li>load forecasting 문제에서의 기계 학습 기반 모델은 효율적인 예측 결과를 보이며 이러한 모델은 전통적인 방법보다 더 유연하다. 그러나 기계학습 기반의 예측 모델은 대량의 대표적인(representative) 데이터에 크게 의존하며, 이러한 데이터 없이는 모델이 일반성을 가지지 못한다. 또한 예측 시계열에 대한 예측 기간에 상관없이 정확한 예측을 수행하고 다양한 제약 조건에 대한 트레이드오프를 하지 않고도 작동할 수 있는 표준적이고 견고한(robust) 예측 방법이 필요하다.</li>
+</ul></li>
+<li>Load Transfer Detection(부하 이전 감지?):
+<ul>
+<li>대부분의 문헌 검토에서는 강조되지 않았음. 다만 정확하고 효율적인 예측을 달성하기 위한 주요 도전 중 하나이다.</li>
+<li>이 도전은 utility or distribution 운영자가 주로 유지보수 또는 신뢰성 이유로 계절적, 임시 또는 영구적인 기준으로 다른 회로로 부하를 이전할 때 발생한다. 기계 학습 방법은 부하 예측에서 이러한 도전을 효과적으로 식별하고 해결하는 데 중요한 역할을 할 수 있다.</li>
+</ul></li>
+<li>Extrapolation of Faults:
+<ul>
+<li>fault diagnosis와 fault detection을 위한 데이터 기반 모델은 유망한 결과를 보여주었지만 이러한 기계학습 모델은 훈련 데이터의 경계를 넘어 추론할 수 없다. 따라서 베이지안 방법, 퍼지 기반 방법과 같은 지식 기반 방법과 데이터 기반 기계학습 기반 방법을 결합한 하이브리드 접근 방식은 상기한 문제를 효과적으로 해결할 수 있다.</li>
+</ul></li>
+<li>Machine Learning-based Planning Framework:
+<ul>
+<li>스마트 그리드 기획 및 운영 문제에 대한 기계학습을 통한 추가적인 연구 가능성이 여전히 많이 남아있다.</li>
+</ul></li>
+<li>Deep Learning-based Multi-label Classification Approaches:
+<ul>
+<li><p>NILM 문제에서 표준 딥 러닝 방법(SAE 및 DBN과 같은)의 한계로 인해 딥 러닝 기반 다중 레이블 분류의 탐색과 개발이 필요하다.</p>
+<p>로지스틱 회귀 및 소프트맥스가 훈련에 자주 사용되는 경우, 로지스틱 회귀 및 소프트맥스 기반의 딥 러닝 모델 훈련은 단일 클래스로 이어진다. 따라서 다른 혁신적인 딥 러닝 기반 다중 레이블 분류 접근 방식은 NILM 문제를 효과적으로 해결할 수 있다.</p>
+<p><code>=&gt; 다중 레이블 분류와 다중 클래스 분류(다중분류)는 다르다. 다중분류는 각 샘플이 하나의 클래스에만 속할 수 있는 분류 문제를 의미. 다중 레이블 분류는 각 샘플이 여러 개의 클래스에 속할 수 있는 분류 문제를 의미한다. 즉, 각 샘플은 여러 개의 레이블을 가질 수 있으며 각 레이블은 클래스를 나타낸다.</code></p></li>
+</ul></li>
+<li>Post-Attack Resilience Frameworks(사이버 공간에서의 공격 후 회복 프레임 워크):
+<ul>
+<li>사이버 공간 보안과 관련된 대부분의 문헌은 기계학습 기반의 공격 탐지 및 예방 메커니즘에 중점을 두지만, 공격 이후의 상황에 중점을 둔 출판물은 소수이다. 따라서 사이버 위협의 탐지 및 예방뿐만 아니라 완화에 중점을 둔 보안 알고리즘이 필요하다.</li>
+</ul></li>
+<li>Lightweight Machine Learning Solutions:
+<ul>
+<li>미래의 IoT 기반 스마트 디바이스에 구현하기 위해 빠르면서도 계산 비용이 적은 기계 학습 및 딥 러닝 알고리즘이 필요하다. 이는 계산 요구 사항이 제한된 스마트 디바이스에서 사용될 것이다.</li>
+</ul></li>
+<li>Smart Grid Reliability Requirements:
+<ul>
+<li><p>스마트 그리드에 대규모로 통합되는 재생 가능한 power sources, 특히 풍력 및 태양광 발전 시스템은</p>
+<ol type="1">
+<li><p>일반적인 예측 기간에서의 큰 예측 오류,</p></li>
+<li><p>대규모 설치로 인한 송전 혼잡,</p></li>
+<li><p>전압 및 주파수 안정성과 관련된 전력 품질 문제,</p></li>
+<li><p>지리적으로 분산된 자원으로 인한 관련 전력 분배 시스템의 challenge</p></li>
+</ol>
+<p>로 스마트 그리드의 신뢰성 요구 사항을 강조한다. 이러한 시스템의 불확실성 및 신뢰성 요구 사항은 스마트 그리드에서 기계 학습 기반 기술을 다양한 측면에서 활용하는 데 명백한 challenge를 제공한다. 예를 들면 효율적인 운영 상태 모니터링 및 분석, 정확한 상태 예측 및 이상 징후 감지, 그리고 합리적인 의사 결정 등이 있다.</p></li>
+</ul></li>
+</ul>
+<p><code>stimuli</code> 자극</p>
+<p><code>intermittent</code> 간헐적</p>
+<p><code>countermeasures</code> 대책</p>
+<p><code>diffusion</code> 어떤 현상이나 개념이 시간이 지남에 따라 널리 퍼져나가거나 확산되는 과정</p>
+<p><code>encompass</code> 포함하다</p>
+<p><code>hence</code> 이런 이유로</p>
+<p><code>massive</code> 거대한</p>
+<p><code>inadequacy</code> 불충분함</p>
+<p><code>extrapolate</code> 추론하다</p>
+<p><code>exploitation</code> 착취, (부당한)이용, 개발</p>
+<p><code>resilience</code> 회복력, 탄력, 복원력</p>
+
+
+</section>
 </section>
 
  ]]></description>
-  <guid>https://star77sa.github.io/posts/Paper/Smart_Grid/smartgrid1.html</guid>
+  <guid>https://star77sa.github.io/posts/Paper/smartgrid1.html</guid>
   <pubDate>Thu, 18 Jan 2024 15:00:00 GMT</pubDate>
 </item>
 <item>

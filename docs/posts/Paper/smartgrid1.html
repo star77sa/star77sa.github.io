@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.540">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2024-01-19">
+
+<title>Time Series - [논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../time-series.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Time Series</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../../about.html" aria-current="page"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/star77sa"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://ksko.notion.site"> <i class="bi bi-files" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Paper/smartgrid1.html">Paper</a></li><li class="breadcrumb-item"><a href="../../posts/Paper/smartgrid1.html">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Paper/smartgrid1.html">Paper</a></li><li class="breadcrumb-item"><a href="../../posts/Paper/smartgrid1.html">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a></li></ol></nav>
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>고경수 </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 19, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">About</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Posts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Etc</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2023.08.28 블로그 구축</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Paper</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Paper/smartgrid1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">[확률론] 1. Probability and counting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">데이터 과학</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">통계 101 X 데이터분석</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">6. Conclusion</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#an-overview-of-machine-learning" id="toc-an-overview-of-machine-learning" class="nav-link" data-scroll-target="#an-overview-of-machine-learning">2. An overview of machine learning</a></li>
+  <li><a href="#machine-learning-applications-in-smart-grid" id="toc-machine-learning-applications-in-smart-grid" class="nav-link" data-scroll-target="#machine-learning-applications-in-smart-grid">3. Machine learning applications in smart grid</a>
+  <ul class="collapse">
+  <li><a href="#forecasting-in-smart-grid" id="toc-forecasting-in-smart-grid" class="nav-link" data-scroll-target="#forecasting-in-smart-grid"><em>3.1. Forecasting in smart grid</em></a>
+  <ul class="collapse">
+  <li><a href="#electric-load-and-price-forecasting" id="toc-electric-load-and-price-forecasting" class="nav-link" data-scroll-target="#electric-load-and-price-forecasting"><em>3.1.1. Electric load and price forecasting</em></a></li>
+  <li><a href="#renewable-power-generation-prediction" id="toc-renewable-power-generation-prediction" class="nav-link" data-scroll-target="#renewable-power-generation-prediction"><em>3.1.2. Renewable power generation prediction</em></a></li>
+  </ul></li>
+  <li><a href="#machine-learning-in-fault-and-failure-analysis" id="toc-machine-learning-in-fault-and-failure-analysis" class="nav-link" data-scroll-target="#machine-learning-in-fault-and-failure-analysis"><em>3.2. Machine learning in fault and failure analysis</em></a></li>
+  <li><a href="#machine-learning-in-demand-side-management" id="toc-machine-learning-in-demand-side-management" class="nav-link" data-scroll-target="#machine-learning-in-demand-side-management"><em>3.3. Machine learning in demand-side management</em></a></li>
+  <li><a href="#machine-learning-in-cyberspace-security" id="toc-machine-learning-in-cyberspace-security" class="nav-link" data-scroll-target="#machine-learning-in-cyberspace-security"><em>3.4. Machine learning in cyberspace security</em></a></li>
+  <li><a href="#others" id="toc-others" class="nav-link" data-scroll-target="#others"><em>3.5. Others</em></a></li>
+  </ul></li>
+  <li><a href="#discussion-and-remarks" id="toc-discussion-and-remarks" class="nav-link" data-scroll-target="#discussion-and-remarks">4. Discussion and remarks</a>
+  <ul class="collapse">
+  <li><a href="#observations" id="toc-observations" class="nav-link" data-scroll-target="#observations"><em>4.1. Observations</em></a></li>
+  <li><a href="#technical-challenges" id="toc-technical-challenges" class="nav-link" data-scroll-target="#technical-challenges"><em>4.2. Technical challenges</em></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<nav id="TOC-body" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#abstract" id="toc-abstract">Abstract</a></li>
+  <li><a href="#conclusion" id="toc-conclusion">6. Conclusion</a></li>
+  <li><a href="#introduction" id="toc-introduction">1. Introduction</a></li>
+  <li><a href="#an-overview-of-machine-learning" id="toc-an-overview-of-machine-learning">2. An overview of machine learning</a></li>
+  <li><a href="#machine-learning-applications-in-smart-grid" id="toc-machine-learning-applications-in-smart-grid">3. Machine learning applications in smart grid</a>
+  <ul>
+  <li><a href="#forecasting-in-smart-grid" id="toc-forecasting-in-smart-grid"><em>3.1. Forecasting in smart grid</em></a>
+  <ul>
+  <li><a href="#electric-load-and-price-forecasting" id="toc-electric-load-and-price-forecasting"><em>3.1.1. Electric load and price forecasting</em></a></li>
+  <li><a href="#renewable-power-generation-prediction" id="toc-renewable-power-generation-prediction"><em>3.1.2. Renewable power generation prediction</em></a></li>
+  </ul></li>
+  <li><a href="#machine-learning-in-fault-and-failure-analysis" id="toc-machine-learning-in-fault-and-failure-analysis"><em>3.2. Machine learning in fault and failure analysis</em></a></li>
+  <li><a href="#machine-learning-in-demand-side-management" id="toc-machine-learning-in-demand-side-management"><em>3.3. Machine learning in demand-side management</em></a></li>
+  <li><a href="#machine-learning-in-cyberspace-security" id="toc-machine-learning-in-cyberspace-security"><em>3.4. Machine learning in cyberspace security</em></a></li>
+  <li><a href="#others" id="toc-others"><em>3.5. Others</em></a></li>
+  </ul></li>
+  <li><a href="#discussion-and-remarks" id="toc-discussion-and-remarks">4. Discussion and remarks</a>
+  <ul>
+  <li><a href="#observations" id="toc-observations"><em>4.1. Observations</em></a></li>
+  <li><a href="#technical-challenges" id="toc-technical-challenges"><em>4.2. Technical challenges</em></a></li>
+  </ul></li>
+  </ul>
+</nav>
+<hr>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0306261920307492">Machine learning driven smart electric power system: Current trends and new perspectives (2020)</a></p>
+<hr>
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
+<ul>
+<li><p>이 연구는 다양한 측면으로부터 스마트 그리드의 기술적 문제에 성공적으로 접근하기 위해 머신러닝 기술 사용의 증가하는 관심과 빠른 확장에 대해 쓰여졌다.</p></li>
+<li><p>현재의 전력 시스템은 보다 능동적이고 유연하며 지능적인 스마트 그리드로 빠르게 전환되고 있으며 이는 많은 영역에서 도전을 야기한다. (다양하게 분배된 재사용가능한 에너지들의 통합, 사이버 보안, 수요측면관리, 시스템 계획 및 운영에 관한 의사결정)</p></li>
+<li><p>스마트그리드에서 고급 기능의 실현은 기본적인 정보 통신 인프라와 다양한 소스(smart meter, phasor measurement units, and various forms of sensors)에서 생성된 방대한 양의 데이터를 효율적으로 처리하는 데 크게 의존한다.</p></li>
+<li><p>몇몇 이슈는 여전히 열리고 더 연구할 가지가 있는 채로 남겨졌다. (high-performance data processing and analysis for intelligent decision-making in large-scale complex multi-energy systems, lightweight machine learning-based solutions, and so forth)</p>
+<p>더하여 진보된 컴퓨팅, 통신기술(edge computing, ubiquitous internet of things and 5G wireless networks, in the smart grid are also highlighted.)을 활용하는 미래관점에서 스마트그리드는 주목받을 것이다.</p></li>
+<li><p>머신러닝은 미래 스마트 전력 시스템을 이끄는 주요한 방법 중 하나가 될 것이다.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="level1">
+<h1>6. Conclusion</h1>
+<ul>
+<li><p>스마트 그리드 - 전통적 power grid와 반대로 더 효율적이고 데이터에 의존하고 사용자 중심적이다.</p></li>
+<li><p>인공지능 맥락에서 머신러닝 기술은 스마트그리드의 다양한 측면의 단순하지 않은 기술적 도전에 접근하기 위한 효율적이고 진보된 도구로 고려된다.</p>
+<p>머신러닝 툴 사용의 빠른 확장에도 불구하고 몇몇 문제들은 남아있고 더욱 연구할 가치가 있다.</p></li>
+<li><p>200개가 넘는 2014~2019 high impact journal들을 광범위하게 리뷰하고 보고하였다. 간단한 신경망부터 세련된 강화학습과 딥러닝 방법도 관측되었다. 더 구체적으로 55개가 machine learning based forecasting 문제, 23개가 machine learning based fault analysis, 42개가 machine leanring driven DSM 문제, 35개가 cyberspace security issues였다.</p></li>
+</ul>
+</section>
+<section id="introduction" class="level1">
+<h1>1. Introduction</h1>
+<ul>
+<li><p>AC(Alternating current), DC(Direct current) system</p></li>
+<li><p>conventional energy system → more efficient next-generation smart grid system.</p></li>
+<li><p><strong>conventional energy system</strong></p>
+<ul>
+<li>few centralized and large power generation sources</li>
+<li>mainly hydropower or fossil fuel based power generation system to the consumers via a distribution system</li>
+<li>uni-directional(단방향) power and communication flow ⇒ passive</li>
+</ul></li>
+<li><p><strong>smart grid</strong></p>
+<ul>
+<li>integration and contribution of every distributed and renewable energy resource</li>
+<li>two-way power and information flow ⇒ active —</li>
+<li>bi-directional flow of power and communication은 reliability, security, efficiency of power systems를 향상시킬 수 있다.</li>
+</ul></li>
+<li><p>스마트 그리드는 더 좋은 energy efficiency, cost-effectiveness, controlled <span class="math inline">\(CO_2\)</span> emission, reduced cost, improved utility로 인해 미래의 전력망으로 일컬어지고 있다.</p></li>
+<li><p>스마트 그리드는 conventional power grid와 비교하여 넓은 범위의 작업들을 수행한다. 많은 수의 기기 연결은 에너지 관련 작업을 특정 방식으로 수행하기 위한 명령과 정보 교환을 가능케 한다.</p></li>
+<li><p>grid infrastructure로의 IoT 기기들의 통합은 미래 스마트그리드로 향한 첫걸음이다.</p>
+<ul>
+<li>Smart meter는 실시간에서 에너지 소비를 측정할 수 있을 뿐만 아니라 양방향 통신을 통해 고객이 전력 유틸리티와 상호작용하고 advanced demand-side management operations를 수행할 수 있도록 한다.</li>
+<li>스마트그리드에서 IoT의 통합은 스마트그리드들의 관리에 추가적인 challenge들을 가져온다. 예를들어 the timely delivery of critical operational information, the efficient process of the vat amount of field data, and cyberspace security issues. 이러한 문제들은 적절한 접근 및 기술 사용이 필요 e.g., the phasor measurement unit placement, advanced analytical tools, and machine learning-based solutions.</li>
+</ul></li>
+<li><p>This paradigm-shift(conventional grid → smart grid) has equipped the power grid with many distributed generation(DG) systems, such as photovoltic(PV), wind energy, and electric vehicles(EV). 다시말해 스마트그리드는 processes, technologies, and distributed and renewable generation systems that makes the conventional power grid more intelligent and efficient의 통합이다.</p></li>
+<li><p>다양한 DGs의 통합은 수많은 challenge들을 소개한다. 예를들어 load forecast, fault and failure analysis, demand-side management, non-intrusive load monitoring(NILM), cyberspace security, electricity theft detection, and islanding detection among others.</p></li>
+<li><p>최근 몇년간 스마트 그리드에 독보적인 문제에 접근하는 머신러닝 기반 기술의 사용이 관측되는 트렌드이다.</p></li>
+<li><p>이 연구는 스마트 그리드에서 머신러닝 기술의 응용의 최근 진보 overview와 다양한 기술들의 한계점에 대해 토론하는것에 더해 future practice을 위한 가능한 솔루션에 초점을 맞춘다.</p></li>
+</ul>
+</section>
+<section id="an-overview-of-machine-learning" class="level1">
+<h1>2. An overview of machine learning</h1>
+<ul>
+<li><p>integration of advanced information and communication technologies, in particular IoT, in the power grid infrastructure is one of the primary steps towards the smart grid.</p></li>
+<li><p>Much research effort has been made to explore a variety of machine learning and deep learning-based solutions to address the challenges in various application domains of the smart gird.</p></li>
+<li><p>머신러닝 기술은 넓게 4가지 카테고리로 분류된다.</p>
+<ol type="1">
+<li>Supervised learning : 학습을 위해 인풋과 아웃풋 사이에 맵핑이 되어있고 많은 트레이닝 샘플들 인풋과 아웃풋 페어에 라벨이 주어진다.</li>
+<li>Unsupervised learning : 라벨이 없을 뿐만 아니라 분류도 되어있지 않다. similarity 나 difference를 기준으로 그룹핑한다. supervised보다 복잡한 task. 흔한 방식은 cluster analysis이며 이는 숨겨진 패턴 또는 데이터를 그룹핑할때 EDA를 사용한다.</li>
+<li>Reinforcement learning(RL) : <strong>agent</strong>가 환경과 상호작용 하고 action에 응답하여 받은 자극에 기반하여 액션을 수정한다. RL은 input/output 페어의 라벨을 요구하지 않고 환경에서 액션에 응답하여 에이전트에 reward or penalty를 받는다는점에서 supervised learning과 다르다. RL는 행동을 자동적으로 결정하는것이 가능하다. 인간이나 동물의 행동과 가장 유사한 방법</li>
+<li>Ensemble methods : 몇몇 머신러닝 알고리즘을 사용하여 한개의 알고리즘을 쓸때보다 성능을 향상시키기 위해 만든다. 싱글보다 일반화된 성능을 가짐.</li>
+</ol></li>
+<li><p>The inadequacy and limitations of conventional computational techniques bring forward the motivation of using machine learning techniques in addressing various smart grid challenges.</p></li>
+<li><p><strong>Limitations of existing solutions</strong></p>
+<ul>
+<li>Unable to handle large amounts of data</li>
+<li>Lacking robustness against uncertainty</li>
+<li>Lacking better optimization in the presence of constraints</li>
+<li>Lacking adaptive and autonomous operations</li>
+<li>Lacking intelligent decision making</li>
+<li>Lacking real-time processing</li>
+<li>Lacking complex systems modeling capability</li>
+<li>Unable to handle non-linear systems</li>
+</ul></li>
+<li><p><strong>Benefits of ML techniques</strong></p>
+<ul>
+<li>Mostly data-driven</li>
+<li>Feature selection and feature extraction ability</li>
+<li>Autonomous, adaptive, and intelligent operations and decision making</li>
+<li>Can perform real-time and/or near realtime operations</li>
+<li>Can effectively deal with non-linear systems</li>
+<li>Complex system modeling</li>
+</ul></li>
+</ul>
+</section>
+<section id="machine-learning-applications-in-smart-grid" class="level1">
+<h1>3. Machine learning applications in smart grid</h1>
+<section id="forecasting-in-smart-grid" class="level2">
+<h2 class="anchored" data-anchor-id="forecasting-in-smart-grid"><em>3.1. Forecasting in smart grid</em></h2>
+<section id="electric-load-and-price-forecasting" class="level3">
+<h3 class="anchored" data-anchor-id="electric-load-and-price-forecasting"><em>3.1.1. Electric load and price forecasting</em></h3>
+<ul>
+<li><p>Electric load forecasting is divided into three categories based on the forecasting horizons.</p>
+<ol type="1">
+<li>Short-term Load Forecasting</li>
+</ol>
+<ul>
+<li><p>short : generally involves load forecasting of a few minutes up to a few days</p></li>
+<li><p>…</p>
+<p><img src="smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul>
+<ol start="2" type="1">
+<li>General (Medium-term and long-term) Load Forecasting</li>
+</ol>
+<ul>
+<li><p>medium : forecast of a few days up to a few months</p></li>
+<li><p>long : forecast of a few months up to a year</p></li>
+<li><p>…</p>
+<p><img src="smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul>
+<ol start="3" type="1">
+<li>Electricity Price Forecast</li>
+</ol>
+<ul>
+<li><p>…</p>
+<p><img src="smartgrid1_files/figure-html/cell-12-1-image.png" class="img-fluid"></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="renewable-power-generation-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="renewable-power-generation-prediction"><em>3.1.2. Renewable power generation prediction</em></h3>
+<ul>
+<li><p>The integration of renewable energy systems poses many challenges due to their variable generation patterns caused by their <strong>geographical location, weather, and other factors</strong> which can impact the <strong>power quality and stability</strong>.</p></li>
+<li><p>…</p>
+<p><img src="smartgrid1_files/figure-html/cell-13-1-image.png" class="img-fluid"></p></li>
+</ul>
+</section>
+</section>
+<section id="machine-learning-in-fault-and-failure-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-fault-and-failure-analysis"><em>3.2. Machine learning in fault and failure analysis</em></h2>
+<p><img src="smartgrid1_files/figure-html/cell-14-1-image.png" class="img-fluid"></p>
+</section>
+<section id="machine-learning-in-demand-side-management" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-demand-side-management"><em>3.3. Machine learning in demand-side management</em></h2>
+<p><img src="smartgrid1_files/figure-html/cell-15-1-image.png" class="img-fluid"></p>
+</section>
+<section id="machine-learning-in-cyberspace-security" class="level2">
+<h2 class="anchored" data-anchor-id="machine-learning-in-cyberspace-security"><em>3.4. Machine learning in cyberspace security</em></h2>
+<p><img src="smartgrid1_files/figure-html/cell-16-1-image.png" class="img-fluid"></p>
+</section>
+<section id="others" class="level2">
+<h2 class="anchored" data-anchor-id="others"><em>3.5. Others</em></h2>
+<ul>
+<li>…</li>
+</ul>
+</section>
+</section>
+<section id="discussion-and-remarks" class="level1">
+<h1>4. Discussion and remarks</h1>
+<section id="observations" class="level2">
+<h2 class="anchored" data-anchor-id="observations"><em>4.1. Observations</em></h2>
+<ul>
+<li>광범위한 문헌 조사는 다양한 smart grid challenges에 접근하는 머신러닝, 딥러닝 기법의 사용 증가를 보여준다.</li>
+</ul>
+<p><img src="smartgrid1_files/figure-html/cell-19-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>Based on the comprehensive review of the literature, a collection of observations and insights are summarized as follows:</p>
+<ul>
+<li><p><strong>Electric Load Forecasting</strong> : 상대적으로 성숙한 분야. 머신러닝 기법이 중요한 역할을 하였다. 기상 데이터의 활용 및 다양한 지역의 계층적 예측을 활용하였다. 게다가, 기계학습 기반 단기 예측은 수요를 충족시키고 간헐적이고 재생 가능한 분산 발전 예측에도 크게 기여하였다.</p>
+<p>유명한 기계학습 기반 electric load forecast algorithms는 supervised neural networks, LSTM RNN, and Random forest among others를 포함한다</p></li>
+<li><p><strong>Fault diagnosis and detection :</strong> 머신러닝 기법은 고장 감지 및 진단에서 뛰어난 성과를 보인다. 이는 고장에 대한 깊은 이해나 전문 지식이 필요하지 않고, 데이터의 패턴에 민감하며, 필수적인 변수가 누락되어도 효율적으로 동작할 수 있다는 특성 때문이다. 반면에 베이지안 네트워크와 같은 지식 주도 방법(Knowledge-Driven Approach (↔︎ Data Driven Approach))은 도메인 및 전문 지식의 도입으로 불완전한 정보에 대한 문제를 해결할 수 있다.</p></li>
+<li><p><strong>Load management / demand-side management(DSM)</strong> : DSM frameworks or demand response programs are mainly based on classification where machine learning tools such as SVM, MLP, and RNN have shown promising performance.</p></li>
+<li><p><strong>NILM :</strong> use of deep learning and advanced multi-label classification methods such as ML-KNN and SVM where the need of prior feature extraction is diminished due to the automatic feature extraction ability of such methods, which was one of the challanges for the classic machine learning techniques.</p></li>
+<li><p><strong>Cyber-attack detection</strong> : 머신러닝 기반 방법은 flexibility towards scalability 때문에 높은 분류 정확도를 보인다. + dominance of supervised learning methods in attack detection.</p></li>
+<li><p><strong>Energy and economic dispatch :</strong> 대부분의 문헌들은 multi-agent theory를 사용. 이는 정확한 cost function의 수학적 모델을 요구하는 반면 최근의 몇 연구에서는 이 문제를 해결하기 위해 강화학습 알고리즘과 같은 머신러닝을 사용하는 경향이 있다.</p></li>
+</ul></li>
+<li><p>기존의 그리드에서 스마트 그리드로 전환하고 기존의 생산 시스템을 탈탄소화 하기 위해서는 현재의 전력망에 친환경적이고 재사용가능한 생산시스템의 더 많이 침투해야한다. 이러한 시스템의 침투는 최적의 전력 흐름과 수급 균형을 유지하면서 효과적이고 효율적인 계획 전략이 필요하며 이는 SVM, Q-learning, Decision trees 같은 기계 학습 도구가 효과적으로 사용될 수 있는 복잡한 비선형 문제로 모델링될 수 있다.</p>
+<p><img src="smartgrid1_files/figure-html/cell-20-1-image.png" class="img-fluid"></p></li>
+<li><p>다양한 머신러닝 알고리즘(SVM, LSTM, DBN and CNN)이 많은 스마트 그리드 문제 해결에 사용되곤 한다.</p>
+<p>Neural network가 가장 많이 사용되고 높은 정확도를 보이며 non-linear mapping ability.</p>
+<p>Deep learning 은 forecasting과 cyberspace security에서 인기있는 기술이다.</p>
+<p>LSTM과 같은 RNN은 forecasting문제에서 사용이 증가하고있다.</p>
+<p><img src="smartgrid1_files/figure-html/cell-21-1-image.png" class="img-fluid"></p></li>
+</ul>
+</section>
+<section id="technical-challenges" class="level2">
+<h2 class="anchored" data-anchor-id="technical-challenges"><em>4.2. Technical challenges</em></h2>
+<p>다양한 스마트 그리드 응용 분야에서 기계 학습 알고리즘 및 기술의 구현을 위한 몇 가지 도전요소와 권장 사항:</p>
+<ul>
+<li>Smart Grid Data Preprocessing:
+<ul>
+<li><p>데이터 전처리는 일반적으로 데이터 통합, 데이터 정제, 데이터 변환 세 가지 주요 단계로 이루어짐.</p></li>
+<li><p>스마트 그리드의 데이터 전처리 사이클은 다양한 데이터 소스로 인해 도전적이다.</p>
+<p>주요 데이터 소스에는</p>
+<ol type="1">
+<li><p>real and reactive powers, DR capacity, voltage 등의 operational data</p></li>
+<li><p>전력 품질 및 신뢰성과 관련된 non-operational data</p></li>
+<li><p>하루 중 시간, 평균, 최대 수요 값, 전력 사용과 관련된 스마트 미터 데이터</p></li>
+<li><p>voltage loss, fault detection event, security breach event를 포함하는 스마트 그리드 event data</p></li>
+<li><p>다른 유형의 데이터를 조직하고 해석하는 데 사용되는 메타데이터</p></li>
+</ol></li>
+<li><p>스마트 그리드의 데이터 전처리는 다양한 유형의 데이터 소스와 이에 따른 데이터로 인해 도전적이다.</p></li>
+</ul></li>
+<li>Data Availability:
+<ul>
+<li>load forecasting 문제에서의 기계 학습 기반 모델은 효율적인 예측 결과를 보이며 이러한 모델은 전통적인 방법보다 더 유연하다. 그러나 기계학습 기반의 예측 모델은 대량의 대표적인(representative) 데이터에 크게 의존하며, 이러한 데이터 없이는 모델이 일반성을 가지지 못한다. 또한 예측 시계열에 대한 예측 기간에 상관없이 정확한 예측을 수행하고 다양한 제약 조건에 대한 트레이드오프를 하지 않고도 작동할 수 있는 표준적이고 견고한(robust) 예측 방법이 필요하다.</li>
+</ul></li>
+<li>Load Transfer Detection(부하 이전 감지?):
+<ul>
+<li>대부분의 문헌 검토에서는 강조되지 않았음. 다만 정확하고 효율적인 예측을 달성하기 위한 주요 도전 중 하나이다.</li>
+<li>이 도전은 utility or distribution 운영자가 주로 유지보수 또는 신뢰성 이유로 계절적, 임시 또는 영구적인 기준으로 다른 회로로 부하를 이전할 때 발생한다. 기계 학습 방법은 부하 예측에서 이러한 도전을 효과적으로 식별하고 해결하는 데 중요한 역할을 할 수 있다.</li>
+</ul></li>
+<li>Extrapolation of Faults:
+<ul>
+<li>fault diagnosis와 fault detection을 위한 데이터 기반 모델은 유망한 결과를 보여주었지만 이러한 기계학습 모델은 훈련 데이터의 경계를 넘어 추론할 수 없다. 따라서 베이지안 방법, 퍼지 기반 방법과 같은 지식 기반 방법과 데이터 기반 기계학습 기반 방법을 결합한 하이브리드 접근 방식은 상기한 문제를 효과적으로 해결할 수 있다.</li>
+</ul></li>
+<li>Machine Learning-based Planning Framework:
+<ul>
+<li>스마트 그리드 기획 및 운영 문제에 대한 기계학습을 통한 추가적인 연구 가능성이 여전히 많이 남아있다.</li>
+</ul></li>
+<li>Deep Learning-based Multi-label Classification Approaches:
+<ul>
+<li><p>NILM 문제에서 표준 딥 러닝 방법(SAE 및 DBN과 같은)의 한계로 인해 딥 러닝 기반 다중 레이블 분류의 탐색과 개발이 필요하다.</p>
+<p>로지스틱 회귀 및 소프트맥스가 훈련에 자주 사용되는 경우, 로지스틱 회귀 및 소프트맥스 기반의 딥 러닝 모델 훈련은 단일 클래스로 이어진다. 따라서 다른 혁신적인 딥 러닝 기반 다중 레이블 분류 접근 방식은 NILM 문제를 효과적으로 해결할 수 있다.</p>
+<p><code>=&gt; 다중 레이블 분류와 다중 클래스 분류(다중분류)는 다르다. 다중분류는 각 샘플이 하나의 클래스에만 속할 수 있는 분류 문제를 의미. 다중 레이블 분류는 각 샘플이 여러 개의 클래스에 속할 수 있는 분류 문제를 의미한다. 즉, 각 샘플은 여러 개의 레이블을 가질 수 있으며 각 레이블은 클래스를 나타낸다.</code></p></li>
+</ul></li>
+<li>Post-Attack Resilience Frameworks(사이버 공간에서의 공격 후 회복 프레임 워크):
+<ul>
+<li>사이버 공간 보안과 관련된 대부분의 문헌은 기계학습 기반의 공격 탐지 및 예방 메커니즘에 중점을 두지만, 공격 이후의 상황에 중점을 둔 출판물은 소수이다. 따라서 사이버 위협의 탐지 및 예방뿐만 아니라 완화에 중점을 둔 보안 알고리즘이 필요하다.</li>
+</ul></li>
+<li>Lightweight Machine Learning Solutions:
+<ul>
+<li>미래의 IoT 기반 스마트 디바이스에 구현하기 위해 빠르면서도 계산 비용이 적은 기계 학습 및 딥 러닝 알고리즘이 필요하다. 이는 계산 요구 사항이 제한된 스마트 디바이스에서 사용될 것이다.</li>
+</ul></li>
+<li>Smart Grid Reliability Requirements:
+<ul>
+<li><p>스마트 그리드에 대규모로 통합되는 재생 가능한 power sources, 특히 풍력 및 태양광 발전 시스템은</p>
+<ol type="1">
+<li><p>일반적인 예측 기간에서의 큰 예측 오류,</p></li>
+<li><p>대규모 설치로 인한 송전 혼잡,</p></li>
+<li><p>전압 및 주파수 안정성과 관련된 전력 품질 문제,</p></li>
+<li><p>지리적으로 분산된 자원으로 인한 관련 전력 분배 시스템의 challenge</p></li>
+</ol>
+<p>로 스마트 그리드의 신뢰성 요구 사항을 강조한다. 이러한 시스템의 불확실성 및 신뢰성 요구 사항은 스마트 그리드에서 기계 학습 기반 기술을 다양한 측면에서 활용하는 데 명백한 challenge를 제공한다. 예를 들면 효율적인 운영 상태 모니터링 및 분석, 정확한 상태 예측 및 이상 징후 감지, 그리고 합리적인 의사 결정 등이 있다.</p></li>
+</ul></li>
+</ul>
+<p><code>stimuli</code> 자극</p>
+<p><code>intermittent</code> 간헐적</p>
+<p><code>countermeasures</code> 대책</p>
+<p><code>diffusion</code> 어떤 현상이나 개념이 시간이 지남에 따라 널리 퍼져나가거나 확산되는 과정</p>
+<p><code>encompass</code> 포함하다</p>
+<p><code>hence</code> 이런 이유로</p>
+<p><code>massive</code> 거대한</p>
+<p><code>inadequacy</code> 불충분함</p>
+<p><code>extrapolate</code> 추론하다</p>
+<p><code>exploitation</code> 착취, (부당한)이용, 개발</p>
+<p><code>resilience</code> 회복력, 탄력, 복원력</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
