@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Time Series",
     "section": "",
-    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 24, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
+    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르겠거나 복습할 개념 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 24, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -960,7 +960,7 @@
     "href": "posts/Paper/smartgrid1.html",
     "title": "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)",
     "section": "",
-    "text": "Abstract\n  6. Conclusion\n  1. Introduction\n  2. An overview of machine learning\n  3. Machine learning applications in smart grid\n  \n  3.1. Forecasting in smart grid\n  \n  3.1.1. Electric load and price forecasting\n  3.1.2. Renewable power generation prediction\n  \n  3.2. Machine learning in fault and failure analysis\n  3.3. Machine learning in demand-side management\n  3.4. Machine learning in cyberspace security\n  3.5. Others\n  \n  4. Discussion and remarks\n  \n  4.1. Observations\n  4.2. Technical challenges\n  \n  5. New perspectives\n  \n  5.1. New perspectives in smart energy systems application domain\n  5.2. New perspectives in emerging technologies integration with smart energy systems\n  \n  논문 정리 중 생략한 내용\n  추가로 공부해야 할 내용\nMachine learning driven smart electric power system: Current trends and new perspectives (2020)",
+    "text": "Abstract\n  6. Conclusion\n  1. Introduction\n  2. An overview of machine learning\n  3. Machine learning applications in smart grid\n  \n  3.1. Forecasting in smart grid\n  \n  3.1.1. Electric load and price forecasting\n  3.1.2. Renewable power generation prediction\n  \n  3.2. Machine learning in fault and failure analysis\n  3.3. Machine learning in demand-side management\n  3.4. Machine learning in cyberspace security\n  3.5. Others\n  \n  4. Discussion and remarks\n  \n  4.1. Observations\n  4.2. Technical challenges\n  \n  5. New perspectives\n  \n  5.1. New perspectives in smart energy systems application domain\n  5.2. New perspectives in emerging technologies integration with smart energy systems\n  \n  논문 정리 중 생략한 내용\nMachine learning driven smart electric power system: Current trends and new perspectives (2020)",
     "crumbs": [
       "About",
       "Posts",
@@ -1096,6 +1096,32 @@
       "Posts",
       "Etc",
       "논문 읽다가 모르는 영단어 정리"
+    ]
+  },
+  {
+    "objectID": "posts/etc/논문_개념.html",
+    "href": "posts/etc/논문_개념.html",
+    "title": "논문 읽다가 모르겠거나 복습할 개념 정리",
+    "section": "",
+    "text": "성능, 평가 지표 정리\n  개념 정리 2\n  Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n  \n  challenge",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "논문 읽다가 모르겠거나 복습할 개념 정리"
+    ]
+  },
+  {
+    "objectID": "posts/etc/논문_개념.html#challenge",
+    "href": "posts/etc/논문_개념.html#challenge",
+    "title": "논문 읽다가 모르겠거나 복습할 개념 정리",
+    "section": "challenge",
+    "text": "challenge\n\nload forecast\n\nshort-term load forecasting\ngeneral (medium-term, long-term) load forecasting\n\nelectricity price forecast\nrenewable power generation prediction\nfault and failure analysis\ndemand-side management(DSM)\nnon-intrusive load monitoring(NILM)\nNIALM(Non-intrusive appliance load monitoring)\nelectricity theft detection\nislanding detection\n\n방법론 - Bayesian Methods - HMM(Hidden Markov model) - Q-learning - DBN\n\nLASSO\nLDA(Linear discriminant analysis)\nMDA(Multiple discriminant analysis)\nQDA(Quadratic discriminant analysis)\nKNN\nLSTM\nMAPE(Mean absolute percentage error)\n\nnetwork - BPNN(Back propagation neural network) - FFNN(Feed Forward neural network) - RBFNN(Radial basis function neural network) - DBN(Deep belief network)\nBoltzmann machine 볼츠만이 계속 나오네 확인해볼것 - CRBM(Conditional restricted Boltzmann machine) - DBM(Deep Boltzmann machine) - FCRBM(Factored conditional resticted Boltzmann machine) - RBM(Restricted Boltzmann machine)\n\n\nELM(Extreme learning machine)\nLSM(Liquid state machine)\nFDI(False data injection)\nGRU(Gated recurrent unit)\nMARS(Multivariate adaptive regression splines)\nPICP(Prediction interval coverage probability)\nPINC(Prediction interval nominal confidence)\nPSO(Particle swarm optimization)\nSAE(Stacked auto-encoder)\nSVR(Support vector regression)\nACE(Average coverage error)\nAMI(Advanced metering infrastructure)\nAC(Alternating current), DC(Direct current) system\nDG(distributed generation)\nPV(photovoltic)\n5G (+6G?)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "논문 읽다가 모르겠거나 복습할 개념 정리"
     ]
   }
 ]
