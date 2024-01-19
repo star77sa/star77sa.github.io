@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="고경수">
-<meta name="dcterms.date" content="2024-01-01">
+<meta name="dcterms.date" content="2024-01-19">
 
-<title>Time Series - 논문 읽다가 모르겠거나 복습할 개념 정리</title>
+<title>Time Series - 성능 평가 지표(회귀모델, 분류모델)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/etc/2023-08-28-블로그.html">Etc</a></li><li class="breadcrumb-item"><a href="../../posts/etc/논문_개념.html">논문 읽다가 모르겠거나 복습할 개념 정리</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/etc/2023-08-28-블로그.html">Etc</a></li><li class="breadcrumb-item"><a href="../../posts/etc/모델_성능평가지표_정리.html">성능 평가 지표(회귀모델, 분류모델)</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,10 +126,10 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/etc/2023-08-28-블로그.html">Etc</a></li><li class="breadcrumb-item"><a href="../../posts/etc/논문_개념.html">논문 읽다가 모르겠거나 복습할 개념 정리</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/etc/2023-08-28-블로그.html">Etc</a></li><li class="breadcrumb-item"><a href="../../posts/etc/모델_성능평가지표_정리.html">성능 평가 지표(회귀모델, 분류모델)</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">논문 읽다가 모르겠거나 복습할 개념 정리</h1>
+      <h1 class="title">성능 평가 지표(회귀모델, 분류모델)</h1>
                       </div>
   </div>
     
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 1, 2024</p>
+        <p class="date">January 19, 2024</p>
       </div>
     </div>
     
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/etc/논문_개념.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../posts/etc/논문_개념.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">논문 읽다가 모르겠거나 복습할 개념 정리</span></a>
   </div>
 </li>
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/etc/모델_성능평가지표_정리.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/etc/모델_성능평가지표_정리.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">성능 평가 지표(회귀모델, 분류모델)</span></a>
   </div>
 </li>
@@ -278,12 +278,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#성능-평가-지표-정리" id="toc-성능-평가-지표-정리" class="nav-link active" data-scroll-target="#성능-평가-지표-정리">성능, 평가 지표 정리</a></li>
-  <li><a href="#개념-정리-2" id="toc-개념-정리-2" class="nav-link" data-scroll-target="#개념-정리-2">개념 정리 2</a></li>
-  <li><a href="#machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020" id="toc-machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020" class="nav-link" data-scroll-target="#machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020">Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
-  <ul class="collapse">
-  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">challenge</a></li>
-  </ul></li>
+  <li><a href="#포스팅-예정" id="toc-포스팅-예정" class="nav-link active" data-scroll-target="#포스팅-예정">포스팅 예정</a></li>
   </ul>
 </nav>
     </div>
@@ -297,79 +292,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#성능-평가-지표-정리" id="toc-성능-평가-지표-정리">성능, 평가 지표 정리</a></li>
-  <li><a href="#개념-정리-2" id="toc-개념-정리-2">개념 정리 2</a></li>
-  <li><a href="#machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020" id="toc-machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020">Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
-  <ul>
-  <li><a href="#challenge" id="toc-challenge">challenge</a></li>
-  </ul></li>
+  <li><a href="#포스팅-예정" id="toc-포스팅-예정">포스팅 예정</a></li>
   </ul>
 </nav>
-<section id="성능-평가-지표-정리" class="level1">
-<h1>성능, 평가 지표 정리</h1>
-<p>AUC</p>
-<p>ROC Curve</p>
-<p>precision - recall</p>
-</section>
-<section id="개념-정리-2" class="level1">
-<h1>개념 정리 2</h1>
-<p>SMOTE</p>
-<hr>
-<p><code>시멘틱 커뮤니케이션</code></p>
-</section>
-<section id="machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives2020" class="level1">
-<h1>Machine learning driven smart electric power system: Current trends and new perspectives(2020)</h1>
-<section id="challenge" class="level2">
-<h2 class="anchored" data-anchor-id="challenge">challenge</h2>
-<ul>
-<li><p>load forecast</p>
-<ul>
-<li>short-term load forecasting</li>
-<li>general (medium-term, long-term) load forecasting</li>
-</ul></li>
-<li><p>electricity price forecast</p></li>
-<li><p>renewable power generation prediction</p></li>
-<li><p>fault and failure analysis</p></li>
-<li><p>demand-side management(DSM)</p></li>
-<li><p>non-intrusive load monitoring(NILM)</p></li>
-<li><p>NIALM(Non-intrusive appliance load monitoring)</p></li>
-<li><p>electricity theft detection</p></li>
-<li><p>islanding detection</p></li>
-</ul>
-<p><code>방법론</code> - Bayesian Methods - HMM(Hidden Markov model) - Q-learning - DBN</p>
-<ul>
-<li>LASSO</li>
-<li>LDA(Linear discriminant analysis)</li>
-<li>MDA(Multiple discriminant analysis)</li>
-<li>QDA(Quadratic discriminant analysis)</li>
-<li>KNN</li>
-<li>LSTM</li>
-<li>MAPE(Mean absolute percentage error)</li>
-</ul>
-<p><strong>network</strong> - BPNN(Back propagation neural network) - FFNN(Feed Forward neural network) - RBFNN(Radial basis function neural network) - DBN(Deep belief network)</p>
-<p><strong>Boltzmann machine</strong> 볼츠만이 계속 나오네 확인해볼것 - CRBM(Conditional restricted Boltzmann machine) - DBM(Deep Boltzmann machine) - FCRBM(Factored conditional resticted Boltzmann machine) - RBM(Restricted Boltzmann machine)</p>
-<hr>
-<ul>
-<li><p>ELM(Extreme learning machine)</p></li>
-<li><p>LSM(Liquid state machine)</p></li>
-<li><p>FDI(False data injection)</p></li>
-<li><p>GRU(Gated recurrent unit)</p></li>
-<li><p>MARS(Multivariate adaptive regression splines)</p></li>
-<li><p>PICP(Prediction interval coverage probability)</p></li>
-<li><p>PINC(Prediction interval nominal confidence)</p></li>
-<li><p>PSO(Particle swarm optimization)</p></li>
-<li><p>SAE(Stacked auto-encoder)</p></li>
-<li><p>SVR(Support vector regression)</p></li>
-<li><p>ACE(Average coverage error)</p></li>
-<li><p>AMI(Advanced metering infrastructure)</p></li>
-<li><p>AC(Alternating current), DC(Direct current) system</p></li>
-<li><p>DG(distributed generation)</p></li>
-<li><p>PV(photovoltic)</p></li>
-<li><p>5G (+6G?)</p></li>
-</ul>
+<section id="포스팅-예정" class="level1">
+<h1>포스팅 예정</h1>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
