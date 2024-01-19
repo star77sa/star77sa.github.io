@@ -2,10 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Paper/Smart_Grid/smartgrid1.html",
       "/posts/etc/NVIDIA초청강연.html",
-      "/posts/통계, 데이터분석/데이터_분석.html",
-      "/posts/통계, 데이터분석/통계_101_X_데이터_분석.html",
-      "/posts/통계, 데이터분석/1_probability_and_counting.html",
+      "/posts/Statistics/데이터_분석.html",
+      "/posts/Statistics/통계_101_X_데이터_분석.html",
+      "/posts/Statistics/1_probability_and_counting.html",
       "/posts/etc/2023-08-28-블로그.html"
     ]
   }

@@ -25,5 +25,5 @@ format:
     code-fold: false
     code-line-numbers: true
     code-copy: true
-
+    toc: true
 

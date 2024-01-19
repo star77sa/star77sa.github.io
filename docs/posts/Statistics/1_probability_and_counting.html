@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2023-08-24">
 
-<title>Time Series</title>
+<title>Time Series - [확률론] 1. Probability and counting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./time-series.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../time-series.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,77 +69,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Time Series" href="index.xml" data-external="1"></head>
-
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Time Series</span>
     </a>
   </div>
@@ -150,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link active" href="../../about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Time Series</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">[확률론] 1. Probability and counting</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,23 +126,35 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">[확률론] 1. Probability and counting</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Time Series</h1>
+      <h1 class="title">[확률론] 1. Probability and counting</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>고경수 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 24, 2023</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -212,7 +166,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -236,13 +190,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023.08.28 블로그 구축</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
   </div>
 </li>
@@ -268,7 +222,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
   </div>
 </li>
@@ -278,28 +232,28 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">데이터 과학</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">통계 101 X 데이터분석</span></a>
   </div>
 </li>
@@ -313,120 +267,104 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#probability-and-counting" id="toc-probability-and-counting" class="nav-link active" data-scroll-target="#probability-and-counting">1.Probability and counting</a>
+  <ul class="collapse">
+  <li><a href="#why-study-probability" id="toc-why-study-probability" class="nav-link" data-scroll-target="#why-study-probability">1.1 Why study probability?</a></li>
+  <li><a href="#sample-spaces-and-pebble-world" id="toc-sample-spaces-and-pebble-world" class="nav-link" data-scroll-target="#sample-spaces-and-pebble-world">1.2 Sample spaces and Pebble World</a></li>
+  <li><a href="#naive-definition-of-probability" id="toc-naive-definition-of-probability" class="nav-link" data-scroll-target="#naive-definition-of-probability">1.3 Naive definition of probability</a></li>
+  <li><a href="#how-to-count" id="toc-how-to-count" class="nav-link" data-scroll-target="#how-to-count">1.4 How to count</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
 
 
-<p>통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.</p>
-<p>Email : star77sa@gmail.com</p>
-<p><strong>Link</strong></p>
-<ul>
-<li>Github : <a href="https://github.com/star77sa">https://github.com/star77sa</a></li>
-<li>Notion : <a href="https://ksko.notion.site">https://ksko.notion.site</a></li>
-<li>Linkedin : <a href="https://linkedin.com/in/star77sa">https://linkedin.com/in/star77sa</a></li>
-</ul>
-<p><strong>이전 블로그</strong></p>
-<ul>
-<li>fastpage : <a href="https://star77sa.github.io/TIL-Blog/">https://star77sa.github.io/TIL-Blog</a></li>
-<li>Tistory: <a href="https://ksko0424.tistory.com/">https://ksko0424.tistory.com/</a></li>
-</ul>
-
-
-
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1705590000000" data-listing-file-modified-sort="1705646505520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368" data-listing-title-sort="[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)" data-listing-filename-sort="smartgrid1.ipynb">
-<td>
-<span class="listing-date">Jan 19, 2024</span>
-</td>
-<td>
-<a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="title listing-title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1705417200000" data-listing-file-modified-sort="1705563737551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701" data-listing-title-sort="2024 GIST-NVAITC Korea 강연 내용" data-listing-filename-sort="NVIDIA초청강연.ipynb">
-<td>
-<span class="listing-date">Jan 17, 2024</span>
-</td>
-<td>
-<a href="./posts/etc/NVIDIA초청강연.html" class="title listing-title">2024 GIST-NVAITC Korea 강연 내용</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1704898800000" data-listing-file-modified-sort="1705220676705" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1418" data-listing-title-sort="데이터 과학" data-listing-filename-sort="데이터_분석.ipynb">
-<td>
-<span class="listing-date">Jan 11, 2024</span>
-</td>
-<td>
-<a href="./posts/Statistics/데이터_분석.html" class="title listing-title">데이터 과학</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1694617200000" data-listing-file-modified-sort="1705626755158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3069" data-listing-title-sort="통계 101 X 데이터분석" data-listing-filename-sort="통계_101_X_데이터_분석.ipynb">
-<td>
-<span class="listing-date">Sep 14, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="title listing-title">통계 101 X 데이터분석</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1692802800000" data-listing-file-modified-sort="1704847954891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395" data-listing-title-sort="[확률론] 1. Probability and counting" data-listing-filename-sort="1_probability_and_counting.ipynb">
-<td>
-<span class="listing-date">Aug 24, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/1_probability_and_counting.html" class="title listing-title">[확률론] 1. Probability and counting</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1577804400000" data-listing-file-modified-sort="1705545065469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87" data-listing-title-sort="2023.08.28 블로그 구축" data-listing-filename-sort="2023-08-28-블로그.ipynb">
-<td>
-<span class="listing-date">Jan 1, 2020</span>
-</td>
-<td>
-<a href="./posts/etc/2023-08-28-블로그.html" class="title listing-title">2023.08.28 블로그 구축</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="1_probability_and_counting_files/figure-html/cell-1-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Introduction to Probability Second Edition</figcaption>
+</figure>
 </div>
-</div></main> <!-- /main -->
+<section id="probability-and-counting" class="level1 page-columns page-full">
+<h1>1.Probability and counting</h1>
+<p><img src="1_probability_and_counting_files/figure-html/cell-3-1-image.png" class="img-fluid"></p>
+<section id="why-study-probability" class="level2">
+<h2 class="anchored" data-anchor-id="why-study-probability">1.1 Why study probability?</h2>
+<p>수학은 확실성의 논리이며 확률은 불확실성의 논리이다.</p>
+<p>list of applications:</p>
+<ul>
+<li><p>statistics : 확률은 통계를 위한 기초이자 언어이다. 데이터를 사용하여 세상에 대해 배울 수 있는 다양한 강력한 방법을 가능하게 한다.</p></li>
+<li><p>computer science: Randomized algorithms은 실행되는 동안 무작위 선택을 하며, 많은 중요한 응용 분야에서 현재 알려진 결정론적 대안(deterministic alternatives)보다 더 간단하고 효율적이다. 확률은 또한 알고리즘의 성능을 연구하는 데 필수적인 역할을 하며, 머신러닝, 인공지능에서 중요한 역할을 한다.</p></li>
+<li><p>Life: 인생은 불확실하고 확률은 불확실성의 논리이다. 인생에서 결정되는 모든 결정에 대해 공식적인 확률 계산을 수행하는 것은 실용적이지 않지만, 확률에 대해 열심히 생각하는 것은 우리가 몇 가지 흔한 오류를 피하고, 우연을 조명하고, 더 나은 예측을 하는 데 도움이 될 수 있다.</p></li>
+<li><p>Physics, Biology, Meteorology, Gambling, Finance, Political science, Medicine….</p></li>
+</ul>
+</section>
+<section id="sample-spaces-and-pebble-world" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="sample-spaces-and-pebble-world">1.2 Sample spaces and Pebble World</h2>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="1_probability_and_counting_files/figure-html/cell-7-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">Figure 1.1</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>sample space S: 실험의 모든 가능한 경우의 집합</p></li>
+<li><p>event A: sample space S의 부분 집합</p></li>
+<li><p>표본 공간은 finite, countably infinite, uncountably infinite 할 수 있다. 표본공간이 finite(유한)할 때, 우리는 Pebble World로 시각화 할 수 있으며 Figure 1.1과 같이 나타낼 수 있다. 각각의 pebble은 결과를 나타내며 event는 pebbles의 집합이다.</p></li>
+<li><p>만약 모든 pebble이 같은 질량을 가지면 pebble은 동일한 확률로 선택되어진다. 이러한 특별한 경우가 다음 두 Section에서 다뤄지며 Section 1.6에서는 질량이 다른 경우에 대해 다룬다.</p></li>
+<li><p>집합 이론은 확률에서 매우 유용하다(각 사건을 표현). 이러한 방식은 사건을 한 가지 이상의 방법으로 표현 가능하게 해준다. 어떠한 한 가지 표현은 다른 표현보다 더 쉽다.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="1_probability_and_counting_files/figure-html/cell-9-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">ex) De Morgan’s laws</figcaption>
+</figure>
+</div>
+</section>
+<section id="naive-definition-of-probability" class="level2">
+<h2 class="anchored" data-anchor-id="naive-definition-of-probability">1.3 Naive definition of probability</h2>
+<p><strong>Naive definition of probability</strong></p>
+<ul>
+<li>A를 사건이라 하고 S를 유한한 표본공간이라 하자. 이때 The naive probability of A는</li>
+</ul>
+<p><img src="1_probability_and_counting_files/figure-html/cell-12-1-image.png" class="img-fluid"></p>
+<p>예시로, Figure 1.1의 상황에서</p>
+<p><img src="1_probability_and_counting_files/figure-html/cell-14-1-image.png" class="img-fluid"></p>
+<p><img src="1_probability_and_counting_files/figure-html/cell-15-1-image.png" class="img-fluid"></p>
+<p><img src="1_probability_and_counting_files/figure-html/cell-16-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>The naive definition은 매우 제한적. S가 유한해야하며 각각의 pebble들의 질량이 동일해야 한다. 이것은 종종 잘못 적용되는데, justification 없이 그것이 50:50이라고 주장하는 것(예를 들어, 화성에 지적 생명체가 산다를 50:50이라고 함.)</p></li>
+<li><p>The naive difinition이 적용 가능한 중요한 케이스들이 존재한다.</p>
+<ol type="1">
+<li><p>문제에 symmetry(대칭)이 있는 경우 등확률이다. ex) 동전이 50% 확률로 앞면이 나올 수 있다. -&gt; 동전이 물리적으로 symmetry.</p></li>
+<li><p>설계에 의한 등확률. ex) N명의 인구 중 설문조사를 위해 n명의 사람을 랜덤하게 뽑는 경우. 성공한다면 나이브한 정의를 적용가능하지만, 다양한 문제로 인해 달성이 어려울 수 있다.</p></li>
+<li><p>영가설에서의 모형</p></li>
+</ol></li>
+</ul>
+</section>
+<section id="how-to-count" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-count">1.4 How to count</h2>
+<p><strong>Multiplication rule</strong></p>
+<ul>
+<li>2개의 하위 실험 A, B로 구성된 복합실험을 생각해보자. 실험 A는 a개 가능한 경우의 수가 있고 실험 B는 b개의 가능한 경우의 수가 있다. 이런 경우 복합 실험은 a*b의 가능한 경우를 갖는다.</li>
+</ul>
+<p><img src="1_probability_and_counting_files/figure-html/cell-21-1-image.png" class="img-fluid"></p>
+<p>※ 실험이 시간순서로 진행된다고 생각하기 쉬우나 A가 B보다 먼저 실행된다는 요건은 없다. <code>주어진 내용이 없으면 순차적으로 실행된다고 생각하지 말 것?</code></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

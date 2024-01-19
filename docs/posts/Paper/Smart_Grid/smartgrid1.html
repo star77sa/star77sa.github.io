@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2024-01-19">
 
-<title>Time Series</title>
+<title>Time Series - [논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./time-series.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../time-series.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,68 +69,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Time Series" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../../styles.css">
+</head>
 
 <body class="nav-sidebar docked nav-fixed">
 
@@ -139,7 +81,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Time Series</span>
     </a>
   </div>
@@ -150,7 +92,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link active" href="../../../about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,7 +116,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Time Series</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item">Paper</li><li class="breadcrumb-item"><a href="../../../posts/Paper/Smart_Grid/smartgrid1.html">Smart Grid</a></li><li class="breadcrumb-item"><a href="../../../posts/Paper/Smart_Grid/smartgrid1.html">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,23 +126,35 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item">Paper</li><li class="breadcrumb-item"><a href="../../../posts/Paper/Smart_Grid/smartgrid1.html">Smart Grid</a></li><li class="breadcrumb-item"><a href="../../../posts/Paper/Smart_Grid/smartgrid1.html">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Time Series</h1>
+      <h1 class="title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>고경수 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 19, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -212,7 +166,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -236,13 +190,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023.08.28 블로그 구축</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
   </div>
 </li>
@@ -250,25 +204,25 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text">Paper</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Smart Grid</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
   </div>
 </li>
@@ -287,19 +241,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">데이터 과학</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">통계 101 X 데이터분석</span></a>
   </div>
 </li>
@@ -313,120 +267,71 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives-2020" id="toc-machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives-2020" class="nav-link active" data-scroll-target="#machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives-2020">Machine learning driven smart electric power system: Current trends and new perspectives (2020)</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract">Abstract</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">6. Conclusion</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.</p>
-<p>Email : star77sa@gmail.com</p>
-<p><strong>Link</strong></p>
+<section id="machine-learning-driven-smart-electric-power-system-current-trends-and-new-perspectives-2020" class="level1">
+<h1>Machine learning driven smart electric power system: Current trends and new perspectives (2020)</h1>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0306261920307492">link</a></p>
+</section>
+<section id="abstract" class="level1">
+<h1>Abstract</h1>
 <ul>
-<li>Github : <a href="https://github.com/star77sa">https://github.com/star77sa</a></li>
-<li>Notion : <a href="https://ksko.notion.site">https://ksko.notion.site</a></li>
-<li>Linkedin : <a href="https://linkedin.com/in/star77sa">https://linkedin.com/in/star77sa</a></li>
+<li><p>이 연구는 다양한 측면으로부터 스마트 그리드의 기술적 문제에 성공적으로 접근하기 위해 머신러닝 기술 사용의 증가하는 관심과 빠른 확장에 대해 쓰여졌다.</p></li>
+<li><p>현재의 전력 시스템은 보다 능동적이고 유연하며 지능적인 스마트 그리드로 빠르게 전환되고 있으며 이는 많은 영역에서 도전을 야기한다. (다양하게 분배된 재사용가능한 에너지들의 통합, 사이버 보안, 수요측면관리, 시스템 계획 및 운영에 관한 의사결정)</p></li>
+<li><p>스마트그리드에서 고급 기능의 실현은 기본적인 정보 통신 인프라와 다양한 소스(smart meter, phasor measurement units, and various forms of sensors)에서 생성된 방대한 양의 데이터를 효율적으로 처리하는 데 크게 의존한다.</p></li>
+<li><p>몇몇 이슈는 여전히 열리고 더 연구할 가지가 있는 채로 남겨졌다. (high-performance data processing and analysis for intelligent decision-making in large-scale complex multi-energy systems, lightweight machine learning-based solutions, and so forth)</p>
+<p>더하여 진보된 컴퓨팅, 통신기술(edge computing, ubiquitous internet of things and 5G wireless networks, in the smart grid are also highlighted.)을 활용하는 미래관점에서 스마트그리드는 주목받을 것이다.</p></li>
+<li><p>머신러닝은 미래 스마트 전력 시스템을 이끄는 주요한 방법 중 하나가 될 것이다.</p></li>
 </ul>
-<p><strong>이전 블로그</strong></p>
+</section>
+<section id="conclusion" class="level1">
+<h1>6. Conclusion</h1>
 <ul>
-<li>fastpage : <a href="https://star77sa.github.io/TIL-Blog/">https://star77sa.github.io/TIL-Blog</a></li>
-<li>Tistory: <a href="https://ksko0424.tistory.com/">https://ksko0424.tistory.com/</a></li>
+<li><p>스마트 그리드 - 전통적 power grid와 반대로 더 효율적이고 데이터에 의존하고 사용자 중심적이다.</p></li>
+<li><p>인공지능 맥락에서 머신러닝 기술은 스마트그리드의 다양한 측면의 단순하지 않은 기술적 도전에 접근하기 위한 효율적이고 진보된 도구로 고려된다.</p>
+<p>머신러닝 툴 사용의 빠른 확장에도 불구하고 몇몇 문제들은 남아있고 더욱 연구할 가치가 있다.</p></li>
+<li><p>200개가 넘는 2014~2019 high impact journal들을 광범위하게 리뷰하고 보고하였다. 간단한 신경망부터 세련된 강화학습과 딥러닝 방법도 관측되었다. 더 구체적으로 55개가 machine learning based forecasting 문제, 23개가 machine learning based fault analysis, 42개가 machine leanring driven DSM 문제, 35개가 cyberspace security issues였다.</p></li>
+</ul>
+</section>
+<section id="introduction" class="level1">
+<h1>1. Introduction</h1>
+<ul>
+<li><p>AC(Alternating current), DC(Direct current) system</p></li>
+<li><p>conventional energy system → more efficient next-generation smart grid system.</p></li>
+<li><p>conventional energy system</p>
+<ul>
+<li>few centralized and large power generation sources</li>
+<li>mainly hydropower or fossil fuel based power generation system to the consumers via a distribution system</li>
+<li>uni-directional(단방향) power and communication flow ⇒ passive</li>
+</ul></li>
+<li><p>smart grid</p>
+<ul>
+<li>integration and contribution of every distributed and renewable energy resource</li>
+<li>two-way power and information flow ⇒ active —</li>
+<li>bi-directional flow of power and communication은 reliability, security, efficiency of power systems를 향상시킬 수 있다.</li>
+</ul></li>
 </ul>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1705590000000" data-listing-file-modified-sort="1705646505520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368" data-listing-title-sort="[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)" data-listing-filename-sort="smartgrid1.ipynb">
-<td>
-<span class="listing-date">Jan 19, 2024</span>
-</td>
-<td>
-<a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="title listing-title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1705417200000" data-listing-file-modified-sort="1705563737551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701" data-listing-title-sort="2024 GIST-NVAITC Korea 강연 내용" data-listing-filename-sort="NVIDIA초청강연.ipynb">
-<td>
-<span class="listing-date">Jan 17, 2024</span>
-</td>
-<td>
-<a href="./posts/etc/NVIDIA초청강연.html" class="title listing-title">2024 GIST-NVAITC Korea 강연 내용</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1704898800000" data-listing-file-modified-sort="1705220676705" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1418" data-listing-title-sort="데이터 과학" data-listing-filename-sort="데이터_분석.ipynb">
-<td>
-<span class="listing-date">Jan 11, 2024</span>
-</td>
-<td>
-<a href="./posts/Statistics/데이터_분석.html" class="title listing-title">데이터 과학</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1694617200000" data-listing-file-modified-sort="1705626755158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3069" data-listing-title-sort="통계 101 X 데이터분석" data-listing-filename-sort="통계_101_X_데이터_분석.ipynb">
-<td>
-<span class="listing-date">Sep 14, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="title listing-title">통계 101 X 데이터분석</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1692802800000" data-listing-file-modified-sort="1704847954891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395" data-listing-title-sort="[확률론] 1. Probability and counting" data-listing-filename-sort="1_probability_and_counting.ipynb">
-<td>
-<span class="listing-date">Aug 24, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/1_probability_and_counting.html" class="title listing-title">[확률론] 1. Probability and counting</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1577804400000" data-listing-file-modified-sort="1705545065469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87" data-listing-title-sort="2023.08.28 블로그 구축" data-listing-filename-sort="2023-08-28-블로그.ipynb">
-<td>
-<span class="listing-date">Jan 1, 2020</span>
-</td>
-<td>
-<a href="./posts/etc/2023-08-28-블로그.html" class="title listing-title">2023.08.28 블로그 구축</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

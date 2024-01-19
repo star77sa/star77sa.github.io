@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="고경수">
+<meta name="dcterms.date" content="2024-01-11">
 
-<title>Time Series</title>
+<title>Time Series - 데이터 과학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +25,23 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./time-series.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../time-series.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -129,8 +100,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Time Series" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="../../styles.css">
+</head>
 
 <body class="nav-sidebar docked nav-fixed">
 
@@ -139,7 +110,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Time Series</span>
     </a>
   </div>
@@ -150,7 +121,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" aria-current="page"> 
+    <a class="nav-link active" href="../../about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -174,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Time Series</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../posts/Statistics/데이터_분석.html">데이터 과학</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,23 +155,35 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Statistics/1_probability_and_counting.html">Statistics</a></li><li class="breadcrumb-item"><a href="../../posts/Statistics/데이터_분석.html">데이터 과학</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Time Series</h1>
+      <h1 class="title">데이터 과학</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-body">
+  <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>고경수 </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 11, 2024</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -212,7 +195,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -236,13 +219,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023.08.28 블로그 구축</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
   </div>
 </li>
@@ -268,7 +251,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
   </div>
 </li>
@@ -278,28 +261,28 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
  <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">데이터 과학</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">통계 101 X 데이터분석</span></a>
   </div>
 </li>
@@ -313,120 +296,134 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(6)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#데이터-분석" id="toc-데이터-분석" class="nav-link active" data-scroll-target="#데이터-분석">데이터 분석</a>
+  <ul class="collapse">
+  <li><a href="#통계" id="toc-통계" class="nav-link" data-scroll-target="#통계">통계</a>
+  <ul class="collapse">
+  <li><a href="#통계-인터뷰-질문" id="toc-통계-인터뷰-질문" class="nav-link" data-scroll-target="#통계-인터뷰-질문">통계 인터뷰 질문</a></li>
+  <li><a href="#모집단-모수-표본" id="toc-모집단-모수-표본" class="nav-link" data-scroll-target="#모집단-모수-표본">모집단, 모수, 표본</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-<p>통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.</p>
-<p>Email : star77sa@gmail.com</p>
-<p><strong>Link</strong></p>
+<section id="데이터-분석" class="level1">
+<h1>데이터 분석</h1>
 <ul>
-<li>Github : <a href="https://github.com/star77sa">https://github.com/star77sa</a></li>
-<li>Notion : <a href="https://ksko.notion.site">https://ksko.notion.site</a></li>
-<li>Linkedin : <a href="https://linkedin.com/in/star77sa">https://linkedin.com/in/star77sa</a></li>
+<li>데이터 과학 : 데이터를 사용하여 질문에 합리적인 답을 내릴 수 있게 해주는 활동</li>
 </ul>
-<p><strong>이전 블로그</strong></p>
+<p>데이터 분석에 있어 기초통계, 선형모형(회귀·분산 분석 포함)은 제대로 배울 것을 권장.</p>
+<p>중요한 요소 : 협업할 수 있는 태도, 소통능력, 폭넓은 독서(논픽션 양서)</p>
+<p>데이터 획득 : UCI, 머신러닝 리포, 캐글, 위키피디아 데이터 세트 리스트 등…</p>
+<p>분석 순서 : 데이터 취득·데이터 정리 → 탐색적 자료 분석 EDA : 시각화·기초통계량 계산(데이터의 패턴, 이상치 탐색) → 확증적 자료 분석 CDA : 통계적 가설·가설검정·신뢰구간(통계적 모형화 statistical modeling)</p>
+<section id="통계" class="level2">
+<h2 class="anchored" data-anchor-id="통계">통계</h2>
 <ul>
-<li>fastpage : <a href="https://star77sa.github.io/TIL-Blog/">https://star77sa.github.io/TIL-Blog</a></li>
-<li>Tistory: <a href="https://ksko0424.tistory.com/">https://ksko0424.tistory.com/</a></li>
+<li><p>특별한 이유를 제외하고는 양측검정 하는 것이 좋다.</p></li>
+<li><p>p-value가 크다는 것은 귀무가설에 반하는 증거가 불충분하다는 것이지 귀무가설을 증명하는 증거가 있다는 것이 아니다.</p></li>
+<li><p>1종 오류 : 귀무가설을 잘못 기각</p></li>
+<li><p>2종 오류 : 대립가설을 잘못 기각</p></li>
+<li><p>“유의수준 5%에서 유의하다” 라고만 하지말고 p-value 그 자체의 값도 알려야 한다.</p></li>
+<li><p>모수는 상수다.(빈도주의자 관점)</p></li>
+<li><p><code>높은 p-value를 귀무가설이 옳다는 증거로 이해하는 오류</code> : 높은 p-value는 대립가설을 입증하는 증거가 불충분함을 의미한다. 효과가 아주 강해도 데이터 관측치가 적으면 p-value가 높을 수 있다. 즉, 높은 p-value는 증거/데이터 불충분으로 이해해야 한다.</p></li>
+<li><p><code>낮은 p-value가 항상 의미있다고 이해하는 오류</code> : 만약 표본크기가 너무 크고, 표본평균의 증가값 자체가 너무 적다면 낮은 p-value 자체로는 의미가 없다.</p></li>
+<li><p>95% 신뢰구간의 정의 : 같은 모형에서 반복해서 표본을 얻고 신뢰구간을 얻을 때 신뢰구간이 참 모수값을 포함할 확률이 95%가 되도록 만들어진 구간</p></li>
+<li><p>중심극한정리 : 어떤 분포든 표본평균은 대략 종모양을 따른다. 정규분포에 기반.</p></li>
+<li><p>95% 신뢰구간의 크기는 <span class="math inline">\(\frac{1}{\sqrt{n}}\)</span> 이다. 즉, 표본의 크기가 커지면 커질수록 신뢰구간의 크기는 줄어들고 그 줄어드는 속도는 <span class="math inline">\(\sqrt{n}\)</span> 이다.</p></li>
+</ul>
+<section id="통계-인터뷰-질문" class="level3">
+<h3 class="anchored" data-anchor-id="통계-인터뷰-질문">통계 인터뷰 질문</h3>
+<ul>
+<li>p-value를 정의하라 : 귀무가설 하에서, 관찰된 통계량만큼 극단적인 값이 관찰될 확률</li>
+<li>비전문가들이 이해하기 쉽게 p-value를 설명하라.</li>
+</ul>
+<hr>
+</section>
+<section id="모집단-모수-표본" class="level3">
+<h3 class="anchored" data-anchor-id="모집단-모수-표본">모집단, 모수, 표본</h3>
+<ul>
+<li><p>모집단(population) : 데이터가 (랜덤하게) 표본화되었다고 가정하는 분포/집단</p></li>
+<li><p>모수(population parameter) : 모집단을 정의하는 값을 모르는 상수</p></li>
+<li><p>표본(sample) : 모집단으로부터 (랜덤하게) 추출된 일부 관측치</p></li>
+<li><p>통계량(statistics) : 모수를 추정하기 위해 데이터로부터 계산된 값</p></li>
+<li><p>귀무가설(null hypothesis) : 모수에 대한 기존(status quo)의 사실 혹은 디폴트 값</p></li>
+<li><p>대립가설(alternative hypothesis) : 모수에 대해 귀무가설과 대립하여 증명하고 싶은 사실</p></li>
+<li><p>가설검정(hypothesis testing) : 통계량을 사용해 귀무가설을 기각하는 절차</p></li>
+<li><p>타입 1 오류(Type 1 error) : 가설검정 절차가 참인 귀무가설을 기각하는 사건</p></li>
+<li><p>타입 2 오류(Type 2 error) : 가설검정 절차가 거짓인 귀무가설을 기각하지 않는 사건</p></li>
+<li><p>유의수준(significance level) : 타입 1 오류를 범할 확률의 허용치</p></li>
+<li><p>P-value : 만약 귀무가설이 참일 때 데이터가 보여준 정도로 특이한 값이 관측될 확률</p></li>
+<li><p>더미 변수 : 통계 및 회귀 분석에서 사용되는 용어. 범주형 데이터를 처리하거나 특정 변수의 상태를 나타내기 위해 사용되는 가상의 이진 변수. 일반적으로, 머신 러닝 모델이나 통계 모델은 숫자형 데이터를 다루는 데 효과적. 그러나 범주형 데이터(예: 성별, 국적, 색상 등)는 이진 변수로 변환해야 한다. 이를 위해 더미 변수를 사용. 더미 변수는 원래 범주형 변수의 각 범주에 대해 0 또는 1의 값을 가지는 새로운 이진 변수. 예를 들어, 성별이라는 범주형 변수가 있을 때, 이를 더미 변수로 나타내려면 남성인 경우에는 1로, 여성인 경우에는 0으로 표현하거나 그 반대로 할 수 있다. 더미 변수를 사용하면 범주형 데이터를 포함한 모델에서 계산이 용이해지며, 해당 변수가 모델에 미치는 영향을 측정할 수 있다. 또한, 더미 변수를 사용함으로써 모델이 범주 간의 상대적인 영향을 학습할 수 있다.</p></li>
+<li><p>t값 : <span class="math inline">\(\frac{\bar{x}-\mu_0}{\frac{s}{\sqrt{n}}}\)</span></p></li>
+<li><p>PCA : 주성분 분석(Principal Component Analysis, PCA)는 다차원 데이터를 저차원으로 차원 축소하는 기술 중 하나다. 주로 데이터의 분산을 최대한 보존하면서 차원을 축소하는 데 사용된다. PCA의 목표는 데이터의 주성분(principal components)을 찾는 것인데, 주성분은 데이터의 분산이 최대가 되도록 하는 방향이 된다. 즉, 첫 번째 주성분은 데이터의 분산이 가장 큰 방향이며, 두 번째 주성분은 첫 번째 주성분과 직교하면서 데이터의 분산을 최대한 보존하는 방향이 된다. 이런 식으로 주성분은 데이터의 분산을 차례로 최대화하는 방향으로 정의된다. PCA를 통해 얻은 주성분들은 기존 변수들의 선형 조합으로 표현된다. 이를 통해 데이터를 표현하는 데 필요한 변수의 수를 줄일 수 있다. 이는 차원 축소의 효과를 가져오며, 중요한 정보를 유지하면서 데이터의 복잡성을 낮춘다. PCA는 주로 데이터 시각화, 노이즈 제거, 특성 추출 등 다양한 분야에서 활용된다. 또한, 다중공선성 문제를 해결하거나 머신러닝 모델의 학습 속도를 향상시키는 데에도 사용될 수 있다.</p></li>
+<li><p>랜덤 변수(Random Variable)는 확률적인 실험 또는 현상의 결과를 수치적으로 나타내는 변수를 의미한다. 랜덤 변수는 표본 공간의 각 원소를 실수 값으로 매핑하는 함수로 정의되며, 확률 분포에 따라 그 값을 취합니다. 랜덤 변수는 확률 이론과 통계학에서 핵심 개념 중 하나이며, 확률 분포를 통해 랜덤 변수의 특성과 동작을 설명하고 예측하는 데 사용된다. 확률 변수를 이용하면 확률적인 현상을 수학적으로 모델링하고, 이를 통해 다양한 통계적 추론 및 예측을 수행할 수 있다.</p></li>
+<li><p>랜덤프로세스 : 확률 변수의 시퀀스 또는 함수로, 시간 또는 공간에 따라 확률적으로 변하는 프로세스를 나타낸다. 랜덤 프로세스는 시간에 따른 랜덤한 변동을 모델링하거나 시공간에서의 랜덤한 현상을 분석하는 데 사용된다. 이는 확률론과 통계학, 시계열 분석, 통신 이론, 제어 이론 등 다양한 분야에서 응용된다.</p>
+<p>랜덤 프로세스는 다음과 같은 주요 특징을 갖는다:</p>
+<ul>
+<li><p>확률 변수의 집합: 랜덤 프로세스는 각각의 시간 또는 위치에 대해 하나 이상의 확률 변수를 갖는다. 이 확률 변수들은 시간 또는 위치에 따라 변하는 값들을 나타낸다.</p></li>
+<li><p>시간 또는 위치의 집합: 랜덤 프로세스는 정의된 시간 또는 위치의 집합에서 정의된다. 시간의 경우, 이를 시계열(random time series)이라고 부르기도 한다.</p></li>
+<li><p>확률 분포의 변화: 랜덤 프로세스의 특정 시간 또는 위치에서의 값은 확률 분포를 따른다. 이 분포는 시간이나 위치에 따라 변할 수 있다.</p></li>
+</ul>
+<p>랜덤 프로세스의 예시로는 브라운 운동(Brownian motion), 마코프 체인(Markov chain), 확률 과정(Stochastic process) 등이 있다. 이러한 랜덤 프로세스는 자연 현상, 금융 모델링, 통신 시스템 등에서 모델링과 분석에 활용된다.</p></li>
+<li><p>포아송 프로세스 :</p></li>
+<li><p>포아송 어라이블 :</p></li>
+<li><p>마르코프 과정 :</p></li>
+<li><p>정보이론 :</p></li>
+<li><p>신호 및 시스템 :</p></li>
+<li><p>표준화(Standardization) : 표준화는 데이터의 평균을 0으로, 표준 편차를 1로 만드는 변환을 의미. 표준화된 값은 Z 점수 또는 표준 점수로 불리며 다음의 공식으로 계산 <span class="math inline">\(z=\frac{x-\mu}{\sigma}\)</span></p></li>
+<li><p>정규화(Normalization) : 정규화는 데이터의 범위를 [0, 1] 또는 [-1, 1]로 조정하는 변환을 의미. Min-Max 정규화는 가장 일반적인 형태로 다음의 공식으로 계산 <span class="math inline">\(x_{normalized} = \frac{x-\min(X)}{\max(X)-\min(X)}\)</span> 정규화는 다양한 변수 간의 스케일을 맞추어줌으로써 경사 하강법과 같은 최적화 알고리즘의 수렴 속도를 향상시키고, 학습 과정을 안정화 시킨다.</p></li>
+</ul>
+<p>*** <code>표준 정규 분포에서 정규와 정규화는 관련이 없음.. 정규분포인 데이터에 표준화를 해주면 그게 표준 정규분포!! 표준정규분포 = 평균이 0이고 표준편차가 1인 정규분포</code></p>
+<ul>
+<li><p>중심 극한 정리 :</p></li>
+<li><p>부트스트랩 : 부트스트랩(Bootstrap)은 통계학과 머신 러닝에서 사용되는 샘플링 방법 중 하나로, 주어진 데이터로부터 중복을 허용하여 샘플을 추출하는 과정을 말한다. 일반적으로 데이터셋에서 일부를 무작위로 추출하는 과정에서는 원래 데이터셋에 존재하는 정보의 일부가 누락될 수 있다. 부트스트랩은 이러한 문제를 완화하기 위해 중복을 허용하여 여러 번의 샘플링을 수행한다.</p></li>
+<li><p>iid(Independent and Identically Distributed) : 독립 동일 분포. 통계적 가정과 머신러닝 모델의 일부에서 사용된다. 예를 들어, 통계적 가설 검정에서 독립 동일 분포 가정은 검정 결과의 신뢰성을 보장하는 데 중요하다. 머신러닝에서는 iid 가정이 모델의 일반화 성능을 평가하는 데 사용된다. 훈련 데이터셋과 테스트 데이터셋이 iid를 만족한다면, 모델이 새로운 데이터에 대해 더 잘 일반화될 것으로 기대할 수 있다.</p>
+<ul>
+<li>Independent : 데이터 샘플들이 서로 독립적. 하나의 데이터 포인트나 관측치가 다른 것과 상관없이 독립적으로 발생했다는 것을 나타낸다. 예를 들어, 동일한 데이터셋에서 뽑은 두 개의 관측치는 서로 영향을 주지 않고 독립적으로 존재한다.</li>
+<li>Identically Distributed : 데이터 샘플들이 같은 확률 분포에서 추출되었다는 것을 의미한다. 모든 데이터 포인트가 동일한 특성을 가지며, 동일한 확률 분포를 따르는 것을 의미한다.</li>
+</ul></li>
+<li><p>통계적 패턴인식 : 데이터에서 통계적 구조나 패턴을 추출하고 이를 활용하여 패턴을 인식하거나 분류하는 기술. 이는 주로 통계학, 머신 러닝, 인공 지능 분야에서 활용되며, 다양한 응용 분야에서 패턴을 감지하고 이해하는 데 사용된다.</p></li>
+<li><p>Class imbalance를 고려한 모델 학습 방법 (Chat-GPT 답변)</p>
+<ul>
+<li>가중치 조절 : 적은 수의 클래스에 대해 더 높은 가중치를 부여하여 모델이 이러한 클래스에 더 집중하도록 유도</li>
+<li>샘플링 기법 : 1. Under-sampling 다수 클래스의 데이터를 일부 제거하여 클래스간의 균형을 맞춘다. 하지만 정보 손실이 발생할 수 있다. // 2. Over-sampling 소수 클래스의 데이터를 복제하거나 합성하여 데이터를 늘린다. SMOTE(Synthetic Minority Over-sampling Technique)와 같은 기술을 사용할 수 있다.</li>
+<li>앙상블 방법 : 다양한 모델을 조합하여 앙상블을 형성하는 것도 클래스 불균형을 해소하는데 도움이 될 수 있다. 예를 들어, 다수결 투표를 통해 예측을 결합할 수 있다.</li>
+<li>평가 지표의 선택 : 정확도(accuracy)만을 평가 지표로 사용하지 말고, 클래스 불균형을 고려한 평가 지표를 선택. 정밀도(precision), 재현율(recall), F1-score 등이 유용할 수 있다.</li>
+<li>다단계 학습(?) : 다단계 분류기를 사용하여 클래스 간의 계층적인 학습을 수행할 수 있다. 이를 통해 클래스 간의 계층 구조를 고려할 수 있다.</li>
+<li>클래스 가중치 설정 : 일부 모델은 클래스에 대한 가중치를 설정할 수 있는 매개변수를 제공한다. 이를 조절하여 클래스 불균형을 고려할 수 있다.</li>
+<li>사전 훈련된 모델 사용 : 사전 훈련된 모델을 사용하여 초기 가중치를 설정하면 클래스 불균형에 민감한 초기화 문제를 완화할 수 있다.</li>
+<li>클래스 결합 : 비슷한 클래스를 하나로 결합하거나, 다수 클래스의 몇 개를 합쳐서 클래스의 수를 줄일 수도 있다.</li>
+<li>전이학습</li>
+<li>데이터 증강</li>
+</ul></li>
+<li><p>다단계 분류기(multi-class classifier) : 데이터를 둘 이상의 클래스로 분류하는 머신러닝 모델. 일대일/일대다/다중출력분류</p></li>
+<li><p>SQL</p></li>
+<li><p>유닉스 쉘</p></li>
+<li><p>파이썬 코딩 스타일 : PEP 0008 (도움을 주는 pylint)</p></li>
+<li><p>정보이론, 엔트로피</p></li>
+<li><p>평가지표</p></li>
+<li><p>손실함수</p></li>
+<li><p>한계효용체감</p></li>
+<li><p>Gapminder(http://www.gapminder.org/) :스웨덴의 비영리 통계 분석 서비스. 틈새주의(mind the gap)라는 지하철 경고문에서 영감을 얻은 이름은 세계관과 사실/데이터 간의 간극을 조심하고 좁히자는 이상을 반영</p></li>
 </ul>
 
 
+</section>
+</section>
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="1705590000000" data-listing-file-modified-sort="1705646505520" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="368" data-listing-title-sort="[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)" data-listing-filename-sort="smartgrid1.ipynb">
-<td>
-<span class="listing-date">Jan 19, 2024</span>
-</td>
-<td>
-<a href="./posts/Paper/Smart_Grid/smartgrid1.html" class="title listing-title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1705417200000" data-listing-file-modified-sort="1705563737551" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="701" data-listing-title-sort="2024 GIST-NVAITC Korea 강연 내용" data-listing-filename-sort="NVIDIA초청강연.ipynb">
-<td>
-<span class="listing-date">Jan 17, 2024</span>
-</td>
-<td>
-<a href="./posts/etc/NVIDIA초청강연.html" class="title listing-title">2024 GIST-NVAITC Korea 강연 내용</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1704898800000" data-listing-file-modified-sort="1705220676705" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1418" data-listing-title-sort="데이터 과학" data-listing-filename-sort="데이터_분석.ipynb">
-<td>
-<span class="listing-date">Jan 11, 2024</span>
-</td>
-<td>
-<a href="./posts/Statistics/데이터_분석.html" class="title listing-title">데이터 과학</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1694617200000" data-listing-file-modified-sort="1705626755158" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3069" data-listing-title-sort="통계 101 X 데이터분석" data-listing-filename-sort="통계_101_X_데이터_분석.ipynb">
-<td>
-<span class="listing-date">Sep 14, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="title listing-title">통계 101 X 데이터분석</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1692802800000" data-listing-file-modified-sort="1704847954891" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="395" data-listing-title-sort="[확률론] 1. Probability and counting" data-listing-filename-sort="1_probability_and_counting.ipynb">
-<td>
-<span class="listing-date">Aug 24, 2023</span>
-</td>
-<td>
-<a href="./posts/Statistics/1_probability_and_counting.html" class="title listing-title">[확률론] 1. Probability and counting</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1577804400000" data-listing-file-modified-sort="1705545065469" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="87" data-listing-title-sort="2023.08.28 블로그 구축" data-listing-filename-sort="2023-08-28-블로그.ipynb">
-<td>
-<span class="listing-date">Jan 1, 2020</span>
-</td>
-<td>
-<a href="./posts/etc/2023-08-28-블로그.html" class="title listing-title">2023.08.28 블로그 구축</a>
-</td>
-<td>
-<span class="listing-author">고경수 </span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
