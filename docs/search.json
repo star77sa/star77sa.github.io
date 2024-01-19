@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Time Series",
     "section": "",
-    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 24, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
+    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 24, 2023\n\n\n[확률론] 1. Probability and counting\n\n\n고경수 \n\n\n\n\nJan 1, 2020\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -46,7 +46,7 @@
     "href": "posts/etc/2023-08-28-블로그.html",
     "title": "2023.08.28 블로그 구축",
     "section": "",
-    "text": "깃허브를 이용한 블로그, 네이버 블로그 등 다양한 블로그를 사용해보다가 fastpage 블로그에 정착을 했었습니다.\n주피터노트북 파일을 만들면 그대로 포스팅을 해주어서 용이하였기 때문이었는데,\n해당 블로그의 서비스가 종료되고 Quarto 사용을 권장한다고 하였으나 블로그 개설이 복잡한 것 같아 티스토리를 한동안 사용해보았습니다. 다만 역시 코드 기록이 불편하여 Quarto 블로그를 제작하여 이 블로그로 옮기게 되었습니다.\n다른 블로그들의 포스팅은 복습하는 겸 조금씩 옮길 예정입니다.\n\n블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\n설정가능 icon\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html",
+    "text": "On this page\n   \n  \n  블로그 제작 (Quarto)\n  RSS 피드\n  블로그 검색엔진 등록\n  Jupyter Notebook\n  \n\n깃허브를 이용한 블로그, 네이버 블로그 등 다양한 블로그를 사용해보다가 fastpage 블로그에 정착을 했었습니다.\n주피터노트북 파일을 만들면 그대로 포스팅을 해주어서 용이하였기 때문이었는데,\n해당 블로그의 서비스가 종료되고 Quarto 사용을 권장한다고 하였으나 블로그 개설이 복잡한 것 같아 티스토리를 한동안 사용해보았습니다. 다만 역시 코드 기록이 불편하여 Quarto 블로그를 제작하여 이 블로그로 옮기게 되었습니다.\n다른 블로그들의 포스팅은 복습하는 겸 조금씩 옮길 예정입니다.\n\n블로그 제작 (Quarto)\n\nQuarto\n참고영상\n\n\n\n설정가능 icon\n\n\n\nRSS 피드\n\nquarto feed\nfeed parser\n날짜 포맷\n\n\n\n블로그 검색엔진 등록\n\n검색엔진 등록\n\n\n\nJupyter Notebook\n\n노트북의 첫 번째 셀은 문서제목, 작성자 및 지정해야하는 기타 옵션이 포함된 RAW Cell이어야 한다. https://quarto.org/docs/tools/jupyter-lab.html",
     "crumbs": [
       "About",
       "Posts",
@@ -960,7 +960,7 @@
     "href": "posts/Paper/smartgrid1.html",
     "title": "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)",
     "section": "",
-    "text": "Abstract\n  6. Conclusion\n  1. Introduction\n  2. An overview of machine learning\n  3. Machine learning applications in smart grid\n  \n  3.1. Forecasting in smart grid\n  \n  3.1.1. Electric load and price forecasting\n  3.1.2. Renewable power generation prediction\n  \n  3.2. Machine learning in fault and failure analysis\n  3.3. Machine learning in demand-side management\n  3.4. Machine learning in cyberspace security\n  3.5. Others\n  \n  4. Discussion and remarks\n  \n  4.1. Observations\n  4.2. Technical challenges\nMachine learning driven smart electric power system: Current trends and new perspectives (2020)",
+    "text": "Abstract\n  6. Conclusion\n  1. Introduction\n  2. An overview of machine learning\n  3. Machine learning applications in smart grid\n  \n  3.1. Forecasting in smart grid\n  \n  3.1.1. Electric load and price forecasting\n  3.1.2. Renewable power generation prediction\n  \n  3.2. Machine learning in fault and failure analysis\n  3.3. Machine learning in demand-side management\n  3.4. Machine learning in cyberspace security\n  3.5. Others\n  \n  4. Discussion and remarks\n  \n  4.1. Observations\n  4.2. Technical challenges\n  \n  5. New perspectives\n  \n  5.1. New perspectives in smart energy systems application domain\n  5.2. New perspectives in emerging technologies integration with smart energy systems\n  \n  논문 정리 중 생략한 내용\n  추가로 공부해야 할 내용\nMachine learning driven smart electric power system: Current trends and new perspectives (2020)",
     "crumbs": [
       "About",
       "Posts",
@@ -1051,12 +1051,51 @@
     "href": "posts/Paper/smartgrid1.html#technical-challenges",
     "title": "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)",
     "section": "4.2. Technical challenges",
-    "text": "4.2. Technical challenges\n다양한 스마트 그리드 응용 분야에서 기계 학습 알고리즘 및 기술의 구현을 위한 몇 가지 도전요소와 권장 사항:\n\nSmart Grid Data Preprocessing:\n\n데이터 전처리는 일반적으로 데이터 통합, 데이터 정제, 데이터 변환 세 가지 주요 단계로 이루어짐.\n스마트 그리드의 데이터 전처리 사이클은 다양한 데이터 소스로 인해 도전적이다.\n주요 데이터 소스에는\n\nreal and reactive powers, DR capacity, voltage 등의 operational data\n전력 품질 및 신뢰성과 관련된 non-operational data\n하루 중 시간, 평균, 최대 수요 값, 전력 사용과 관련된 스마트 미터 데이터\nvoltage loss, fault detection event, security breach event를 포함하는 스마트 그리드 event data\n다른 유형의 데이터를 조직하고 해석하는 데 사용되는 메타데이터\n\n스마트 그리드의 데이터 전처리는 다양한 유형의 데이터 소스와 이에 따른 데이터로 인해 도전적이다.\n\nData Availability:\n\nload forecasting 문제에서의 기계 학습 기반 모델은 효율적인 예측 결과를 보이며 이러한 모델은 전통적인 방법보다 더 유연하다. 그러나 기계학습 기반의 예측 모델은 대량의 대표적인(representative) 데이터에 크게 의존하며, 이러한 데이터 없이는 모델이 일반성을 가지지 못한다. 또한 예측 시계열에 대한 예측 기간에 상관없이 정확한 예측을 수행하고 다양한 제약 조건에 대한 트레이드오프를 하지 않고도 작동할 수 있는 표준적이고 견고한(robust) 예측 방법이 필요하다.\n\nLoad Transfer Detection(부하 이전 감지?):\n\n대부분의 문헌 검토에서는 강조되지 않았음. 다만 정확하고 효율적인 예측을 달성하기 위한 주요 도전 중 하나이다.\n이 도전은 utility or distribution 운영자가 주로 유지보수 또는 신뢰성 이유로 계절적, 임시 또는 영구적인 기준으로 다른 회로로 부하를 이전할 때 발생한다. 기계 학습 방법은 부하 예측에서 이러한 도전을 효과적으로 식별하고 해결하는 데 중요한 역할을 할 수 있다.\n\nExtrapolation of Faults:\n\nfault diagnosis와 fault detection을 위한 데이터 기반 모델은 유망한 결과를 보여주었지만 이러한 기계학습 모델은 훈련 데이터의 경계를 넘어 추론할 수 없다. 따라서 베이지안 방법, 퍼지 기반 방법과 같은 지식 기반 방법과 데이터 기반 기계학습 기반 방법을 결합한 하이브리드 접근 방식은 상기한 문제를 효과적으로 해결할 수 있다.\n\nMachine Learning-based Planning Framework:\n\n스마트 그리드 기획 및 운영 문제에 대한 기계학습을 통한 추가적인 연구 가능성이 여전히 많이 남아있다.\n\nDeep Learning-based Multi-label Classification Approaches:\n\nNILM 문제에서 표준 딥 러닝 방법(SAE 및 DBN과 같은)의 한계로 인해 딥 러닝 기반 다중 레이블 분류의 탐색과 개발이 필요하다.\n로지스틱 회귀 및 소프트맥스가 훈련에 자주 사용되는 경우, 로지스틱 회귀 및 소프트맥스 기반의 딥 러닝 모델 훈련은 단일 클래스로 이어진다. 따라서 다른 혁신적인 딥 러닝 기반 다중 레이블 분류 접근 방식은 NILM 문제를 효과적으로 해결할 수 있다.\n=&gt; 다중 레이블 분류와 다중 클래스 분류(다중분류)는 다르다. 다중분류는 각 샘플이 하나의 클래스에만 속할 수 있는 분류 문제를 의미. 다중 레이블 분류는 각 샘플이 여러 개의 클래스에 속할 수 있는 분류 문제를 의미한다. 즉, 각 샘플은 여러 개의 레이블을 가질 수 있으며 각 레이블은 클래스를 나타낸다.\n\nPost-Attack Resilience Frameworks(사이버 공간에서의 공격 후 회복 프레임 워크):\n\n사이버 공간 보안과 관련된 대부분의 문헌은 기계학습 기반의 공격 탐지 및 예방 메커니즘에 중점을 두지만, 공격 이후의 상황에 중점을 둔 출판물은 소수이다. 따라서 사이버 위협의 탐지 및 예방뿐만 아니라 완화에 중점을 둔 보안 알고리즘이 필요하다.\n\nLightweight Machine Learning Solutions:\n\n미래의 IoT 기반 스마트 디바이스에 구현하기 위해 빠르면서도 계산 비용이 적은 기계 학습 및 딥 러닝 알고리즘이 필요하다. 이는 계산 요구 사항이 제한된 스마트 디바이스에서 사용될 것이다.\n\nSmart Grid Reliability Requirements:\n\n스마트 그리드에 대규모로 통합되는 재생 가능한 power sources, 특히 풍력 및 태양광 발전 시스템은\n\n일반적인 예측 기간에서의 큰 예측 오류,\n대규모 설치로 인한 송전 혼잡,\n전압 및 주파수 안정성과 관련된 전력 품질 문제,\n지리적으로 분산된 자원으로 인한 관련 전력 분배 시스템의 challenge\n\n로 스마트 그리드의 신뢰성 요구 사항을 강조한다. 이러한 시스템의 불확실성 및 신뢰성 요구 사항은 스마트 그리드에서 기계 학습 기반 기술을 다양한 측면에서 활용하는 데 명백한 challenge를 제공한다. 예를 들면 효율적인 운영 상태 모니터링 및 분석, 정확한 상태 예측 및 이상 징후 감지, 그리고 합리적인 의사 결정 등이 있다.\n\n\nstimuli 자극\nintermittent 간헐적\ncountermeasures 대책\ndiffusion 어떤 현상이나 개념이 시간이 지남에 따라 널리 퍼져나가거나 확산되는 과정\nencompass 포함하다\nhence 이런 이유로\nmassive 거대한\ninadequacy 불충분함\nextrapolate 추론하다\nexploitation 착취, (부당한)이용, 개발\nresilience 회복력, 탄력, 복원력",
+    "text": "4.2. Technical challenges\n다양한 스마트 그리드 응용 분야에서 기계 학습 알고리즘 및 기술의 구현을 위한 몇 가지 도전요소와 권장 사항:\n\nSmart Grid Data Preprocessing:\n\n데이터 전처리는 일반적으로 데이터 통합, 데이터 정제, 데이터 변환 세 가지 주요 단계로 이루어짐.\n스마트 그리드의 데이터 전처리 사이클은 다양한 데이터 소스로 인해 도전적이다.\n주요 데이터 소스에는\n\nreal and reactive powers, DR capacity, voltage 등의 operational data\n전력 품질 및 신뢰성과 관련된 non-operational data\n하루 중 시간, 평균, 최대 수요 값, 전력 사용과 관련된 스마트 미터 데이터\nvoltage loss, fault detection event, security breach event를 포함하는 스마트 그리드 event data\n다른 유형의 데이터를 조직하고 해석하는 데 사용되는 메타데이터\n\n스마트 그리드의 데이터 전처리는 다양한 유형의 데이터 소스와 이에 따른 데이터로 인해 도전적이다.\n\nData Availability:\n\nload forecasting 문제에서의 기계 학습 기반 모델은 효율적인 예측 결과를 보이며 이러한 모델은 전통적인 방법보다 더 유연하다. 그러나 기계학습 기반의 예측 모델은 대량의 대표적인(representative) 데이터에 크게 의존하며, 이러한 데이터 없이는 모델이 일반성을 가지지 못한다. 또한 예측 시계열에 대한 예측 기간에 상관없이 정확한 예측을 수행하고 다양한 제약 조건에 대한 트레이드오프를 하지 않고도 작동할 수 있는 표준적이고 견고한(robust) 예측 방법이 필요하다.\n\nLoad Transfer Detection(부하 이전 감지?):\n\n대부분의 문헌 검토에서는 강조되지 않았음. 다만 정확하고 효율적인 예측을 달성하기 위한 주요 도전 중 하나이다.\n이 도전은 utility or distribution 운영자가 주로 유지보수 또는 신뢰성 이유로 계절적, 임시 또는 영구적인 기준으로 다른 회로로 부하를 이전할 때 발생한다. 기계 학습 방법은 부하 예측에서 이러한 도전을 효과적으로 식별하고 해결하는 데 중요한 역할을 할 수 있다.\n\nExtrapolation of Faults:\n\nfault diagnosis와 fault detection을 위한 데이터 기반 모델은 유망한 결과를 보여주었지만 이러한 기계학습 모델은 훈련 데이터의 경계를 넘어 추론할 수 없다. 따라서 베이지안 방법, 퍼지 기반 방법과 같은 지식 기반 방법과 데이터 기반 기계학습 기반 방법을 결합한 하이브리드 접근 방식은 상기한 문제를 효과적으로 해결할 수 있다.\n\nMachine Learning-based Planning Framework:\n\n스마트 그리드 기획 및 운영 문제에 대한 기계학습을 통한 추가적인 연구 가능성이 여전히 많이 남아있다.\n\nDeep Learning-based Multi-label Classification Approaches:\n\nNILM 문제에서 표준 딥 러닝 방법(SAE 및 DBN과 같은)의 한계로 인해 딥 러닝 기반 다중 레이블 분류의 탐색과 개발이 필요하다.\n로지스틱 회귀 및 소프트맥스가 훈련에 자주 사용되는 경우, 로지스틱 회귀 및 소프트맥스 기반의 딥 러닝 모델 훈련은 단일 클래스로 이어진다. 따라서 다른 혁신적인 딥 러닝 기반 다중 레이블 분류 접근 방식은 NILM 문제를 효과적으로 해결할 수 있다.\n=&gt; 다중 레이블 분류와 다중 클래스 분류(다중분류)는 다르다. 다중분류는 각 샘플이 하나의 클래스에만 속할 수 있는 분류 문제를 의미. 다중 레이블 분류는 각 샘플이 여러 개의 클래스에 속할 수 있는 분류 문제를 의미한다. 즉, 각 샘플은 여러 개의 레이블을 가질 수 있으며 각 레이블은 클래스를 나타낸다.\n\nPost-Attack Resilience Frameworks(사이버 공간에서의 공격 후 회복 프레임 워크):\n\n사이버 공간 보안과 관련된 대부분의 문헌은 기계학습 기반의 공격 탐지 및 예방 메커니즘에 중점을 두지만, 공격 이후의 상황에 중점을 둔 출판물은 소수이다. 따라서 사이버 위협의 탐지 및 예방뿐만 아니라 완화에 중점을 둔 보안 알고리즘이 필요하다.\n\nLightweight Machine Learning Solutions:\n\n미래의 IoT 기반 스마트 디바이스에 구현하기 위해 빠르면서도 계산 비용이 적은 기계 학습 및 딥 러닝 알고리즘이 필요하다. 이는 계산 요구 사항이 제한된 스마트 디바이스에서 사용될 것이다.\n\nSmart Grid Reliability Requirements:\n\n스마트 그리드에 대규모로 통합되는 재생 가능한 power sources, 특히 풍력 및 태양광 발전 시스템은\n\n일반적인 예측 기간에서의 큰 예측 오류,\n대규모 설치로 인한 송전 혼잡,\n전압 및 주파수 안정성과 관련된 전력 품질 문제,\n지리적으로 분산된 자원으로 인한 관련 전력 분배 시스템의 challenge\n\n로 스마트 그리드의 신뢰성 요구 사항을 강조한다. 이러한 시스템의 불확실성 및 신뢰성 요구 사항은 스마트 그리드에서 기계 학습 기반 기술을 다양한 측면에서 활용하는 데 명백한 challenge를 제공한다. 예를 들면 효율적인 운영 상태 모니터링 및 분석, 정확한 상태 예측 및 이상 징후 감지, 그리고 합리적인 의사 결정 등이 있다.",
     "crumbs": [
       "About",
       "Posts",
       "Paper",
       "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)"
+    ]
+  },
+  {
+    "objectID": "posts/Paper/smartgrid1.html#new-perspectives-in-smart-energy-systems-application-domain",
+    "href": "posts/Paper/smartgrid1.html#new-perspectives-in-smart-energy-systems-application-domain",
+    "title": "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)",
+    "section": "5.1. New perspectives in smart energy systems application domain",
+    "text": "5.1. New perspectives in smart energy systems application domain\n\n스마트 그리드는 다양한 성격의 에너지 원천과 소비자들 간의 복잡한 네트워크로, 여기에서 기계 학습 기술이 유망한 기여를 보여주고 있다.\n기계 학습 모델의 적용은 에너지 시스템에서 운영 계획, 소비자 수요 관리, 재생 에너지 시스템 통합 등에 유용\n단위 할당 및 에너지 경제 배치와 같은 전력 시장 거래 운영이 기계 학습 도구를 사용하여 더 깊이 탐구될 수 있다\nDSM은 스마트 그리드의 핵심 촉진 요소 중 하나로, 소비자들이 유틸리티 자체 외에도 전력 관리에 적극적으로 참여할 수 있는 환경을 제공\nDR에 대한 기존 연구가 이미 수행되었음에도 불구하고, 기계 학습이 소비자 행동 예측을 통해 전력 공급 관리를 더욱 향상시킬 수 있다는 전망\n소비자 행동 및 전력 소비 패턴을 학습함으로써 부하 예측, 전기 요금 개발, 그리고 차량-그리드 및 차량-가정 모델, 전기 자동차 충전 일정에 큰 기여를 할 수 있습니다",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Paper",
+      "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)"
+    ]
+  },
+  {
+    "objectID": "posts/Paper/smartgrid1.html#new-perspectives-in-emerging-technologies-integration-with-smart-energy-systems",
+    "href": "posts/Paper/smartgrid1.html#new-perspectives-in-emerging-technologies-integration-with-smart-energy-systems",
+    "title": "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)",
+    "section": "5.2. New perspectives in emerging technologies integration with smart energy systems",
+    "text": "5.2. New perspectives in emerging technologies integration with smart energy systems\n\n인공 지능 및 컴퓨팅 기술의 발전에도 불구하고, 스마트 디바이스의 급증, 복잡한 기계 학습 및 딥 러닝 알고리즘의 진화, 그리고 이에 따른 컴퓨팅 수요의 증가로 인해 필요한 컴퓨팅 리소스의 즉각적인 가용성이 요구된다.\n기존의 스마트 그리드 네트워크는 주로 IoT 및 클라우드 기반 네트워크로, 데이터 처리 및 저장은 일반적으로 클라우드 서버에서 수행된다. 그러나 클라우드 컴퓨팅 기반 시스템은 효율적인 컴퓨팅 및 저장 리소스를 제공하며 복잡한 계산 부담을 완화하는 데 도움이 될 수 있지만, 클라우드 컴퓨팅은 고지연성과 실시간 응용 프로그램에 제약 사항이 있으며 대역폭 이용도가 증가하는 등의 한계가 있다. 더구나, 클라우드 컴퓨팅 패러다임은 이동성을 지원하지 않는 문제도 가지고 있다.\n앞서 언급한 문제를 해결하기 위해 에지 컴퓨팅을 스마트 그리드 네트워크에 클라우드 컴퓨팅과 함께 중간 컴퓨팅 및 저장 시스템으로 통합할 수 있다. 에지 컴퓨팅 기술은 주로 포그 컴퓨팅, 모바일 에지 컴퓨팅 및 클라우드렛 컴퓨팅을 포함.\n미래의 연구 전망에는 IoT 및 에지 컴퓨팅 기반 스마트 그리드 인프라에 정교한 기계 학습 도구를 도입하여 예측 분석, 데이터 필터링, 사이버 공격 탐지, 단기 예측, 에지에서의 부하 분해 등과 같은 다양한 기능을 수행하는 것이 포함될 수 있다. 클라우드에서 풍부한 양의 기록 데이터를 기반으로 훈련된 기계 학습 모델은 에지 디바이스에서의 실시간 추론을 통해 실현될 수 있다.\n에지 컴퓨팅 패러다임 외에도 통신 네트워크의 최근 발전 및 5G 네트워크의 진화는 DSM, 그리드 모니터링, 그리드 제어 및 전기차 충전 및 방전 조정과 같은 다양한 스마트 그리드 서비스에 대한 네트워크 가상화 및 소프트웨어 정의 네트워크와 같은 혁신적인 5G 개념의 사용을 촉진하고 있다. 5G를 활용한 IoT의 스마트 그리드 적용은 높은 통신 속도, 동적인 특성, 저전력 소비, 견고한 보안 및 다양한 연결 기능으로 인해 더 나은 통신 인프라를 제공할 수 있다.\n기계 학습 기술은 이러한 기술들이 제공하는 탁월한 예측 능력에 따라 5G를 지원하는 스마트 그리드 시스템에서 라디오 자원 할당의 최적화에 기여할 수 있다.",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Paper",
+      "[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)"
+    ]
+  },
+  {
+    "objectID": "posts/etc/논문_영단어.html",
+    "href": "posts/etc/논문_영단어.html",
+    "title": "논문 읽다가 모르는 영단어 정리",
+    "section": "",
+    "text": "On this page\n   \n  \n  영단어\n  \n\n\n영단어\nstimuli 자극\nintermittent 간헐적\ncountermeasures 대책\ndiffusion 어떤 현상이나 개념이 시간이 지남에 따라 널리 퍼져나가거나 확산되는 과정\nencompass 포함하다\nhence 이런 이유로\nmassive 거대한\ninadequacy 불충분함\nextrapolate 추론하다\nexploitation 착취, (부당한)이용, 개발\nresilience 회복력, 탄력, 복원력",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "논문 읽다가 모르는 영단어 정리"
     ]
   }
 ]
