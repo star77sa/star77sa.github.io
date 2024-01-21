@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -229,6 +263,24 @@ window.Quarto = {
  <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/etc/논문_개념.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">논문 읽다가 모르겠거나 복습할 개념 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/etc/논문_영단어.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">논문 읽다가 모르는 영단어 정리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/etc/모델_성능평가지표_정리.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">성능 평가 지표(회귀모델, 분류모델)</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -240,38 +292,27 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
- <span class="menu-text">Smart Grid</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/Paper/Smart_Grid/smartgrid1.html" class="sidebar-item-text sidebar-link">
+  <a href="../../posts/Paper/smartgrid1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
   </div>
 </li>
       </ul>
   </li>
-      </ul>
-  </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">[확률론] 1. Probability and counting</span></a>
+ <span class="menu-text">1. Probability and counting [확률론]</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -326,6 +367,14 @@ window.Quarto = {
   <li><a href="#추론통계를-배우기-전에" id="toc-추론통계를-배우기-전에" class="nav-link" data-scroll-target="#추론통계를-배우기-전에">4.1 추론통계를 배우기 전에</a></li>
   <li><a href="#표본오차와-신뢰구간" id="toc-표본오차와-신뢰구간" class="nav-link" data-scroll-target="#표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</a></li>
   </ul></li>
+  <li><a href="#가설검정-정리-必" id="toc-가설검정-정리-必" class="nav-link" data-scroll-target="#가설검정-정리-必">5. 가설검정 (정리 必)</a>
+  <ul class="collapse">
+  <li><a href="#가설검정의-원리" id="toc-가설검정의-원리" class="nav-link" data-scroll-target="#가설검정의-원리">5.1 가설검정의 원리</a></li>
+  <li><a href="#가설검정-시행" id="toc-가설검정-시행" class="nav-link" data-scroll-target="#가설검정-시행">5.2 가설검정 시행</a></li>
+  <li><a href="#가설검정-관련-그래프" id="toc-가설검정-관련-그래프" class="nav-link" data-scroll-target="#가설검정-관련-그래프">5.3 가설검정 관련 그래프</a></li>
+  <li><a href="#제1종-오류와-제2종-오류" id="toc-제1종-오류와-제2종-오류" class="nav-link" data-scroll-target="#제1종-오류와-제2종-오류">5.4 제1종 오류와 제2종 오류</a></li>
+  </ul></li>
+  <li><a href="#다양한-가설검정" id="toc-다양한-가설검정" class="nav-link" data-scroll-target="#다양한-가설검정">6. 다양한 가설검정</a></li>
   </ul>
 </nav>
     </div>
@@ -365,6 +414,14 @@ window.Quarto = {
   <li><a href="#추론통계를-배우기-전에" id="toc-추론통계를-배우기-전에">4.1 추론통계를 배우기 전에</a></li>
   <li><a href="#표본오차와-신뢰구간" id="toc-표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</a></li>
   </ul></li>
+  <li><a href="#가설검정-정리-必" id="toc-가설검정-정리-必">5. 가설검정 (정리 必)</a>
+  <ul>
+  <li><a href="#가설검정의-원리" id="toc-가설검정의-원리">5.1 가설검정의 원리</a></li>
+  <li><a href="#가설검정-시행" id="toc-가설검정-시행">5.2 가설검정 시행</a></li>
+  <li><a href="#가설검정-관련-그래프" id="toc-가설검정-관련-그래프">5.3 가설검정 관련 그래프</a></li>
+  <li><a href="#제1종-오류와-제2종-오류" id="toc-제1종-오류와-제2종-오류">5.4 제1종 오류와 제2종 오류</a></li>
+  </ul></li>
+  <li><a href="#다양한-가설검정" id="toc-다양한-가설검정">6. 다양한 가설검정</a></li>
   </ul>
 </nav>
 <p><img src="image.png" class="img-fluid"></p>
@@ -579,7 +636,7 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="추론통계-신뢰구간" class="level1 page-columns page-full">
+<section id="추론통계-신뢰구간" class="level1">
 <h1>4. 추론통계 ~ 신뢰구간</h1>
 <ul>
 <li>데이터로 모집단의 성질을 추정한다.</li>
@@ -620,7 +677,7 @@ window.Quarto = {
 <li>편향된 추출로는 올바른 추정이 어려움</li>
 </ul>
 </section>
-<section id="표본오차와-신뢰구간" class="level2 page-columns page-full">
+<section id="표본오차와-신뢰구간" class="level2">
 <h2 class="anchored" data-anchor-id="표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</h2>
 <p>모집단의 평균 <span class="math inline">\(\mu\)</span>나 <span class="math inline">\(\sigma\)</span> 등은 고정된 값이지만, 모집단분포에서 얻은 표본 <span class="math inline">\(x_1, x_2, ... x_n\)</span>은 확률적으로 변하는 확률변수라는 사실을 염두에 둘 것</p>
 <p><code>확률변수의 정확한 의미는?</code></p>
@@ -737,10 +794,29 @@ window.Quarto = {
 <ul>
 <li><span class="math inline">\(t\)</span>분포를 사용할 때 주의할 점</li>
 </ul>
-<p>표본크기 <span class="math inline">\(n\)</span>이 작아도 적용 가능한 %t$분포에는 ’정규분포에서 얻은 데이터’라는 가정이 필요하다. 즉, <span class="math inline">\(t\)</span>분포는 데이터 <span class="math inline">\(x_1, x_2, ... , x_n\)</span>을 정규분포라는 모형에서 얻었을 때의 (표준화된) 표본오차가 따르는 분포이다. 데이터의 배경에 잇는 모집단분포가 완벽한 정규분포일 수는 없으므로, 얻은 95% 신뢰구간은 정확한 95%가 아니라는 점에 주의.</p>
+<p>표본크기 <span class="math inline">\(n\)</span>이 작아도 적용 가능한 <span class="math inline">\(t\)</span>분포에는 ’정규분포에서 얻은 데이터’라는 가정이 필요하다. 즉, <span class="math inline">\(t\)</span>분포는 데이터 <span class="math inline">\(x_1, x_2, ... , x_n\)</span>을 정규분포라는 모형에서 얻었을 때의 (표준화된) 표본오차가 따르는 분포이다. 데이터의 배경에 잇는 모집단분포가 완벽한 정규분포일 수는 없으므로, 얻은 95% 신뢰구간은 정확한 95%가 아니라는 점에 주의.</p>
 <p>특히 문제가 되는 것은 정규분포와 현저하게 다른 분포에서 데이터를 얻었을 때이다. 이 경우 95% 신뢰구간을 구해도 95%에서 벗어날 수 있어 주의해야 한다.</p>
 <p>단, 표본크기 <span class="math inline">\(n\)</span>이 클 때는 중심극한정리에 따라 모집단이 정규분포가 아니더라도 표본평균을 정규분포로 근사할 수 있으므로 신뢰구간은 정확해진다.</p>
+</section>
+</section>
+<section id="가설검정-정리-必" class="level1">
+<h1>5. 가설검정 (정리 必)</h1>
+<section id="가설검정의-원리" class="level2">
+<h2 class="anchored" data-anchor-id="가설검정의-원리">5.1 가설검정의 원리</h2>
+</section>
+<section id="가설검정-시행" class="level2">
+<h2 class="anchored" data-anchor-id="가설검정-시행">5.2 가설검정 시행</h2>
+</section>
+<section id="가설검정-관련-그래프" class="level2">
+<h2 class="anchored" data-anchor-id="가설검정-관련-그래프">5.3 가설검정 관련 그래프</h2>
+</section>
+<section id="제1종-오류와-제2종-오류" class="level2">
+<h2 class="anchored" data-anchor-id="제1종-오류와-제2종-오류">5.4 제1종 오류와 제2종 오류</h2>
 <hr>
+</section>
+</section>
+<section id="다양한-가설검정" class="level1 page-columns page-full">
+<h1>6. 다양한 가설검정</h1>
 <p>p.151 ~</p>
 <ul>
 <li><p>모수검정 : 모집단이 특정분포를 따른다는 가정을 둔 가설검정</p>
@@ -795,7 +871,7 @@ window.Quarto = {
 </ul>
 <div class="quarto-figure quarto-figure-center page-columns page-full">
 <figure class="figure page-columns page-full">
-<p><img src="통계_101_X_데이터_분석_files/figure-html/cell-82-1-image.png" class="img-fluid figure-img"></p>
+<p><img src="통계_101_X_데이터_분석_files/figure-html/cell-83-1-image.png" class="img-fluid figure-img"></p>
 <figcaption class="margin-caption">image.png</figcaption>
 </figure>
 </div>
@@ -806,9 +882,64 @@ window.Quarto = {
 <li><p>일표본 t검정 (가정) vs 이표본 t검정</p></li>
 <li><p>정규분포 ㅡ t분포 ㅡ t검정 관계</p></li>
 </ul>
+<p>p.164 ~</p>
+<ul>
+<li><p>분산분석의 대립가설은 “적어도 한 쌍에는 차이가 있다.” 이기에 <span class="math inline">\(p&lt;0.05\)</span> 로 대립가설을 채택하더라도 어느쌍에 차이가 있는지까지는 알 수 없다. 어느 쌍에 차이가 있는지 알고싶다면 “다중 비교”라 불리는 방법을 사용해야 한다.</p></li>
+<li><p>집단이 셋 이상일 때 각 쌍의 차이를 조사하기 위해 유의수준 <span class="math inline">\(\alpha=0.05\)</span>에서 이표본 t검정을 반복해 실행하면 제 1종 오류가 증가하고 마는 문제가 생김</p>
+<ul>
+<li>ex) 3개 집단, t검정 3번, 적어도 한 쌍에서 제 1종 오류가 일어날 확률 : <span class="math inline">\(1-\)</span>(어느 쌍에서도 제 1종 오류가 일어나지 않을 확률)<span class="math inline">\(^3 = 0.143\)</span></li>
+</ul></li>
+<li><p>집단의 수가 늘어날수록 제 1종 오류가 일어나기 쉬워진다.</p></li>
+</ul>
+<div id="cell-88" class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>x <span class="op">=</span> np.arange(<span class="dv">1</span>,<span class="dv">100</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a>y <span class="op">=</span> <span class="dv">1</span><span class="op">-</span>(<span class="fl">0.95</span>)<span class="op">**</span>x</span>
+<span id="cb1-7"><a href="#cb1-7"></a>plt.plot(x,y)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>plt.xlabel(<span class="st">"검정횟수"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="65">
+<pre><code>Text(0.5, 0, '검정횟수')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="통계_101_X_데이터_분석_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p>다중비교의 기본 아이디어 : 검정을 반복하는 만큼, 유의수준을 엄격한 값으로 변경하는 것</p>
+<ul>
+<li>본페로니 교정, 튜키 검정, 던넷 검정, 윌리엄스 검정</li>
+</ul></li>
+<li><p>3집단 이상의 비모수 검정 : 크러스컬 - 월리스 검정, 스틸-드와스 검정(&lt;-&gt; 튜키 검정), 스틸 검정(&lt;-&gt; 던넷 검정)</p></li>
+<li><p>양적변수는 모집단의 평균값을 추정하거나 모집단을 대상으로 가설을 세워 가설검정을 한다.</p></li>
+<li><p>범주형변수는 사건이 일어날 확률 P를 추정하거나 확률 P에 관련된 가설을 세워 검정한다.</p></li>
+</ul>
+<p>이항분포 <span class="math inline">\(_nC_mp^m(1-p)^{N-m}\)</span> - 이항검정 -&gt; 범주가 2개일때만 이용가능. - 범주가 여러개거나 일반적인 이산확률분포에 이항검정의 방식을 적용하고 싶을 때 =&gt; 카이제곱검정(<span class="math inline">\(\chi^2\)</span> chi-squard test)의 일종인 적합도 검정 이용</p>
+<p>카이제곱검정의 적합도 검정 해석 - 귀무가설 : 모집단은 상정한 이산확률분포이다. - 대립가설 : 모집단은 상정한 이산확률분포가 아니다.</p>
+<p><span class="math display">\[\chi^2 = \frac{(실제 출현도수-기대도수)^2}{기대도수}\]</span></p>
+<ul>
+<li>귀무가설이 옳다면 이는 <span class="math inline">\(\chi^2\)</span>분포라는 확률분포를 따른다.</li>
+<li>이 분포 안에서 실제로 얻은 <span class="math inline">\(\chi^2\)</span>의 위치를 구해 p값을 도출한다</li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="통계_101_X_데이터_분석_files/figure-html/cell-93-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">image.png</figcaption>
+</figure>
+</div>
+<ul>
+<li><p>이항검정, 카이제곱 검정의 적합도 검정 : ’데이터 vs 모집단’의 확률 분포를 비교</p></li>
+<li><p>범주형 변수에서도 두 개 변수의 관계를 조사해야 할 때가 있다. - 카이제곱의 독립성 검정 (그 밖에는 초기하분포 이용 피셔의 정확검정 등)</p></li>
+<li><p>분할표에서 비율을 유지? -&gt; 독립</p></li>
+</ul>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
