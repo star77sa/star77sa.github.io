@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Time Series",
     "section": "",
-    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 19, 2024\n\n\n성능 평가 지표(회귀모델, 분류모델)\n\n\n고경수 \n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르겠거나 복습할 개념 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 29, 2023\n\n\n1. Probability and counting [확률론]\n\n\n고경수 \n\n\n\n\nAug 28, 2023\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
+    "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 22, 2024\n\n\nPython 기초 복습\n\n\n고경수 \n\n\n\n\nJan 19, 2024\n\n\n성능 평가 지표(회귀모델, 분류모델)\n\n\n고경수 \n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르겠거나 복습할 개념 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 29, 2023\n\n\n1. Probability and counting [확률론]\n\n\n고경수 \n\n\n\n\nAug 28, 2023\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -1116,7 +1116,7 @@
     "href": "posts/etc/논문_개념.html#challenge",
     "title": "논문 읽다가 모르겠거나 복습할 개념 정리",
     "section": "challenge",
-    "text": "challenge\nSmart grid의 challenges - forecasting in smart grid - electric load and price forecasting - 전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다. - renewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요. - fault and failure analysis - 전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다. - demand-side management(DSM) / load management - 전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다. - NILM : - 비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다. - cyber-attack detection - 스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다. - energy and economic dispatch - 전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다. - 이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.\n\nload forecast\n\nshort-term load forecasting\ngeneral (medium-term, long-term) load forecasting\n\nNIALM(Non-intrusive appliance load monitoring)\nelectricity theft detection\nislanding detection\n\n방법론 - Bayesian Methods - HMM(Hidden Markov model) - Q-learning - DBN\n\nLASSO\nLDA(Linear discriminant analysis)\nMDA(Multiple discriminant analysis)\nQDA(Quadratic discriminant analysis)\nKNN\nLSTM\nMAPE(Mean absolute percentage error)\n\nnetwork - BPNN(Back propagation neural network) - FFNN(Feed Forward neural network) - RBFNN(Radial basis function neural network) - DBN(Deep belief network)\nBoltzmann machine 볼츠만이 계속 나오네 확인해볼것 - CRBM(Conditional restricted Boltzmann machine) - DBM(Deep Boltzmann machine) - FCRBM(Factored conditional resticted Boltzmann machine) - RBM(Restricted Boltzmann machine)\n\n\nELM(Extreme learning machine)\nLSM(Liquid state machine)\nFDI(False data injection)\nGRU(Gated recurrent unit)\nMARS(Multivariate adaptive regression splines)\nPICP(Prediction interval coverage probability)\nPINC(Prediction interval nominal confidence)\nPSO(Particle swarm optimization)\nSAE(Stacked auto-encoder)\nSVR(Support vector regression)\nACE(Average coverage error)\nAMI(Advanced metering infrastructure)\nAC(Alternating current), DC(Direct current) system\nDG(distributed generation)\nPV(photovoltic)\n5G (+6G?)",
+    "text": "challenge\nSmart grid의 challenges\n\nelectric load and price forecasting\n\n전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다.\n\nrenewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요.\nfault and failure analysis\n\n전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다.\n\ndemand-side management(DSM) / load management\n\n전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다.\n\nNILM :\n\n비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다.\n\ncyber-attack detection\n\n스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다.\n\nenergy and economic dispatch\n\n전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다.\n\n이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.\nload forecast\n\nshort-term load forecasting\ngeneral (medium-term, long-term) load forecasting\n\nNIALM(Non-intrusive appliance load monitoring)\nelectricity theft detection\nislanding detection\n\n방법론 - Bayesian Methods - HMM(Hidden Markov model) - Q-learning - DBN\n\nLASSO\nLDA(Linear discriminant analysis)\nMDA(Multiple discriminant analysis)\nQDA(Quadratic discriminant analysis)\nKNN\nLSTM\nMAPE(Mean absolute percentage error)\n\nnetwork - BPNN(Back propagation neural network) - FFNN(Feed Forward neural network) - RBFNN(Radial basis function neural network) - DBN(Deep belief network)\nBoltzmann machine 볼츠만이 계속 나오네 확인해볼것 - CRBM(Conditional restricted Boltzmann machine) - DBM(Deep Boltzmann machine) - FCRBM(Factored conditional resticted Boltzmann machine) - RBM(Restricted Boltzmann machine)\n\n\nELM(Extreme learning machine)\nLSM(Liquid state machine)\nFDI(False data injection)\nGRU(Gated recurrent unit)\nMARS(Multivariate adaptive regression splines)\nPICP(Prediction interval coverage probability)\nPINC(Prediction interval nominal confidence)\nPSO(Particle swarm optimization)\nSAE(Stacked auto-encoder)\nSVR(Support vector regression)\nACE(Average coverage error)\nAMI(Advanced metering infrastructure)\nAC(Alternating current), DC(Direct current) system\nDG(distributed generation)\nPV(photovoltic)\n5G (+6G?)",
     "crumbs": [
       "About",
       "Posts",
@@ -1187,6 +1187,162 @@
       "Posts",
       "Statistics",
       "통계 101 X 데이터분석"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html",
+    "href": "posts/etc/python.html",
+    "title": "Python",
+    "section": "",
+    "text": "파이썬 자료형\n  \n  리스트 컴프리헨션\n  튜플\n  인덱싱고급 (스트라이딩)\n  \n  Numpy\n  \n  행렬 관련 기능\n  Numpy: axis의 이해\n  \n  Pandas\n  \n  행과 열의 선택\n  lambda\n  map\n  s.apply(변환함수)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#리스트-컴프리헨션",
+    "href": "posts/etc/python.html#리스트-컴프리헨션",
+    "title": "Python",
+    "section": "리스트 컴프리헨션",
+    "text": "리스트 컴프리헨션\n\nlst = [a**2 for a in [1,2,3,4]]\nprint(lst)\n\n[1, 4, 9, 16]\n\n\n\n[A+B for A in 'XY' for B in '123']\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n\n# if 활용\n# ex) 제곱수중에서 12로 나누어 떨어지는 수만 원소로 가지는 리스트를 만들고 싶다.\n[x**2 for x in range(1,50) if (x**2 % 12 == 0)]\n\n[36, 144, 324, 576, 900, 1296, 1764, 2304]",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#튜플",
+    "href": "posts/etc/python.html#튜플",
+    "title": "Python",
+    "section": "튜플",
+    "text": "튜플\n\n# 변수값을 교환\na = 10; b=20\na,b = b,a\na\n\n20\n\n\n\n# for문에서의 사용\nlst = [['ksko', 201821991, 'M'],\n       ['iu',202254321, 'F'],\n       ['hodong', 202011223, 'M']]\nlst\n\n[['ksko', 201821991, 'M'], ['iu', 202254321, 'F'], ['hodong', 202011223, 'M']]\n\n\n\nfor i in lst:\n    print(i)\n\n['ksko', 201821991, 'M']\n['iu', 202254321, 'F']\n['hodong', 202011223, 'M']\n\n\n\nfor name, studentid, sex in lst:\n    print(name,sex)\n\nksko M\niu F\nhodong M\n\n\n\n# dummy variable _\nfor _, studentid,_ in lst:\n    print(studentid)\n\n201821991\n202254321\n202011223\n\n\n\n# *연산자\nfor name, *args in lst:\n    print(name)\n\nksko\niu\nhodong",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#인덱싱고급-스트라이딩",
+    "href": "posts/etc/python.html#인덱싱고급-스트라이딩",
+    "title": "Python",
+    "section": "인덱싱고급 (스트라이딩)",
+    "text": "인덱싱고급 (스트라이딩)\n스트라이딩 [start:stop:step]\n\nlst = list('abcdefgh')\nlst\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']\n\n\n\nlst[0:8:2]\n\n['a', 'c', 'e', 'g']\n\n\n\nlst[::2]\n\n['a', 'c', 'e', 'g']\n\n\n\n# 짝수/홀수 원소 추출\nprint(lst[::2])\nprint(lst[1::2])\n\n['a', 'c', 'e', 'g']\n['b', 'd', 'f', 'h']\n\n\n\n# step = -1 이면 뒤집는다.\nlst[::-1]\n\n['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']\n\n\n\n# 주어진 리스트에서 x_i&gt;80 의 조건을 만족하는 원소의 갯수는?\nx = [80,60,80,90,55,85,95,100,35,70,75,65,95]\nsum([i&gt;80 for i in x])\n\n5\n\n\n리스트 컴프리헨션을 이용하여 \\[ z = [x_1^2 + y_1^2, ... , x_8^2+y_8^2] = [x_i^2 + y_i^2 : \\text{for}\\ i = 1,2,3,...,8] \\] 와 같은 리스트를 생성하라.\n\nx=[1,2,1,5,6,2,4,7]\ny=[3,2,4,1,2,5,6,7] \n\n[x[i]**2 + y[i]**2 for i in range(8)]\n\n[10, 8, 17, 26, 40, 29, 52, 98]\n\n\n아래와 같은 문자열이 있다고 하자.\n\ntest_arr = 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'\n\n이 문자열에서 대문자의 수를 count하라.\n\nsum([i.isupper() for i in test_arr])\n\n155\n\n\n\n# string의 .replace()기능과 리스트 컴프리헨션의 응용\nlst = ['2022/09/21','2022/10/30','2022/12/25','2023/01/01','2023/01/31','2023/03/20']\n[a.replace('/','-') for a in lst]\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#numpy",
+    "href": "posts/etc/python.html#numpy",
+    "title": "Python",
+    "section": "Numpy",
+    "text": "Numpy\n\nimport numpy as np\n\n\nnp.linspace(0, 1, 12)\n\narray([0.        , 0.09090909, 0.18181818, 0.27272727, 0.36363636,\n       0.45454545, 0.54545455, 0.63636364, 0.72727273, 0.81818182,\n       0.90909091, 1.        ])\n\n\n\nnp.arange(1,6)\n\narray([1, 2, 3, 4, 5])\n\n\n\na = np.array([11,22,33,44,55,66])\na.reshape(2,3)\n\narray([[11, 22, 33],\n       [44, 55, 66]])\n\n\n\n# reshape 는 a 자체를 변화시키는 것은 아님.\n\na # a는 그대로 있음\n\narray([11, 22, 33, 44, 55, 66])\n\n\n\n# reshape with -1\n\na.reshape(2,-1)\n\narray([[11, 22, 33],\n       [44, 55, 66]])\n\n\n\na.reshape(6,-1)\n\narray([[11],\n       [22],\n       [33],\n       [44],\n       [55],\n       [66]])\n\n\n\na.reshape(-1) # 길이가 6인 벡터로 변환\n\narray([11, 22, 33, 44, 55, 66])\n\n\n\nnp.random.randn(10) # 표준정규분포에서 10개를 뽑음\n\narray([-1.13998443,  0.76993493, -0.27241088, -1.15305554, -1.07096225,\n        1.45305076, -0.69331096,  1.23455362,  0.29442183, -0.04995428])\n\n\n\nnp.random.rand(10) # 0~1사이에서 10개를 뽑음\n\narray([0.52396217, 0.88733873, 0.60787126, 0.97045172, 0.93069322,\n       0.06647319, 0.53918035, 0.71268956, 0.19958319, 0.05187009])\n\n\n\nnp.random.randn(4).reshape(2,2) # 표준 정규분포에서 4개를 뽑고 (2,2)로 형태변환\n\narray([[-1.58796509, -1.44762151],\n       [-1.13955349, -0.93728862]])\n\n\n\n행렬 관련 기능\n\nA = np.arange(4).reshape(2,2)\nA\n\narray([[0, 1],\n       [2, 3]])\n\n\n\nA.T # .T는 전치행렬을 구해줌\n\narray([[0, 2],\n       [1, 3]])\n\n\n\nnp.linalg.inv(A) # np.linalg.inv 는 역행렬을 구해줌\n\narray([[-1.5,  0.5],\n       [ 1. ,  0. ]])\n\n\n\nA @ np.linalg.inv(A) # @는 행렬곱을 수행\n\narray([[1., 0.],\n       [0., 1.]])\n\n\n\n\nNumpy: axis의 이해\n\n두번째 차원을 바꾸고 싶다 -&gt; 두번째 축을 바꾸고 싶다 -&gt; axis = 1 (파이썬은 0부터 시작)\n값이 바뀌는 부분이 axis\n\nex)\na.shape, b.shape, np.concatenate([a,b],axis=1).shape\n\n\n((2, 3, 4), (2, 3, 4), (2, 6, 4))\nex)\n\na=np.array(range(6)).reshape(2,3)\na, a.shape\n\n(array([[0, 1, 2],\n        [3, 4, 5]]),\n (2, 3))\n\n\n\na.sum(axis=0), a.sum(axis=0).shape # 첫번째 축이 삭제됨\n\n(array([3, 5, 7]), (3,))\n\n\n\na.sum(axis=1), a.sum(axis=1).shape # 두번째 축이 삭제됨\n\n(array([ 3, 12]), (2,))",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#pandas",
+    "href": "posts/etc/python.html#pandas",
+    "title": "Python",
+    "section": "Pandas",
+    "text": "Pandas\n\n행과 열의 선택\n\nimport pandas as pd\n\nnp.random.seed(43052)\natt = np.random.choice(np.arange(10,21)*5,20)\nrep = np.random.choice(np.arange(5,21)*5,20)\nmid = np.random.choice(np.arange(0,21)*5,20)\nfin = np.random.choice(np.arange(0,21)*5,20)\nstudent_id = ['2022-12'+str(s) for s in np.random.choice(np.arange(300,501),20,replace=False)]\n\ndf2 = pd.DataFrame({'id':student_id,'att':att,'rep':rep,'mid':mid,'fin':fin})\ndf2.head()\n\n\n\n\n\n\n\n\nid\natt\nrep\nmid\nfin\n\n\n\n\n0\n2022-12380\n65\n55\n50\n40\n\n\n1\n2022-12370\n95\n100\n50\n80\n\n\n2\n2022-12363\n65\n90\n60\n30\n\n\n3\n2022-12488\n55\n80\n75\n80\n\n\n4\n2022-12312\n80\n30\n30\n100\n\n\n\n\n\n\n\n가장 안전한 코드\ndf.loc[:,:]\n상황: 하나의 col을 뽑으려 할 때 좋은 코드\ndf.att or df['att']\n상황: row 슬라이싱 할 때 좋은 코드(★★★)\ndf[:5]\n위의 상황 이외에는 df.loc[:,:]를 사용하는 것이 유리하다.\n상황: column 슬라이싱 할때\ndf.loc[:, 'att':'mid']\n상황: row + column 슬라이싱하는 가장 좋은 코드\ndf.loc[0:5, 'att':'mid']\n상황: 조건에 맞는 col을 뽑기에 가장 좋은 코드\ndf.loc[:, [len(col_name)&gt;2 for col_name in df.columns]]\n상황: 조건에 맞는 row, col을 뽑기에 가장 좋은 코드\ndf.loc[df.att&lt;60, [len(col_name)&gt;2 for col_name in df.columns]]\n\n여러 열을 뽑을때에는 리스트로 묶어주어야함. ex) df.loc[:, ['B','C']]\n\n\n\nlambda\n람다표현식(lambda expression) 자체가 하나의 오브젝트임.\n\nlambda x: (x-2)**2 # 실행되는 순간 메모리 상에 함수 오브젝트가 저장됨\n\n&lt;function __main__.&lt;lambda&gt;(x)&gt;\n\n\n\n(lambda x: (x-2)**2)(5) # 입력 5 -&gt; (5-2)^2 = 9\n\n9\n\n\n람다 표현식에 이름을 줄 수 있음\n\nf = lambda x: (x-2)**2\n\n\nf(2), f(4), f(6), f(-2)\n\n(0, 4, 16, 16)\n\n\n위의 코드는 아래와 같다.\n\ndef f(x):\n    return (x-2)**2\nf(2), f(4), f(6), f(-2)\n\n(0, 4, 16, 16)\n\n\n조건부 출력\n\n# x,y가 입력 / x&gt;y 일때만 x를 리턴하고 그렇지 않으면 y를 리턴. 즉 큰 값을 리턴하라는 소리\nf = lambda x,y: x if x&gt;y else y\nf(1,20)\n\n20\n\n\n\n\nmap\nlist(map(함수, input))\n\nx = [1,2,3] \nf = lambda x: x+1\ny = list(map(f,x))\nx,y\n\n([1, 2, 3], [2, 3, 4])\n\n\n\n\ns.apply(변환함수)\n\ndf = pd.read_csv('https://raw.githubusercontent.com/guebin/DV2022/master/posts/FIFA23_official_data.csv')\ndf.Height.apply(lambda x: int(x[:3]))\n\n0        189\n1        179\n2        172\n3        181\n4        172\n        ... \n17655    190\n17656    195\n17657    190\n17658    187\n17659    186\nName: Height, Length: 17660, dtype: int64",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#팡",
+    "href": "posts/etc/python.html#팡",
+    "title": "Python",
+    "section": "팡",
+    "text": "팡\na.f() 형태를 읽는 팁\n\na.f()는 f(a)로 생각하면 편리함\na.f(2)는 f(a,2)로 생각하면 편리함",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/etc/python.html#파이썬-자료형",
+    "href": "posts/etc/python.html#파이썬-자료형",
+    "title": "Python",
+    "section": "파이썬 자료형",
+    "text": "파이썬 자료형\na.f() 형태를 읽는 팁\n\na.f()는 f(a)로 생각하면 편리함\na.f(2)는 f(a,2)로 생각하면 편리함\n\n\n리스트 컴프리헨션\n\nlst = [a**2 for a in [1,2,3,4]]\nprint(lst)\n\n[1, 4, 9, 16]\n\n\n\n[A+B for A in 'XY' for B in '123']\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n\n# if 활용\n# ex) 제곱수중에서 12로 나누어 떨어지는 수만 원소로 가지는 리스트를 만들고 싶다.\n[x**2 for x in range(1,50) if (x**2 % 12 == 0)]\n\n[36, 144, 324, 576, 900, 1296, 1764, 2304]\n\n\n\n\n튜플\n\n# 변수값을 교환\na = 10; b=20\na,b = b,a\na\n\n20\n\n\n\n# for문에서의 사용\nlst = [['ksko', 201821991, 'M'],\n       ['iu',202254321, 'F'],\n       ['hodong', 202011223, 'M']]\nlst\n\n[['ksko', 201821991, 'M'], ['iu', 202254321, 'F'], ['hodong', 202011223, 'M']]\n\n\n\nfor i in lst:\n    print(i)\n\n['ksko', 201821991, 'M']\n['iu', 202254321, 'F']\n['hodong', 202011223, 'M']\n\n\n\nfor name, studentid, sex in lst:\n    print(name,sex)\n\nksko M\niu F\nhodong M\n\n\n\n# dummy variable _\nfor _, studentid,_ in lst:\n    print(studentid)\n\n201821991\n202254321\n202011223\n\n\n\n# *연산자\nfor name, *args in lst:\n    print(name)\n\nksko\niu\nhodong\n\n\n\n\n인덱싱고급 (스트라이딩)\n스트라이딩 [start:stop:step]\n\nlst = list('abcdefgh')\nlst\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']\n\n\n\nlst[0:8:2]\n\n['a', 'c', 'e', 'g']\n\n\n\nlst[::2]\n\n['a', 'c', 'e', 'g']\n\n\n\n# 짝수/홀수 원소 추출\nprint(lst[::2])\nprint(lst[1::2])\n\n['a', 'c', 'e', 'g']\n['b', 'd', 'f', 'h']\n\n\n\n# step = -1 이면 뒤집는다.\nlst[::-1]\n\n['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']\n\n\n\n# 주어진 리스트에서 x_i&gt;80 의 조건을 만족하는 원소의 갯수는?\nx = [80,60,80,90,55,85,95,100,35,70,75,65,95]\nsum([i&gt;80 for i in x])\n\n5\n\n\n리스트 컴프리헨션을 이용하여 \\[ z = [x_1^2 + y_1^2, ... , x_8^2+y_8^2] = [x_i^2 + y_i^2 : \\text{for}\\ i = 1,2,3,...,8] \\] 와 같은 리스트를 생성하라.\n\nx=[1,2,1,5,6,2,4,7]\ny=[3,2,4,1,2,5,6,7] \n\n[x[i]**2 + y[i]**2 for i in range(8)]\n\n[10, 8, 17, 26, 40, 29, 52, 98]\n\n\n아래와 같은 문자열이 있다고 하자.\n\ntest_arr = 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'\n\n이 문자열에서 대문자의 수를 count하라.\n\nsum([i.isupper() for i in test_arr])\n\n155\n\n\n\n# string의 .replace()기능과 리스트 컴프리헨션의 응용\nlst = ['2022/09/21','2022/10/30','2022/12/25','2023/01/01','2023/01/31','2023/03/20']\n[a.replace('/','-') for a in lst]\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Etc",
+      "Python"
+    ]
+  },
+  {
+    "objectID": "posts/Python/python.html",
+    "href": "posts/Python/python.html",
+    "title": "Python 기초 복습",
+    "section": "",
+    "text": "파이썬 자료형\n  \n  리스트 컴프리헨션\n  튜플\n  인덱싱고급 (스트라이딩)\n  \n  Numpy\n  \n  행렬 관련 기능\n  Numpy: axis의 이해\n  \n  Pandas\n  \n  행과 열의 선택\n  lambda\n  map\n  s.apply(변환함수)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Python",
+      "Python 기초 복습"
+    ]
+  },
+  {
+    "objectID": "posts/Python/python.html#파이썬-자료형",
+    "href": "posts/Python/python.html#파이썬-자료형",
+    "title": "Python 기초 복습",
+    "section": "파이썬 자료형",
+    "text": "파이썬 자료형\na.f() 형태를 읽는 팁\n\na.f()는 f(a)로 생각하면 편리함\na.f(2)는 f(a,2)로 생각하면 편리함\n\n\n리스트 컴프리헨션\n\nlst = [a**2 for a in [1,2,3,4]]\nprint(lst)\n\n[1, 4, 9, 16]\n\n\n\n[A+B for A in 'XY' for B in '123']\n\n['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']\n\n\n\n# if 활용\n# ex) 제곱수중에서 12로 나누어 떨어지는 수만 원소로 가지는 리스트를 만들고 싶다.\n[x**2 for x in range(1,50) if (x**2 % 12 == 0)]\n\n[36, 144, 324, 576, 900, 1296, 1764, 2304]\n\n\n\n\n튜플\n\n# 변수값을 교환\na = 10; b=20\na,b = b,a\na\n\n20\n\n\n\n# for문에서의 사용\nlst = [['ksko', 201821991, 'M'],\n       ['iu',202254321, 'F'],\n       ['hodong', 202011223, 'M']]\nlst\n\n[['ksko', 201821991, 'M'], ['iu', 202254321, 'F'], ['hodong', 202011223, 'M']]\n\n\n\nfor i in lst:\n    print(i)\n\n['ksko', 201821991, 'M']\n['iu', 202254321, 'F']\n['hodong', 202011223, 'M']\n\n\n\nfor name, studentid, sex in lst:\n    print(name,sex)\n\nksko M\niu F\nhodong M\n\n\n\n# dummy variable _\nfor _, studentid,_ in lst:\n    print(studentid)\n\n201821991\n202254321\n202011223\n\n\n\n# *연산자\nfor name, *args in lst:\n    print(name)\n\nksko\niu\nhodong\n\n\n\n\n인덱싱고급 (스트라이딩)\n스트라이딩 [start:stop:step]\n\nlst = list('abcdefgh')\nlst\n\n['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']\n\n\n\nlst[0:8:2]\n\n['a', 'c', 'e', 'g']\n\n\n\nlst[::2]\n\n['a', 'c', 'e', 'g']\n\n\n\n# 짝수/홀수 원소 추출\nprint(lst[::2])\nprint(lst[1::2])\n\n['a', 'c', 'e', 'g']\n['b', 'd', 'f', 'h']\n\n\n\n# step = -1 이면 뒤집는다.\nlst[::-1]\n\n['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']\n\n\n\n# 주어진 리스트에서 x_i&gt;80 의 조건을 만족하는 원소의 갯수는?\nx = [80,60,80,90,55,85,95,100,35,70,75,65,95]\nsum([i&gt;80 for i in x])\n\n5\n\n\n리스트 컴프리헨션을 이용하여 \\[ z = [x_1^2 + y_1^2, ... , x_8^2+y_8^2] = [x_i^2 + y_i^2 : \\text{for}\\ i = 1,2,3,...,8] \\] 와 같은 리스트를 생성하라.\n\nx=[1,2,1,5,6,2,4,7]\ny=[3,2,4,1,2,5,6,7] \n\n[x[i]**2 + y[i]**2 for i in range(8)]\n\n[10, 8, 17, 26, 40, 29, 52, 98]\n\n\n아래와 같은 문자열이 있다고 하자.\n\ntest_arr = 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'\n\n이 문자열에서 대문자의 수를 count하라.\n\nsum([i.isupper() for i in test_arr])\n\n155\n\n\n\n# string의 .replace()기능과 리스트 컴프리헨션의 응용\nlst = ['2022/09/21','2022/10/30','2022/12/25','2023/01/01','2023/01/31','2023/03/20']\n[a.replace('/','-') for a in lst]\n\n['2022-09-21',\n '2022-10-30',\n '2022-12-25',\n '2023-01-01',\n '2023-01-31',\n '2023-03-20']",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Python",
+      "Python 기초 복습"
+    ]
+  },
+  {
+    "objectID": "posts/Python/python.html#numpy",
+    "href": "posts/Python/python.html#numpy",
+    "title": "Python 기초 복습",
+    "section": "Numpy",
+    "text": "Numpy\n\nimport numpy as np\n\n\nnp.linspace(0, 1, 12)\n\narray([0.        , 0.09090909, 0.18181818, 0.27272727, 0.36363636,\n       0.45454545, 0.54545455, 0.63636364, 0.72727273, 0.81818182,\n       0.90909091, 1.        ])\n\n\n\nnp.arange(1,6)\n\narray([1, 2, 3, 4, 5])\n\n\n\na = np.array([11,22,33,44,55,66])\na.reshape(2,3)\n\narray([[11, 22, 33],\n       [44, 55, 66]])\n\n\n\n# reshape 는 a 자체를 변화시키는 것은 아님.\n\na # a는 그대로 있음\n\narray([11, 22, 33, 44, 55, 66])\n\n\n\n# reshape with -1\n\na.reshape(2,-1)\n\narray([[11, 22, 33],\n       [44, 55, 66]])\n\n\n\na.reshape(6,-1)\n\narray([[11],\n       [22],\n       [33],\n       [44],\n       [55],\n       [66]])\n\n\n\na.reshape(-1) # 길이가 6인 벡터로 변환\n\narray([11, 22, 33, 44, 55, 66])\n\n\n\nnp.random.randn(10) # 표준정규분포에서 10개를 뽑음\n\narray([-1.13998443,  0.76993493, -0.27241088, -1.15305554, -1.07096225,\n        1.45305076, -0.69331096,  1.23455362,  0.29442183, -0.04995428])\n\n\n\nnp.random.rand(10) # 0~1사이에서 10개를 뽑음\n\narray([0.52396217, 0.88733873, 0.60787126, 0.97045172, 0.93069322,\n       0.06647319, 0.53918035, 0.71268956, 0.19958319, 0.05187009])\n\n\n\nnp.random.randn(4).reshape(2,2) # 표준 정규분포에서 4개를 뽑고 (2,2)로 형태변환\n\narray([[-1.58796509, -1.44762151],\n       [-1.13955349, -0.93728862]])\n\n\n\n행렬 관련 기능\n\nA = np.arange(4).reshape(2,2)\nA\n\narray([[0, 1],\n       [2, 3]])\n\n\n\nA.T # .T는 전치행렬을 구해줌\n\narray([[0, 2],\n       [1, 3]])\n\n\n\nnp.linalg.inv(A) # np.linalg.inv 는 역행렬을 구해줌\n\narray([[-1.5,  0.5],\n       [ 1. ,  0. ]])\n\n\n\nA @ np.linalg.inv(A) # @는 행렬곱을 수행\n\narray([[1., 0.],\n       [0., 1.]])\n\n\n\n\nNumpy: axis의 이해\n\n두번째 차원을 바꾸고 싶다 -&gt; 두번째 축을 바꾸고 싶다 -&gt; axis = 1 (파이썬은 0부터 시작)\n값이 바뀌는 부분이 axis\n\nex)\na.shape, b.shape, np.concatenate([a,b],axis=1).shape\n\n\n((2, 3, 4), (2, 3, 4), (2, 6, 4))\nex)\n\na=np.array(range(6)).reshape(2,3)\na, a.shape\n\n(array([[0, 1, 2],\n        [3, 4, 5]]),\n (2, 3))\n\n\n\na.sum(axis=0), a.sum(axis=0).shape # 첫번째 축이 삭제됨\n\n(array([3, 5, 7]), (3,))\n\n\n\na.sum(axis=1), a.sum(axis=1).shape # 두번째 축이 삭제됨\n\n(array([ 3, 12]), (2,))",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Python",
+      "Python 기초 복습"
+    ]
+  },
+  {
+    "objectID": "posts/Python/python.html#pandas",
+    "href": "posts/Python/python.html#pandas",
+    "title": "Python 기초 복습",
+    "section": "Pandas",
+    "text": "Pandas\n\n행과 열의 선택\n\nimport pandas as pd\n\nnp.random.seed(43052)\natt = np.random.choice(np.arange(10,21)*5,20)\nrep = np.random.choice(np.arange(5,21)*5,20)\nmid = np.random.choice(np.arange(0,21)*5,20)\nfin = np.random.choice(np.arange(0,21)*5,20)\nstudent_id = ['2022-12'+str(s) for s in np.random.choice(np.arange(300,501),20,replace=False)]\n\ndf2 = pd.DataFrame({'id':student_id,'att':att,'rep':rep,'mid':mid,'fin':fin})\ndf2.head()\n\n\n\n\n\n\n\n\nid\natt\nrep\nmid\nfin\n\n\n\n\n0\n2022-12380\n65\n55\n50\n40\n\n\n1\n2022-12370\n95\n100\n50\n80\n\n\n2\n2022-12363\n65\n90\n60\n30\n\n\n3\n2022-12488\n55\n80\n75\n80\n\n\n4\n2022-12312\n80\n30\n30\n100\n\n\n\n\n\n\n\n가장 안전한 코드\ndf.loc[:,:]\n상황: 하나의 col을 뽑으려 할 때 좋은 코드\ndf.att or df['att']\n상황: row 슬라이싱 할 때 좋은 코드(★★★)\ndf[:5]\n위의 상황 이외에는 df.loc[:,:]를 사용하는 것이 유리하다.\n상황: column 슬라이싱 할때\ndf.loc[:, 'att':'mid']\n상황: row + column 슬라이싱하는 가장 좋은 코드\ndf.loc[0:5, 'att':'mid']\n상황: 조건에 맞는 col을 뽑기에 가장 좋은 코드\ndf.loc[:, [len(col_name)&gt;2 for col_name in df.columns]]\n상황: 조건에 맞는 row, col을 뽑기에 가장 좋은 코드\ndf.loc[df.att&lt;60, [len(col_name)&gt;2 for col_name in df.columns]]\n\n여러 열을 뽑을때에는 리스트로 묶어주어야함. ex) df.loc[:, ['B','C']]\n\n\n\nlambda\n람다표현식(lambda expression) 자체가 하나의 오브젝트임.\n\nlambda x: (x-2)**2 # 실행되는 순간 메모리 상에 함수 오브젝트가 저장됨\n\n&lt;function __main__.&lt;lambda&gt;(x)&gt;\n\n\n\n(lambda x: (x-2)**2)(5) # 입력 5 -&gt; (5-2)^2 = 9\n\n9\n\n\n람다 표현식에 이름을 줄 수 있음\n\nf = lambda x: (x-2)**2\n\n\nf(2), f(4), f(6), f(-2)\n\n(0, 4, 16, 16)\n\n\n위의 코드는 아래와 같다.\n\ndef f(x):\n    return (x-2)**2\nf(2), f(4), f(6), f(-2)\n\n(0, 4, 16, 16)\n\n\n조건부 출력\n\n# x,y가 입력 / x&gt;y 일때만 x를 리턴하고 그렇지 않으면 y를 리턴. 즉 큰 값을 리턴하라는 소리\nf = lambda x,y: x if x&gt;y else y\nf(1,20)\n\n20\n\n\n\n\nmap\nlist(map(함수, input))\n\nx = [1,2,3] \nf = lambda x: x+1\ny = list(map(f,x))\nx,y\n\n([1, 2, 3], [2, 3, 4])\n\n\n\n\ns.apply(변환함수)\n\ndf = pd.read_csv('https://raw.githubusercontent.com/guebin/DV2022/master/posts/FIFA23_official_data.csv')\ndf.Height.apply(lambda x: int(x[:3]))\n\n0        189\n1        179\n2        172\n3        181\n4        172\n        ... \n17655    190\n17656    195\n17657    190\n17658    187\n17659    186\nName: Height, Length: 17660, dtype: int64",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Python",
+      "Python 기초 복습"
     ]
   }
 ]

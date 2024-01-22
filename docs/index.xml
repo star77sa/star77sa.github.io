@@ -10,7 +10,1148 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.540</generator>
-<lastBuildDate>Thu, 18 Jan 2024 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 21 Jan 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>Python 기초 복습</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/Python/python.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="파이썬-자료형" class="level2">
+<h2 class="anchored" data-anchor-id="파이썬-자료형">파이썬 자료형</h2>
+<p><code>a.f()</code> 형태를 읽는 팁</p>
+<ul>
+<li><code>a.f()</code>는 <code>f(a)</code>로 생각하면 편리함</li>
+<li><code>a.f(2)</code>는 <code>f(a,2)</code>로 생각하면 편리함</li>
+</ul>
+<section id="리스트-컴프리헨션" class="level3">
+<h3 class="anchored" data-anchor-id="리스트-컴프리헨션">리스트 컴프리헨션</h3>
+<div id="cell-4" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [a<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> a <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>]]</span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(lst)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 4, 9, 16]</code></pre>
+</div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">[A<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>B <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> A <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'XY'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> B <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'123'</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>['X1', 'X2', 'X3', 'Y1', 'Y2', 'Y3']</code></pre>
+</div>
+</div>
+<div id="cell-6" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># if 활용</span></span>
+<span id="cb5-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># ex) 제곱수중에서 12로 나누어 떨어지는 수만 원소로 가지는 리스트를 만들고 싶다.</span></span>
+<span id="cb5-3">[x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> x <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>[36, 144, 324, 576, 900, 1296, 1764, 2304]</code></pre>
+</div>
+</div>
+</section>
+<section id="튜플" class="level3">
+<h3 class="anchored" data-anchor-id="튜플">튜플</h3>
+<div id="cell-8" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 변수값을 교환</span></span>
+<span id="cb7-2">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> b<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span></span>
+<span id="cb7-3">a,b <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> b,a</span>
+<span id="cb7-4">a</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>20</code></pre>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># for문에서의 사용</span></span>
+<span id="cb9-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ksko'</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">201821991</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'M'</span>],</span>
+<span id="cb9-3">       [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'iu'</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">202254321</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'F'</span>],</span>
+<span id="cb9-4">       [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'hodong'</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">202011223</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'M'</span>]]</span>
+<span id="cb9-5">lst</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>[['ksko', 201821991, 'M'], ['iu', 202254321, 'F'], ['hodong', 202011223, 'M']]</code></pre>
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb11-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(i)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['ksko', 201821991, 'M']
+['iu', 202254321, 'F']
+['hodong', 202011223, 'M']</code></pre>
+</div>
+</div>
+<div id="cell-11" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> name, studentid, sex <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb13-2">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(name,sex)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ksko M
+iu F
+hodong M</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># dummy variable _</span></span>
+<span id="cb15-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> _, studentid,_ <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb15-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(studentid)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>201821991
+202254321
+202011223</code></pre>
+</div>
+</div>
+<div id="cell-13" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># *연산자</span></span>
+<span id="cb17-2"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> name, <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span>args <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lst:</span>
+<span id="cb17-3">    <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(name)</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>ksko
+iu
+hodong</code></pre>
+</div>
+</div>
+</section>
+<section id="인덱싱고급-스트라이딩" class="level3">
+<h3 class="anchored" data-anchor-id="인덱싱고급-스트라이딩">인덱싱고급 (스트라이딩)</h3>
+<p>스트라이딩 [start:stop:step]</p>
+<div id="cell-16" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'abcdefgh'</span>)</span>
+<span id="cb19-2">lst</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<pre><code>['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']</code></pre>
+</div>
+</div>
+<div id="cell-17" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1">lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>['a', 'c', 'e', 'g']</code></pre>
+</div>
+</div>
+<div id="cell-18" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">lst[::<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<pre><code>['a', 'c', 'e', 'g']</code></pre>
+</div>
+</div>
+<div id="cell-19" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 짝수/홀수 원소 추출</span></span>
+<span id="cb25-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(lst[::<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>])</span>
+<span id="cb25-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(lst[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>::<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>])</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>['a', 'c', 'e', 'g']
+['b', 'd', 'f', 'h']</code></pre>
+</div>
+</div>
+<div id="cell-20" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># step = -1 이면 뒤집는다.</span></span>
+<span id="cb27-2">lst[::<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']</code></pre>
+</div>
+</div>
+<div id="cell-21" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 주어진 리스트에서 x_i&gt;80 의 조건을 만족하는 원소의 갯수는?</span></span>
+<span id="cb29-2">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">80</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">60</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">80</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">55</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">85</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">35</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">70</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">75</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">65</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">95</span>]</span>
+<span id="cb29-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([i<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">80</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> x])</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<pre><code>5</code></pre>
+</div>
+</div>
+<p>리스트 컴프리헨션을 이용하여 <img src="https://latex.codecogs.com/png.latex?%20z%20=%20%5Bx_1%5E2%20+%20y_1%5E2,%20...%20,%20x_8%5E2+y_8%5E2%5D%20=%20%5Bx_i%5E2%20+%20y_i%5E2%20:%20%5Ctext%7Bfor%7D%5C%20i%20=%201,2,3,...,8%5D%20"> 와 같은 리스트를 생성하라.</p>
+<div id="cell-23" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1">x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>]</span>
+<span id="cb31-2">y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">7</span>] </span>
+<span id="cb31-3"></span>
+<span id="cb31-4">[x[i]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> y[i]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>[10, 8, 17, 26, 40, 29, 52, 98]</code></pre>
+</div>
+</div>
+<p>아래와 같은 문자열이 있다고 하자.</p>
+<div id="cell-25" class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1">test_arr <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAklOUpkDHrfHY17SbrmTIpNLTGK9Tjom/BWDSUGPl+nafzlHDTYW7hdI4yZ5ew18JH4JW9jbhUFrviQzM7xlELEVf4h9lFX5QVkbPppSwg0cda3Pbv7kOdJ/MTyBlWXFCR+HAo3FXRitBqxiX1nKhXpHAZsMciLq8V6RjsNAQwdsdMFvSlVK/7XAt3FaoJoAsncM1Q9x5+3V0Ww68/eIFmb1zuUFljQJKprrX88XypNDvjYNby6vw/Pb0rwert/EnmZ+AW4OZPnTPI89ZPmVMLuayrD2cE86Z/il8b+gw3r3+1nKatmIkjn2so1d01QraTlMqVSsbxNrRFi9wrf+M7Q== schacon@mylaptop.local'</span></span></code></pre></div>
+</div>
+<p>이 문자열에서 대문자의 수를 count하라.</p>
+<div id="cell-27" class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>([i.isupper() <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> test_arr])</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="45">
+<pre><code>155</code></pre>
+</div>
+</div>
+<div id="cell-28" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># string의 .replace()기능과 리스트 컴프리헨션의 응용</span></span>
+<span id="cb36-2">lst <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2022/09/21'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2022/10/30'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2022/12/25'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2023/01/01'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2023/01/31'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2023/03/20'</span>]</span>
+<span id="cb36-3">[a.replace(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'/'</span>,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'-'</span>) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> a <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> lst]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="50">
+<pre><code>['2022-09-21',
+ '2022-10-30',
+ '2022-12-25',
+ '2023-01-01',
+ '2023-01-31',
+ '2023-03-20']</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="numpy" class="level2">
+<h2 class="anchored" data-anchor-id="numpy">Numpy</h2>
+<div id="cell-30" class="cell" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span></code></pre></div>
+</div>
+<div id="cell-31" class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1">np.linspace(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="53">
+<pre><code>array([0.        , 0.09090909, 0.18181818, 0.27272727, 0.36363636,
+       0.45454545, 0.54545455, 0.63636364, 0.72727273, 0.81818182,
+       0.90909091, 1.        ])</code></pre>
+</div>
+</div>
+<div id="cell-32" class="cell" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1">np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="54">
+<pre><code>array([1, 2, 3, 4, 5])</code></pre>
+</div>
+</div>
+<div id="cell-33" class="cell" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1">a <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.array([<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">22</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">33</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">44</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">55</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">66</span>])</span>
+<span id="cb43-2">a.reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="56">
+<pre><code>array([[11, 22, 33],
+       [44, 55, 66]])</code></pre>
+</div>
+</div>
+<div id="cell-34" class="cell" data-execution_count="58">
+<div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># reshape 는 a 자체를 변화시키는 것은 아님.</span></span>
+<span id="cb45-2"></span>
+<span id="cb45-3">a <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># a는 그대로 있음</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="58">
+<pre><code>array([11, 22, 33, 44, 55, 66])</code></pre>
+</div>
+</div>
+<div id="cell-35" class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># reshape with -1</span></span>
+<span id="cb47-2"></span>
+<span id="cb47-3">a.reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="59">
+<pre><code>array([[11, 22, 33],
+       [44, 55, 66]])</code></pre>
+</div>
+</div>
+<div id="cell-36" class="cell" data-execution_count="61">
+<div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1">a.reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="61">
+<pre><code>array([[11],
+       [22],
+       [33],
+       [44],
+       [55],
+       [66]])</code></pre>
+</div>
+</div>
+<div id="cell-37" class="cell" data-execution_count="62">
+<div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1">a.reshape(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 길이가 6인 벡터로 변환</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="62">
+<pre><code>array([11, 22, 33, 44, 55, 66])</code></pre>
+</div>
+</div>
+<div id="cell-38" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1">np.random.randn(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 표준정규분포에서 10개를 뽑음</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="69">
+<pre><code>array([-1.13998443,  0.76993493, -0.27241088, -1.15305554, -1.07096225,
+        1.45305076, -0.69331096,  1.23455362,  0.29442183, -0.04995428])</code></pre>
+</div>
+</div>
+<div id="cell-39" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1">np.random.rand(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0~1사이에서 10개를 뽑음</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="70">
+<pre><code>array([0.52396217, 0.88733873, 0.60787126, 0.97045172, 0.93069322,
+       0.06647319, 0.53918035, 0.71268956, 0.19958319, 0.05187009])</code></pre>
+</div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1">np.random.randn(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>).reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 표준 정규분포에서 4개를 뽑고 (2,2)로 형태변환</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+<pre><code>array([[-1.58796509, -1.44762151],
+       [-1.13955349, -0.93728862]])</code></pre>
+</div>
+</div>
+<section id="행렬-관련-기능" class="level3">
+<h3 class="anchored" data-anchor-id="행렬-관련-기능">행렬 관련 기능</h3>
+<div id="cell-42" class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1">A <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>).reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb59-2">A</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="72">
+<pre><code>array([[0, 1],
+       [2, 3]])</code></pre>
+</div>
+</div>
+<div id="cell-43" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1">A.T <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># .T는 전치행렬을 구해줌</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="73">
+<pre><code>array([[0, 2],
+       [1, 3]])</code></pre>
+</div>
+</div>
+<div id="cell-44" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb63" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1">np.linalg.inv(A) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># np.linalg.inv 는 역행렬을 구해줌</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="74">
+<pre><code>array([[-1.5,  0.5],
+       [ 1. ,  0. ]])</code></pre>
+</div>
+</div>
+<div id="cell-45" class="cell" data-execution_count="75">
+<div class="sourceCode cell-code" id="cb65" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1">A <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">@</span> np.linalg.inv(A) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># @는 행렬곱을 수행</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="75">
+<pre><code>array([[1., 0.],
+       [0., 1.]])</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-axis의-이해" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-axis의-이해">Numpy: axis의 이해</h3>
+<ul>
+<li><p>두번째 차원을 바꾸고 싶다 -&gt; 두번째 축을 바꾸고 싶다 -&gt; axis = 1 (파이썬은 0부터 시작)</p>
+<p>값이 바뀌는 부분이 axis</p></li>
+</ul>
+<p>ex)</p>
+<pre><code>a.shape, b.shape, np.concatenate([a,b],axis=1).shape
+
+
+((2, 3, 4), (2, 3, 4), (2, 6, 4))</code></pre>
+<p>ex)</p>
+<div id="cell-48" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb68" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1">a<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>np.array(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)).reshape(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>)</span>
+<span id="cb68-2">a, a.shape</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="83">
+<pre><code>(array([[0, 1, 2],
+        [3, 4, 5]]),
+ (2, 3))</code></pre>
+</div>
+</div>
+<div id="cell-49" class="cell" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb70" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1">a.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>), a.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>).shape <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 첫번째 축이 삭제됨</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="84">
+<pre><code>(array([3, 5, 7]), (3,))</code></pre>
+</div>
+</div>
+<div id="cell-50" class="cell" data-execution_count="85">
+<div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1">a.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), a.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>).shape <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 두번째 축이 삭제됨</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="85">
+<pre><code>(array([ 3, 12]), (2,))</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="pandas" class="level2">
+<h2 class="anchored" data-anchor-id="pandas">Pandas</h2>
+<section id="행과-열의-선택" class="level3">
+<h3 class="anchored" data-anchor-id="행과-열의-선택">행과 열의 선택</h3>
+<div id="cell-53" class="cell" data-execution_count="90">
+<div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb74-2"></span>
+<span id="cb74-3">np.random.seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">43052</span>)</span>
+<span id="cb74-4">att <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.choice(np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb74-5">rep <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.choice(np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb74-6">mid <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.choice(np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb74-7">fin <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.choice(np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">21</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span>
+<span id="cb74-8">student_id <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2022-12'</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>(s) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> s <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> np.random.choice(np.arange(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">300</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">501</span>),<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>,replace<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)]</span>
+<span id="cb74-9"></span>
+<span id="cb74-10">df2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'id'</span>:student_id,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'att'</span>:att,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'rep'</span>:rep,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'mid'</span>:mid,<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'fin'</span>:fin})</span>
+<span id="cb74-11">df2.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="90">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">att</th>
+<th data-quarto-table-cell-role="th">rep</th>
+<th data-quarto-table-cell-role="th">mid</th>
+<th data-quarto-table-cell-role="th">fin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>2022-12380</td>
+<td>65</td>
+<td>55</td>
+<td>50</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2022-12370</td>
+<td>95</td>
+<td>100</td>
+<td>50</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>2022-12363</td>
+<td>65</td>
+<td>90</td>
+<td>60</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>2022-12488</td>
+<td>55</td>
+<td>80</td>
+<td>75</td>
+<td>80</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>2022-12312</td>
+<td>80</td>
+<td>30</td>
+<td>30</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>가장 안전한 코드</p>
+<p><code>df.loc[:,:]</code></p>
+<p>상황: 하나의 col을 뽑으려 할 때 좋은 코드</p>
+<p><code>df.att</code> or <code>df['att']</code></p>
+<p>상황: row 슬라이싱 할 때 좋은 코드(★★★)</p>
+<p><code>df[:5]</code></p>
+<p>위의 상황 이외에는 <code>df.loc[:,:]</code>를 사용하는 것이 유리하다.</p>
+<p>상황: column 슬라이싱 할때</p>
+<p><code>df.loc[:, 'att':'mid']</code></p>
+<p>상황: row + column 슬라이싱하는 가장 좋은 코드</p>
+<p><code>df.loc[0:5, 'att':'mid']</code></p>
+<p>상황: 조건에 맞는 col을 뽑기에 가장 좋은 코드</p>
+<p><code>df.loc[:, [len(col_name)&gt;2 for col_name in df.columns]]</code></p>
+<p>상황: 조건에 맞는 row, col을 뽑기에 가장 좋은 코드</p>
+<p><code>df.loc[df.att&lt;60, [len(col_name)&gt;2 for col_name in df.columns]]</code></p>
+<ul>
+<li>여러 열을 뽑을때에는 리스트로 묶어주어야함. ex) <code>df.loc[:, ['B','C']]</code></li>
+</ul>
+</section>
+<section id="lambda" class="level3">
+<h3 class="anchored" data-anchor-id="lambda">lambda</h3>
+<p>람다표현식(lambda expression) 자체가 하나의 오브젝트임.</p>
+<div id="cell-59" class="cell" data-execution_count="117">
+<div class="sourceCode cell-code" id="cb75" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 실행되는 순간 메모리 상에 함수 오브젝트가 저장됨</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="117">
+<pre><code>&lt;function __main__.&lt;lambda&gt;(x)&gt;</code></pre>
+</div>
+</div>
+<div id="cell-60" class="cell" data-execution_count="119">
+<div class="sourceCode cell-code" id="cb77" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb77-1">(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>) <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 입력 5 -&gt; (5-2)^2 = 9</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="119">
+<pre><code>9</code></pre>
+</div>
+</div>
+<p>람다 표현식에 이름을 줄 수 있음</p>
+<div id="cell-62" class="cell" data-execution_count="120">
+<div class="sourceCode cell-code" id="cb79" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb79-1">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span></code></pre></div>
+</div>
+<div id="cell-63" class="cell" data-execution_count="121">
+<div class="sourceCode cell-code" id="cb80" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1">f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>), f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>), f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>), f(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="121">
+<pre><code>(0, 4, 16, 16)</code></pre>
+</div>
+</div>
+<p>위의 코드는 아래와 같다.</p>
+<div id="cell-65" class="cell" data-execution_count="122">
+<div class="sourceCode cell-code" id="cb82" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">def</span> f(x):</span>
+<span id="cb82-2">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> (x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">**</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span></span>
+<span id="cb82-3">f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>), f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>), f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>), f(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="122">
+<pre><code>(0, 4, 16, 16)</code></pre>
+</div>
+</div>
+<p>조건부 출력</p>
+<div id="cell-67" class="cell" data-execution_count="124">
+<div class="sourceCode cell-code" id="cb84" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># x,y가 입력 / x&gt;y 일때만 x를 리턴하고 그렇지 않으면 y를 리턴. 즉 큰 값을 리턴하라는 소리</span></span>
+<span id="cb84-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x,y: x <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>y <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">else</span> y</span>
+<span id="cb84-3">f(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="124">
+<pre><code>20</code></pre>
+</div>
+</div>
+</section>
+<section id="map" class="level3">
+<h3 class="anchored" data-anchor-id="map">map</h3>
+<p>list(map(함수, input))</p>
+<div id="cell-70" class="cell" data-execution_count="125">
+<div class="sourceCode cell-code" id="cb86" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1">x <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>] </span>
+<span id="cb86-2">f <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span></span>
+<span id="cb86-3">y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">list</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">map</span>(f,x))</span>
+<span id="cb86-4">x,y</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="125">
+<pre><code>([1, 2, 3], [2, 3, 4])</code></pre>
+</div>
+</div>
+</section>
+<section id="s.apply변환함수" class="level3">
+<h3 class="anchored" data-anchor-id="s.apply변환함수">s.apply(변환함수)</h3>
+<div id="cell-72" class="cell" data-execution_count="127">
+<div class="sourceCode cell-code" id="cb88" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'https://raw.githubusercontent.com/guebin/DV2022/master/posts/FIFA23_official_data.csv'</span>)</span>
+<span id="cb88-2">df.Height.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">apply</span>(<span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">lambda</span> x: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>(x[:<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>]))</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="127">
+<pre><code>0        189
+1        179
+2        172
+3        181
+4        172
+        ... 
+17655    190
+17656    195
+17657    190
+17658    187
+17659    186
+Name: Height, Length: 17660, dtype: int64</code></pre>
+</div>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/Python/python.html</guid>
+  <pubDate>Sun, 21 Jan 2024 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>성능 평가 지표(회귀모델, 분류모델)</title>
   <dc:creator>고경수 </dc:creator>
@@ -327,7 +1468,35 @@
 <li>더 좋은 에너지 효율, 비용 효율, 적은 비용, 향상된 기능 등등 ..</li>
 </ul>
 <p>최근 몇 년간 스마트 그리드의 독보적인 문제에 접근하는 머신러닝 기반 기술 사용이 관측되는 트렌드</p>
-<p>Smart grid의 challenges - electric load and price forecasting - 전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다. - renewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요. - fault and failure analysis - 전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다. - demand-side management(DSM) / load management - 전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다. - NILM : - 비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다. - cyber-attack detection - 스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다. - energy and economic dispatch - 전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다. - 이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.</p>
+<p>Smart grid의 challenges</p>
+<ul>
+<li><p>electric load and price forecasting</p>
+<ul>
+<li>전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다.</li>
+</ul></li>
+<li><p>renewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요.</p></li>
+<li><p>fault and failure analysis</p>
+<ul>
+<li>전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다.</li>
+</ul></li>
+<li><p>demand-side management(DSM) / load management</p>
+<ul>
+<li>전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다.</li>
+</ul></li>
+<li><p>NILM :</p>
+<ul>
+<li>비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다.</li>
+</ul></li>
+<li><p>cyber-attack detection</p>
+<ul>
+<li>스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다.</li>
+</ul></li>
+<li><p>energy and economic dispatch</p>
+<ul>
+<li>전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다.</li>
+</ul></li>
+<li><p>이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.</p></li>
+</ul>
 
 
 </section>
@@ -623,8 +1792,34 @@
 <h1>Machine learning driven smart electric power system: Current trends and new perspectives(2020)</h1>
 <section id="challenge" class="level2">
 <h2 class="anchored" data-anchor-id="challenge">challenge</h2>
-<p>Smart grid의 challenges - forecasting in smart grid - electric load and price forecasting - 전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다. - renewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요. - fault and failure analysis - 전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다. - demand-side management(DSM) / load management - 전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다. - NILM : - 비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다. - cyber-attack detection - 스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다. - energy and economic dispatch - 전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다. - 이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.</p>
+<p>Smart grid의 challenges</p>
 <ul>
+<li><p>electric load and price forecasting</p>
+<ul>
+<li>전력 수요 예측은 전력 공급 및 유통을 최적화하고 에너지 효율성을 향상시키는 데 도움이 된다. 또한 가격 예측은 사용자에게 최적의 전력 소비 시간을 선택할 수 있도록 도움을 준다.</li>
+</ul></li>
+<li><p>renewable power generation prediction - 재생가능 에너지의 효과적인 통합을 위해서는 향후 발전량을 정확하게 예측하는 것이 필요.</p></li>
+<li><p>fault and failure analysis</p>
+<ul>
+<li>전력 시스템의 안정성을 유지하기 위해 필요. 신속하게 고장을 감지하고 이에 대응함으로써 전력 시스템의 중단을 최소화하고 서비스 품질을 개선할 수 있다.</li>
+</ul></li>
+<li><p>demand-side management(DSM) / load management</p>
+<ul>
+<li>전력 수요를 조절하여 그리드 부하를 분산시키고 최적화하는 것. 이를 통해 에너지 소비를 낮추고 전력 네트워크의 효율성을 향상시킬 수 있다.</li>
+</ul></li>
+<li><p>NILM :</p>
+<ul>
+<li>비침입적으로 가정이나 사업장에서의 전력 사용을 모니터링하는 기술. 각 전기 기기의 전력 패턴을 분석하여 에너지 사용을 식별하고 이를 통해 에너지 사용 패턴을 최적화할 수 있다.</li>
+</ul></li>
+<li><p>cyber-attack detection</p>
+<ul>
+<li>스마트 그리드는 전산 네트워크에 의존하므로 사이버 공격에 노출될 수 있다. 사이버 공격 탐지는 악성 행위를 식별하고 방어하는데 중요하다.</li>
+</ul></li>
+<li><p>energy and economic dispatch</p>
+<ul>
+<li>전력 생산 장치의 작동을 최적화하여 에너지 효율성을 극대화하고 경제적 비용을 최소화하는 것을 목표로 한다. 이는 전력 그리드의 운영을 최적화하고 에너지 비용을 관리하는 데 도움이 된다.</li>
+</ul></li>
+<li><p>이러한 챌린지들에 대한 연구와 개발은 스마트 그리드의 안정성, 효율성, 그리고 신뢰성을 향상시키는 데 기여하며, 지속 가능한 전력 시스템의 구현을 지원한다.</p></li>
 <li><p>load forecast</p>
 <ul>
 <li>short-term load forecasting</li>
@@ -673,572 +1868,6 @@
  ]]></description>
   <guid>https://star77sa.github.io/posts/etc/논문_개념.html</guid>
   <pubDate>Sun, 31 Dec 2023 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>통계 101 X 데이터분석</title>
-  <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/Statistics/통계_101_X_데이터_분석.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p><img src="https://star77sa.github.io/posts/Statistics/image.png" class="img-fluid"></p>
-<section id="통계학이란" class="level1">
-<h1>1. 통계학이란?</h1>
-<section id="데이터를-분석하다" class="level2">
-<h2 class="anchored" data-anchor-id="데이터를-분석하다">1.1 데이터를 분석하다</h2>
-<ul>
-<li>데이터 분석의 목적</li>
-</ul>
-<ol type="1">
-<li>데이터를 <strong>요약</strong>하는 것</li>
-<li>대상을 <strong>설명</strong>하는 것</li>
-<li>새로 얻을 데이터를 <strong>예측</strong>하는 것</li>
-</ol>
-<ul>
-<li><p>인과관계 : 2가지 중 하나(원인)을 변화시키면, 다른 하나(결과)도 바꿀 수 있는 관계. 인과관계를 알면 곧 원리(메커니즘)에 관한 지식을 얻는 것이기에 깊은 이해라고 할 수 있다.</p></li>
-<li><p>상관관계 : 한쪽이 크면 다른 한쪽도 큰(또는 한쪽이 크면 다른 한쪽은 작은) 관계를 말한다. 한쪽을 ’변화시켰다’하더라도 다른 한쪽이 ’변한다’고 단정할 수 없다는 점에서 인과관계와 다르다. 원리에 관련된 몇 가지 가능성을 구별할 수 없으므로, 얕은 이해라 할 수 있다.</p></li>
-<li><p>선형관계에는 사람이 다루기 쉽고, 해석하기도 쉽다는 특징. 한편, 해석이 어려운 복잡한 관계를 추출하고 예측하는 <strong>기계학습</strong>이란 방법도 있다.(12장)</p></li>
-</ul>
-</section>
-<section id="통계학의-역할" class="level2">
-<h2 class="anchored" data-anchor-id="통계학의-역할">1.2 통계학의 역할</h2>
-<ul>
-<li>통계학은 데이터 퍼짐 정도가 클수록 힘을 발휘한다.</li>
-<li>데이터 분석에서 통계학의 중요한 역할은, <strong>퍼짐(산포, dispersion)</strong> 이 있는 데이터에 대해 설명이나 예측을 하는 것.</li>
-<li>통계학은 이러한 데이터 퍼짐을 ’불확실성’이라 평가하고, 통계학의 목적인 ’대상의 설명과 예측’을 수행</li>
-<li>통계학은 데이터 퍼짐이나 불확실성에 대처하는 방법을 제공. 그 근거가 되는 것이 데이터 퍼짐이나 불확실성을 확률로 나타내는 <strong>확률론</strong>이다.</li>
-</ul>
-</section>
-<section id="통계학의-전체-모습" class="level2">
-<h2 class="anchored" data-anchor-id="통계학의-전체-모습">1.3 통계학의 전체 모습</h2>
-<p><code>-</code> 기술통계와 추론통계</p>
-<ul>
-<li><p><strong>기술통계(descriptive statistics)</strong> : 수집한 데이터를 정리하고 요약하는 방법. 확보한 데이터에만 집중하면서, 데이터 자체의 성질을 이해하는 것을 목표로 한다는 점에 주의.</p></li>
-<li><p><strong>추론통계(inferential statistics)</strong> : 수집한 데이터로부터 데이터의 발생원을 추정하는 방법</p></li>
-</ul>
-<p><code>-</code> 통계적 추론과 가설검정</p>
-<p>추론통계는 크게 2가지가 있다.</p>
-<ol type="1">
-<li><p>통계적 추론(statistical inference) : 데이터에서 가정한 확률 모형의 성질을 추정하는 방법. 예를 들어, 모서리가 닳아버린 주사위라면 각 눈이 나올 확률이 1/6이 아닐지도 모른다. 이럴 때 통계적 추론을 이용하여, 얻은 데이터로부터 각 눈이 어떤 확률로 나오는 주사위인가를 추정할 수 있다.</p></li>
-<li><p>가설검정(statistical test) : 세운 가설과 얻은 데이터가 얼마나 들어맞는지를 평가하여, 가설을 채택할 것인가를 판단하는 방법</p></li>
-</ol>
-<hr>
-</section>
-</section>
-<section id="모집단과-표본" class="level1">
-<h1>2. 모집단과 표본</h1>
-<section id="데이터-분석의-목적과-알고자-하는-대상" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-분석의-목적과-알고자-하는-대상">2.1 데이터 분석의 목적과 알고자 하는 대상</h2>
-<ol type="1">
-<li>데이터 분석의 목적을 정하기.</li>
-<li>알고자 하는 대상을 명확히 하기.</li>
-</ol>
-</section>
-<section id="모집단" class="level2">
-<h2 class="anchored" data-anchor-id="모집단">2.2 모집단</h2>
-<ul>
-<li>모집단 : 알고자 하는 대상 전체</li>
-</ul>
-<p>‘지금 알고자 하는 대상은 무엇인지’, ’무엇을 모집단으로 설정할 것인지’의 문제에는 항상 주의를 기울여야 한다.</p>
-<ul>
-<li>유한모집단</li>
-<li>무한모집단</li>
-</ul>
-</section>
-<section id="모집단의-성질을-알다" class="level2">
-<h2 class="anchored" data-anchor-id="모집단의-성질을-알다">2.3 모집단의 성질을 알다</h2>
-<ul>
-<li>모집단은 데이터 분석에서 알고자 하는 대상 전체를 가리키기 때문에, <strong>모집단의 성질</strong>을 알 수 있다면 대상을 설명하거나 이해할 수 있고, 미지의 데이터를 예측할 수도 있게 된다.</li>
-<li>모집단의 성질이란, 다음과 같이 모집단에 포함된 요소를 특징 짓는 값이다.</li>
-</ul>
-<ol type="1">
-<li>한국인 남성의 평균 키는 172.5cm이다.</li>
-<li>한국인 여성의 평균 키는 159.6cm이다.</li>
-<li>신약을 복용한 사람의 최고 혈압 평균은 120mmHg이다.</li>
-<li>이 주사위는 모든 눈이 균등하게 나온다.</li>
-<li>이 주사위는 6의 눈이 1/4 확률로 나온다.</li>
-</ol>
-<ul>
-<li>그렇다면 이러한 모집단의 성질을 알기 위해서는 어떻게 해야 할까?</li>
-</ul>
-<p><code>-</code> 전수조사 : 모집단에 포함된 모든 요소를 조사</p>
-<ul>
-<li><p>모집단에 포함된 요소의 개수가 한정된, 유한모집단일 때 선택할 수 있는 조사 방법.</p></li>
-<li><p>전수조사의 경우 ‘분석할 데이터 = 모집단’. 그러므로 획득한 데이터의 특징을 파악하고 기술하기만 해도, 모집단의 성질을 설명하고 이해할 수 있다.</p></li>
-<li><p>전수조사의 어려움 : 비용이나 시간 면에서 부담이 막대하여 실현 불가능할 때가 대부분.</p></li>
-</ul>
-<p><code>-</code> 표본조사 : 모집단의 일부를 분석하여 모집단 전체의 성질을 추정하는 <strong>추론통계(inferential statistics)</strong> 라는 분야가 있으며, 이것이야말로 통계학의 참모습이라 할 수 있다.</p>
-<ul>
-<li><p>표본(sample) : 추론통계에서 조사하는 모집단의 일부</p></li>
-<li><p>표본추출(sampling) : 모집단에서 표본을 뽑는 것</p></li>
-<li><p>표본조사 : 표본을 이용해 모집단의 성질을 조사하는 것</p></li>
-</ul>
-<p>표본을 통해 모집단의 성질을 알 수 있는 잘 알려진 방법으로, 선거 출구조사를 들 수 있다. 일부의 표만으로도 당선확실 여부를 알 수 있다.</p>
-<p>추론통계는 ’추론’이라는 말에서 알 수 있듯이 모집단의 성질을 100% 알아맞힐 수는 없으며, 어느 정도 불확실성을 염두에 두고 평가하게 된다.</p>
-<ul>
-<li><p>대상을 설명(이해)하고 예측하기 위해서는 모집단의 성질을 알아야 한다.</p></li>
-<li><p>일반적으로 모집단을 대상으로 한 전수조사는 어렵다.</p></li>
-<li><p>표본을 조사하면 모집단의 성질을 추정할 수 있다.</p></li>
-<li><p>표본크기 : 표본에 포함된 요소의 개수를 표본크기(sample size)라 부르며, 보통 알파벳 <img src="https://latex.codecogs.com/png.latex?n">으로 나타낸다. 예를 들어 표본으로 30개를 추출했다면, <img src="https://latex.codecogs.com/png.latex?n">=30이라 표기한다.</p></li>
-<li><p>통계학에서 샘플 수라고 하면 표본의 개수를 뜻한다. 예를 들어 20명으로 이루어진 표본A와 이와 별개로 30명으로 이루어진 표본B가 있는 경우, 표본은 A, B 2개이므로 샘플 수는 2가 된다. 이처럼 표본크기와 표본의 개수는 혼동하기 쉬우므로 주의.</p></li>
-<li><p>표본크기는 모집단의 성질을 추정할 때의 확실성이나 가설검정의 결과에도 영향을 끼치기 때문에, 통계분석에 있어 중요한 요소 중 하나.</p></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="통계분석의-기초" class="level1">
-<h1>3. 통계분석의 기초</h1>
-<section id="데이터-유형" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-유형">3.1 데이터 유형</h2>
-<p><code>-</code> 모집단과 표본</p>
-<p><code>-</code> 변수 : 데이터 중 공통의 측정 방법으로 얻은 같은 성질의 값</p>
-<p>예를 들어, 키는 하나의 변수이다. 변수는 각각 다른 값을 취할 수 있으므로 변수라고 불린다.</p>
-<p>변수가 여러 개인 경우, 변수 간의 관계를 밝히고자 데이터를 분석할 수 있다.</p>
-<p>통계학에서 변수의 개수는 ’차원’이라 표현되기도 한다.</p>
-<p>여러 개의 변수를 포함한 데이터는 ’고차원 데이터’라 한다.</p>
-<p><code>-</code> 다양한 데이터 유형</p>
-<p>변수의 유형마다 분석 방법이 달라지기 때문에, 데이터를 수집할 때나 분석을 실행할 때는 변수가 어떤 유형인지 주의 깊게 고려하는 것이 중요</p>
-<ol type="1">
-<li>양적 변수 (수치형 변수)</li>
-</ol>
-<p>수치로 나타낼 수 있는 변수를 양적 변수라 한다. 양적 변수는 다시 이산형과 연속형으로 나눌 수 있다.</p>
-<ul>
-<li>이산형</li>
-</ul>
-<p>얻을 수 있는 값이 점점이 있는 변수를 <strong>이산형 양적 변수(이산변수)</strong> 라 한다. ex) 주사위의 눈은 나오는 값이 1부터 6까지의 정수</p>
-<ul>
-<li>연속형</li>
-</ul>
-<p>키 173.4cm나 몸무게 65.8kg 같이 간격 없이 이어지는 값으로 나타낼 수 있는 변수를 <strong>연속형 양적 변수 (연속변수)</strong> 라 한다.</p>
-<p>이는 정밀도가 높은 측정 방법을 이용하면, 원리상으로는 소수점 아래 몇 자리든 나타낼 수 있다는 점에서 이산형과는 다르다.</p>
-<p>이산형과 연속형의 차이점은 확률분포의 종류와 밀접한 관계가 있으므로, 데이터를 다룰 때는 주의</p>
-<ol start="2" type="1">
-<li>질적 변수 (범주형 변수)</li>
-</ol>
-<p>숫자가 아닌 범주로 변수를 나타낼 때, 이를 질적 변수 또는 범주형 변수라 한다. ex) 설문조사의 예/아니오, 동전의 앞/뒤</p>
-<p>숫자인 양적 변수와 달리, 변수 사이에 대소 관계는 없다.</p>
-<p>또한 범주형 변수는 숫자가 아니므로, 평균값 등의 수치 역시 정의할 수 없다.</p>
-</section>
-<section id="데이터-분포" class="level2">
-<h2 class="anchored" data-anchor-id="데이터-분포">3.2 데이터 분포</h2>
-<p><code>-</code> 그림으로 데이터 분포 표현하기</p>
-<p>’데이터가 어떻게 분포되어 있는지’를 그래프 등으로 시각화하여, 대략적인 데이터 경향을 파악하는 것이 데이터 분석의 첫 단계</p>
-<p>데이터 분포를 그림으로 나타내는 데는 어떤 값이 데이터에 몇 개 포함되어 있는가(도수, 빈도, 횟수)를 나타내는 그래프인 <strong>도수분포도(히스토그램)</strong> 를 자주 사용</p>
-<p><code>-</code> 히스토그램은 그림으로 나타낸 것일 뿐</p>
-<p>히스토그램은 대략적인 데이터 구성을 파악하는 것이 목적이지, 무엇인가 결론을 내기 위한 것이 아니라는 점을 명심</p>
-</section>
-<section id="통계량" class="level2">
-<h2 class="anchored" data-anchor-id="통계량">3.3 통계량</h2>
-<p><code>-</code> 데이터 특징 짓기</p>
-<p>수집한 데이터로 이런저런 계산을 수행하여 얻은 값을 일반적으로 <strong>통계량</strong> 이라 한다.</p>
-<p>데이터 그 자체의 성질을 기술하고 요약하는 통계량을, <strong>기술통계량</strong> 또는 <strong>요약통계량</strong> 이라 부른다.</p>
-<ul>
-<li>통계량과 정보</li>
-</ul>
-<p>1개 또는 몇 개의 통계량으로 요약한다는 것은, 데이터에 있는 정보 중 버리는 부분이 있다는 것을 뜻한다. 예를 들어 평균값에는 ’어느 정도 데이터가 퍼져 있는지’의 정보는 포함되지 않습니다. 다른 예로 데이터에 포함된 가장 큰 값인 최댓값도 하나의 통계량이지만 여기에는 데이터 전체의 경향을 알 수 있는 정보가 없다. 이처럼 최댓값은 분포의 중심 위치나 분포 형태에 관한 정보가 주어지지 않으므로, 분포를 파악하는 데는 적합한 통계량이 아니다.</p>
-<p><code>-</code> 다양한 기술통계량</p>
-<p>대략적인 분포 위치를 나타내는 대푯값 : 평균값, 중앙값, 최빈값</p>
-<p>데이터 퍼짐 정도를 나타내는 값 : 분산, 표준편차</p>
-<ul>
-<li>평균값(mean)</li>
-</ul>
-<p>표본의 평균값은 표본에서 얻었다는 점에서 ’표본평균’이라고도 한다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%20%5Cbar%7Bx%7D%20=%20%5Cfrac%7B1%7D%7Bn%7D(x_1+x_2+...+x_n)%20=%20%5Cfrac%7B1%7D%7Bn%7D%5Csum%5En_%7Bi=1%7D%20x_i%20"></p>
-<p>평균값은 계산 시 모든 값을 고려하기 때문에 이상값의 영향을 받기 쉽다는 특징이 있다.</p>
-<ul>
-<li>중앙값(median)</li>
-</ul>
-<p>‘크기 순으로 값을 정렬했을 때 한가운데 위치한 값’</p>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 홀수라면 가운데 값은 1개이므로 이 값이 중앙값이다. 한편 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 짝수일 때는 가운데에 있는 값이 2개이므로, 두 값의 평균값을 중앙값으로 한다.</p>
-<p>중앙값은 수치 자체의 정보가 아닌 순서에만 주목하기에, 극단적으로 크거나 작은 값이 있어도 영향을 받지 않는다는 특징이 있다.</p>
-<ul>
-<li>최빈값(mode)</li>
-</ul>
-<p>‘데이터 중 가장 자주 나타나는 값’</p>
-<p>처음에 히스토그램을 그려 대략적인 파악을 한 다음, 대푯값으로 적절하게 분포를 특징 지을 수 있는지 확인하는 것이 중요한 데이터 분석 작업 순서라는 점을 꼭 기억</p>
-<p><code>-</code> 분산과 표준편차</p>
-<p>데이터 퍼짐을 평가하기 위해서는 <strong>분산(variance)</strong> 혹은 <strong>표준편차(standard deviation, S.D.)</strong> 라는 통계량을 계산.</p>
-<p>표본에서 구하고, 표본을 평가한다는 점을 강조하여 ’표본분산(sample variance)’이나 ’표본표준편차(sample standard deviation)’라 부르기도 한다.</p>
-<p><strong>표본분산</strong> 은 표본의 각 값과 표본평균이 어느 정도 떨어져 있는지를 평가하는 것으로, 데이터 퍼짐 상태를 정량화한 통계량이다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%20s%5E2%20=%20%5Cfrac%7B1%7D%7Bn%7D%5C%7B(x_1-%5Cbar%7Bx%7D)%5E2%20+%20(x_2-%5Cbar%7Bx%7D)%5E2+...+(x_n-%5Cbar%7Bx%7D)%5E2%5C%7D%20=%20%5Cfrac%7B1%7D%7Bn%7D%5Csum%5En_%7Bi=1%7D(x_i-%5Cbar%7Bx%7D)%5E2%20"></p>
-<ul>
-<li>표본분산의 성질</li>
-</ul>
-<ol type="1">
-<li><p><img src="https://latex.codecogs.com/png.latex?s%5E2%20%5Cgeqq%200"></p></li>
-<li><p>모든 값이 같다면 0</p></li>
-<li><p>데이터 퍼짐 정도가 크면 <img src="https://latex.codecogs.com/png.latex?s%5E2">이 커짐</p></li>
-</ol>
-<p>표본표준편차 <img src="https://latex.codecogs.com/png.latex?s">는, 이 표본분산의 제곱근을 취한 값이다.</p>
-<p>계산상 분산과 표준편차에는 제곱근인지 아닌지의 차이만 있으며, 포함하는 정보에는 차이가 없다. 분산 단위는 원래 값 단위의 제곱이 되지만, 표준편차는 제곱근을 취하므로 원래 단위와 일치한다. 따라서 데이터 퍼짐 정도를 정량화한 지표로는 표준편차 쪽이 감각적으로 더 알기 쉽게 느껴진다.</p>
-<p><code>-</code> 분산을 확인할 수 있는 상자 수염 그림</p>
-<p>이름처럼 상자와 수염으로 구성되며, 각각은 데이터의 분포를 특징 짓는 통계량을 나타낸다.</p>
-<p>제1 사분위수(Q1) : 데이터의 25%가 이 값보다 작거나 같음</p>
-<p>제2 사분위수(Q2) : 중앙값</p>
-<p>제3 사분위수(Q3) : 데이터의 75%가 이 값보다 작거나 같음</p>
-<p>사분위간 범위 : 제1 사분위수와 제3 사분위수 간의 거리(Q3-Q1). 상자로 나타낸 부분.</p>
-<p>수염은 상자 길이(사분위간 범위)의 1.5배 길이를 상자로부터 늘인 범위 안에서, 최댓값 또는 최솟값을 가리킨다.</p>
-<p>이 범위에 포함되지 않은 값은 이상값으로 정의된다.</p>
-<p>상자 수염 그림은 중앙값이나 사분위수, 최댓값, 최솟값 등의 통계량은 나타내는 반면, 히스토그램에서 볼 수 있는 상세한 분포 형태 정보는 포함하지 않는다.</p>
-<p><code>-</code> 분포를 시각화하는 다양한 방법</p>
-<ul>
-<li><p>막대그래프(평균값) + 오차 막대(S.D. or S.E.)</p></li>
-<li><p>바이올린 플롯</p></li>
-<li><p>스웜 플롯</p></li>
-<li><p>상자 수염 그림 + 스웜 플롯</p></li>
-</ul>
-<section id="p.-3장-나머지-정리-必" class="level3">
-<h3 class="anchored" data-anchor-id="p.-3장-나머지-정리-必">~ 67p. 3장 나머지 정리 必</h3>
-<hr>
-</section>
-</section>
-</section>
-<section id="추론통계-신뢰구간" class="level1">
-<h1>4. 추론통계 ~ 신뢰구간</h1>
-<ul>
-<li>데이터로 모집단의 성질을 추정한다.</li>
-</ul>
-<section id="추론통계를-배우기-전에" class="level2">
-<h2 class="anchored" data-anchor-id="추론통계를-배우기-전에">4.1 추론통계를 배우기 전에</h2>
-<p><code>-</code> 전수조사와 표본조사</p>
-<p>전수조사 : 모집단의 모든 요소를 조사</p>
-<p>표본조사 : 모집단의 일부인 표본으로 모집단의 성질을 추정</p>
-<p><code>-</code> 데이터를 얻는다는 것</p>
-<p>” 데이터(표본)를 얻는다는 것은 무엇인가? ” : 모집단에 포함된 전체 값으로 구성된 분포에서 일부를 추출하는 것</p>
-<p>모집단분포를 특징 짓는 양을 <strong>모수</strong> 또는 <strong>파라미터</strong> 라 부른다</p>
-<p>확률분포와 실현값의 관계는 모집단과 표본의 관계와 매우 비슷</p>
-<p>‘모집단 = 확률분포, 표본 = 확률분포를 따르는 실현값’ 이라고 생각하자</p>
-<p>” 얻은 실현값으로 이 값을 발생시킨 확률분포를 추정한다 ” 라는 목표로 바꾸어 말할 수 있다.</p>
-<ul>
-<li>모집단분포 모형화</li>
-</ul>
-<p>ex) 성인 남성 키의 분포는 정규분포와 매우 비슷하지만, 엄밀한 의미에서 정규분포가 되는 일은 있을 수 없다.</p>
-<p>그러나 있는 그대로를 바로 수학적으로 다룰 수 없을 때가 잦기 때문에, 3장에서 배운 것과 같은 <strong>수식</strong> 으로 기술하게 된다.</p>
-<p>그러면 수학적으로 다룰 수 있는 확률분포(모형)에 근사하여 작업을 진행할 수 있게 되어, 모집단의 추정이 용이해진다.</p>
-<p>수학적인 확률분포로 모집단 분포를 근사하는 것을 여기서는 <strong>모형화(modeling)</strong> 라 부르도록 하자</p>
-<p>예를 들어 정규분포로 근사할 수 있다면, 평균과 표준편차 같은 2가지 파라미터만으로 분포를 기술할 수 있으며, 다룰 수도 있게된다.</p>
-<p>이 장 후반에 등장하는 t분포는, 이와 같이 모집단이 정규분포라는 가정하에 이용할 수 있는 분포이다.</p>
-<ul>
-<li>무작위추출</li>
-</ul>
-<p>모집단에서 표본을 얻을 때 중요한 것이 <strong>무작위추출(random sampling)</strong> 이다.</p>
-<p>데이터를 얻을 때 모집단에 포함된 요소를 무작위로 선택하여 추출하는 방식</p>
-<p>독립적이지 않은 선택방식도 적절하지 않다.</p>
-<ul>
-<li>무작위추출 방법</li>
-</ul>
-<p>이상적인 무작위추출 방법은 표본에 있을 수 있는 모든 요소를 목록으로 만들고, 난수를 이용하여 표본을 정하는 것. 이를 <strong>단순무작위추출법</strong> 이라 한다.</p>
-<p>실제로 자주 사용하는 방법은 <strong>층화추출법</strong> 이다. 이는 모집단을 몇개의 층(집단)으로 미리 나눈 뒤, 각 층에서 필요한 수의 조사대상을 무작위로 추출하는 방법이다.</p>
-<p>그 밖에도 계통추출법, 군집추출법 등 다양한 방법이 있다.</p>
-<ul>
-<li>편향된 추출로는 올바른 추정이 어려움</li>
-</ul>
-</section>
-<section id="표본오차와-신뢰구간" class="level2">
-<h2 class="anchored" data-anchor-id="표본오차와-신뢰구간">4.2 표본오차와 신뢰구간</h2>
-<p>모집단의 평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">나 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 등은 고정된 값이지만, 모집단분포에서 얻은 표본 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20x_n">은 확률적으로 변하는 확률변수라는 사실을 염두에 둘 것</p>
-<p><code>확률변수의 정확한 의미는?</code></p>
-<p>일반적으로 표본평균은 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하지 않는다. 즉 ’정말로 알고 싶은 것’과 ’실제로 손 안에 있는 데이터’에는 어긋남(오차)가 생기는 것. 이런 오차를 <strong>표본오차(표집오차, sampling error)</strong> 라고 한다.</p>
-<p>표본오차는 표본을 추출할 때의 인위적인 실수나 잘못으로 생기는 오차가 아니라, 데이터 퍼짐이 있는 모집단에서 확률적으로 무작위 표본을 고르는 데서 발생하는, 피할 수 없는 오차라는 점에 주의</p>
-<ul>
-<li>큰 수의 법칙</li>
-</ul>
-<p>표본평균과 모집단평균의 관계에는 <strong>큰 수의 법칙(law of large numbers)</strong> 이 성립한다.</p>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">가 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">에 한없이 가까워진다는 법칙.</p>
-<p>다시 말해 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">가 <img src="https://latex.codecogs.com/png.latex?0">에 한없이 가까워진다는 뜻이기도 하다.</p>
-<p><code>-</code> 표본오차의 확률분포</p>
-<p>표본오차의 확률분포를 알면 어느 정도 크기의 오차가, 어느 정도의 확률로 나타나는지를 알 수 있게 된다.</p>
-<ul>
-<li>중심극한정리</li>
-</ul>
-<p>표본오차의 분포에 관해 중요한 정보를 제공하는 것이 <strong>중심극한정리(central limit theorem)</strong> 이다.</p>
-<p>모집단이 어떤 분포이든 간에, 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 분포는 정규분포로 근사할 수 있다는 것을 의미</p>
-<p>’표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 분포? : 표본크기 <img src="https://latex.codecogs.com/png.latex?n">으로 표본을 추출하고 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">를 계산하는 작업을 몇 번이고 반복해서, 표본평균을 한데 모아 히스토그램을 그린다는 것.</p>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본평균의 분포는 다음과 같은 정규분포로 근사할 수 있다.</p>
-<p>평균 : 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu"></p>
-<p>표준편차 : <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D"></p>
-<blockquote class="blockquote">
-<p>Chat GPT : 중심극한정리와 대수의 법칙의 차이점이 뭐야?</p>
-</blockquote>
-<ol type="1">
-<li>중심극한정리 (Central Limit Theorem):</li>
-</ol>
-<p>중심극한정리는 확률론의 기본 개념 중 하나로, 독립적인 확률 변수들의 합 또는 평균이 정규분포에 근사하는 현상을 설명합니다. 중심극한정리는 다음과 같은 특징을 가집니다:</p>
-<p>독립적인 확률 변수들의 합 또는 평균은 표본 크기가 충분히 크면 정규분포에 근사한다.</p>
-<p>중심극한정리는 모집단의 분포에 상관 없이 적용될 수 있으며, 모집단이 어떤 분포를 따르더라도 표본 평균의 분포는 정규분포에 가까워진다.</p>
-<ol start="2" type="1">
-<li>대수의 법칙 (Law of Large Numbers):</li>
-</ol>
-<p>대수의 법칙은 표본 크기가 커질수록 표본 평균이 모집단의 평균에 가까워진다는 원리를 설명합니다. 대수의 법칙은 다음과 같은 특징을 가집니다:</p>
-<p>대수의 법칙은 표본 크기가 커질수록 표본 평균이 모집단 평균에 수렴한다.</p>
-<p>대수의 법칙은 표본 크기가 충분히 크다면 모집단의 분포에 상관 없이 적용될 수 있으며, 모집단이 어떤 분포를 따르더라도 표본 평균은 모집단 평균에 가까워진다.</p>
-<p>차이점:</p>
-<p>중심극한정리는 확률 변수들의 합 또는 평균의 분포에 대한 이론을 다루는 것이며, 주로 정규분포와 관련이 있습니다.</p>
-<p>대수의 법칙은 표본 크기가 커질 때 표본 평균이 모집단 평균으로 수렴하는 원리를 설명하며, 분포에 대한 특별한 가정이 필요하지 않습니다. 이는 큰 표본 크기를 가지고 있는 경우에는 표본의 평균이 모집단 평균과 거의 같아질 것이라는 것을 의미합니다.</p>
-<p>중심극한정리와 대수의 법칙은 통계 분석과 데이터 분석에서 중요한 개념으로 사용되며, 표본 크기와 확률 분포에 대한 이해를 높이는 데 도움을 줍니다.</p>
-<ul>
-<li>추정량</li>
-</ul>
-<p>모집단의 성질을 추정하는 데 사용하는 통계량을 <strong>추정량</strong> 이라 한다.</p>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">을 무한대로 했을 때, 모집단의 성질과 일치하는 추정량을 <strong>일치추정량</strong> 이라 하고, 추정량의 평균값(기댓값)이 모집단의 성질과 일치할 때의 추정량은 <strong>비편향추정량</strong> 이라 한다.</p>
-<p>비편향추정량은 매번 얻을 때마다 확률적으로 다른 값이 되지만, 평균으로 보면 모집단의 성질을 과대하지도 과소하지도 않게 나타내는 양을 뜻한다.</p>
-<p>모집단의 성질을 추정할 때 편향된 추정은 바람직하지 않다. 그러므로 비편향추정량은 바람직한 추정량이다.</p>
-<p><code>비편향추정량, 일치추정량 ??</code></p>
-<p>추정량 하나하나는 모집단의 성질(여기서는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">)에서 벗어나지만, 이를 모아 구한 평균값이 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하는 경우 이를 비편향추정량이라 부른다.</p>
-<p>중심극한정리에서 본 것 처럼 표본평균의 분포의 평균은 모집단의 성질인 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하므로, 표본평균은 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">를 편향되지 않게 추정하는 비편향추정량이다.</p>
-<p>한편 표본표준편차 <img src="https://latex.codecogs.com/png.latex?s">(또는 표본분산 <img src="https://latex.codecogs.com/png.latex?s%5E2">)는 사정이 조금 다르다.</p>
-<p>표본표준편차 <img src="https://latex.codecogs.com/png.latex?s">의 정의에서 루트 안의 분모는 <img src="https://latex.codecogs.com/png.latex?n">이었다. 기술통계에서 데이터 퍼짐 정도를 평가할 때는 문제가 없지만, 모집단의 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">를 과소평가한다는 문제가 있다.</p>
-<p>올바르게는 <img src="https://latex.codecogs.com/png.latex?n-1">로 나눈 다음 식이, 모집단 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">의 비편향추정량이 된다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?s%20=%20%5Csqrt%7Bs%5E2%7D%20=%20%5Csqrt%7B%5Cfrac%7B1%7D%7Bn-1%7D%5Csum%5En_%7Bi=1%7D(x_i-%5Cbar%7Bx%7D)%5E2%7D"></p>
-<blockquote class="blockquote">
-<p><img src="https://latex.codecogs.com/png.latex?n">으로 나누면 왜 과소평가가 되는가?</p>
-</blockquote>
-<p>각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 차이를 제곱하여 값이 얼마나 퍼졌는지를 측정하지만 원래 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cmu)%5E2">로 계산해야 하는 것을 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 미지수이므로 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cbar%7Bx%7D)%5E2">로 바꾼 것이다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">와 일치하지 않으며, 각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 <img src="https://latex.codecogs.com/png.latex?%5Cmu">의 위치 관계 또는 각 값 <img src="https://latex.codecogs.com/png.latex?x_i">와 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">의 위치 관계를 생각하면 <img src="https://latex.codecogs.com/png.latex?x_i">는 <img src="https://latex.codecogs.com/png.latex?%5Cmu">보다도 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">에 가까이 있을 것이다.</p>
-<p>그러므로 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cbar%7Bx%7D)%5E2">의 합은 <img src="https://latex.codecogs.com/png.latex?(x_i-%5Cmu)%5E2">보다도 작은 값이 된다.</p>
-<p>따라서 <img src="https://latex.codecogs.com/png.latex?n">으로 나누지 않고 <img src="https://latex.codecogs.com/png.latex?n-1">로 나누어 과소평가를 보정하는 것</p>
-<ul>
-<li>표본오차의 분포</li>
-</ul>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">의 분포는 다음 정규분포로 근사할 수 있다.</p>
-<p>평균 : 0</p>
-<p>표준편차 : <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D"></p>
-<p>표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">의 분포는 모집단의 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">와 표본크기 <img src="https://latex.codecogs.com/png.latex?n"> 등 2개의 값만 정해지면 알 수 있다는 것. 이 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D">을 <strong>표준오차(standard error)</strong> 라 한다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Csigma">는 모집단의 성질이므로 보통 우리로선 알 수 없는 미지의 숫자이다. 그러므로 앞서 살펴본 표본에서 추정한 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">를 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 대신 사용한 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">를 표준오차로 삼는다.</p>
-<p>이때 표본오차(단 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">으로 나눔)는 정규분포가 아니라 정규분포와 매우 닮은 t분포를 따르게 된다.</p>
-<p><code>-</code> 신뢰구간이란?</p>
-<p>표본오차의 확률분포는 얼마나 큰 오차가 어느 정도의 확률로 나타나는가를 알 수 있다.</p>
-<p>간단하게 오차를 정량화하기 위해서, <strong>신뢰구간(confidence interval)</strong> 이라는 개념을 도입</p>
-<blockquote class="blockquote">
-<p>정규분포의 성질에서 <img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%20%5Cpm"> 2 <img src="https://latex.codecogs.com/png.latex?%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8"> 범위에 약 95%의 값을 포함하고 있었다. 즉, 정규분포에서 하나의 값을 무작위로 꺼내면 95%의 확률로 그 범위에 포함된다는 뜻</p>
-</blockquote>
-<p>이 개념을 그대로 표본오차의 정규분포에 적용해보면</p>
-<p>표본오차의 약 95%는 <img src="https://latex.codecogs.com/png.latex?0-2%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cbar%7Bx%7D%20-%20%5Cmu%20%5Cleq%200%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D"> 에서 <img src="https://latex.codecogs.com/png.latex?%5Cmu"> 를 알고 싶기 때문에 이항하고 음수를 곱하면 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%20-%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%20%5Cleq%20%5Cmu%20%5Cleq%20%5Cbar%7Bx%7D%20+%202%20%5Ctimes%20%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D"></p>
-<ul>
-<li>신뢰구간의 해석</li>
-</ul>
-<p>OO% 신뢰구간을 해석하면 “OO%의 확률로 이 구간에 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 있다.” 가 된다.</p>
-<p>단, 확률변수는 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 아니라 표본평균 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D">(또는 신뢰구간)이다.</p>
-<blockquote class="blockquote">
-<p>즉 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 확률적으로 변화하여 그 구간에 포함되는 것이 아니라, 모집단에서 표본을 추출하여 OO% 신뢰구간을 구하는 작업을 100번 반복했을 때 평균적으로 그 구간에 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 포함되는 것이 OO번이란 뜻.</p>
-</blockquote>
-<p>하나의 표본에서 얻은 신뢰구간은 <img src="https://latex.codecogs.com/png.latex?%5Cmu">를 포함하거나 포함하지 않거나 둘 중 하나이다.</p>
-<p>신뢰구간은 표본에서 구한 모집단 <img src="https://latex.codecogs.com/png.latex?%5Cmu">의 추정값을 어느 정도 신뢰할 수 있는지를 나타낸다고 할 수 있다.</p>
-<p>신뢰구간이 좁다면 추정값 가까이에 <img src="https://latex.codecogs.com/png.latex?%5Cmu">가 있다고 생각할 수 있으므로, 추정값은 신뢰할 수 있는 값이다. 반대로 신뢰구간이 넓다면 추정값과 모집단평균 <img src="https://latex.codecogs.com/png.latex?%5Cmu">사이의 오차는 커지는 경향이 있으므로 신뢰도는 낮다.</p>
-<p>OO% 신뢰구간에서 ’OO%’에는 일반적으로 95%를 사용한다. 이 숫자는 과학계에서 관례로 사용되어 온 것으로, 필연성은 없다.</p>
-<p>가설검정에서 유의수준 5%는 95% 신뢰구간과 동전의 양면과 같은 관계이다.</p>
-<p>95% 신뢰구간이란 평균적으로 20번 중 1번 정도 벗어난다는, 달리 말하면 20번 중 19번은 구간에 모집단평균을 포함한다는 뜻이다.</p>
-<p><code>-</code> t분포와 95% 신뢰구간</p>
-<p>정규분포의 성질을 “<img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%5Cpm%202%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8">”안에 95%라고 대략적으로 말해왔지만 정확하게는 “<img src="https://latex.codecogs.com/png.latex?%ED%8F%89%EA%B7%A0%EA%B0%92%5Cpm%201.96%5Ctimes%20%ED%91%9C%EC%A4%80%ED%8E%B8%EC%B0%A8">”의 범위가 95%가 된다.</p>
-<p>문제가 되는 것은 중심극한정리는 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 근사적으로 성립하기에 실제 데이터 분석에서 볼 수 있는 작은 표본크기의 경우 표본오차가 정규분포를 따른다고 말할 수 없다는 것과 모집단의 <img src="https://latex.codecogs.com/png.latex?%5Csigma"> 대신 <img src="https://latex.codecogs.com/png.latex?s">를 써야만 한다는 것.</p>
-<p>이때 활약하는 것이 <strong><img src="https://latex.codecogs.com/png.latex?t">분포</strong></p>
-<p><strong><img src="https://latex.codecogs.com/png.latex?t">분포</strong>는 모집단이 정규분포라는 가정하에 미지의 모집단 표준편차 <img src="https://latex.codecogs.com/png.latex?%5Csigma">를 표본으로 계산한 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">로 대용했을 때, <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">를 표준오차 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">로 나누어 표준화한 값이 따르는 분포이다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cbar%7Bx%7D-%5Cmu%7D%7B%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D%7D"></p>
-<p>이 값은 표준오차 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">를 단위로 표본오차 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D-%5Cmu">가 몇 개분인지를 나타낸다.(3장의 표준화와 마찬가지)</p>
-<p>복잡하다고 느낄 수도 있겠으나, <img src="https://latex.codecogs.com/png.latex?t">분포 자체는 정규분포와 매우 비슷한 형태이며 표본크기 <img src="https://latex.codecogs.com/png.latex?n">에 따라 모양이 조금 달라질 뿐, 신뢰구간을 구하는 논리는 그대로이다.</p>
-<p>95%라는 엄밀한 값을 얻고자 미세 조정하는 것으로 생각하면 된다.</p>
-<p>아울러 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 커짐에 따라, <img src="https://latex.codecogs.com/png.latex?t">분포는 정규분포에 가까워진다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?t">분포에서 표본크기 <img src="https://latex.codecogs.com/png.latex?n=10">인 경우에는 평균 0, 표준편차 1인 정규분포보다 조금 넓어져 하위 2.5%, 상위 2.5%인 지점이 -2.26과 +2.26이 된다 (정규분포는 -1.96, +1.96)</p>
-<p>그러므로 신뢰구간을 구하는 식에서는 <img src="https://latex.codecogs.com/png.latex?%5Cpm%202">나 <img src="https://latex.codecogs.com/png.latex?%5Cpm%201.96">이 아닌 <img src="https://latex.codecogs.com/png.latex?%5Cpm%202.26">을 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Bs%7D%7B%5Csqrt%7Bn%7D%7D">에 곱해 계산한다.</p>
-<ul>
-<li>정밀도를 높이려면</li>
-</ul>
-<p>보다 신뢰 가능한 평균값을 추정하고 싶을 때는 어떻게 할까?</p>
-<p>오차분포의 너비를 나타내는 <strong>표준오차 </strong>에 주목해보면 이를 작게 만들기 위해서는 분자인 비편향표준편차 <img src="https://latex.codecogs.com/png.latex?s">를 작게 하거나, 분모인 표본크기 <img src="https://latex.codecogs.com/png.latex?n">을 크게 하는 두 가지 방법이 있다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?s">(또는 <img src="https://latex.codecogs.com/png.latex?%5Csigma">)는 모집단 데이터 퍼짐이라는 모집단 그 자체의 성질에서 유래하기에 작게 만들기 어렵지만, 측정한 데이터 퍼짐(변동) 정도를 줄일 수는 있다. 데이터 퍼짐이 증가하면 결과적으로 <img src="https://latex.codecogs.com/png.latex?s">(또는 <img src="https://latex.codecogs.com/png.latex?%5Csigma">)가 커지기 때문에, 측정을 한층 정밀하게 실시하는 식으로 대처 가능한 경우도 있다.</p>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">에 관해서는, <img src="https://latex.codecogs.com/png.latex?n">을 크게 만듦으로써 더 높은 정밀도로 추정할 수 있다.</p>
-<ul>
-<li><img src="https://latex.codecogs.com/png.latex?t">분포를 사용할 때 주의할 점</li>
-</ul>
-<p>표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 작아도 적용 가능한 <img src="https://latex.codecogs.com/png.latex?t">분포에는 ’정규분포에서 얻은 데이터’라는 가정이 필요하다. 즉, <img src="https://latex.codecogs.com/png.latex?t">분포는 데이터 <img src="https://latex.codecogs.com/png.latex?x_1,%20x_2,%20...%20,%20x_n">을 정규분포라는 모형에서 얻었을 때의 (표준화된) 표본오차가 따르는 분포이다. 데이터의 배경에 잇는 모집단분포가 완벽한 정규분포일 수는 없으므로, 얻은 95% 신뢰구간은 정확한 95%가 아니라는 점에 주의.</p>
-<p>특히 문제가 되는 것은 정규분포와 현저하게 다른 분포에서 데이터를 얻었을 때이다. 이 경우 95% 신뢰구간을 구해도 95%에서 벗어날 수 있어 주의해야 한다.</p>
-<p>단, 표본크기 <img src="https://latex.codecogs.com/png.latex?n">이 클 때는 중심극한정리에 따라 모집단이 정규분포가 아니더라도 표본평균을 정규분포로 근사할 수 있으므로 신뢰구간은 정확해진다.</p>
-</section>
-</section>
-<section id="가설검정-정리-必" class="level1">
-<h1>5. 가설검정 (정리 必)</h1>
-<section id="가설검정의-원리" class="level2">
-<h2 class="anchored" data-anchor-id="가설검정의-원리">5.1 가설검정의 원리</h2>
-</section>
-<section id="가설검정-시행" class="level2">
-<h2 class="anchored" data-anchor-id="가설검정-시행">5.2 가설검정 시행</h2>
-</section>
-<section id="가설검정-관련-그래프" class="level2">
-<h2 class="anchored" data-anchor-id="가설검정-관련-그래프">5.3 가설검정 관련 그래프</h2>
-</section>
-<section id="제1종-오류와-제2종-오류" class="level2">
-<h2 class="anchored" data-anchor-id="제1종-오류와-제2종-오류">5.4 제1종 오류와 제2종 오류</h2>
-<hr>
-</section>
-</section>
-<section id="다양한-가설검정" class="level1 page-columns page-full">
-<h1>6. 다양한 가설검정</h1>
-<p>p.151 ~</p>
-<ul>
-<li><p>모수검정 : 모집단이 특정분포를 따른다는 가정을 둔 가설검정</p>
-<ul>
-<li><p>정규분포로부터 얻어졌다고 간주할 수 있는 성질 (정규성 normality를 가졌다.)</p></li>
-<li><p>반대는 특정분포로 가정을 못하는 경우가 있다. ex) 좌우 비대칭 분포, 이상값이 있는 분포라면 평균이나 표준편차는 도움이 되지 않음, 모수검정 이용이 적절하지 않다. 그 대신 평균, 표준펴나 등의 파라미터에 기반을 두지 않는 ’비모수 검정’으로 분류되는 방법을 이용</p></li>
-</ul></li>
-<li><p>정규성 조사 (귀무가설에 정규성 가정)</p>
-<p>모수검정에서는 각 집단의 데이터에 정규성이 있어야한다.</p>
-<ul>
-<li><p>정규성 조사법 :</p>
-<ul>
-<li>Q-Q플롯(분위수-분위수 그림)</li>
-<li>샤피로-윌크 검정 (가설검정으로 조사)</li>
-<li>콜모고로프-스미르노프 (K-S) 검정</li>
-</ul></li>
-</ul></li>
-<li><p>등분산성 조사 (귀무가설에 등분산 가정)</p>
-<p>t검정, 분산분석 =&gt; 분산이 같은 모집단으로부터 획득되었다는 가정이 필요</p>
-<ul>
-<li>등분산성 조사법 :
-<ul>
-<li>바틀렛 검정</li>
-<li>레빈 검정</li>
-</ul></li>
-</ul></li>
-<li><p>데이터에 정규성이 없는 경우? → 비모수검정 (평균값 대신 분포의 위치를 나타내는 대푯값에 주목하여 해석)</p>
-<ul>
-<li><strong>윌콕슨 순위합 검정</strong>(wil-coxon rank sum test) : 평균값 대신 각 데이터 값의 순위에 기반하여 검정</li>
-<li>맨-휘트니 U 검정
-<ul>
-<li>비교할 2개 집단의 분포 모양 자체가 같아야함</li>
-</ul></li>
-<li>플리그너-폴리셀로 검정</li>
-<li>브루너-문첼 검정</li>
-</ul></li>
-</ul>
-<blockquote class="blockquote">
-<p>여기까지는 2개 표본 비교</p>
-</blockquote>
-<ul>
-<li>분산분석(ANOVA, Analysis of variance) : 3개 집단 이상의 평균값 비교
-<ul>
-<li>귀무가설 : 모든 집단의 평균이 같다 (<img src="https://latex.codecogs.com/png.latex?%5Cmu_A%20=%20%5Cmu_B%20=%20%5Cmu_C">)</li>
-<li>대립가설 : 적어도 한 쌍에는 차이가 있다.</li>
-</ul></li>
-<li>F값 = (평균적인 집단간 변동) / (평균적인 집단 내 변동)
-<ul>
-<li>집단 내 변동 = 오차에 따른 변동</li>
-<li>집단 간 변동 = 효과에 따른 변동</li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/Statistics/통계_101_X_데이터_분석_files/figure-html/cell-83-1-image.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">image.png</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>자유도(degree of freedom) : 자유로이 움직일 수 있는 변수의 수</p>
-<p>ex) 표본크기가 n=10인 표본이라면 자유도는 10이지만 표본평균을 계산한 이후의 자유도는 9가 된다.</p>
-<p>표본평균이 확정되었기에 9개의 데이터가 정해지면 남은 1개의 값을 확정할 수 있기 때문</p></li>
-<li><p>일표본 t검정 (가정) vs 이표본 t검정</p></li>
-<li><p>정규분포 ㅡ t분포 ㅡ t검정 관계</p></li>
-</ul>
-<p>p.164 ~</p>
-<ul>
-<li><p>분산분석의 대립가설은 “적어도 한 쌍에는 차이가 있다.” 이기에 <img src="https://latex.codecogs.com/png.latex?p%3C0.05"> 로 대립가설을 채택하더라도 어느쌍에 차이가 있는지까지는 알 수 없다. 어느 쌍에 차이가 있는지 알고싶다면 “다중 비교”라 불리는 방법을 사용해야 한다.</p></li>
-<li><p>집단이 셋 이상일 때 각 쌍의 차이를 조사하기 위해 유의수준 <img src="https://latex.codecogs.com/png.latex?%5Calpha=0.05">에서 이표본 t검정을 반복해 실행하면 제 1종 오류가 증가하고 마는 문제가 생김</p>
-<ul>
-<li>ex) 3개 집단, t검정 3번, 적어도 한 쌍에서 제 1종 오류가 일어날 확률 : <img src="https://latex.codecogs.com/png.latex?1-">(어느 쌍에서도 제 1종 오류가 일어나지 않을 확률)<img src="https://latex.codecogs.com/png.latex?%5E3%20=%200.143"></li>
-</ul></li>
-<li><p>집단의 수가 늘어날수록 제 1종 오류가 일어나기 쉬워진다.</p></li>
-</ul>
-<div id="cell-88" class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> plt</span>
-<span id="cb1-2">plt.rcParams[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'font.family'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Malgun Gothic'</span></span>
-<span id="cb1-3">plt.rcParams[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'axes.unicode_minus'</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span></span>
-<span id="cb1-4"></span>
-<span id="cb1-5">x <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.arange(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">100</span>)</span>
-<span id="cb1-6">y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>(<span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.95</span>)<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">**</span>x</span>
-<span id="cb1-7">plt.plot(x,y)</span>
-<span id="cb1-8">plt.xlabel(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"검정횟수"</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
-<pre><code>Text(0.5, 0, '검정횟수')</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="https://star77sa.github.io/posts/Statistics/통계_101_X_데이터_분석_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li><p>다중비교의 기본 아이디어 : 검정을 반복하는 만큼, 유의수준을 엄격한 값으로 변경하는 것</p>
-<ul>
-<li>본페로니 교정, 튜키 검정, 던넷 검정, 윌리엄스 검정</li>
-</ul></li>
-<li><p>3집단 이상의 비모수 검정 : 크러스컬 - 월리스 검정, 스틸-드와스 검정(&lt;-&gt; 튜키 검정), 스틸 검정(&lt;-&gt; 던넷 검정)</p></li>
-<li><p>양적변수는 모집단의 평균값을 추정하거나 모집단을 대상으로 가설을 세워 가설검정을 한다.</p></li>
-<li><p>범주형변수는 사건이 일어날 확률 P를 추정하거나 확률 P에 관련된 가설을 세워 검정한다.</p></li>
-</ul>
-<p>이항분포 <img src="https://latex.codecogs.com/png.latex?_nC_mp%5Em(1-p)%5E%7BN-m%7D"> - 이항검정 -&gt; 범주가 2개일때만 이용가능. - 범주가 여러개거나 일반적인 이산확률분포에 이항검정의 방식을 적용하고 싶을 때 =&gt; 카이제곱검정(<img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2"> chi-squard test)의 일종인 적합도 검정 이용</p>
-<p>카이제곱검정의 적합도 검정 해석 - 귀무가설 : 모집단은 상정한 이산확률분포이다. - 대립가설 : 모집단은 상정한 이산확률분포가 아니다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2%20=%20%5Cfrac%7B(%EC%8B%A4%EC%A0%9C%20%EC%B6%9C%ED%98%84%EB%8F%84%EC%88%98-%EA%B8%B0%EB%8C%80%EB%8F%84%EC%88%98)%5E2%7D%7B%EA%B8%B0%EB%8C%80%EB%8F%84%EC%88%98%7D"></p>
-<ul>
-<li>귀무가설이 옳다면 이는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2">분포라는 확률분포를 따른다.</li>
-<li>이 분포 안에서 실제로 얻은 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2">의 위치를 구해 p값을 도출한다</li>
-</ul>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/Statistics/통계_101_X_데이터_분석_files/figure-html/cell-93-1-image.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">image.png</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>이항검정, 카이제곱 검정의 적합도 검정 : ’데이터 vs 모집단’의 확률 분포를 비교</p></li>
-<li><p>범주형 변수에서도 두 개 변수의 관계를 조사해야 할 때가 있다. - 카이제곱의 독립성 검정 (그 밖에는 초기하분포 이용 피셔의 정확검정 등)</p></li>
-<li><p>분할표에서 비율을 유지? -&gt; 독립</p></li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <guid>https://star77sa.github.io/posts/Statistics/통계_101_X_데이터_분석.html</guid>
-  <pubDate>Wed, 13 Sep 2023 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
