@@ -2,7 +2,9 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Python/python.html",
+      "/posts/Python/python_3.html",
+      "/posts/Python/python_2.html",
+      "/posts/Python/python_1.html",
       "/posts/etc/모델_성능평가지표_정리.html",
       "/posts/Paper/smartgrid1.html",
       "/posts/etc/NVIDIA초청강연.html",
