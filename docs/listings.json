@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Linear_Algebra/선형대수학.html",
       "/posts/Python/python_3.html",
       "/posts/Python/python_2.html",
       "/posts/Python/python_1.html",

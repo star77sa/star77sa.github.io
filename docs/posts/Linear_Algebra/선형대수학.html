@@ -9,7 +9,7 @@
 <meta name="author" content="고경수">
 <meta name="dcterms.date" content="2024-01-23">
 
-<title>Time Series - Python_3 seaborn, plotnine</title>
+<title>Time Series - 선형대수학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -116,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_3.html">Python_3 seaborn, plotnine</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Linear_Algebra/선형대수학.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../posts/Linear_Algebra/선형대수학.html">선형대수학</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -126,10 +155,10 @@ ul.task-list li input[type="checkbox"] {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_3.html">Python_3 seaborn, plotnine</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Linear_Algebra/선형대수학.html">Linear Algebra</a></li><li class="breadcrumb-item"><a href="../../posts/Linear_Algebra/선형대수학.html">선형대수학</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Python_3 seaborn, plotnine</h1>
+      <h1 class="title">선형대수학</h1>
                       </div>
   </div>
     
@@ -222,13 +251,30 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
- <span class="menu-text">Paper</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Linear Algebra</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Linear_Algebra/선형대수학.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">선형대수학</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Paper</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Paper/smartgrid1.html" class="sidebar-item-text sidebar-link">
@@ -239,13 +285,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Python</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_1.html" class="sidebar-item-text sidebar-link">
@@ -255,12 +301,12 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python_2 matplotlib, seaborn, plotnine</span></a>
+ <span class="menu-text">Python_2 matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../posts/Python/python_3.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../posts/Python/python_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python_3 seaborn, plotnine</span></a>
   </div>
 </li>
@@ -268,13 +314,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
  <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
@@ -307,7 +353,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#seaborn" id="toc-seaborn" class="nav-link active" data-scroll-target="#seaborn">Seaborn</a></li>
+  <li><a href="#선형대수학" id="toc-선형대수학" class="nav-link active" data-scroll-target="#선형대수학">선형대수학</a>
+  <ul class="collapse">
+  <li><a href="#전치-transpose" id="toc-전치-transpose" class="nav-link" data-scroll-target="#전치-transpose">전치 (Transpose)</a></li>
+  <li><a href="#내적과-정사영-dot-project-projection" id="toc-내적과-정사영-dot-project-projection" class="nav-link" data-scroll-target="#내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</a></li>
+  <li><a href="#벡터의-norm" id="toc-벡터의-norm" class="nav-link" data-scroll-target="#벡터의-norm">벡터의 norm</a>
+  <ul class="collapse">
+  <li><a href="#norm" id="toc-norm" class="nav-link" data-scroll-target="#norm">2-norm</a></li>
+  <li><a href="#norm-1" id="toc-norm-1" class="nav-link" data-scroll-target="#norm-1">1-norm</a></li>
+  <li><a href="#p-norm" id="toc-p-norm" class="nav-link" data-scroll-target="#p-norm">p-norm</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -321,13 +377,82 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#seaborn" id="toc-seaborn">Seaborn</a></li>
+  <li><a href="#선형대수학" id="toc-선형대수학">선형대수학</a>
+  <ul>
+  <li><a href="#전치-transpose" id="toc-전치-transpose">전치 (Transpose)</a></li>
+  <li><a href="#내적과-정사영-dot-project-projection" id="toc-내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</a></li>
+  <li><a href="#벡터의-norm" id="toc-벡터의-norm">벡터의 norm</a>
+  <ul>
+  <li><a href="#norm" id="toc-norm">2-norm</a></li>
+  <li><a href="#norm-1" id="toc-norm-1">1-norm</a></li>
+  <li><a href="#p-norm" id="toc-p-norm">p-norm</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
-<section id="seaborn" class="level2">
-<h2 class="anchored" data-anchor-id="seaborn">Seaborn</h2>
+<section id="선형대수학" class="level1">
+<h1>선형대수학</h1>
+<p>선형 방정식만을 다룬다.</p>
+<p><span class="math inline">\(\cancel{ax^2}+bx+c=0\)</span></p>
+<p>행렬과 벡터에 대해서 공부하는 학문이다.</p>
+<p>하고자 하는 것: 연립 1차 방정식을 푸는 것.</p>
+<p><span class="math display">\[{\color{Red}1}{\color{SkyBlue}x} + {\color{Red}2}{\color{SkyBlue}y} = {\color{SkyBlue}4} \]</span></p>
+<p><span class="math display">\[{\color{Red}2}{\color{SkyBlue}x} + {\color{Red}5}{\color{SkyBlue}y} = {\color{SkyBlue}9} \]</span></p>
+<p><span class="math display">\[ \begin{pmatrix} {\color{Red}1} &amp; {\color{Red}2} \\ {\color{Red}2} &amp; {\color{Red}5} \end{pmatrix} \begin{pmatrix} {\color{SkyBlue}x} \\ {\color{SkyBlue}4} \end{pmatrix} = \begin{pmatrix} {\color{SkyBlue}4} \\ {\color{SkyBlue}9} \end{pmatrix} \]</span></p>
+<p><span class="math display">\[\text{\ matrix \  vector \ \ \ vector}\]</span></p>
+<section id="전치-transpose" class="level2">
+<h2 class="anchored" data-anchor-id="전치-transpose">전치 (Transpose)</h2>
+<p><span class="math inline">\(A\)</span> -&gt; <span class="math inline">\(A^T\)</span></p>
+<p><span class="math inline">\(a_{ij}\)</span> -&gt; <span class="math inline">\(a_{ji}\)</span></p>
+$ A =
+<span class="math display">\[\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\]</span>
+$, $ A^T =
+<span class="math display">\[\begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}\]</span>
+<p>$</p>
+<ol type="1">
+<li><p><span class="math inline">\((A^T)^T = A\)</span></p></li>
+<li><p><span class="math inline">\((A+B)^T = A^T + B^T\)</span></p></li>
+<li><p><span class="math inline">\((AB)^T = B^TA^T\)</span></p></li>
+<li><p><span class="math inline">\((CA)^T = CA^T\)</span></p></li>
+<li><p><span class="math inline">\(\text{det}(A^T) = \text{det}(A)\)</span></p></li>
+<li><p>$ (A<sup>T)</sup>{-1} = (A<sup>{-1})</sup>T $</p></li>
+</ol>
+</section>
+<section id="내적과-정사영-dot-project-projection" class="level2">
+<h2 class="anchored" data-anchor-id="내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</h2>
+<p>내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.</p>
+<p>inner product <span class="math inline">\(\supset\)</span> dot prodect <span class="math inline">\(=\)</span> scalar product</p>
+<p><span class="math display">\[ \begin{pmatrix} 1 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 5 \\ 1 \end{pmatrix} = 5+3 = 8 \]</span></p>
+<p><span class="math inline">\(a^Tb = \lVert a \rVert \lVert b \rVert cos\theta = \lVert a \rVert cos\theta \lVert b \rVert = \lVert b \rVert cos\theta \lVert a \rVert\)</span></p>
+<pre><code>                a에서 b로의 정사영 / b에서 a로의 정사영</code></pre>
+<p>” 내적은 정사영이다. ”</p>
+<p><span class="math inline">\(a^Tb = \lVert a \rVert \lVert a \rVert = \lVert a \rVert^2\)</span></p>
+<p>a 벡터의 크기를 구할 때 <span class="math inline">\(\sqrt{a^Ta}\)</span> 이런식으로도 많이 구함</p>
+<p>단위벡터(unit vector): 크기가 1인 벡터</p>
+<p><span class="math inline">\(\frac{a}{\sqrt{a^T}{a}} = \frac{a}{\lVert a \rVert}\)</span> : Normalize</p>
+<p><span class="math inline">\(a \cdot b\)</span> =&gt; 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0</p>
+</section>
+<section id="벡터의-norm" class="level2">
+<h2 class="anchored" data-anchor-id="벡터의-norm">벡터의 norm</h2>
+<section id="norm" class="level3">
+<h3 class="anchored" data-anchor-id="norm">2-norm</h3>
+<p><span class="math inline">\(a = \begin{pmatrix} 1\\2\\3 \end{pmatrix}\)</span>,</p>
+<p>$a _2 = = $ (<span class="math inline">\(l_2\)</span>-norm)</p>
+</section>
+<section id="norm-1" class="level3">
+<h3 class="anchored" data-anchor-id="norm-1">1-norm</h3>
+$ b =
+<span class="math display">\[\begin{pmatrix} 1\\2\\3 \end{pmatrix}\]</span>
+<p>$, <span class="math inline">\(\lVert b \rVert_1 = 1+2+3 = 6\)</span> (<span class="math inline">\(l_1\)</span>-norm)</p>
+</section>
+<section id="p-norm" class="level3">
+<h3 class="anchored" data-anchor-id="p-norm">p-norm</h3>
+<p><span class="math inline">\((|　|^p+|　|^p+|　|^p+ ... )^\frac{1}{p}\)</span>, <span class="math inline">\((p\geq 1)\)</span></p>
+<p><code>+</code> <span class="math inline">\(l_0\)</span>-norm 은 0이아닌 성분의 “개수”</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
