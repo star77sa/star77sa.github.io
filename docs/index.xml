@@ -67,14 +67,11 @@ $, $ A^T =
 <h2 class="anchored" data-anchor-id="벡터의-norm">벡터의 norm</h2>
 <section id="norm" class="level3">
 <h3 class="anchored" data-anchor-id="norm">2-norm</h3>
-<p><img src="https://latex.codecogs.com/png.latex?a%20=%20%5Cbegin%7Bpmatrix%7D%201%5C%5C2%5C%5C3%20%5Cend%7Bpmatrix%7D">,</p>
-<p>$a _2 = = $ (<img src="https://latex.codecogs.com/png.latex?l_2">-norm)</p>
+<p><img src="https://latex.codecogs.com/png.latex?a=%5Cbegin%7Bpmatrix%7D%201%5C%5C2%5C%5C3%20%5Cend%7Bpmatrix%7D,%7C%7Ca%7C%7C%20_%7B2%7D%20=%20%5Csqrt%7Ba%5ETa%7D%20=%20%5Csqrt%7B1%5E2%20+%202%5E2%20+%203%5E2%7D"> (<img src="https://latex.codecogs.com/png.latex?l_2">-norm)</p>
 </section>
 <section id="norm-1" class="level3">
 <h3 class="anchored" data-anchor-id="norm-1">1-norm</h3>
-$ b =
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bpmatrix%7D%201%5C%5C2%5C%5C3%20%5Cend%7Bpmatrix%7D">
-<p>$, <img src="https://latex.codecogs.com/png.latex?%5ClVert%20b%20%5CrVert_1%20=%201+2+3%20=%206"> (<img src="https://latex.codecogs.com/png.latex?l_1">-norm)</p>
+<p><img src="https://latex.codecogs.com/png.latex?b=%5Cbegin%7Bpmatrix%7D%201%5C%5C2%5C%5C3%20%5Cend%7Bpmatrix%7D">, <img src="https://latex.codecogs.com/png.latex?%5ClVert%20b%20%5CrVert_1%20=%201+2+3%20=%206"> (<img src="https://latex.codecogs.com/png.latex?l_1">-norm)</p>
 </section>
 <section id="p-norm" class="level3">
 <h3 class="anchored" data-anchor-id="p-norm">p-norm</h3>

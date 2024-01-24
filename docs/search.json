@@ -1561,7 +1561,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#벡터의-norm",
     "title": "선형대수학",
     "section": "벡터의 norm",
-    "text": "벡터의 norm\n\n2-norm\n\\(a = \\begin{pmatrix} 1\\\\2\\\\3 \\end{pmatrix}\\),\n$a _2 = = $ (\\(l_2\\)-norm)\n\n\n1-norm\n$ b =\n\\[\\begin{pmatrix} 1\\\\2\\\\3 \\end{pmatrix}\\]\n$, \\(\\lVert b \\rVert_1 = 1+2+3 = 6\\) (\\(l_1\\)-norm)\n\n\np-norm\n\\((|　|^p+|　|^p+|　|^p+ ... )^\\frac{1}{p}\\), \\((p\\geq 1)\\)\n+ \\(l_0\\)-norm 은 0이아닌 성분의 “개수”",
+    "text": "벡터의 norm\n\n2-norm\n\\(a=\\begin{pmatrix} 1\\\\2\\\\3 \\end{pmatrix},||a|| _{2} = \\sqrt{a^Ta} = \\sqrt{1^2 + 2^2 + 3^2}\\) (\\(l_2\\)-norm)\n\n\n1-norm\n\\(b=\\begin{pmatrix} 1\\\\2\\\\3 \\end{pmatrix}\\), \\(\\lVert b \\rVert_1 = 1+2+3 = 6\\) (\\(l_1\\)-norm)\n\n\np-norm\n\\((|　|^p+|　|^p+|　|^p+ ... )^\\frac{1}{p}\\), \\((p\\geq 1)\\)\n+ \\(l_0\\)-norm 은 0이아닌 성분의 “개수”",
     "crumbs": [
       "About",
       "Posts",
