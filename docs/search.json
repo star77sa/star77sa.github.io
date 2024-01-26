@@ -1522,7 +1522,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html",
     "title": "선형대수학",
     "section": "",
-    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n  \n  Identity matrix (항등 행렬)\n  역행렬",
+    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n  \n  Identity matrix (항등 행렬)\n  Inverse matrix (역행렬)\n  Diagonal matrix (대각 행렬)\n  Orthogonal matrix (직교 행렬)\n  \n  Rank (행렬의 계수)\n  Null space (영공간)\n  Ax=b의 해의 수 알아내기\n  rank 구하기 예제 풀이\n  가우스-조던 소거법 (Gauss-Jordan Elimination)",
     "crumbs": [
       "About",
       "Posts",
@@ -1587,7 +1587,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#span과-column-space열공간",
     "title": "선형대수학",
     "section": "span과 column space(열공간)",
-    "text": "span과 column space(열공간)\n\nLinear combination\n\n\\({\\color{red}a_1}v_1 + {\\color{red}a_2}v_2 + {\\color{red}a_3}v_3\\)\n\\({\\color{red}a_1, a_2, a_3}\\) : 스칼라\n\\(v_1, v_2, v_3\\) : 벡터\n\n내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span\n2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(\\(\\begin{pmatrix}0\\\\0\\end{pmatrix}\\)인 두 벡터) 등 …\n\ncolumn space 표기법\n\n\\(C(A)\\)\n\\(range(A)\\)",
+    "text": "span과 column space(열공간)\n\nLinear combination\n\n\\({\\color{red}a_1}v_1 + {\\color{red}a_2}v_2 + {\\color{red}a_3}v_3\\)\n\\({\\color{red}a_1, a_2, a_3}\\) : 스칼라\n\\(v_1, v_2, v_3\\) : 벡터\n\n내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span\n2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(\\(\\begin{pmatrix}0\\\\0\\end{pmatrix}\\)인 두 벡터) 등 …\ncolumn space:\n\n선형 독립인 A의 column들로 이루어진 벡터 공간.\n행렬의 열이 span하는 영역\ncolumn space 표기법\n\n\\(C(A)\\)\n\\(range(A)\\)",
     "crumbs": [
       "About",
       "Posts",
@@ -1626,7 +1626,72 @@
     "href": "posts/Linear_Algebra/선형대수학.html#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix",
     "title": "선형대수학",
     "section": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)",
-    "text": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n\nIdentity matrix (항등 행렬)\n\n항등원과 비슷\n어떤 행렬과 곱해도 그 행렬 그대로 나옴\n정사각 행렬에 대해서만 정의\n\n\\(A \\times \\mathbf{I} = A\\)\n\\(I_2 = \\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}\\) \\(I_3 = \\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}...\\)\n\n\n역행렬\n\\(A\\times{\\color{red}A^{-1}}=I\\)\n\n정사각 행렬에 대해서만 정의\nA가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 \\(A^{-1}\\)이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현\nA의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것",
+    "text": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n\nIdentity matrix (항등 행렬)\n\n항등원과 비슷\n어떤 행렬과 곱해도 그 행렬 그대로 나옴\n정사각 행렬에 대해서만 정의\n\n\\(A \\times \\mathbf{I} = A\\)\n\\(I_2 = \\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}\\) \\(I_3 = \\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}...\\)\n\n\nInverse matrix (역행렬)\n\\(A\\times{\\color{red}A^{-1}}=I\\)\n\n정사각 행렬에 대해서만 정의\nA가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 \\(A^{-1}\\)이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현\nA의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것\n\n\n\nDiagonal matrix (대각 행렬)\n\\(\\begin{pmatrix}\n..&0\\\\\n0&..\n\\end{pmatrix}\\) \\(\\begin{pmatrix}\n..&0&0\\\\\n0&..&0\\\\\n0&0&..\n\\end{pmatrix}\\)\n\n대각선에만 값이 있어야 함. 나머지는 0\n대각선에도 0이 들어갈 수 있음.\n정사각 행렬이 아니어도 됨. 보통은 정사각형. 정사각행렬이 아닌경우 rectangular diagonal matrix 라고 말해주는 편\n\n\n\nOrthogonal matrix (직교 행렬)\n\n모든 column들이 orthonormal set을 이루는 행렬. (orthogonal + normal)\n모든 column 벡터들이 서로 직교한다.(수식적으로 내적이 0이라는 것) + 모든 벡터의 크기가 1로 맞춰져 있다.\n정사각 행렬에 대해서만 정의\n직교행렬의 열끼리는 서로 직교\n직교행렬에서는 \\(Q^{-1}=Q^T\\)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#rank-행렬의-계수",
+    "href": "posts/Linear_Algebra/선형대수학.html#rank-행렬의-계수",
+    "title": "선형대수학",
+    "section": "Rank (행렬의 계수)",
+    "text": "Rank (행렬의 계수)\n\nrank : 행렬이 가지는 independent한 column의 수 = column space의 dimension(=row space의 dim)\n\n★ independent한 column의 수 = independent한 row의 수 - \\(rank(A) = rank(A^T)\\)\n\\(\\begin{pmatrix}1&2&3\\\\0&0&0\\end{pmatrix}, rank=1\\), rank-deficient\n\\(\\begin{pmatrix}1&0&1\\\\0&1&1\\end{pmatrix}, rank=2\\): 이 경우는 행이 2개기에 rank가 2개보다 클 수는 없다 + full row rank\n\nrank-deficient, full row rank, full column rank, full rank",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#null-space-영공간",
+    "href": "posts/Linear_Algebra/선형대수학.html#null-space-영공간",
+    "title": "선형대수학",
+    "section": "Null space (영공간)",
+    "text": "Null space (영공간)\n\n\\(Ax=0\\)을 만족하는 \\(x\\)의 집합 (행렬 A의 column들의 linear combination이 0이 되게 하는 계수 \\(x\\)의 집합)\n\nrow vector의 차원을 따른다. \\(n\\times m\\) \\({\\color{red}m \\times 1}\\) → \\(n \\times 1\\)\n\n행렬과 벡터의 곱을 linear combination으로 나타낼 수 있다.\nex) \\(A=\\begin{pmatrix}1&0&1\\\\0&1&1\\end{pmatrix}\\), \\(Ax = x_1\\begin{pmatrix}1\\\\0\\end{pmatrix}+x_2\\begin{pmatrix}0\\\\1\\end{pmatrix}+x_3\\begin{pmatrix}1\\\\1\\end{pmatrix} = {\\color{red}\\begin{pmatrix}0\\\\0\\end{pmatrix}}\\)으로 만들고싶다.\n\n\\(x=\\begin{pmatrix}0\\\\0\\\\0\\end{pmatrix}\\) - null space에 0 0 0 은 항상 들어간다.\n\\(x=\\begin{pmatrix}1\\\\1\\\\-1\\end{pmatrix}\\), \\(x=\\begin{pmatrix}2\\\\2\\\\-2\\end{pmatrix}\\), … → \\({\\color{red}c\\times} Ax=0{\\color{red}\\times c}\\)\n\\({\\color{red}x_n = c\\begin{pmatrix}1\\\\1\\\\-1\\end{pmatrix}}\\) null space는 3차원 공간 안에서 1차원을 span 하겠다는 것(상수배)\ncolumn vector는 2차원 안에 있는데 null space는 3차원 안에 있다. 즉 null space는 column space와 아예 다른 차원에 있는 space.\n\n\n헷갈릴 수 있는 것: null space는 column space의 일부 같은 것이다. (x)\n\nA가 m \\(\\times\\) n 일 때, \\(dim(N(A))=n-rank(A)\\) (열의 수 - A의 rank)\n\\(A=\\begin{pmatrix}1&0\\\\0&1\\\\0&0\\end{pmatrix}\\), \\(r=2, n=2\\) 여기서는 \\(n-r\\)이 0이므로 유일하게 가능한 것은 \\({\\color{red}x=\\begin{pmatrix}0\\\\0\\end{pmatrix}}\\)\nNull space는 row space와 수직한 space.\n\\(dim(N(A)) + dim(R(A)) = n\\)\n\nA라는 행렬이 있을 때 rank를 알아내면 Null space의 차원이 어떻게 되고… 이런식으로 행렬의 분석에 있어서 굉장히 자주 등장하는 요소\n\\(Ax=b\\)에서 \\(x\\)라는 해가 무한할지 하나일지 아니면 없을지 등을 이런 개념을 토대로 알아낼 수 있다.",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#axb의-해의-수-알아내기",
+    "href": "posts/Linear_Algebra/선형대수학.html#axb의-해의-수-알아내기",
+    "title": "선형대수학",
+    "section": "Ax=b의 해의 수 알아내기",
+    "text": "Ax=b의 해의 수 알아내기\nex1)\n\\(x+2y=1\\),\n\\(2x+4y=2\\) 와 같이 주어졌을 경우는 해가 무한 (하나의 직선 위의 모든 값이 해가 됨)\nex2)\n\\(x+2y=1\\),\n\\(2x+4y=1\\) 와 같이 주어졌을 경우는 해가 없음 (두 개의 평행한 직선)\nex3)\n\\(x+2y=1\\),\n\\(x+4y=1\\) 와 같이 주어졌을 경우는 해가 하나 (두 직선이 한 점에서 만남)\n\nfull column rank 일 때: 해가 없거나 한 개\n\n\n\n\nimage.png\n\n\n\nfull row rank 일 때: 해는 무한하다. (\\(A(x_p+x_n)=b\\))\n← \\(Ax_n=0, Ax_p=b\\),\n\\(x_n\\)은 무한, \\(x_p\\)는 식이 성립하는 임의의 값\nfull rank(square matrix) 일 때: 해가 한 개 있다. \\((x=A^{-1}b)\\)\nrank-deficient 일 때:\n\\(\\begin{pmatrix}1&2&3\\\\0&0&0\\end{pmatrix}\\) rank가 1인경우 → 1차원만을 span 가능. 예를 들어 b가 \\(\\begin{pmatrix}1\\\\1\\end{pmatrix}\\)이다? 해가 없음.\nA가 span할 수 있는 차원 \\(c(A)\\)에 b가 있다면 해가 무한하다. 들어있지 않다면 해가 없다.",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#rank-구하기-예제-풀이",
+    "href": "posts/Linear_Algebra/선형대수학.html#rank-구하기-예제-풀이",
+    "title": "선형대수학",
+    "section": "rank 구하기 예제 풀이",
+    "text": "rank 구하기 예제 풀이\n3x3인 실수행렬 A가 다음을 만족할 때, \\(rank(A)\\)는?\n(가) \\(Ax = \\begin{pmatrix}1\\\\2\\\\b\\end{pmatrix}\\)의 해가 존재하는 실수 \\(b\\)는 유일하다.\n(나) \\(Ax = \\begin{pmatrix}1\\\\1\\\\b\\end{pmatrix}\\)의 해는 어느 실수 \\(b\\)에 대해서도 존재하지 않는다.\n…\n\n(가)조건에 의해 \\(\\begin{pmatrix}1\\\\2\\\\b\\end{pmatrix}\\) 는 span할 수 있다. (나)조건에 의해 \\(\\begin{pmatrix}1\\\\1\\\\b\\end{pmatrix}\\)는 span 할 수 없다.\n그런데 이 때, A가 full rank라면 span 할 수 없는 것이 없기 때문에 rank가 3은 아닐 것.\n(가)조건에 의해 \\(\\begin{pmatrix}1\\\\2\\\\b\\end{pmatrix}\\) 정도는 span 할 수 있으므로 rank가 0은 아닐 것.\n→ rank가 1이냐 2냐.\n\n\n\n\nimage.png\n\n\n\nrank = 2이면 평면, rank = 1 이면 직선이다.\nAx의 값에서 \\(\\begin{pmatrix}1\\\\2\\\\b\\end{pmatrix}\\)가 유일하므로 x는 수직할 수 없다.\n여기서, rank = 2일 경우를 생각해보면 수직이 아니므로 b를 바꾸다 보면 1 1 b 가 만나는 부분이 있을 것.\n따라서 rank = 1이다. (직선)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#가우스-조던-소거법-gauss-jordan-elimination",
+    "href": "posts/Linear_Algebra/선형대수학.html#가우스-조던-소거법-gauss-jordan-elimination",
+    "title": "선형대수학",
+    "section": "가우스-조던 소거법 (Gauss-Jordan Elimination)",
+    "text": "가우스-조던 소거법 (Gauss-Jordan Elimination)",
     "crumbs": [
       "About",
       "Posts",
