@@ -387,6 +387,8 @@ window.Quarto = {
   <li><a href="#axb의-해의-수-알아내기" id="toc-axb의-해의-수-알아내기" class="nav-link" data-scroll-target="#axb의-해의-수-알아내기">Ax=b의 해의 수 알아내기</a></li>
   <li><a href="#rank-구하기-예제-풀이" id="toc-rank-구하기-예제-풀이" class="nav-link" data-scroll-target="#rank-구하기-예제-풀이">rank 구하기 예제 풀이</a></li>
   <li><a href="#가우스-조던-소거법-gauss-jordan-elimination" id="toc-가우스-조던-소거법-gauss-jordan-elimination" class="nav-link" data-scroll-target="#가우스-조던-소거법-gauss-jordan-elimination">가우스-조던 소거법 (Gauss-Jordan Elimination)</a></li>
+  <li><a href="#times-2-역행렬" id="toc-times-2-역행렬" class="nav-link" data-scroll-target="#times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</a></li>
+  <li><a href="#행렬식determinant" id="toc-행렬식determinant" class="nav-link" data-scroll-target="#행렬식determinant">행렬식(determinant)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -435,6 +437,8 @@ window.Quarto = {
   <li><a href="#axb의-해의-수-알아내기" id="toc-axb의-해의-수-알아내기">Ax=b의 해의 수 알아내기</a></li>
   <li><a href="#rank-구하기-예제-풀이" id="toc-rank-구하기-예제-풀이">rank 구하기 예제 풀이</a></li>
   <li><a href="#가우스-조던-소거법-gauss-jordan-elimination" id="toc-가우스-조던-소거법-gauss-jordan-elimination">가우스-조던 소거법 (Gauss-Jordan Elimination)</a></li>
+  <li><a href="#times-2-역행렬" id="toc-times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</a></li>
+  <li><a href="#행렬식determinant" id="toc-행렬식determinant">행렬식(determinant)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -450,8 +454,8 @@ window.Quarto = {
 <p><span class="math display">\[\text{\ matrix \  vector \ \ \ vector}\]</span></p>
 <section id="전치-transpose" class="level2">
 <h2 class="anchored" data-anchor-id="전치-transpose">전치 (Transpose)</h2>
-<p><span class="math inline">\(A\)</span> -&gt; <span class="math inline">\(A^T\)</span></p>
-<p><span class="math inline">\(a_{ij}\)</span> -&gt; <span class="math inline">\(a_{ji}\)</span></p>
+<p><span class="math inline">\(A\)</span> → <span class="math inline">\(A^T\)</span></p>
+<p><span class="math inline">\(a_{ij}\)</span> → <span class="math inline">\(a_{ji}\)</span></p>
 <p><span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span>, <span class="math inline">\(A^T = \begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}\)</span></p>
 <ol type="1">
 <li><p><span class="math inline">\((A^T)^T = A\)</span></p></li>
@@ -465,7 +469,7 @@ window.Quarto = {
 <section id="내적과-정사영-dot-product-projection" class="level2">
 <h2 class="anchored" data-anchor-id="내적과-정사영-dot-product-projection">내적과 정사영 (dot product &amp; projection)</h2>
 <p>내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.</p>
-<p>inner product <span class="math inline">\(\supset\)</span> dot prodect <span class="math inline">\(=\)</span> scalar product</p>
+<p>inner product <span class="math inline">\(\supset\)</span> dot product <span class="math inline">\(=\)</span> scalar product</p>
 <p><span class="math display">\[ \begin{pmatrix} 1 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 5 \\ 1 \end{pmatrix} = 5+3 = 8 \]</span></p>
 <p><span class="math inline">\(a^Tb = \lVert a \rVert \lVert b \rVert cos\theta = \lVert a \rVert cos\theta \lVert b \rVert = \lVert b \rVert cos\theta \lVert a \rVert\)</span></p>
 <pre><code>                a에서 b로의 정사영 / b에서 a로의 정사영</code></pre>
@@ -474,7 +478,7 @@ window.Quarto = {
 <p>a 벡터의 크기를 구할 때 <span class="math inline">\(\sqrt{a^Ta}\)</span> 이런식으로도 많이 구함</p>
 <p>단위벡터(unit vector): 크기가 1인 벡터</p>
 <p><span class="math inline">\(\frac{a}{\sqrt{a^T}{a}} = \frac{a}{\lVert a \rVert}\)</span> : Normalize</p>
-<p><span class="math inline">\(a \cdot b\)</span> =&gt; 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0</p>
+<p><span class="math inline">\(a \cdot b\)</span> → 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0</p>
 </section>
 <section id="벡터의-norm" class="level2">
 <h2 class="anchored" data-anchor-id="벡터의-norm">벡터의 norm</h2>
@@ -698,6 +702,49 @@ window.Quarto = {
 </section>
 <section id="가우스-조던-소거법-gauss-jordan-elimination" class="level2">
 <h2 class="anchored" data-anchor-id="가우스-조던-소거법-gauss-jordan-elimination">가우스-조던 소거법 (Gauss-Jordan Elimination)</h2>
+<p>https://youtu.be/Q1zCibRtI2A?si=zc1RxVBsds3qsRRH&amp;t=128</p>
+</section>
+<section id="times-2-역행렬" class="level2">
+<h2 class="anchored" data-anchor-id="times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</h2>
+<p><span class="math inline">\(\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}^{-1}\)</span> = <span class="math inline">\(\frac{1}{ad-bc}\begin{pmatrix}d&amp;{-b}\\{-c}&amp;a\end{pmatrix}\)</span></p>
+<p>그렇다면 ad-bc가 0일 경우에는?? invertible하지 않다고 한다.</p>
+<p>여기서 ad-bc를 determinant라고 함.</p>
+<ul>
+<li><p>정사각행렬 A가 invertible하다(non singular matrix라고 함 invertible하지 않으면 singular matrix)</p>
+<p>와 동치인 것들</p>
+<ol type="1">
+<li><p><span class="math inline">\(det(A) \neq 0\)</span></p></li>
+<li><p>A가 full rank 이다.</p>
+<p>(즉, <span class="math inline">\(det(A)=0\)</span>인 경우는 A가 rank-deficient)</p></li>
+<li><p><span class="math inline">\(N(A) = \mathbf{0}\)</span></p>
+<p>full rank이면 null space는 영벡터만 존재한다.</p></li>
+</ol></li>
+<li><p>역행렬 관련 property</p>
+<ol type="1">
+<li><p><span class="math inline">\((AB)^{-1} = B^{-1}A^{-1}\)</span></p></li>
+<li><p><span class="math inline">\((A^{-1})^{-1} = A\)</span></p></li>
+<li><p><span class="math inline">\((kA)^{-1} = \frac{1}{k}A^{-1}\)</span></p></li>
+<li><p><span class="math inline">\((A^{T})^{-1} = (A^{-1})^{T}\)</span></p></li>
+<li><p><span class="math inline">\(det(A^{-1}) = \frac{1}{det(A)}\)</span></p></li>
+</ol></li>
+</ul>
+</section>
+<section id="행렬식determinant" class="level2">
+<h2 class="anchored" data-anchor-id="행렬식determinant">행렬식(determinant)</h2>
+<p><code>option</code></p>
+<p><span class="math inline">\(A=\begin{pmatrix}a&amp;b&amp;c\\d&amp;e&amp;f\\g&amp;h&amp;i\end{pmatrix}\)</span>,</p>
+<p><span class="math inline">\(\det(A) = a(ei-fh)-b(di-fg)+c(dh-eg)\)</span></p>
+<p>a, b, c가 + - + 인 것? → cofactor 찾아볼 것</p>
+<p>다음과 같이 determinant 구하는 것을 “Laplace expansion” or “Cofactor expansion” 이라고 한다.</p>
+<p>행렬이 조금 클 때 determinant는 위와 같이 작은 행렬의 determinant 합으로 나타내어진다.</p>
+<ul>
+<li>Determinant 관련 properties</li>
+</ul>
+<ol type="1">
+<li><span class="math inline">\(det(A)=0\)</span> <span class="math inline">\(↔\)</span> A is singular(invertible 하지 않다.)</li>
+<li>A가 rank-deficient <span class="math inline">\(↔\)</span> <span class="math inline">\(det(A)=0\)</span> (하나라도 dependent한 열벡터가 있다면 즉, 다른 열벡터들의 조합으로 나타낼 수 있는 열벡터가 있다면 rank-deficient인 것 이고 그때는 <span class="math inline">\(det(A)=0\)</span>이다.)</li>
+<li><span class="math inline">\(\begin{pmatrix}a_{11}&amp;&amp;...&amp;\\&amp;a_{22}&amp;&amp;\\...&amp;&amp;...&amp;\\&amp;&amp;&amp;a_{nn}\end{pmatrix}\)</span>대각행렬에서, <span class="math inline">\(det(A)=a_{11}a_{22}...a_{nn}\)</span> (하나의 원소라도 0이 있으면 역행렬이 존재하지 않음. <span class="math inline">\(det(A) \neq 0\)</span>가 되기에)</li>
+</ol>
 
 
 </section>
