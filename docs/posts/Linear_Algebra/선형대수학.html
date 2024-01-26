@@ -743,8 +743,17 @@ window.Quarto = {
 <ol type="1">
 <li><span class="math inline">\(det(A)=0\)</span> <span class="math inline">\(↔\)</span> A is singular(invertible 하지 않다.)</li>
 <li>A가 rank-deficient <span class="math inline">\(↔\)</span> <span class="math inline">\(det(A)=0\)</span> (하나라도 dependent한 열벡터가 있다면 즉, 다른 열벡터들의 조합으로 나타낼 수 있는 열벡터가 있다면 rank-deficient인 것 이고 그때는 <span class="math inline">\(det(A)=0\)</span>이다.)</li>
-<li><span class="math inline">\(\begin{pmatrix}a_{11}&amp;&amp;...&amp;\\&amp;a_{22}&amp;&amp;\\...&amp;&amp;...&amp;\\&amp;&amp;&amp;a_{nn}\end{pmatrix}\)</span>대각행렬에서, <span class="math inline">\(det(A)=a_{11}a_{22}...a_{nn}\)</span> (하나의 원소라도 0이 있으면 역행렬이 존재하지 않음. <span class="math inline">\(det(A) \neq 0\)</span>가 되기에)</li>
+<li><span class="math inline">\(\begin{pmatrix}a_{11}&amp;0&amp;...&amp;0\\0&amp;a_{22}&amp;&amp;\\...&amp;&amp;...&amp;\\0&amp;&amp;&amp;a_{nn}\end{pmatrix}\)</span>대각행렬에서, <span class="math inline">\(det(A)=a_{11}a_{22}...a_{nn}\)</span> (하나의 원소라도 0이 있으면 역행렬이 존재하지 않음. <span class="math inline">\(det(A) \neq 0\)</span>가 되기에)</li>
+<li>삼각행렬(triangular matrix)에서도 마찬가지로 <span class="math inline">\(det(A)=a_{11}a_{22}...a_{nn}\)</span></li>
+<li>항등행렬 <span class="math inline">\(\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}\)</span>의 <span class="math inline">\(\det(I)=1\)</span></li>
+<li>A가 <span class="math inline">\(n \times n\)</span>행렬일 때 <span class="math inline">\(det(cA) = c^ndet(A)\)</span></li>
+<li><span class="math inline">\(det(A^T)=det(A)\)</span></li>
 </ol>
+<p><code>★8.</code> <span class="math inline">\(det(AB) = det(A)det(B)\)</span></p>
+<ol start="9" type="1">
+<li><span class="math inline">\(det(A^{-1}) = \frac{1}{det(A)}\)</span></li>
+</ol>
+<p><code>★10.</code> <span class="math inline">\(det(A) = \lambda_1 \lambda_2 ... \lambda_n\)</span> (<span class="math inline">\(\lambda\)</span> = eigen value)</p>
 
 
 </section>

@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.540">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.4.540" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Time Series</title>
@@ -24,7 +22,26 @@ ul.task-list li input[type="checkbox"] {
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./time-series.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -112,45 +129,37 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css" />
-</head>
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="Time Series" href="index.xml" data-external="1"></head>
 
-<body>
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Time Series</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/about.html"> 
+    <a class="nav-link active" href="./about.html" aria-current="page"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/star77sa"> <i 
-  class="bi bi-github" 
-  role="img" 
->
+    <a class="nav-link" href="https://github.com/star77sa"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://ksko.notion.site"> <i 
-  class="bi bi-files" 
-  role="img" 
->
+    <a class="nav-link" href="https://ksko.notion.site"> <i class="bi bi-files" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -162,16 +171,11 @@ window.Quarto = {
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" 
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Time Series</li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -180,7 +184,23 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Time Series</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-body">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -192,7 +212,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/about.html" class="sidebar-item-text sidebar-link">
+  <a href="./about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About</span></a>
   </div>
 </li>
@@ -216,31 +236,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/etc/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2023.08.28 블로그 구축</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/etc/NVIDIA초청강연.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">2024 GIST-NVAITC Korea 강연 내용</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/etc/논문_개념.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/etc/논문_개념.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">논문 읽다가 모르겠거나 복습할 개념 정리</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/etc/논문_영단어.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/etc/논문_영단어.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">논문 읽다가 모르는 영단어 정리</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/etc/모델_성능평가지표_정리.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/etc/모델_성능평가지표_정리.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">성능 평가 지표(회귀모델, 분류모델)</span></a>
   </div>
 </li>
@@ -257,7 +277,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Linear_Algebra/선형대수학.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Linear_Algebra/선형대수학.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">선형대수학</span></a>
   </div>
 </li>
@@ -274,7 +294,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Paper/smartgrid1.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Paper/smartgrid1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span></a>
   </div>
 </li>
@@ -291,19 +311,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Python/python_1.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Python/python_1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python_1 자료형, Numpy, Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Python/python_2.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Python/python_2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python_2 matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Python/python_3.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Python/python_3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Python_3 seaborn, plotnine</span></a>
   </div>
 </li>
@@ -320,19 +340,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">1. Probability and counting [확률론]</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Statistics/데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">데이터 과학</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
+  <a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">통계 101 X 데이터분석</span></a>
   </div>
 </li>
@@ -343,32 +363,16 @@ window.Quarto = {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(13)</span></div></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-body" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
-  <div class="quarto-title-banner">
-    <div class="quarto-title column-body">
-      <h1 class="title">Time Series</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
 
-      
-    
-      
-    </div>
-    
-  
-  </header>
 
 
 <p>통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.</p>
@@ -384,12 +388,11 @@ window.Quarto = {
 <li>fastpage : <a href="https://star77sa.github.io/TIL-Blog/">https://star77sa.github.io/TIL-Blog</a></li>
 <li>Tistory: <a href="https://ksko0424.tistory.com/">https://ksko0424.tistory.com/</a></li>
 </ul>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden" data-render-id="quarto-int-sidebar-title">Time Series</span> <span class="hidden" data-render-id="quarto-int-navbar-title">Time Series</span> <span class="hidden" data-render-id="quarto-int-sidebar:/about.htmlAbout">About</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-1">Posts</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-2">Etc</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/etc/2023-08-28-블로그.html2023.08.28-블로그-구축">2023.08.28 블로그 구축</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/etc/NVIDIA초청강연.html2024-GIST-NVAITC-Korea-강연-내용">2024 GIST-NVAITC Korea 강연 내용</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/etc/논문_개념.html논문-읽다가-모르겠거나-복습할-개념-정리">논문 읽다가 모르겠거나 복습할 개념 정리</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/etc/논문_영단어.html논문-읽다가-모르는-영단어-정리">논문 읽다가 모르는 영단어 정리</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/etc/모델_성능평가지표_정리.html성능-평가-지표(회귀모델,-분류모델)">성능 평가 지표(회귀모델, 분류모델)</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-3">Linear Algebra</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Linear_Algebra/선형대수학.html선형대수학">선형대수학</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-4">Paper</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Paper/smartgrid1.html[논문-리뷰]-Machine-learning-driven-smart-electric-power-system:-Current-trends-and-new-perspectives(2020)">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-5">Python</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Python/python_1.htmlPython_1-자료형,-Numpy,-Pandas">Python_1 자료형, Numpy, Pandas</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Python/python_2.htmlPython_2-matplotlib">Python_2 matplotlib</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Python/python_3.htmlPython_3-seaborn,-plotnine">Python_3 seaborn, plotnine</span> <span class="hidden" data-render-id="quarto-int-sidebar:quarto-sidebar-section-6">Statistics</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Statistics/1_probability_and_counting.html1.-Probability-and-counting-[확률론]">1. Probability and counting [확률론]</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Statistics/데이터_분석.html데이터-과학">데이터 과학</span> <span class="hidden" data-render-id="quarto-int-sidebar:/posts/Statistics/통계_101_X_데이터_분석.html통계-101-X-데이터분석">통계 101 X 데이터분석</span> <span class="hidden" data-render-id="quarto-int-navbar:About">About</span> <span class="hidden" data-render-id="quarto-int-navbar:/about.html">/about.html</span> <span class="hidden" data-render-id="quarto-int-navbar:https://github.com/star77sa">https://github.com/star77sa</span> <span class="hidden" data-render-id="quarto-int-navbar:https://ksko.notion.site">https://ksko.notion.site</span></p>
-</div>
-<div id="quarto-listing-pipeline" class="hidden">
-<p><span class="hidden" data-render-id="quarto-enable-math-inline"><span class="math inline">\(e = mC^2\)</span></span></p>
-<div class="hidden" data-render-id="pipeline-listing-listing">
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
 <table class="quarto-listing-table table">
 <thead>
 <tr>
@@ -405,12 +408,12 @@ Author
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1705935600000" data-listing-file-modified-sort="1706271515252" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1382" data-listing-title-sort="선형대수학" data-listing-filename-sort="선형대수학.ipynb">
+<tr data-index="0" data-listing-date-sort="1705935600000" data-listing-file-modified-sort="1706272588474" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1414" data-listing-title-sort="선형대수학" data-listing-filename-sort="선형대수학.ipynb">
 <td>
 <span class="listing-date">Jan 23, 2024</span>
 </td>
 <td>
-<a href="/posts\Linear_Algebra\선형대수학.ipynb" class="title listing-title">선형대수학</a>
+<a href="./posts/Linear_Algebra/선형대수학.html" class="title listing-title">선형대수학</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -421,7 +424,7 @@ Author
 <span class="listing-date">Jan 23, 2024</span>
 </td>
 <td>
-<a href="/posts\Python\python_3.ipynb" class="title listing-title">Python_3 seaborn, plotnine</a>
+<a href="./posts/Python/python_3.html" class="title listing-title">Python_3 seaborn, plotnine</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -432,7 +435,7 @@ Author
 <span class="listing-date">Jan 23, 2024</span>
 </td>
 <td>
-<a href="/posts\Python\python_2.ipynb" class="title listing-title">Python_2 matplotlib</a>
+<a href="./posts/Python/python_2.html" class="title listing-title">Python_2 matplotlib</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -443,7 +446,7 @@ Author
 <span class="listing-date">Jan 22, 2024</span>
 </td>
 <td>
-<a href="/posts\Python\python_1.ipynb" class="title listing-title">Python_1 자료형, Numpy, Pandas</a>
+<a href="./posts/Python/python_1.html" class="title listing-title">Python_1 자료형, Numpy, Pandas</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -454,7 +457,7 @@ Author
 <span class="listing-date">Jan 19, 2024</span>
 </td>
 <td>
-<a href="/posts\etc\모델_성능평가지표_정리.ipynb" class="title listing-title">성능 평가 지표(회귀모델, 분류모델)</a>
+<a href="./posts/etc/모델_성능평가지표_정리.html" class="title listing-title">성능 평가 지표(회귀모델, 분류모델)</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -465,7 +468,7 @@ Author
 <span class="listing-date">Jan 19, 2024</span>
 </td>
 <td>
-<a href="/posts\Paper\smartgrid1.ipynb" class="title listing-title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
+<a href="./posts/Paper/smartgrid1.html" class="title listing-title">[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -476,7 +479,7 @@ Author
 <span class="listing-date">Jan 17, 2024</span>
 </td>
 <td>
-<a href="/posts\etc\NVIDIA초청강연.ipynb" class="title listing-title">2024 GIST-NVAITC Korea 강연 내용</a>
+<a href="./posts/etc/NVIDIA초청강연.html" class="title listing-title">2024 GIST-NVAITC Korea 강연 내용</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -487,7 +490,7 @@ Author
 <span class="listing-date">Jan 11, 2024</span>
 </td>
 <td>
-<a href="/posts\Statistics\데이터_분석.ipynb" class="title listing-title">데이터 과학</a>
+<a href="./posts/Statistics/데이터_분석.html" class="title listing-title">데이터 과학</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -498,7 +501,7 @@ Author
 <span class="listing-date">Jan 1, 2024</span>
 </td>
 <td>
-<a href="/posts\etc\논문_영단어.ipynb" class="title listing-title">논문 읽다가 모르는 영단어 정리</a>
+<a href="./posts/etc/논문_영단어.html" class="title listing-title">논문 읽다가 모르는 영단어 정리</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -509,7 +512,7 @@ Author
 <span class="listing-date">Jan 1, 2024</span>
 </td>
 <td>
-<a href="/posts\etc\논문_개념.ipynb" class="title listing-title">논문 읽다가 모르겠거나 복습할 개념 정리</a>
+<a href="./posts/etc/논문_개념.html" class="title listing-title">논문 읽다가 모르겠거나 복습할 개념 정리</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -520,7 +523,7 @@ Author
 <span class="listing-date">Sep 14, 2023</span>
 </td>
 <td>
-<a href="/posts\Statistics\통계_101_X_데이터_분석.ipynb" class="title listing-title">통계 101 X 데이터분석</a>
+<a href="./posts/Statistics/통계_101_X_데이터_분석.html" class="title listing-title">통계 101 X 데이터분석</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -531,7 +534,7 @@ Author
 <span class="listing-date">Aug 29, 2023</span>
 </td>
 <td>
-<a href="/posts\Statistics\1_probability_and_counting.ipynb" class="title listing-title">1. Probability and counting [확률론]</a>
+<a href="./posts/Statistics/1_probability_and_counting.html" class="title listing-title">1. Probability and counting [확률론]</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -542,7 +545,7 @@ Author
 <span class="listing-date">Aug 28, 2023</span>
 </td>
 <td>
-<a href="/posts\etc\2023-08-28-블로그.ipynb" class="title listing-title">2023.08.28 블로그 구축</a>
+<a href="./posts/etc/2023-08-28-블로그.html" class="title listing-title">2023.08.28 블로그 구축</a>
 </td>
 <td>
 <span class="listing-author">고경수 </span>
@@ -553,14 +556,8 @@ Author
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div>
-</div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden" data-render-id="quarto-metatitle">Time Series</span> <span class="hidden" data-render-id="quarto-twittercardtitle">Time Series</span> <span class="hidden" data-render-id="quarto-ogcardtitle">Time Series</span> <span class="hidden" data-render-id="quarto-metasitename">Time Series</span> <span class="hidden" data-render-id="quarto-twittercarddesc"></span> <span class="hidden" data-render-id="quarto-ogcardddesc"></span></p>
-</div>
-
-</main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+</div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -944,6 +941,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+</body></html>

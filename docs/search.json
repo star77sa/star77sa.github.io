@@ -1522,7 +1522,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html",
     "title": "선형대수학",
     "section": "",
-    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n  \n  Identity matrix (항등 행렬)\n  Inverse matrix (역행렬)\n  Diagonal matrix (대각 행렬)\n  Orthogonal matrix (직교 행렬)\n  \n  Rank (행렬의 계수)\n  Null space (영공간)\n  Ax=b의 해의 수 알아내기\n  rank 구하기 예제 풀이\n  가우스-조던 소거법 (Gauss-Jordan Elimination)",
+    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n  \n  Identity matrix (항등 행렬)\n  Inverse matrix (역행렬)\n  Diagonal matrix (대각 행렬)\n  Orthogonal matrix (직교 행렬)\n  \n  Rank (행렬의 계수)\n  Null space (영공간)\n  Ax=b의 해의 수 알아내기\n  rank 구하기 예제 풀이\n  가우스-조던 소거법 (Gauss-Jordan Elimination)\n  2 \\(\\times\\) 2 역행렬\n  행렬식(determinant)",
     "crumbs": [
       "About",
       "Posts",
@@ -1535,7 +1535,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#전치-transpose",
     "title": "선형대수학",
     "section": "전치 (Transpose)",
-    "text": "전치 (Transpose)\n\\(A\\) -&gt; \\(A^T\\)\n\\(a_{ij}\\) -&gt; \\(a_{ji}\\)\n\\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\), \\(A^T = \\begin{pmatrix} 1 & 3 \\\\ 2 & 4 \\end{pmatrix}\\)\n\n\\((A^T)^T = A\\)\n\\((A+B)^T = A^T + B^T\\)\n\\((AB)^T = B^TA^T\\)\n\\((CA)^T = CA^T\\)\n\\(\\text{det}(A^T) = \\text{det}(A)\\)\n\\((A^T)^{-1} = (A^{-1})^T\\)",
+    "text": "전치 (Transpose)\n\\(A\\) → \\(A^T\\)\n\\(a_{ij}\\) → \\(a_{ji}\\)\n\\(A = \\begin{pmatrix} 1 & 2 \\\\ 3 & 4 \\end{pmatrix}\\), \\(A^T = \\begin{pmatrix} 1 & 3 \\\\ 2 & 4 \\end{pmatrix}\\)\n\n\\((A^T)^T = A\\)\n\\((A+B)^T = A^T + B^T\\)\n\\((AB)^T = B^TA^T\\)\n\\((CA)^T = CA^T\\)\n\\(\\text{det}(A^T) = \\text{det}(A)\\)\n\\((A^T)^{-1} = (A^{-1})^T\\)",
     "crumbs": [
       "About",
       "Posts",
@@ -1600,7 +1600,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#내적과-정사영-dot-product-projection",
     "title": "선형대수학",
     "section": "내적과 정사영 (dot product & projection)",
-    "text": "내적과 정사영 (dot product & projection)\n내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.\ninner product \\(\\supset\\) dot prodect \\(=\\) scalar product\n\\[ \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix} \\cdot \\begin{pmatrix} 5 \\\\ 1 \\end{pmatrix} = 5+3 = 8 \\]\n\\(a^Tb = \\lVert a \\rVert \\lVert b \\rVert cos\\theta = \\lVert a \\rVert cos\\theta \\lVert b \\rVert = \\lVert b \\rVert cos\\theta \\lVert a \\rVert\\)\n                a에서 b로의 정사영 / b에서 a로의 정사영\n” 내적은 정사영이다. ”\n\\(a^Tb = \\lVert a \\rVert \\lVert a \\rVert = \\lVert a \\rVert^2\\)\na 벡터의 크기를 구할 때 \\(\\sqrt{a^Ta}\\) 이런식으로도 많이 구함\n단위벡터(unit vector): 크기가 1인 벡터\n\\(\\frac{a}{\\sqrt{a^T}{a}} = \\frac{a}{\\lVert a \\rVert}\\) : Normalize\n\\(a \\cdot b\\) =&gt; 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0",
+    "text": "내적과 정사영 (dot product & projection)\n내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.\ninner product \\(\\supset\\) dot product \\(=\\) scalar product\n\\[ \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix} \\cdot \\begin{pmatrix} 5 \\\\ 1 \\end{pmatrix} = 5+3 = 8 \\]\n\\(a^Tb = \\lVert a \\rVert \\lVert b \\rVert cos\\theta = \\lVert a \\rVert cos\\theta \\lVert b \\rVert = \\lVert b \\rVert cos\\theta \\lVert a \\rVert\\)\n                a에서 b로의 정사영 / b에서 a로의 정사영\n” 내적은 정사영이다. ”\n\\(a^Tb = \\lVert a \\rVert \\lVert a \\rVert = \\lVert a \\rVert^2\\)\na 벡터의 크기를 구할 때 \\(\\sqrt{a^Ta}\\) 이런식으로도 많이 구함\n단위벡터(unit vector): 크기가 1인 벡터\n\\(\\frac{a}{\\sqrt{a^T}{a}} = \\frac{a}{\\lVert a \\rVert}\\) : Normalize\n\\(a \\cdot b\\) → 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0",
     "crumbs": [
       "About",
       "Posts",
@@ -1691,7 +1691,33 @@
     "href": "posts/Linear_Algebra/선형대수학.html#가우스-조던-소거법-gauss-jordan-elimination",
     "title": "선형대수학",
     "section": "가우스-조던 소거법 (Gauss-Jordan Elimination)",
-    "text": "가우스-조던 소거법 (Gauss-Jordan Elimination)",
+    "text": "가우스-조던 소거법 (Gauss-Jordan Elimination)\nhttps://youtu.be/Q1zCibRtI2A?si=zc1RxVBsds3qsRRH&t=128",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#times-2-역행렬",
+    "href": "posts/Linear_Algebra/선형대수학.html#times-2-역행렬",
+    "title": "선형대수학",
+    "section": "2 \\(\\times\\) 2 역행렬",
+    "text": "2 \\(\\times\\) 2 역행렬\n\\(\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}^{-1}\\) = \\(\\frac{1}{ad-bc}\\begin{pmatrix}d&{-b}\\\\{-c}&a\\end{pmatrix}\\)\n그렇다면 ad-bc가 0일 경우에는?? invertible하지 않다고 한다.\n여기서 ad-bc를 determinant라고 함.\n\n정사각행렬 A가 invertible하다(non singular matrix라고 함 invertible하지 않으면 singular matrix)\n와 동치인 것들\n\n\\(det(A) \\neq 0\\)\nA가 full rank 이다.\n(즉, \\(det(A)=0\\)인 경우는 A가 rank-deficient)\n\\(N(A) = \\mathbf{0}\\)\nfull rank이면 null space는 영벡터만 존재한다.\n\n역행렬 관련 property\n\n\\((AB)^{-1} = B^{-1}A^{-1}\\)\n\\((A^{-1})^{-1} = A\\)\n\\((kA)^{-1} = \\frac{1}{k}A^{-1}\\)\n\\((A^{T})^{-1} = (A^{-1})^{T}\\)\n\\(det(A^{-1}) = \\frac{1}{det(A)}\\)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "선형대수학"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/선형대수학.html#행렬식determinant",
+    "href": "posts/Linear_Algebra/선형대수학.html#행렬식determinant",
+    "title": "선형대수학",
+    "section": "행렬식(determinant)",
+    "text": "행렬식(determinant)\noption\n\\(A=\\begin{pmatrix}a&b&c\\\\d&e&f\\\\g&h&i\\end{pmatrix}\\),\n\\(\\det(A) = a(ei-fh)-b(di-fg)+c(dh-eg)\\)\na, b, c가 + - + 인 것? → cofactor 찾아볼 것\n다음과 같이 determinant 구하는 것을 “Laplace expansion” or “Cofactor expansion” 이라고 한다.\n행렬이 조금 클 때 determinant는 위와 같이 작은 행렬의 determinant 합으로 나타내어진다.\n\nDeterminant 관련 properties\n\n\n\\(det(A)=0\\) \\(↔\\) A is singular(invertible 하지 않다.)\nA가 rank-deficient \\(↔\\) \\(det(A)=0\\) (하나라도 dependent한 열벡터가 있다면 즉, 다른 열벡터들의 조합으로 나타낼 수 있는 열벡터가 있다면 rank-deficient인 것 이고 그때는 \\(det(A)=0\\)이다.)\n\\(\\begin{pmatrix}a_{11}&0&...&0\\\\0&a_{22}&&\\\\...&&...&\\\\0&&&a_{nn}\\end{pmatrix}\\)대각행렬에서, \\(det(A)=a_{11}a_{22}...a_{nn}\\) (하나의 원소라도 0이 있으면 역행렬이 존재하지 않음. \\(det(A) \\neq 0\\)가 되기에)\n삼각행렬(triangular matrix)에서도 마찬가지로 \\(det(A)=a_{11}a_{22}...a_{nn}\\)\n항등행렬 \\(\\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}\\)의 \\(\\det(I)=1\\)\nA가 \\(n \\times n\\)행렬일 때 \\(det(cA) = c^ndet(A)\\)\n\\(det(A^T)=det(A)\\)\n\n★8. \\(det(AB) = det(A)det(B)\\)\n\n\\(det(A^{-1}) = \\frac{1}{det(A)}\\)\n\n★10. \\(det(A) = \\lambda_1 \\lambda_2 ... \\lambda_n\\) (\\(\\lambda\\) = eigen value)",
     "crumbs": [
       "About",
       "Posts",
