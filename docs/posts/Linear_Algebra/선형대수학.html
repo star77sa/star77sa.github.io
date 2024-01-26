@@ -375,7 +375,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#basis" id="toc-basis" class="nav-link" data-scroll-target="#basis">basis</a></li>
   </ul></li>
-  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="nav-link" data-scroll-target="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a></li>
+  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="nav-link" data-scroll-target="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a>
+  <ul class="collapse">
+  <li><a href="#identity-matrix-항등-행렬" id="toc-identity-matrix-항등-행렬" class="nav-link" data-scroll-target="#identity-matrix-항등-행렬">Identity matrix (항등 행렬)</a></li>
+  <li><a href="#역행렬" id="toc-역행렬" class="nav-link" data-scroll-target="#역행렬">역행렬</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -412,7 +417,12 @@ window.Quarto = {
   <ul>
   <li><a href="#basis" id="toc-basis">basis</a></li>
   </ul></li>
-  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a></li>
+  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a>
+  <ul>
+  <li><a href="#identity-matrix-항등-행렬" id="toc-identity-matrix-항등-행렬">Identity matrix (항등 행렬)</a></li>
+  <li><a href="#역행렬" id="toc-역행렬">역행렬</a></li>
+  <li><a href="#section" id="toc-section"></a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -505,9 +515,11 @@ window.Quarto = {
 <li><p>내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span</p>
 <p>2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(<span class="math inline">\(\begin{pmatrix}0\\0\end{pmatrix}\)</span>인 두 벡터) 등 …</p></li>
 </ul>
-<p>$ C(A) $</p>
-<p>$ range(A) $</p>
 <p>column space 표기법</p>
+<ul>
+<li><p><span class="math inline">\(C(A)\)</span></p></li>
+<li><p><span class="math inline">\(range(A)\)</span></p></li>
+</ul>
 </section>
 <section id="선형-독립과-기저-linearly-independent-basis" class="level2">
 <h2 class="anchored" data-anchor-id="선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</h2>
@@ -515,7 +527,7 @@ window.Quarto = {
 <li><p>벡터의 활동범위가 다르면 선형 독립이다.</p></li>
 <li><p>직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.</p></li>
 </ul>
-<p><span class="math display">\[a_1\bold{v_1} + a_2\bold{v_2} + a_3\bold{v_3} + ... = \bold{0}\]</span> 이 식이 성립하기 위해 계수(<span class="math inline">\(a_1, a_2, a_3, ...\)</span>)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
+<p><span class="math display">\[a_1\mathbf{v_1} + a_2\mathbf{v_2} + a_3\mathbf{v_3} + ... = \mathbf{0}\]</span> 이 식이 성립하기 위해 계수(<span class="math inline">\(a_1, a_2, a_3, ...\)</span>)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
 <p>ex) <span class="math inline">\(-2\begin{pmatrix}1\\1\end{pmatrix}+1\begin{pmatrix}2\\2\end{pmatrix} = 0\)</span> 이런경우는 linearly dependent 한 케이스.</p>
 <section id="basis" class="level3">
 <h3 class="anchored" data-anchor-id="basis">basis</h3>
@@ -528,8 +540,30 @@ window.Quarto = {
 </section>
 <section id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</h2>
+<section id="identity-matrix-항등-행렬" class="level3">
+<h3 class="anchored" data-anchor-id="identity-matrix-항등-행렬">Identity matrix (항등 행렬)</h3>
+<ul>
+<li>항등원과 비슷</li>
+<li>어떤 행렬과 곱해도 그 행렬 그대로 나옴</li>
+<li>정사각 행렬에 대해서만 정의</li>
+</ul>
+<p><span class="math inline">\(A \times \mathbf{I} = A\)</span></p>
+<p><span class="math inline">\(I_2 = \begin{pmatrix}1&amp;0\\0&amp;1\end{pmatrix}\)</span> <span class="math inline">\(I_3 = \begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}...\)</span></p>
+</section>
+<section id="역행렬" class="level3">
+<h3 class="anchored" data-anchor-id="역행렬">역행렬</h3>
+<p><span class="math inline">\(A\times{\color{red}A^{-1}}=I\)</span></p>
+<ul>
+<li>정사각 행렬에 대해서만 정의</li>
+<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <span class="math inline">\(A^{-1}\)</span>이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현</li>
+<li>A의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것</li>
+</ul>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 
 
+</section>
 </section>
 </section>
 

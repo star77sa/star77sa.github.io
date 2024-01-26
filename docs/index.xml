@@ -110,9 +110,11 @@
 <li><p>내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span</p>
 <p>2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bpmatrix%7D0%5C%5C0%5Cend%7Bpmatrix%7D">인 두 벡터) 등 …</p></li>
 </ul>
-<p>$ C(A) $</p>
-<p>$ range(A) $</p>
 <p>column space 표기법</p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?C(A)"></p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?range(A)"></p></li>
+</ul>
 </section>
 <section id="선형-독립과-기저-linearly-independent-basis" class="level2">
 <h2 class="anchored" data-anchor-id="선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</h2>
@@ -120,7 +122,7 @@
 <li><p>벡터의 활동범위가 다르면 선형 독립이다.</p></li>
 <li><p>직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.</p></li>
 </ul>
-<p><img src="https://latex.codecogs.com/png.latex?a_1%5Cbold%7Bv_1%7D%20+%20a_2%5Cbold%7Bv_2%7D%20+%20a_3%5Cbold%7Bv_3%7D%20+%20...%20=%20%5Cbold%7B0%7D"> 이 식이 성립하기 위해 계수(<img src="https://latex.codecogs.com/png.latex?a_1,%20a_2,%20a_3,%20...">)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?a_1%5Cmathbf%7Bv_1%7D%20+%20a_2%5Cmathbf%7Bv_2%7D%20+%20a_3%5Cmathbf%7Bv_3%7D%20+%20...%20=%20%5Cmathbf%7B0%7D"> 이 식이 성립하기 위해 계수(<img src="https://latex.codecogs.com/png.latex?a_1,%20a_2,%20a_3,%20...">)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
 <p>ex) <img src="https://latex.codecogs.com/png.latex?-2%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D+1%5Cbegin%7Bpmatrix%7D2%5C%5C2%5Cend%7Bpmatrix%7D%20=%200"> 이런경우는 linearly dependent 한 케이스.</p>
 <section id="basis" class="level3">
 <h3 class="anchored" data-anchor-id="basis">basis</h3>
@@ -133,8 +135,30 @@
 </section>
 <section id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</h2>
+<section id="identity-matrix-항등-행렬" class="level3">
+<h3 class="anchored" data-anchor-id="identity-matrix-항등-행렬">Identity matrix (항등 행렬)</h3>
+<ul>
+<li>항등원과 비슷</li>
+<li>어떤 행렬과 곱해도 그 행렬 그대로 나옴</li>
+<li>정사각 행렬에 대해서만 정의</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?A%20%5Ctimes%20%5Cmathbf%7BI%7D%20=%20A"></p>
+<p><img src="https://latex.codecogs.com/png.latex?I_2%20=%20%5Cbegin%7Bpmatrix%7D1&amp;0%5C%5C0&amp;1%5Cend%7Bpmatrix%7D"> <img src="https://latex.codecogs.com/png.latex?I_3%20=%20%5Cbegin%7Bpmatrix%7D1&amp;0&amp;0%5C%5C0&amp;1&amp;0%5C%5C0&amp;0&amp;1%5Cend%7Bpmatrix%7D..."></p>
+</section>
+<section id="역행렬" class="level3">
+<h3 class="anchored" data-anchor-id="역행렬">역행렬</h3>
+<p><img src="https://latex.codecogs.com/png.latex?A%5Ctimes%7B%5Ccolor%7Bred%7DA%5E%7B-1%7D%7D=I"></p>
+<ul>
+<li>정사각 행렬에 대해서만 정의</li>
+<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D">이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현</li>
+<li>A의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것</li>
+</ul>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 
 
+</section>
 </section>
 </section>
 

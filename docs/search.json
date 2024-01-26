@@ -1522,7 +1522,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html",
     "title": "선형대수학",
     "section": "",
-    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)",
+    "text": "선형대수학\n  \n  전치 (Transpose)\n  내적과 정사영 (dot product & projection)\n  벡터의 norm\n  \n  2-norm\n  1-norm\n  p-norm\n  \n  행렬의 곱셈과 네 가지 관점\n  \n  1. 내적으로 바라보기\n  2. rank-1 matrix의 합\n  3. column space로 바라보기\n  4. row space로 바라보기\n  \n  span과 column space(열공간)\n  선형 독립과 기저 (linearly independent & basis)\n  \n  basis\n  \n  항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n  \n  Identity matrix (항등 행렬)\n  역행렬",
     "crumbs": [
       "About",
       "Posts",
@@ -1587,7 +1587,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#span과-column-space열공간",
     "title": "선형대수학",
     "section": "span과 column space(열공간)",
-    "text": "span과 column space(열공간)\n\nLinear combination\n\n\\({\\color{red}a_1}v_1 + {\\color{red}a_2}v_2 + {\\color{red}a_3}v_3\\)\n\\({\\color{red}a_1, a_2, a_3}\\) : 스칼라\n\\(v_1, v_2, v_3\\) : 벡터\n\n내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span\n2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(\\(\\begin{pmatrix}0\\\\0\\end{pmatrix}\\)인 두 벡터) 등 …\n\n$ C(A) $\n$ range(A) $\ncolumn space 표기법",
+    "text": "span과 column space(열공간)\n\nLinear combination\n\n\\({\\color{red}a_1}v_1 + {\\color{red}a_2}v_2 + {\\color{red}a_3}v_3\\)\n\\({\\color{red}a_1, a_2, a_3}\\) : 스칼라\n\\(v_1, v_2, v_3\\) : 벡터\n\n내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span\n2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(\\(\\begin{pmatrix}0\\\\0\\end{pmatrix}\\)인 두 벡터) 등 …\n\ncolumn space 표기법\n\n\\(C(A)\\)\n\\(range(A)\\)",
     "crumbs": [
       "About",
       "Posts",
@@ -1613,7 +1613,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#선형-독립과-기저-linearly-independent-basis",
     "title": "선형대수학",
     "section": "선형 독립과 기저 (linearly independent & basis)",
-    "text": "선형 독립과 기저 (linearly independent & basis)\n\n벡터의 활동범위가 다르면 선형 독립이다.\n직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.\n\n\\[a_1\\bold{v_1} + a_2\\bold{v_2} + a_3\\bold{v_3} + ... = \\bold{0}\\] 이 식이 성립하기 위해 계수(\\(a_1, a_2, a_3, ...\\))가 모두 0 이어야 한다면 이는 선형 독립이다.\nex) \\(-2\\begin{pmatrix}1\\\\1\\end{pmatrix}+1\\begin{pmatrix}2\\\\2\\end{pmatrix} = 0\\) 이런경우는 linearly dependent 한 케이스.\n\nbasis\n\n어떤 공간을 이루는 필수적인 구성요소\n어떤 벡터공간 V의 벡터들이 선형독립이면서 벡터공간 V 전체를 생성할 수 있다면 이 벡터들의 집합을 말한다.\n벡터공간 \\(R^m\\)의 임의의 원소를 표현하기 위해 필요한 최소한의 벡터로 이루어진 집합",
+    "text": "선형 독립과 기저 (linearly independent & basis)\n\n벡터의 활동범위가 다르면 선형 독립이다.\n직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.\n\n\\[a_1\\mathbf{v_1} + a_2\\mathbf{v_2} + a_3\\mathbf{v_3} + ... = \\mathbf{0}\\] 이 식이 성립하기 위해 계수(\\(a_1, a_2, a_3, ...\\))가 모두 0 이어야 한다면 이는 선형 독립이다.\nex) \\(-2\\begin{pmatrix}1\\\\1\\end{pmatrix}+1\\begin{pmatrix}2\\\\2\\end{pmatrix} = 0\\) 이런경우는 linearly dependent 한 케이스.\n\nbasis\n\n어떤 공간을 이루는 필수적인 구성요소\n어떤 벡터공간 V의 벡터들이 선형독립이면서 벡터공간 V 전체를 생성할 수 있다면 이 벡터들의 집합을 말한다.\n벡터공간 \\(R^m\\)의 임의의 원소를 표현하기 위해 필요한 최소한의 벡터로 이루어진 집합",
     "crumbs": [
       "About",
       "Posts",
@@ -1626,7 +1626,7 @@
     "href": "posts/Linear_Algebra/선형대수학.html#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix",
     "title": "선형대수학",
     "section": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)",
-    "text": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)",
+    "text": "항등행렬, 역행렬, 직교행렬 (indentity matrix & inverse & orthogonal matrix)\n\nIdentity matrix (항등 행렬)\n\n항등원과 비슷\n어떤 행렬과 곱해도 그 행렬 그대로 나옴\n정사각 행렬에 대해서만 정의\n\n\\(A \\times \\mathbf{I} = A\\)\n\\(I_2 = \\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}\\) \\(I_3 = \\begin{pmatrix}1&0&0\\\\0&1&0\\\\0&0&1\\end{pmatrix}...\\)\n\n\n역행렬\n\\(A\\times{\\color{red}A^{-1}}=I\\)\n\n정사각 행렬에 대해서만 정의\nA가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 \\(A^{-1}\\)이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현\nA의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것",
     "crumbs": [
       "About",
       "Posts",
