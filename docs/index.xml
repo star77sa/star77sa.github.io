@@ -35,22 +35,18 @@
 <h2 class="anchored" data-anchor-id="전치-transpose">전치 (Transpose)</h2>
 <p><img src="https://latex.codecogs.com/png.latex?A"> -&gt; <img src="https://latex.codecogs.com/png.latex?A%5ET"></p>
 <p><img src="https://latex.codecogs.com/png.latex?a_%7Bij%7D"> -&gt; <img src="https://latex.codecogs.com/png.latex?a_%7Bji%7D"></p>
-$ A =
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bpmatrix%7D%201%20&amp;%202%20%5C%5C%203%20&amp;%204%20%5Cend%7Bpmatrix%7D">
-$, $ A^T =
-<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bpmatrix%7D%201%20&amp;%203%20%5C%5C%202%20&amp;%204%20%5Cend%7Bpmatrix%7D">
-<p>$</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%20=%20%5Cbegin%7Bpmatrix%7D%201%20&amp;%202%20%5C%5C%203%20&amp;%204%20%5Cend%7Bpmatrix%7D">, <img src="https://latex.codecogs.com/png.latex?A%5ET%20=%20%5Cbegin%7Bpmatrix%7D%201%20&amp;%203%20%5C%5C%202%20&amp;%204%20%5Cend%7Bpmatrix%7D"></p>
 <ol type="1">
 <li><p><img src="https://latex.codecogs.com/png.latex?(A%5ET)%5ET%20=%20A"></p></li>
 <li><p><img src="https://latex.codecogs.com/png.latex?(A+B)%5ET%20=%20A%5ET%20+%20B%5ET"></p></li>
 <li><p><img src="https://latex.codecogs.com/png.latex?(AB)%5ET%20=%20B%5ETA%5ET"></p></li>
 <li><p><img src="https://latex.codecogs.com/png.latex?(CA)%5ET%20=%20CA%5ET"></p></li>
 <li><p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Bdet%7D(A%5ET)%20=%20%5Ctext%7Bdet%7D(A)"></p></li>
-<li><p>$ (A<sup>T)</sup>{-1} = (A<sup>{-1})</sup>T $</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?(A%5ET)%5E%7B-1%7D%20=%20(A%5E%7B-1%7D)%5ET"></p></li>
 </ol>
 </section>
-<section id="내적과-정사영-dot-project-projection" class="level2">
-<h2 class="anchored" data-anchor-id="내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</h2>
+<section id="내적과-정사영-dot-product-projection" class="level2">
+<h2 class="anchored" data-anchor-id="내적과-정사영-dot-product-projection">내적과 정사영 (dot product &amp; projection)</h2>
 <p>내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.</p>
 <p>inner product <img src="https://latex.codecogs.com/png.latex?%5Csupset"> dot prodect <img src="https://latex.codecogs.com/png.latex?="> scalar product</p>
 <p><img src="https://latex.codecogs.com/png.latex?%20%5Cbegin%7Bpmatrix%7D%201%20%5C%5C%203%20%5Cend%7Bpmatrix%7D%20%5Ccdot%20%5Cbegin%7Bpmatrix%7D%205%20%5C%5C%201%20%5Cend%7Bpmatrix%7D%20=%205+3%20=%208%20"></p>
@@ -77,9 +73,68 @@ $, $ A^T =
 <h3 class="anchored" data-anchor-id="p-norm">p-norm</h3>
 <p><img src="https://latex.codecogs.com/png.latex?(%7C%E3%80%80%7C%5Ep+%7C%E3%80%80%7C%5Ep+%7C%E3%80%80%7C%5Ep+%20...%20)%5E%5Cfrac%7B1%7D%7Bp%7D">, <img src="https://latex.codecogs.com/png.latex?(p%5Cgeq%201)"></p>
 <p><code>+</code> <img src="https://latex.codecogs.com/png.latex?l_0">-norm 은 0이아닌 성분의 “개수”</p>
-
-
 </section>
+</section>
+<section id="행렬의-곱셈과-네-가지-관점" class="level2">
+<h2 class="anchored" data-anchor-id="행렬의-곱셈과-네-가지-관점">행렬의 곱셈과 네 가지 관점</h2>
+<section id="내적으로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="내적으로-바라보기">1. 내적으로 바라보기</h3>
+<p><img src="https://latex.codecogs.com/png.latex?AB=%5Cbegin%7Bpmatrix%7Da_1%5ET%5C%5Ca_2%5ET%5C%5Ca_3%5ET%5Cend%7Bpmatrix%7D%20%5Cbegin%7Bpmatrix%7Db_1&amp;b_2&amp;b_3%5Cend%7Bpmatrix%7D=%5Cbegin%7Bpmatrix%7Da_1%5ETb_1&amp;a_1%5ETb_2&amp;a_1%5ETb_3%5C%5Ca_2%5ETb_1&amp;a_2%5ETb_2&amp;a_2%5ETb_3%5C%5Ca_3%5ETb_1&amp;a_3%5ETb_2&amp;a_3%5ETb_3%5Cend%7Bpmatrix%7D"></p>
+</section>
+<section id="rank-1-matrix의-합" class="level3">
+<h3 class="anchored" data-anchor-id="rank-1-matrix의-합">2. rank-1 matrix의 합</h3>
+<p><img src="https://latex.codecogs.com/png.latex?AB%20=%20%5Cbegin%7Bpmatrix%7Da_1&amp;a_2&amp;a_3%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7Db_1%5ET%5C%5Cb_2%5ET%5C%5Cb_3%5ET%5Cend%7Bpmatrix%7D=a_1b_1%5ET+a_2b_2%5ET+a_3b_3%5ET"> ← 각각은 rank1 matrix 이다.</p>
+</section>
+<section id="column-space로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="column-space로-바라보기">3. column space로 바라보기</h3>
+<p><code>-</code> column space?</p>
+<p><img src="https://latex.codecogs.com/png.latex?AB%20=%20%5Cbegin%7Bpmatrix%7Da_1&amp;a_2&amp;a_3%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7Dx_1%5C%5Cx_2%5C%5Cx_3%5Cend%7Bpmatrix%7D=a_1x_1+a_2x_2+a_3x_3"></p>
+</section>
+<section id="row-space로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="row-space로-바라보기">4. row space로 바라보기</h3>
+<p><img src="https://latex.codecogs.com/png.latex?AB%20=%20%5Cbegin%7Bpmatrix%7Dx_1&amp;x_2&amp;x_3%5Cend%7Bpmatrix%7D%5Cbegin%7Bpmatrix%7Da_1%5ET%5C%5Ca_2%5ET%5C%5Ca_3%5ET%5Cend%7Bpmatrix%7D=x_1a_1%5ET+x_2a_2%5ET+x_3a_3%5ET"></p>
+<ul>
+<li>transformer 이해에 도움이 된다.</li>
+</ul>
+</section>
+</section>
+<section id="span과-column-space열공간" class="level2">
+<h2 class="anchored" data-anchor-id="span과-column-space열공간">span과 column space(열공간)</h2>
+<ul>
+<li>Linear combination</li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%7B%5Ccolor%7Bred%7Da_1%7Dv_1%20+%20%7B%5Ccolor%7Bred%7Da_2%7Dv_2%20+%20%7B%5Ccolor%7Bred%7Da_3%7Dv_3"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%7B%5Ccolor%7Bred%7Da_1,%20a_2,%20a_3%7D"> : 스칼라</p>
+<p><img src="https://latex.codecogs.com/png.latex?v_1,%20v_2,%20v_3"> : 벡터</p>
+<ul>
+<li><p>내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span</p>
+<p>2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(<img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Bpmatrix%7D0%5C%5C0%5Cend%7Bpmatrix%7D">인 두 벡터) 등 …</p></li>
+</ul>
+<p>$ C(A) $</p>
+<p>$ range(A) $</p>
+<p>column space 표기법</p>
+</section>
+<section id="선형-독립과-기저-linearly-independent-basis" class="level2">
+<h2 class="anchored" data-anchor-id="선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</h2>
+<ul>
+<li><p>벡터의 활동범위가 다르면 선형 독립이다.</p></li>
+<li><p>직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.</p></li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?a_1%5Cbold%7Bv_1%7D%20+%20a_2%5Cbold%7Bv_2%7D%20+%20a_3%5Cbold%7Bv_3%7D%20+%20...%20=%20%5Cbold%7B0%7D"> 이 식이 성립하기 위해 계수(<img src="https://latex.codecogs.com/png.latex?a_1,%20a_2,%20a_3,%20...">)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
+<p>ex) <img src="https://latex.codecogs.com/png.latex?-2%5Cbegin%7Bpmatrix%7D1%5C%5C1%5Cend%7Bpmatrix%7D+1%5Cbegin%7Bpmatrix%7D2%5C%5C2%5Cend%7Bpmatrix%7D%20=%200"> 이런경우는 linearly dependent 한 케이스.</p>
+<section id="basis" class="level3">
+<h3 class="anchored" data-anchor-id="basis">basis</h3>
+<ul>
+<li><p>어떤 공간을 이루는 필수적인 구성요소</p></li>
+<li><p>어떤 벡터공간 V의 벡터들이 선형독립이면서 벡터공간 V 전체를 생성할 수 있다면 이 벡터들의 집합을 말한다.</p></li>
+<li><p>벡터공간 <img src="https://latex.codecogs.com/png.latex?R%5Em">의 임의의 원소를 표현하기 위해 필요한 최소한의 벡터로 이루어진 집합</p></li>
+</ul>
+</section>
+</section>
+<section id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</h2>
+
+
 </section>
 </section>
 
@@ -97,8 +152,312 @@ $, $ A^T =
 
 
 
+<p>import</p>
+<div id="cell-2" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> plotnine <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span></span></code></pre></div>
+</div>
+<div id="cell-3" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib</span>
+<span id="cb2-2">matplotlib.rcParams[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'figure.dpi'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">120</span></span></code></pre></div>
+</div>
+<div id="cell-4" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> warnings</span>
+<span id="cb3-2">warnings.filterwarnings(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ignore'</span>)</span></code></pre></div>
+</div>
 <section id="seaborn" class="level2">
+<h2 class="anchored" data-anchor-id="seaborn">Seaborn</h2>
+<div id="cell-6" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span></code></pre></div>
+</div>
+<p><code>-</code> 개념차이</p>
+<ul>
+<li>matplotlib: 벡터 친화적</li>
+<li>seaborn: 데이터프레임 친화적</li>
+</ul>
+<p><code>-</code> 데이터프레임 친화적인 시각화 툴이 왜 강력한가?</p>
+<p>분석할 데이터가 tabula data 형식인 경우가 많다. matplotlib은 여전히 강력하지만, seaborn등 데이터프레임 친화적 패키지가 우수한 경우가 많다.</p>
+<div id="cell-8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://raw.githubusercontent.com/guebin/DV2023/main/posts/titanic.csv"</span>)</span>
+<span id="cb5-2">df.head()</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
 
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">PassengerId</th>
+<th data-quarto-table-cell-role="th">Survived</th>
+<th data-quarto-table-cell-role="th">Pclass</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">Sex</th>
+<th data-quarto-table-cell-role="th">Age</th>
+<th data-quarto-table-cell-role="th">SibSp</th>
+<th data-quarto-table-cell-role="th">Parch</th>
+<th data-quarto-table-cell-role="th">Ticket</th>
+<th data-quarto-table-cell-role="th">Fare</th>
+<th data-quarto-table-cell-role="th">Cabin</th>
+<th data-quarto-table-cell-role="th">Embarked</th>
+<th data-quarto-table-cell-role="th">logFare</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>Braund, Mr. Owen Harris</td>
+<td>male</td>
+<td>22.0</td>
+<td>1</td>
+<td>0</td>
+<td>A/5 21171</td>
+<td>7.2500</td>
+<td>NaN</td>
+<td>S</td>
+<td>1.981001</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+<td>female</td>
+<td>38.0</td>
+<td>1</td>
+<td>0</td>
+<td>PC 17599</td>
+<td>71.2833</td>
+<td>C85</td>
+<td>C</td>
+<td>4.266662</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>Heikkinen, Miss. Laina</td>
+<td>female</td>
+<td>26.0</td>
+<td>0</td>
+<td>0</td>
+<td>STON/O2. 3101282</td>
+<td>7.9250</td>
+<td>NaN</td>
+<td>S</td>
+<td>2.070022</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+<td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+<td>female</td>
+<td>35.0</td>
+<td>1</td>
+<td>0</td>
+<td>113803</td>
+<td>53.1000</td>
+<td>C123</td>
+<td>S</td>
+<td>3.972177</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>5</td>
+<td>0</td>
+<td>3</td>
+<td>Allen, Mr. William Henry</td>
+<td>male</td>
+<td>35.0</td>
+<td>0</td>
+<td>0</td>
+<td>373450</td>
+<td>8.0500</td>
+<td>NaN</td>
+<td>S</td>
+<td>2.085672</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="cell-9" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">sns.scatterplot(</span>
+<span id="cb6-2">    df,</span>
+<span id="cb6-3">    x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'logFare'</span>,</span>
+<span id="cb6-4">    y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Age'</span>,</span>
+<span id="cb6-5">    hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Sex'</span>,</span>
+<span id="cb6-6">    style<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Survived'</span>,style_order<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>],</span>
+<span id="cb6-7">    alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span></span>
+<span id="cb6-8">)</span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Python/python_3_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">sns.scatterplot(</span>
+<span id="cb7-2">    df,</span>
+<span id="cb7-3">    x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'logFare'</span>,</span>
+<span id="cb7-4">    y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Age'</span>,</span>
+<span id="cb7-5">    hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Sex'</span>,</span>
+<span id="cb7-6">    style<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Survived'</span>,style_order<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>],</span>
+<span id="cb7-7">    alpha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.8</span></span>
+<span id="cb7-8">)</span>
+<span id="cb7-9">fig <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.gcf()</span>
+<span id="cb7-10">ax <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.gca()</span>
+<span id="cb7-11">ax.set_title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Scatter Plot'</span>)</span>
+<span id="cb7-12">fig.add_axes([<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.6</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.2</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.25</span>,<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.25</span>])</span>
+<span id="cb7-13">ax_mini <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.gca()</span>
+<span id="cb7-14">ax_mini.hist(df.Age)</span>
+<span id="cb7-15">ax_mini.hist(df.Age[df.Survived<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb7-16">ax_mini.set_title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Histogram'</span>)</span>
+<span id="cb7-17">fig.suptitle(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'TITANIC'</span>)</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<pre><code>Text(0.5, 0.98, 'TITANIC')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Python/python_3_files/figure-html/cell-8-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>간단한 시각화는 matplotlib이 유리.</li>
+<li>보통 matplotlib이 더 본질적인 이해를 도와준다. 즉 seaborn에 대한 아주 고급기능은 오히려 matplotlib에 대한 통찰이 있어야 가능하다.</li>
+<li>plotnine을 배우는게 더 좋다(더 우수함 + ggplot2도 같이 배워짐)</li>
+<li>plotly가 모든면에서 seaborn을 압도하는 추세.</li>
+</ul>
 
 
 </section>

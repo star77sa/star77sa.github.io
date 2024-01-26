@@ -356,13 +356,26 @@ window.Quarto = {
   <li><a href="#선형대수학" id="toc-선형대수학" class="nav-link active" data-scroll-target="#선형대수학">선형대수학</a>
   <ul class="collapse">
   <li><a href="#전치-transpose" id="toc-전치-transpose" class="nav-link" data-scroll-target="#전치-transpose">전치 (Transpose)</a></li>
-  <li><a href="#내적과-정사영-dot-project-projection" id="toc-내적과-정사영-dot-project-projection" class="nav-link" data-scroll-target="#내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</a></li>
+  <li><a href="#내적과-정사영-dot-product-projection" id="toc-내적과-정사영-dot-product-projection" class="nav-link" data-scroll-target="#내적과-정사영-dot-product-projection">내적과 정사영 (dot product &amp; projection)</a></li>
   <li><a href="#벡터의-norm" id="toc-벡터의-norm" class="nav-link" data-scroll-target="#벡터의-norm">벡터의 norm</a>
   <ul class="collapse">
   <li><a href="#norm" id="toc-norm" class="nav-link" data-scroll-target="#norm">2-norm</a></li>
   <li><a href="#norm-1" id="toc-norm-1" class="nav-link" data-scroll-target="#norm-1">1-norm</a></li>
   <li><a href="#p-norm" id="toc-p-norm" class="nav-link" data-scroll-target="#p-norm">p-norm</a></li>
   </ul></li>
+  <li><a href="#행렬의-곱셈과-네-가지-관점" id="toc-행렬의-곱셈과-네-가지-관점" class="nav-link" data-scroll-target="#행렬의-곱셈과-네-가지-관점">행렬의 곱셈과 네 가지 관점</a>
+  <ul class="collapse">
+  <li><a href="#내적으로-바라보기" id="toc-내적으로-바라보기" class="nav-link" data-scroll-target="#내적으로-바라보기">1. 내적으로 바라보기</a></li>
+  <li><a href="#rank-1-matrix의-합" id="toc-rank-1-matrix의-합" class="nav-link" data-scroll-target="#rank-1-matrix의-합">2. rank-1 matrix의 합</a></li>
+  <li><a href="#column-space로-바라보기" id="toc-column-space로-바라보기" class="nav-link" data-scroll-target="#column-space로-바라보기">3. column space로 바라보기</a></li>
+  <li><a href="#row-space로-바라보기" id="toc-row-space로-바라보기" class="nav-link" data-scroll-target="#row-space로-바라보기">4. row space로 바라보기</a></li>
+  </ul></li>
+  <li><a href="#span과-column-space열공간" id="toc-span과-column-space열공간" class="nav-link" data-scroll-target="#span과-column-space열공간">span과 column space(열공간)</a></li>
+  <li><a href="#선형-독립과-기저-linearly-independent-basis" id="toc-선형-독립과-기저-linearly-independent-basis" class="nav-link" data-scroll-target="#선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</a>
+  <ul class="collapse">
+  <li><a href="#basis" id="toc-basis" class="nav-link" data-scroll-target="#basis">basis</a></li>
+  </ul></li>
+  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="nav-link" data-scroll-target="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -380,13 +393,26 @@ window.Quarto = {
   <li><a href="#선형대수학" id="toc-선형대수학">선형대수학</a>
   <ul>
   <li><a href="#전치-transpose" id="toc-전치-transpose">전치 (Transpose)</a></li>
-  <li><a href="#내적과-정사영-dot-project-projection" id="toc-내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</a></li>
+  <li><a href="#내적과-정사영-dot-product-projection" id="toc-내적과-정사영-dot-product-projection">내적과 정사영 (dot product &amp; projection)</a></li>
   <li><a href="#벡터의-norm" id="toc-벡터의-norm">벡터의 norm</a>
   <ul>
   <li><a href="#norm" id="toc-norm">2-norm</a></li>
   <li><a href="#norm-1" id="toc-norm-1">1-norm</a></li>
   <li><a href="#p-norm" id="toc-p-norm">p-norm</a></li>
   </ul></li>
+  <li><a href="#행렬의-곱셈과-네-가지-관점" id="toc-행렬의-곱셈과-네-가지-관점">행렬의 곱셈과 네 가지 관점</a>
+  <ul>
+  <li><a href="#내적으로-바라보기" id="toc-내적으로-바라보기">1. 내적으로 바라보기</a></li>
+  <li><a href="#rank-1-matrix의-합" id="toc-rank-1-matrix의-합">2. rank-1 matrix의 합</a></li>
+  <li><a href="#column-space로-바라보기" id="toc-column-space로-바라보기">3. column space로 바라보기</a></li>
+  <li><a href="#row-space로-바라보기" id="toc-row-space로-바라보기">4. row space로 바라보기</a></li>
+  </ul></li>
+  <li><a href="#span과-column-space열공간" id="toc-span과-column-space열공간">span과 column space(열공간)</a></li>
+  <li><a href="#선형-독립과-기저-linearly-independent-basis" id="toc-선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</a>
+  <ul>
+  <li><a href="#basis" id="toc-basis">basis</a></li>
+  </ul></li>
+  <li><a href="#항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" id="toc-항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -404,22 +430,18 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="전치-transpose">전치 (Transpose)</h2>
 <p><span class="math inline">\(A\)</span> -&gt; <span class="math inline">\(A^T\)</span></p>
 <p><span class="math inline">\(a_{ij}\)</span> -&gt; <span class="math inline">\(a_{ji}\)</span></p>
-$ A =
-<span class="math display">\[\begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\]</span>
-$, $ A^T =
-<span class="math display">\[\begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}\]</span>
-<p>$</p>
+<p><span class="math inline">\(A = \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{pmatrix}\)</span>, <span class="math inline">\(A^T = \begin{pmatrix} 1 &amp; 3 \\ 2 &amp; 4 \end{pmatrix}\)</span></p>
 <ol type="1">
 <li><p><span class="math inline">\((A^T)^T = A\)</span></p></li>
 <li><p><span class="math inline">\((A+B)^T = A^T + B^T\)</span></p></li>
 <li><p><span class="math inline">\((AB)^T = B^TA^T\)</span></p></li>
 <li><p><span class="math inline">\((CA)^T = CA^T\)</span></p></li>
 <li><p><span class="math inline">\(\text{det}(A^T) = \text{det}(A)\)</span></p></li>
-<li><p>$ (A<sup>T)</sup>{-1} = (A<sup>{-1})</sup>T $</p></li>
+<li><p><span class="math inline">\((A^T)^{-1} = (A^{-1})^T\)</span></p></li>
 </ol>
 </section>
-<section id="내적과-정사영-dot-project-projection" class="level2">
-<h2 class="anchored" data-anchor-id="내적과-정사영-dot-project-projection">내적과 정사영 (dot project &amp; projection)</h2>
+<section id="내적과-정사영-dot-product-projection" class="level2">
+<h2 class="anchored" data-anchor-id="내적과-정사영-dot-product-projection">내적과 정사영 (dot product &amp; projection)</h2>
 <p>내적: 두 벡터가 닮은 정도를 알아내는데 사용할 수 있다.</p>
 <p>inner product <span class="math inline">\(\supset\)</span> dot prodect <span class="math inline">\(=\)</span> scalar product</p>
 <p><span class="math display">\[ \begin{pmatrix} 1 \\ 3 \end{pmatrix} \cdot \begin{pmatrix} 5 \\ 1 \end{pmatrix} = 5+3 = 8 \]</span></p>
@@ -446,9 +468,68 @@ $, $ A^T =
 <h3 class="anchored" data-anchor-id="p-norm">p-norm</h3>
 <p><span class="math inline">\((|　|^p+|　|^p+|　|^p+ ... )^\frac{1}{p}\)</span>, <span class="math inline">\((p\geq 1)\)</span></p>
 <p><code>+</code> <span class="math inline">\(l_0\)</span>-norm 은 0이아닌 성분의 “개수”</p>
-
-
 </section>
+</section>
+<section id="행렬의-곱셈과-네-가지-관점" class="level2">
+<h2 class="anchored" data-anchor-id="행렬의-곱셈과-네-가지-관점">행렬의 곱셈과 네 가지 관점</h2>
+<section id="내적으로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="내적으로-바라보기">1. 내적으로 바라보기</h3>
+<p><span class="math inline">\(AB=\begin{pmatrix}a_1^T\\a_2^T\\a_3^T\end{pmatrix} \begin{pmatrix}b_1&amp;b_2&amp;b_3\end{pmatrix}=\begin{pmatrix}a_1^Tb_1&amp;a_1^Tb_2&amp;a_1^Tb_3\\a_2^Tb_1&amp;a_2^Tb_2&amp;a_2^Tb_3\\a_3^Tb_1&amp;a_3^Tb_2&amp;a_3^Tb_3\end{pmatrix}\)</span></p>
+</section>
+<section id="rank-1-matrix의-합" class="level3">
+<h3 class="anchored" data-anchor-id="rank-1-matrix의-합">2. rank-1 matrix의 합</h3>
+<p><span class="math inline">\(AB = \begin{pmatrix}a_1&amp;a_2&amp;a_3\end{pmatrix}\begin{pmatrix}b_1^T\\b_2^T\\b_3^T\end{pmatrix}=a_1b_1^T+a_2b_2^T+a_3b_3^T\)</span> ← 각각은 rank1 matrix 이다.</p>
+</section>
+<section id="column-space로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="column-space로-바라보기">3. column space로 바라보기</h3>
+<p><code>-</code> column space?</p>
+<p><span class="math inline">\(AB = \begin{pmatrix}a_1&amp;a_2&amp;a_3\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=a_1x_1+a_2x_2+a_3x_3\)</span></p>
+</section>
+<section id="row-space로-바라보기" class="level3">
+<h3 class="anchored" data-anchor-id="row-space로-바라보기">4. row space로 바라보기</h3>
+<p><span class="math inline">\(AB = \begin{pmatrix}x_1&amp;x_2&amp;x_3\end{pmatrix}\begin{pmatrix}a_1^T\\a_2^T\\a_3^T\end{pmatrix}=x_1a_1^T+x_2a_2^T+x_3a_3^T\)</span></p>
+<ul>
+<li>transformer 이해에 도움이 된다.</li>
+</ul>
+</section>
+</section>
+<section id="span과-column-space열공간" class="level2">
+<h2 class="anchored" data-anchor-id="span과-column-space열공간">span과 column space(열공간)</h2>
+<ul>
+<li>Linear combination</li>
+</ul>
+<p><span class="math inline">\({\color{red}a_1}v_1 + {\color{red}a_2}v_2 + {\color{red}a_3}v_3\)</span></p>
+<p><span class="math inline">\({\color{red}a_1, a_2, a_3}\)</span> : 스칼라</p>
+<p><span class="math inline">\(v_1, v_2, v_3\)</span> : 벡터</p>
+<ul>
+<li><p>내가 가진 벡터들로 표현할 수 있는 영역은 뭘까? → span</p>
+<p>2차원 전체(서로 다른 두 벡터), 라인(단위 벡터가 같은 두 벡터), 점(<span class="math inline">\(\begin{pmatrix}0\\0\end{pmatrix}\)</span>인 두 벡터) 등 …</p></li>
+</ul>
+<p>$ C(A) $</p>
+<p>$ range(A) $</p>
+<p>column space 표기법</p>
+</section>
+<section id="선형-독립과-기저-linearly-independent-basis" class="level2">
+<h2 class="anchored" data-anchor-id="선형-독립과-기저-linearly-independent-basis">선형 독립과 기저 (linearly independent &amp; basis)</h2>
+<ul>
+<li><p>벡터의 활동범위가 다르면 선형 독립이다.</p></li>
+<li><p>직교하면 무조건 독립이다. 하지만 독립이라고 직교하는 건 아니다.</p></li>
+</ul>
+<p><span class="math display">\[a_1\bold{v_1} + a_2\bold{v_2} + a_3\bold{v_3} + ... = \bold{0}\]</span> 이 식이 성립하기 위해 계수(<span class="math inline">\(a_1, a_2, a_3, ...\)</span>)가 모두 0 이어야 한다면 이는 선형 독립이다.</p>
+<p>ex) <span class="math inline">\(-2\begin{pmatrix}1\\1\end{pmatrix}+1\begin{pmatrix}2\\2\end{pmatrix} = 0\)</span> 이런경우는 linearly dependent 한 케이스.</p>
+<section id="basis" class="level3">
+<h3 class="anchored" data-anchor-id="basis">basis</h3>
+<ul>
+<li><p>어떤 공간을 이루는 필수적인 구성요소</p></li>
+<li><p>어떤 벡터공간 V의 벡터들이 선형독립이면서 벡터공간 V 전체를 생성할 수 있다면 이 벡터들의 집합을 말한다.</p></li>
+<li><p>벡터공간 <span class="math inline">\(R^m\)</span>의 임의의 원소를 표현하기 위해 필요한 최소한의 벡터로 이루어진 집합</p></li>
+</ul>
+</section>
+</section>
+<section id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="항등행렬-역행렬-직교행렬-indentity-matrix-inverse-orthogonal-matrix">항등행렬, 역행렬, 직교행렬 (indentity matrix &amp; inverse &amp; orthogonal matrix)</h2>
+
+
 </section>
 </section>
 
