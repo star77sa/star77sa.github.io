@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Time Series"
+  title: "ksko"
   favicon: time-series.png
   site-url: https://star77sa.github.io
   navbar:

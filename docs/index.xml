@@ -5,7 +5,7 @@
       xmlns:dc="http://purl.org/dc/elements/1.1/" 
       version="2.0">
 <channel>
-<title>Time Series</title>
+<title>ksko</title>
 <link>https://star77sa.github.io/</link>
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
@@ -53,10 +53,10 @@
 <p><img src="https://latex.codecogs.com/png.latex?a%5ETb%20=%20%5ClVert%20a%20%5CrVert%20%5ClVert%20b%20%5CrVert%20cos%5Ctheta%20=%20%5ClVert%20a%20%5CrVert%20cos%5Ctheta%20%5ClVert%20b%20%5CrVert%20=%20%5ClVert%20b%20%5CrVert%20cos%5Ctheta%20%5ClVert%20a%20%5CrVert"></p>
 <pre><code>                a에서 b로의 정사영 / b에서 a로의 정사영</code></pre>
 <p>” 내적은 정사영이다. ”</p>
-<p><img src="https://latex.codecogs.com/png.latex?a%5ETb%20=%20%5ClVert%20a%20%5CrVert%20%5ClVert%20a%20%5CrVert%20=%20%5ClVert%20a%20%5CrVert%5E2"></p>
+<p><img src="https://latex.codecogs.com/png.latex?a%5ETa%20=%20%5ClVert%20a%20%5CrVert%20%5ClVert%20a%20%5CrVert%20=%20%5ClVert%20a%20%5CrVert%5E2"></p>
 <p>a 벡터의 크기를 구할 때 <img src="https://latex.codecogs.com/png.latex?%5Csqrt%7Ba%5ETa%7D"> 이런식으로도 많이 구함</p>
 <p>단위벡터(unit vector): 크기가 1인 벡터</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Ba%7D%7B%5Csqrt%7Ba%5ET%7D%7Ba%7D%7D%20=%20%5Cfrac%7Ba%7D%7B%5ClVert%20a%20%5CrVert%7D"> : Normalize</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cfrac%7Ba%7D%7B%5Csqrt%7Ba%5ETa%7D%7D%20=%20%5Cfrac%7Ba%7D%7B%5ClVert%20a%20%5CrVert%7D"> : Normalize</p>
 <p><img src="https://latex.codecogs.com/png.latex?a%20%5Ccdot%20b"> → 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0</p>
 </section>
 <section id="벡터의-norm" class="level2">
@@ -155,7 +155,7 @@
 <p><img src="https://latex.codecogs.com/png.latex?A%5Ctimes%7B%5Ccolor%7Bred%7DA%5E%7B-1%7D%7D=I"></p>
 <ul>
 <li>정사각 행렬에 대해서만 정의</li>
-<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D">이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현</li>
+<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <img src="https://latex.codecogs.com/png.latex?A%5E%7B-1%7D">이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertible하다 라고 표현</li>
 <li>A의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것</li>
 </ul>
 </section>

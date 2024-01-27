@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Time Series",
+    "title": "ksko",
     "section": "",
     "text": "통계학, 머신러닝, 딥러닝 등 공부내용을 기록하는 블로그입니다.\nEmail : star77sa@gmail.com\nLink\n\nGithub : https://github.com/star77sa\nNotion : https://ksko.notion.site\nLinkedin : https://linkedin.com/in/star77sa\n\n이전 블로그\n\nfastpage : https://star77sa.github.io/TIL-Blog\nTistory: https://ksko0424.tistory.com/\n\n\n\n\n\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nJan 23, 2024\n\n\n선형대수학\n\n\n고경수 \n\n\n\n\nJan 23, 2024\n\n\nPython_3 seaborn, plotnine\n\n\n고경수 \n\n\n\n\nJan 23, 2024\n\n\nPython_2 matplotlib\n\n\n고경수 \n\n\n\n\nJan 22, 2024\n\n\nPython_1 자료형, Numpy, Pandas\n\n\n고경수 \n\n\n\n\nJan 19, 2024\n\n\n성능 평가 지표(회귀모델, 분류모델)\n\n\n고경수 \n\n\n\n\nJan 19, 2024\n\n\n[논문 리뷰] Machine learning driven smart electric power system: Current trends and new perspectives(2020)\n\n\n고경수 \n\n\n\n\nJan 17, 2024\n\n\n2024 GIST-NVAITC Korea 강연 내용\n\n\n고경수 \n\n\n\n\nJan 11, 2024\n\n\n데이터 과학\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르는 영단어 정리\n\n\n고경수 \n\n\n\n\nJan 1, 2024\n\n\n논문 읽다가 모르겠거나 복습할 개념 정리\n\n\n고경수 \n\n\n\n\nSep 14, 2023\n\n\n통계 101 X 데이터분석\n\n\n고경수 \n\n\n\n\nAug 29, 2023\n\n\n1. Probability and counting [확률론]\n\n\n고경수 \n\n\n\n\nAug 28, 2023\n\n\n2023.08.28 블로그 구축\n\n\n고경수 \n\n\n\n\n\nNo matching items"
   },
@@ -18,7 +18,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this blog\nI will post my studies on machine learning, deep learning, and time series analysis on my blog.",
+    "text": "About this blog\nI will post my studies on machine learning, deep learning, and energy data analysis on my blog.",
     "crumbs": [
       "About"
     ]

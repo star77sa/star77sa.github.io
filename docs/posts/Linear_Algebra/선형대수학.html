@@ -9,7 +9,7 @@
 <meta name="author" content="고경수">
 <meta name="dcterms.date" content="2024-01-23">
 
-<title>Time Series - 선형대수학</title>
+<title>ksko - 선형대수학</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,7 +111,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Time Series</span>
+    <span class="navbar-title">ksko</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -474,10 +474,10 @@ window.Quarto = {
 <p><span class="math inline">\(a^Tb = \lVert a \rVert \lVert b \rVert cos\theta = \lVert a \rVert cos\theta \lVert b \rVert = \lVert b \rVert cos\theta \lVert a \rVert\)</span></p>
 <pre><code>                a에서 b로의 정사영 / b에서 a로의 정사영</code></pre>
 <p>” 내적은 정사영이다. ”</p>
-<p><span class="math inline">\(a^Tb = \lVert a \rVert \lVert a \rVert = \lVert a \rVert^2\)</span></p>
+<p><span class="math inline">\(a^Ta = \lVert a \rVert \lVert a \rVert = \lVert a \rVert^2\)</span></p>
 <p>a 벡터의 크기를 구할 때 <span class="math inline">\(\sqrt{a^Ta}\)</span> 이런식으로도 많이 구함</p>
 <p>단위벡터(unit vector): 크기가 1인 벡터</p>
-<p><span class="math inline">\(\frac{a}{\sqrt{a^T}{a}} = \frac{a}{\lVert a \rVert}\)</span> : Normalize</p>
+<p><span class="math inline">\(\frac{a}{\sqrt{a^Ta}} = \frac{a}{\lVert a \rVert}\)</span> : Normalize</p>
 <p><span class="math inline">\(a \cdot b\)</span> → 같은 방향일때 가장 크고 반대 방향일 때 가장 작으며 직각일때 0</p>
 </section>
 <section id="벡터의-norm" class="level2">
@@ -576,7 +576,7 @@ window.Quarto = {
 <p><span class="math inline">\(A\times{\color{red}A^{-1}}=I\)</span></p>
 <ul>
 <li>정사각 행렬에 대해서만 정의</li>
-<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <span class="math inline">\(A^{-1}\)</span>이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertable하다 라고 표현</li>
+<li>A가 어떤 행렬이냐에 따라서 항등행렬이 나오도록하는 <span class="math inline">\(A^{-1}\)</span>이 존재할 수도 있고, 존재하지 않을 수도 있다. 존재하면? A는 invertible하다 라고 표현</li>
 <li>A의 앞에 곱하든, 뒤에 곱하든 항등행렬이 나온다. 일반적인 행렬에서는 안되던 교환법칙이 성립한다는 것</li>
 </ul>
 </section>
