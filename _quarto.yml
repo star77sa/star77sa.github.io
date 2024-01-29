@@ -20,11 +20,10 @@ website:
 format:
   html:
     theme: 
-      light: cerulean
+      light: cosmo
     css: styles.css
     code-fold: false
     code-line-numbers: true
     code-copy: true
     toc: true
     toc-location: right-body
-

@@ -10,8 +10,8 @@ listing:
   feed:
     items: 7
     categories: []
-  sort-ui: false
-  filter-ui: false
+  sort-ui: true
+  filter-ui: true
 page-layout: full
 title-block-banner: true
 ---
