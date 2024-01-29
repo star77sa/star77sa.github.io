@@ -20,7 +20,7 @@ website:
 format:
   html:
     theme: 
-      light: Simplex
+      light: cerulean
     css: styles.css
     code-fold: false
     code-line-numbers: true

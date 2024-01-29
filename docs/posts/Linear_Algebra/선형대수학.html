@@ -295,7 +295,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python_1 자료형, Numpy, Pandas</span></a>
+ <span class="menu-text">Python 기초 / 자료형, Numpy, Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -307,7 +307,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python_3 seaborn, plotnine</span></a>
+ <span class="menu-text">Python_3 seaborn</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Python/python_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python_4 Plotly - 판다스 백엔드</span></a>
   </div>
 </li>
       </ul>
@@ -389,6 +395,8 @@ window.Quarto = {
   <li><a href="#가우스-조던-소거법-gauss-jordan-elimination" id="toc-가우스-조던-소거법-gauss-jordan-elimination" class="nav-link" data-scroll-target="#가우스-조던-소거법-gauss-jordan-elimination">가우스-조던 소거법 (Gauss-Jordan Elimination)</a></li>
   <li><a href="#times-2-역행렬" id="toc-times-2-역행렬" class="nav-link" data-scroll-target="#times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</a></li>
   <li><a href="#행렬식determinant" id="toc-행렬식determinant" class="nav-link" data-scroll-target="#행렬식determinant">행렬식(determinant)</a></li>
+  <li><a href="#trace" id="toc-trace" class="nav-link" data-scroll-target="#trace">trace</a></li>
+  <li><a href="#최소자승법least-squares" id="toc-최소자승법least-squares" class="nav-link" data-scroll-target="#최소자승법least-squares">최소자승법(Least squares)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -439,6 +447,8 @@ window.Quarto = {
   <li><a href="#가우스-조던-소거법-gauss-jordan-elimination" id="toc-가우스-조던-소거법-gauss-jordan-elimination">가우스-조던 소거법 (Gauss-Jordan Elimination)</a></li>
   <li><a href="#times-2-역행렬" id="toc-times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</a></li>
   <li><a href="#행렬식determinant" id="toc-행렬식determinant">행렬식(determinant)</a></li>
+  <li><a href="#trace" id="toc-trace">trace</a></li>
+  <li><a href="#최소자승법least-squares" id="toc-최소자승법least-squares">최소자승법(Least squares)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -461,7 +471,7 @@ window.Quarto = {
 <li><p><span class="math inline">\((A^T)^T = A\)</span></p></li>
 <li><p><span class="math inline">\((A+B)^T = A^T + B^T\)</span></p></li>
 <li><p><span class="math inline">\((AB)^T = B^TA^T\)</span></p></li>
-<li><p><span class="math inline">\((CA)^T = CA^T\)</span></p></li>
+<li><p><span class="math inline">\((cA)^T = cA^T\)</span></p></li>
 <li><p><span class="math inline">\(\text{det}(A^T) = \text{det}(A)\)</span></p></li>
 <li><p><span class="math inline">\((A^T)^{-1} = (A^{-1})^T\)</span></p></li>
 </ol>
@@ -708,7 +718,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="times-2-역행렬">2 <span class="math inline">\(\times\)</span> 2 역행렬</h2>
 <p><span class="math inline">\(\begin{pmatrix}a&amp;b\\c&amp;d\end{pmatrix}^{-1}\)</span> = <span class="math inline">\(\frac{1}{ad-bc}\begin{pmatrix}d&amp;{-b}\\{-c}&amp;a\end{pmatrix}\)</span></p>
 <p>그렇다면 ad-bc가 0일 경우에는?? invertible하지 않다고 한다.</p>
-<p>여기서 ad-bc를 determinant라고 함.</p>
+<p>여기서 ad-bc를 determinant라고 함. (역행렬과 determinant는 다르다.)</p>
 <ul>
 <li><p>정사각행렬 A가 invertible하다(non singular matrix라고 함 invertible하지 않으면 singular matrix)</p>
 <p>와 동치인 것들</p>
@@ -754,6 +764,63 @@ window.Quarto = {
 <li><span class="math inline">\(det(A^{-1}) = \frac{1}{det(A)}\)</span></li>
 </ol>
 <p><code>★10.</code> <span class="math inline">\(det(A) = \lambda_1 \lambda_2 ... \lambda_n\)</span> (<span class="math inline">\(\lambda\)</span> = eigen value)</p>
+</section>
+<section id="trace" class="level2">
+<h2 class="anchored" data-anchor-id="trace">trace</h2>
+<ul>
+<li>최적화의 목적 함수는 무조건 스칼라 값.</li>
+</ul>
+<p><span class="math inline">\(tr(A) = \sum^n_{i=1}a_{ii}\)</span></p>
+<ul>
+<li><p>trace를 이용하면 행렬로 미분하는게 매우 쉬워짐</p></li>
+<li><p>trace에는 무조건 정사각행렬이 와야함</p></li>
+</ul>
+<p>trace 관련 properties</p>
+<ol type="1">
+<li><p><span class="math inline">\(tr(A+B)=tr(A)+tr(B)\)</span></p></li>
+<li><p><span class="math inline">\(tr(cA) = ctr(A)\)</span></p></li>
+<li><p><span class="math inline">\(tr(A^T) = tr(A)\)</span></p></li>
+<li><p><span class="math inline">\(tr(AB) = tr(BA)\)</span></p>
+<p><span class="math inline">\(A: m \times n\)</span>이면 <span class="math inline">\(B: n\times m\)</span></p></li>
+<li><p><span class="math inline">\(tr(a^Tb)=tr(ba^T)\)</span> (4를 이용한 자리바꾸기)</p>
+<p>(4,5번은 6번을 위한 빌드업)</p></li>
+</ol>
+<p><code>★</code>6. <span class="math inline">\(tr(ABCD)=tr(BCDA)=tr(CDAB)=tr(DABC)\)</span> (cyclic property)</p>
+<ol start="7" type="1">
+<li><span class="math inline">\(tr(A) = \sum^n_{i=1}\lambda_i\)</span></li>
+</ol>
+</section>
+<section id="최소자승법least-squares" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="최소자승법least-squares">최소자승법(Least squares)</h2>
+<ul>
+<li><p>A의 column space 밖의 b 벡터를 span으로 표현할 수 없을 때, 최대한 가깝게 만드는 x를 찾는법</p></li>
+<li><p><span class="math inline">\(b-Ax = e\)</span> (error),</p>
+<p><span class="math inline">\(||e||^2_2\)</span>을 줄이자 → error 제곱의 합을 최소화 하자는 접근 방식</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="선형대수학_files/figure-html/cell-102-1-image.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">image.png</figcaption>
+</figure>
+</div>
+<p>Ax와 b가 수직할 때 최소이므로 b-Ax와 Ax를 내적했을 때 0인 값을 찾자 + 그러한 x를 <span class="math inline">\(\hat{x}\)</span>로 표기하자</p>
+<ul>
+<li><p><span class="math inline">\((b-A\hat{x})^TA\hat{x}=0\)</span></p>
+<p><span class="math inline">\((b^TA-\hat{x}^TA^TA)\hat{x}=0\)</span></p>
+<p><span class="math inline">\({\color{skyblue}\hat{x}=0?}\)</span> 우리가 원하는 접근방식은 아님. 영벡터를 내적했기에 0이 나오는 것이므로. 그렇다면 <span class="math inline">\((b^TA-\hat{x}^TA^TA)=0\)</span>이 되는 <span class="math inline">\(x\)</span>값을 찾아 주어야 한다.</p>
+<p><span class="math inline">\(b^TA = \hat{x}^TA^TA\)</span></p>
+<p>↓ 양변에 transpose</p>
+<p><span class="math inline">\(A^Tb=A^TA\hat{x}\)</span> 이 식을 “normal equation” 이라고 부름 / <span class="math inline">\(rank(A^TA)=  rank(A)\)</span>이며 <span class="math inline">\(A^TA\)</span>는 3x3 행렬이므로 full rank이다. 즉, invertible하다.</p>
+<p>↓ 그러므로 양변에 <span class="math inline">\(A^TA\)</span>의 역행렬을 곱해줌.</p>
+<p><span class="math inline">\(\hat{x} = (A^TA)^{-1}A^Tb\)</span></p>
+<p>이 <span class="math inline">\(\hat{x}\)</span>를 <span class="math inline">\(A\hat{x}\)</span>에 대입해주면</p>
+<p><span class="math inline">\(A\hat{x} = {\color{red}A(A^TA)^{-1}A^T}b\)</span>,</p>
+<p><span class="math inline">\(b\)</span>에다가 <span class="math inline">\({\color{red}A(A^TA)^{-1}A^T}\)</span>를 곱해서 정사영을 만든 것이기에 이를 “projection matrix”라고 부른다.</p></li>
+</ul>
+<p>이 최소자승법은 어디에 쓰느냐?</p>
+<p><span class="math inline">\(Z = Ax + n\)</span> (여기서 A는 full column rank라는 가정이 필요하다.)</p>
+<p><span class="math inline">\(Z\)</span>:측정값(measurement), <span class="math inline">\(n\)</span>:noise, <span class="math inline">\(x\)</span>:알아내야 하는 값</p>
+<p><span class="math inline">\(A\hat{x} = A(A^TA)^{-1}A^TZ\)</span></p>
 
 
 </section>
