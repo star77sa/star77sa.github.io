@@ -9,7 +9,7 @@
 <meta name="author" content="고경수">
 <meta name="dcterms.date" content="2024-01-23">
 
-<title>ksko - Python 데이터시각화 / Plotly - 판다스 백엔드</title>
+<title>ksko - [데이터시각화] Plotly, 판다스 백엔드</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_4.html">Python 데이터시각화 / Plotly - 판다스 백엔드</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_4.html">[데이터시각화] Plotly, 판다스 백엔드</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -163,10 +163,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_4.html">Python 데이터시각화 / Plotly - 판다스 백엔드</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Python/python_1.html">Python</a></li><li class="breadcrumb-item"><a href="../../posts/Python/python_4.html">[데이터시각화] Plotly, 판다스 백엔드</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Python 데이터시각화 / Plotly - 판다스 백엔드</h1>
+      <h1 class="title">[데이터시각화] Plotly, 판다스 백엔드</h1>
                       </div>
   </div>
     
@@ -303,25 +303,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python 기초 / 자료형, Numpy, Pandas</span></a>
+ <span class="menu-text">[Python] 자료형,Numpy,Pandas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python 데이터시각화 / matplotlib</span></a>
+ <span class="menu-text">[데이터시각화] Matplotlib</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Python 데이터시각화 / seaborn</span></a>
+ <span class="menu-text">[데이터시각화] seaborn</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/python_4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Python 데이터시각화 / Plotly - 판다스 백엔드</span></a>
+ <span class="menu-text">[데이터시각화] Plotly, 판다스 백엔드</span></a>
   </div>
 </li>
       </ul>
@@ -338,7 +338,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">1. Probability and counting [확률론]</span></a>
+ <span class="menu-text">[확률론] 1. Probability and counting</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -401,14 +401,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul>
 </nav>
 <p>import</p>
-<div id="cell-2" class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="103">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>기본적으로 판다스의 백엔드는 matplotlib으로 설정되어있음.</p>
-<p>이를 매번 <code>backend='plotly</code>와 같이 쳐줘도 되지만 노트북 전체에 백엔드를 설정할 수도 있음</p>
-<div id="cell-4" class="cell" data-execution_count="2">
+<p>이를 매번 <code>backend='plotly'</code>와 같이 쳐줘도 되지만 노트북 전체에 백엔드를 설정할 수도 있음</p>
+<div id="cell-4" class="cell" data-execution_count="104">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>pd.options.plotting.backend <span class="op">=</span> <span class="st">"plotly"</span> <span class="co"># 백엔드를 plotly로 설정</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>pio.templates.default <span class="op">=</span> <span class="st">"plotly_white"</span> <span class="co"># plotly의 템플릿 설정. 안해도 무방</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="bu">print</span>(pio.templates) <span class="co"># 템플릿의 종류</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -429,10 +429,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="a..plot.bar" class="level3">
 <h3 class="anchored" data-anchor-id="a..plot.bar">A.<code>.plot.bar()</code></h3>
 <p>예제 1 - 성별 합격률 시각화</p>
-<div id="cell-9" class="cell" data-execution_count="3">
+<div id="cell-9" class="cell" data-execution_count="105">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).reset_index().melt(id_vars<span class="op">=</span><span class="st">'index'</span>).set_axis([<span class="st">'department'</span>,<span class="st">'gender'</span>,<span class="st">'result'</span>,<span class="st">'count'</span>],axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="105">
 <div>
 
 
@@ -621,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="4">
+<div id="cell-10" class="cell" data-execution_count="106">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df.pivot_table(index<span class="op">=</span><span class="st">'gender'</span>,columns<span class="op">=</span><span class="st">'result'</span>,values<span class="op">=</span><span class="st">'count'</span>,aggfunc<span class="op">=</span><span class="st">'sum'</span>)<span class="op">\</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>.assign(rate <span class="op">=</span> <span class="kw">lambda</span> df:  df[<span class="st">'pass'</span>]<span class="op">/</span>(df[<span class="st">'fail'</span>]<span class="op">+</span>df[<span class="st">'pass'</span>]))<span class="op">\</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>.assign(rate <span class="op">=</span> <span class="kw">lambda</span> df:  np.<span class="bu">round</span>(df[<span class="st">'rate'</span>],<span class="dv">2</span>))<span class="op">\</span></span>
@@ -637,10 +637,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>예제 2 - (성별,학과)별 지원자수 시각화</p>
-<div id="cell-12" class="cell" data-execution_count="5">
+<div id="cell-12" class="cell" data-execution_count="107">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).reset_index().melt(id_vars<span class="op">=</span><span class="st">'index'</span>).set_axis([<span class="st">'department'</span>,<span class="st">'gender'</span>,<span class="st">'result'</span>,<span class="st">'count'</span>],axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="107">
 <div>
 
 
@@ -829,7 +829,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-13" class="cell" data-execution_count="6">
+<div id="cell-13" class="cell" data-execution_count="108">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df.groupby([<span class="st">'department'</span>,<span class="st">'gender'</span>]).agg({<span class="st">'count'</span>:<span class="st">'sum'</span>})<span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>.reset_index()<span class="op">\</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>.plot.bar(</span>
@@ -846,10 +846,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="b..plot.line" class="level3">
 <h3 class="anchored" data-anchor-id="b..plot.line">B.<code>.plot.line()</code></h3>
 <p>예제 1 - 휴대폰 판매량</p>
-<div id="cell-16" class="cell" data-execution_count="7">
+<div id="cell-16" class="cell" data-execution_count="109">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="109">
 <div>
 
 
@@ -1143,7 +1143,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-17" class="cell" data-execution_count="8">
+<div id="cell-17" class="cell" data-execution_count="110">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>df.melt(id_vars<span class="op">=</span><span class="st">'Date'</span>)<span class="op">\</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>.set_axis([<span class="st">'날짜'</span>,<span class="st">'회사'</span>,<span class="st">'판매량'</span>],axis<span class="op">=</span><span class="dv">1</span>)<span class="op">\</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>.plot.line(</span>
@@ -1157,7 +1157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="c..plot.scatter" class="level3">
 <h3 class="anchored" data-anchor-id="c..plot.scatter">C.<code>.plot.scatter()</code></h3>
-<div id="cell-19" class="cell" data-execution_count="9">
+<div id="cell-19" class="cell" data-execution_count="111">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>position_dict <span class="op">=</span> {</span>
 <span id="cb13-2"><a href="#cb13-2"></a>    <span class="st">'GOALKEEPER'</span>:{<span class="st">'GK'</span>},</span>
 <span id="cb13-3"><a href="#cb13-3"></a>    <span class="st">'DEFENDER'</span>:{<span class="st">'CB'</span>,<span class="st">'RCB'</span>,<span class="st">'LCB'</span>,<span class="st">'RB'</span>,<span class="st">'LB'</span>,<span class="st">'RWB'</span>,<span class="st">'LWB'</span>},</span>
@@ -1171,7 +1171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-11"><a href="#cb13-11"></a>.assign(Position <span class="op">=</span> <span class="kw">lambda</span> df: df.Position.<span class="bu">str</span>.split(<span class="st">"&gt;"</span>).<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: [k <span class="cf">for</span> k,v <span class="kw">in</span> position_dict.items() <span class="cf">if</span> x <span class="kw">in</span> v].pop()))<span class="op">\</span></span>
 <span id="cb13-12"><a href="#cb13-12"></a>.assign(Wage <span class="op">=</span> <span class="kw">lambda</span> df: df.Wage.<span class="bu">str</span>[<span class="dv">1</span>:].<span class="bu">str</span>.replace(<span class="st">'K'</span>,<span class="st">'000'</span>).astype(<span class="bu">int</span>))</span>
 <span id="cb13-13"><a href="#cb13-13"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="111">
 <div>
 
 
@@ -1474,9 +1474,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="10">
+<div id="cell-20" class="cell" data-execution_count="112">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
+<div class="cell-output cell-output-display" data-execution_count="112">
 <pre><code>Index(['ID', 'Name', 'Age', 'Photo', 'Nationality', 'Flag', 'Overall',
        'Potential', 'Club', 'Club Logo', 'Value', 'Wage', 'Special',
        'Preferred Foot', 'International Reputation', 'Weak Foot',
@@ -1494,7 +1494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       dtype='object')</code></pre>
 </div>
 </div>
-<div id="cell-21" class="cell" data-execution_count="11">
+<div id="cell-21" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>df.query(<span class="st">'Position =="FORWARD" or Position =="DEFENDER"'</span>)<span class="op">\</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>.plot.scatter(</span>
 <span id="cb16-3"><a href="#cb16-3"></a>    x<span class="op">=</span><span class="st">'ShotPower'</span>,y<span class="op">=</span><span class="st">'SlidingTackle'</span>,</span>
@@ -1511,11 +1511,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="d..plot.box" class="level3">
 <h3 class="anchored" data-anchor-id="d..plot.box">D.<code>.plot.box()</code></h3>
-<div id="cell-23" class="cell" data-execution_count="12">
+<div id="cell-23" class="cell" data-execution_count="114">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>y1<span class="op">=</span>[<span class="dv">75</span>,<span class="dv">75</span>,<span class="dv">76</span>,<span class="dv">76</span>,<span class="dv">77</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">79</span>,<span class="dv">98</span>] <span class="co"># A선생님에게 통계학을 배운 학생의 점수들</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a>y2<span class="op">=</span>[<span class="dv">76</span>,<span class="dv">76</span>,<span class="dv">77</span>,<span class="dv">77</span>,<span class="dv">78</span>,<span class="dv">78</span>,<span class="dv">79</span>,<span class="dv">80</span>,<span class="dv">80</span>,<span class="dv">81</span>] <span class="co"># B선생님에게 통계학을 배운 학생의 점수들 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-24" class="cell" data-execution_count="13">
+<div id="cell-24" class="cell" data-execution_count="115">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a>df <span class="op">=</span> pd.DataFrame({</span>
 <span id="cb19-2"><a href="#cb19-2"></a>    <span class="st">'score'</span>:y1<span class="op">+</span>y2,</span>
 <span id="cb19-3"><a href="#cb19-3"></a>    <span class="st">'class'</span>:[<span class="st">'A'</span>]<span class="op">*</span><span class="bu">len</span>(y1) <span class="op">+</span> [<span class="st">'B'</span>]<span class="op">*</span><span class="bu">len</span>(y2)</span>
@@ -1531,7 +1531,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>예제 2 - (년도, 시도)별 전기에너지 사용량</p>
-<div id="cell-26" class="cell" data-execution_count="19">
+<div id="cell-26" class="cell" data-execution_count="116">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/guebin/DV2022/main/posts/Energy/</span><span class="sc">{}</span><span class="st">.csv'</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>prov <span class="op">=</span> [<span class="st">'Seoul'</span>, <span class="st">'Busan'</span>, <span class="st">'Daegu'</span>, <span class="st">'Incheon'</span>, </span>
 <span id="cb21-3"><a href="#cb21-3"></a>        <span class="st">'Gwangju'</span>, <span class="st">'Daejeon'</span>, <span class="st">'Ulsan'</span>, <span class="st">'Sejongsi'</span>, </span>
@@ -1543,7 +1543,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb21-9"><a href="#cb21-9"></a>.set_index([<span class="st">'년도'</span>,<span class="st">'시도'</span>,<span class="st">'지역'</span>]).applymap(<span class="kw">lambda</span> x: <span class="bu">int</span>(<span class="bu">str</span>(x).replace(<span class="st">','</span>,<span class="st">''</span>)))<span class="op">\</span></span>
 <span id="cb21-10"><a href="#cb21-10"></a>.reset_index()</span>
 <span id="cb21-11"><a href="#cb21-11"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div class="cell-output cell-output-display" data-execution_count="116">
 <div>
 
 
@@ -1623,7 +1623,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-27" class="cell" data-execution_count="20">
+<div id="cell-27" class="cell" data-execution_count="117">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>df.plot.box(</span>
 <span id="cb22-2"><a href="#cb22-2"></a>    x<span class="op">=</span><span class="st">'시도'</span>,y<span class="op">=</span><span class="st">'에너지사용량(TOE)/전기'</span>,</span>
 <span id="cb22-3"><a href="#cb22-3"></a>    color<span class="op">=</span><span class="st">'시도'</span>,</span>
@@ -1638,10 +1638,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="e..plot.hist" class="level3">
 <h3 class="anchored" data-anchor-id="e..plot.hist">E.<code>.plot.hist()</code></h3>
-<div id="cell-29" class="cell" data-execution_count="21">
+<div id="cell-29" class="cell" data-execution_count="118">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2023/main/posts/titanic.csv"</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div class="cell-output cell-output-display" data-execution_count="118">
 <div>
 
 
@@ -1848,7 +1848,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="22">
+<div id="cell-30" class="cell" data-execution_count="119">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>df.plot.hist(</span>
 <span id="cb25-2"><a href="#cb25-2"></a>    x<span class="op">=</span><span class="st">'Age'</span>,</span>
 <span id="cb25-3"><a href="#cb25-3"></a>    color<span class="op">=</span><span class="st">'Sex'</span>,</span>
@@ -1861,10 +1861,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="f..plot.area" class="level3">
 <h3 class="anchored" data-anchor-id="f..plot.area">F.<code>.plot.area()</code></h3>
-<div id="cell-32" class="cell" data-execution_count="23">
+<div id="cell-32" class="cell" data-execution_count="120">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb27-2"><a href="#cb27-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="23">
+<div class="cell-output cell-output-display" data-execution_count="120">
 <div>
 
 
@@ -2158,7 +2158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-33" class="cell" data-execution_count="24">
+<div id="cell-33" class="cell" data-execution_count="121">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>df.melt(id_vars<span class="op">=</span><span class="st">'Date'</span>)<span class="op">\</span></span>
 <span id="cb28-2"><a href="#cb28-2"></a>.set_axis([<span class="st">'날짜'</span>,<span class="st">'회사'</span>,<span class="st">'판매량'</span>],axis<span class="op">=</span><span class="dv">1</span>)<span class="op">\</span></span>
 <span id="cb28-3"><a href="#cb28-3"></a>.plot.area(</span>
@@ -2171,7 +2171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>예제 2 - 에너지 사용량</p>
-<div id="cell-35" class="cell" data-execution_count="25">
+<div id="cell-35" class="cell" data-execution_count="122">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>url <span class="op">=</span> <span class="st">'https://raw.githubusercontent.com/guebin/DV2022/main/posts/Energy/</span><span class="sc">{}</span><span class="st">.csv'</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>prov <span class="op">=</span> [<span class="st">'Seoul'</span>, <span class="st">'Busan'</span>, <span class="st">'Daegu'</span>, <span class="st">'Incheon'</span>, </span>
 <span id="cb30-3"><a href="#cb30-3"></a>        <span class="st">'Gwangju'</span>, <span class="st">'Daejeon'</span>, <span class="st">'Ulsan'</span>, <span class="st">'Sejongsi'</span>, </span>
@@ -2183,7 +2183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb30-9"><a href="#cb30-9"></a>.set_index([<span class="st">'년도'</span>,<span class="st">'시도'</span>,<span class="st">'지역'</span>]).applymap(<span class="kw">lambda</span> x: <span class="bu">int</span>(<span class="bu">str</span>(x).replace(<span class="st">','</span>,<span class="st">''</span>)))<span class="op">\</span></span>
 <span id="cb30-10"><a href="#cb30-10"></a>.reset_index()</span>
 <span id="cb30-11"><a href="#cb30-11"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="25">
+<div class="cell-output cell-output-display" data-execution_count="122">
 <div>
 
 
@@ -2263,7 +2263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="26">
+<div id="cell-36" class="cell" data-execution_count="123">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>df.set_index([<span class="st">'년도'</span>,<span class="st">'시도'</span>,<span class="st">'지역'</span>,<span class="st">'건물동수'</span>,<span class="st">'연면적'</span>]).stack().reset_index()<span class="op">\</span></span>
 <span id="cb31-2"><a href="#cb31-2"></a>.rename({<span class="st">'level_5'</span>:<span class="st">'에너지종류'</span>, <span class="dv">0</span>:<span class="st">'에너지사용량'</span>},axis<span class="op">=</span><span class="dv">1</span>)<span class="op">\</span></span>
 <span id="cb31-3"><a href="#cb31-3"></a>.assign(에너지종류 <span class="op">=</span> <span class="kw">lambda</span> df: df[<span class="st">'에너지종류'</span>].<span class="bu">str</span>.split(<span class="st">'/'</span>).<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>])<span class="op">\</span></span>
@@ -2280,7 +2280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>간단한 미세조정</p>
-<div id="cell-38" class="cell" data-execution_count="27">
+<div id="cell-38" class="cell" data-execution_count="124">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>fig <span class="op">=</span> df.set_index([<span class="st">'년도'</span>,<span class="st">'시도'</span>,<span class="st">'지역'</span>,<span class="st">'건물동수'</span>,<span class="st">'연면적'</span>]).stack().reset_index()<span class="op">\</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a>.rename({<span class="st">'level_5'</span>:<span class="st">'에너지종류'</span>, <span class="dv">0</span>:<span class="st">'에너지사용량'</span>},axis<span class="op">=</span><span class="dv">1</span>)<span class="op">\</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>.assign(에너지종류 <span class="op">=</span> <span class="kw">lambda</span> df: df[<span class="st">'에너지종류'</span>].<span class="bu">str</span>.split(<span class="st">'/'</span>).<span class="bu">str</span>[<span class="op">-</span><span class="dv">1</span>])<span class="op">\</span></span>
