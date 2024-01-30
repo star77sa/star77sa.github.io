@@ -1899,7 +1899,7 @@
     "href": "posts/Python/vis_tidydata.html",
     "title": "[데이터시각화] 3. Pandas - lambda df:의 활용, MultiIndex의 이해, tidydata의 이해",
     "section": "",
-    "text": "Pandas - lambda df: 의 활용\n  \n  추후 작성\n  \n  Pandas - MultiIndex의 이해\n  \n  추후 작성\n  \n  tidydata의 개념\nimports\nimport numpy as np\nimport pandas as pd",
+    "text": "Pandas - lambda df: 의 활용\n  \n  추후 작성\n  \n  Pandas - MultiIndex의 이해\n  \n  추후 작성\n  \n  Pandas - tidydata의 개념\nimports\nimport numpy as np\nimport pandas as pd",
     "crumbs": [
       "About",
       "Posts",
@@ -2022,6 +2022,19 @@
       "Posts",
       "Python",
       "[데이터시각화] 2. Seaborn"
+    ]
+  },
+  {
+    "objectID": "posts/Python/vis_tidydata.html#pandas---tidydata의-개념",
+    "href": "posts/Python/vis_tidydata.html#pandas---tidydata의-개념",
+    "title": "[데이터시각화] 3. Pandas - lambda df:의 활용, MultiIndex의 이해, tidydata의 이해",
+    "section": "Pandas - tidydata의 개념",
+    "text": "Pandas - tidydata의 개념\n\n아래의 자료는 처리가 불편하다.\n\n\ndf = pd.read_csv(\"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv\",index_col=0,header=[0,1])\\\n.stack().stack().reset_index()\\\n.rename({'level_0':'department','level_1':'result','level_2':'gender',0:'count'},axis=1).pivot_table(index=['gender','department'], columns='result',values='count',aggfunc=sum)\ndf \n\n\n\n\n\n\n\n\nresult\nfail\npass\n\n\ngender\ndepartment\n\n\n\n\n\n\nfemale\nA\n19\n89\n\n\nB\n7\n18\n\n\nC\n391\n202\n\n\nD\n244\n131\n\n\nE\n299\n94\n\n\nF\n103\n238\n\n\nmale\nA\n314\n511\n\n\nB\n208\n352\n\n\nC\n204\n121\n\n\nD\n279\n138\n\n\nE\n137\n54\n\n\nF\n149\n224\n\n\n\n\n\n\n\n- 가정1: 만약에 A학과에 해당하는 결과만 뽑고 싶다면? → department가 column으로 있어야함..\n- 가정2: 이 데이터를 바탕으로 합격한사람만 bar plot을 그리고 싶다면? → department, gender, pass 가 column으로 있어야함..\n\ntidydata = df['pass'].reset_index()\ntidydata\n\n\n\n\n\n\n\n\ngender\ndepartment\npass\n\n\n\n\n0\nfemale\nA\n89\n\n\n1\nfemale\nB\n18\n\n\n2\nfemale\nC\n202\n\n\n3\nfemale\nD\n131\n\n\n4\nfemale\nE\n94\n\n\n5\nfemale\nF\n238\n\n\n6\nmale\nA\n511\n\n\n7\nmale\nB\n352\n\n\n8\nmale\nC\n121\n\n\n9\nmale\nD\n138\n\n\n10\nmale\nE\n54\n\n\n11\nmale\nF\n224\n\n\n\n\n\n\n\n\nimport plotly.io as pio\npd.options.plotting.backend = \"plotly\"\npio.templates.default = \"plotly_white\"\n\n\ntidydata.plot.bar(\n    x='gender', y='pass',\n    color=[\"red\", \"blue\"],\n    facet_col ='department'\n)\n\nValueError: All arguments should have the same length. The length of argument `color` is 2, whereas the length of  previously-processed arguments ['gender', 'pass', 'department'] is 12",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Python",
+      "[데이터시각화] 3. Pandas - `lambda df:`의 활용, `MultiIndex`의 이해, `tidydata`의 이해"
     ]
   }
 ]
