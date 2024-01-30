@@ -1951,7 +1951,7 @@
     "href": "posts/Python/vis_Plotly.html",
     "title": "[데이터시각화] 4. Plotly, 판다스 백엔드",
     "section": "",
-    "text": "Plotly\n  \n  A..plot.bar()\n  B..plot.line()\n  C..plot.scatter()\n  D..plot.box()\n  E..plot.hist()\n  F..plot.area()\nimport\nimport numpy as np\nimport pandas as pd \nimport plotly.io as pio\nimport matplotlib.pyplot as plt\n기본적으로 판다스의 백엔드는 matplotlib으로 설정되어있음.\n이를 매번 backend='plotly'와 같이 쳐줘도 되지만 노트북 전체에 백엔드를 설정할 수도 있음\npd.options.plotting.backend = \"plotly\" # 백엔드를 plotly로 설정\npio.templates.default = \"plotly_white\" # plotly의 템플릿 설정. 안해도 무방\nprint(pio.templates) # 템플릿의 종류\n\nTemplates configuration\n-----------------------\n    Default template: 'plotly_white'\n    Available templates:\n        ['ggplot2', 'seaborn', 'simple_white', 'plotly',\n         'plotly_white', 'plotly_dark', 'presentation', 'xgridoff',\n         'ygridoff', 'gridon', 'none']",
+    "text": "Plotly\n  \n  A..plot.bar()\n  B..plot.line()\n  C..plot.scatter()\n  D..plot.box()\n  E..plot.hist()\n  F..plot.area()\n전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.\nhttps://guebin.github.io/DV2023/\nimport\nimport numpy as np\nimport pandas as pd \nimport plotly.io as pio\nimport matplotlib.pyplot as plt\n기본적으로 판다스의 백엔드는 matplotlib으로 설정되어있음.\n이를 매번 backend='plotly'와 같이 쳐줘도 되지만 노트북 전체에 백엔드를 설정할 수도 있음\npd.options.plotting.backend = \"plotly\" # 백엔드를 plotly로 설정\npio.templates.default = \"plotly_white\" # plotly의 템플릿 설정. 안해도 무방\nprint(pio.templates) # 템플릿의 종류\n\nTemplates configuration\n-----------------------\n    Default template: 'plotly_white'\n    Available templates:\n        ['ggplot2', 'seaborn', 'simple_white', 'plotly',\n         'plotly_white', 'plotly_dark', 'presentation', 'xgridoff',\n         'ygridoff', 'gridon', 'none']",
     "crumbs": [
       "About",
       "Posts",
@@ -1977,7 +1977,7 @@
     "href": "posts/Python/vis_matplotlib.html",
     "title": "[데이터시각화] 1. Matplotlib",
     "section": "",
-    "text": "Matplotlib\n  \n  Boxplot\n  Histogram\n  Histogram 응용 예제\n  Line plot\n  Scatter plot\n  dot-connected plot\n  겹쳐 그리기\n  객체지향적 시각화",
+    "text": "Matplotlib\n  \n  Boxplot\n  Histogram\n  Histogram 응용 예제\n  Line plot\n  Scatter plot\n  dot-connected plot\n  겹쳐 그리기\n  객체지향적 시각화\n전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.\nhttps://guebin.github.io/DV2023/",
     "crumbs": [
       "About",
       "Posts",
@@ -2003,7 +2003,7 @@
     "href": "posts/Python/vis_Seaborn.html",
     "title": "[데이터시각화] 2. Seaborn",
     "section": "",
-    "text": "Seaborn\nimport\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom plotnine import *\nimport matplotlib\nmatplotlib.rcParams['figure.dpi'] = 120\nimport warnings\nwarnings.filterwarnings('ignore')",
+    "text": "Seaborn\n전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.\nhttps://guebin.github.io/DV2023/\nimport\nimport numpy as np\nimport pandas as pd\nimport matplotlib.pyplot as plt\nfrom plotnine import *\nimport matplotlib\nmatplotlib.rcParams['figure.dpi'] = 120\nimport warnings\nwarnings.filterwarnings('ignore')",
     "crumbs": [
       "About",
       "Posts",
