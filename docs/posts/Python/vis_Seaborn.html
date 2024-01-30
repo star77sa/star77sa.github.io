@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Python/visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">[데이터시각화] 0. 훌륭한 시각화,</span></a>
+ <span class="menu-text">[데이터시각화] 0. 훌륭한 시각화</span></a>
   </div>
 </li>
       </ul>
@@ -396,24 +396,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#seaborn" id="toc-seaborn">Seaborn</a></li>
   </ul>
 </nav>
+<p>전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.</p>
+<p>https://guebin.github.io/DV2023/</p>
 <p>import</p>
-<div id="cell-2" class="cell" data-execution_count="1">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="im">from</span> plotnine <span class="im">import</span> <span class="op">*</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="2">
+<div id="cell-4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> matplotlib</span>
 <span id="cb2-2"><a href="#cb2-2"></a>matplotlib.rcParams[<span class="st">'figure.dpi'</span>] <span class="op">=</span> <span class="dv">120</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-4" class="cell" data-execution_count="3">
+<div id="cell-5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> warnings</span>
 <span id="cb3-2"><a href="#cb3-2"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="seaborn" class="level2">
 <h2 class="anchored" data-anchor-id="seaborn">Seaborn</h2>
-<div id="cell-6" class="cell" data-execution_count="4">
+<div id="cell-7" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><code>-</code> 개념차이</p>
@@ -423,7 +425,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><code>-</code> 데이터프레임 친화적인 시각화 툴이 왜 강력한가?</p>
 <p>분석할 데이터가 tabula data 형식인 경우가 많다. matplotlib은 여전히 강력하지만, seaborn등 데이터프레임 친화적 패키지가 우수한 경우가 많다.</p>
-<div id="cell-8" class="cell" data-execution_count="5">
+<div id="cell-9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2023/main/posts/titanic.csv"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
@@ -536,7 +538,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-9" class="cell" data-execution_count="6">
+<div id="cell-10" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>sns.scatterplot(</span>
 <span id="cb6-2"><a href="#cb6-2"></a>    df,</span>
 <span id="cb6-3"><a href="#cb6-3"></a>    x<span class="op">=</span><span class="st">'logFare'</span>,</span>
@@ -553,7 +555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-10" class="cell" data-execution_count="7">
+<div id="cell-11" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>sns.scatterplot(</span>
 <span id="cb7-2"><a href="#cb7-2"></a>    df,</span>
 <span id="cb7-3"><a href="#cb7-3"></a>    x<span class="op">=</span><span class="st">'logFare'</span>,</span>
@@ -590,7 +592,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>2</code>의 예시</li>
 </ul>
-<div id="cell-13" class="cell" data-execution_count="9">
+<div id="cell-14" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>sns.scatterplot(</span>
 <span id="cb9-2"><a href="#cb9-2"></a>    df,</span>
 <span id="cb9-3"><a href="#cb9-3"></a>    x<span class="op">=</span><span class="st">'logFare'</span>,</span>
