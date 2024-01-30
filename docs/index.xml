@@ -3311,7 +3311,7 @@ font-style: inherit;">0.95</span>]</span>
 <p>전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.</p>
 <p><a href="https://guebin.github.io/DV2023/posts/07wk-1.html">https://guebin.github.io/DV2023/posts/07wk-1.html</a></p>
 <p>imports</p>
-<div id="cell-3" class="cell" data-execution_count="44">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -3358,7 +3358,7 @@ font-style: inherit;">"plotly_white"</span></span></code></pre></div>
 <ul>
 <li>아래의 자료는 처리가 불편하다.</li>
 </ul>
-<div id="cell-11" class="cell" data-execution_count="35">
+<div id="cell-11" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
@@ -3419,7 +3419,7 @@ font-style: inherit;">=</span><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>)</span>
 <span id="cb2-4">df </span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -3509,14 +3509,14 @@ font-style: inherit;">sum</span>)</span>
 </div>
 <p><code>-</code> 가정1: 만약에 A학과에 해당하는 결과만 뽑고 싶다면? → department가 column으로 있어야함..</p>
 <p><code>-</code> 가정2: 이 데이터를 바탕으로 합격한사람만 bar plot을 그리고 싶다면? → department, gender, pass 가 column으로 있어야함..</p>
-<div id="cell-13" class="cell" data-execution_count="36">
+<div id="cell-13" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1">tidydata <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'pass'</span>].reset_index()</span>
 <span id="cb3-2">tidydata</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -3608,7 +3608,7 @@ font-style: inherit;">'pass'</span>].reset_index()</span>
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="38">
+<div id="cell-14" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">tidydata.plot.bar(</span>
 <span id="cb4-2">    x<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -3644,7 +3644,7 @@ font-style: inherit;">'department'</span></span>
 <section id="tidydata가-아닌-예시" class="level3">
 <h3 class="anchored" data-anchor-id="tidydata가-아닌-예시">tidydata가 아닌 예시</h3>
 <p><code>예시1</code> - MultiIndex 구조를 가지면 무조건 tidydata가 아니다.</p>
-<div id="cell-18" class="cell" data-execution_count="46">
+<div id="cell-18" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
@@ -3705,7 +3705,7 @@ font-style: inherit;">=</span><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>)</span>
 <span id="cb6-4">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -3796,7 +3796,7 @@ font-style: inherit;">sum</span>)</span>
 <ul>
 <li>이건 tidydata가 아니고</li>
 </ul>
-<div id="cell-20" class="cell" data-execution_count="51">
+<div id="cell-20" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">tidydata <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df.stack().reset_index().rename({<span class="dv" style="color: #AD0000;
@@ -3809,7 +3809,7 @@ font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)</span>
 <span id="cb7-2">tidydata </span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -4009,7 +4009,7 @@ font-style: inherit;">1</span>)</span>
 </ul>
 <p><code>-</code> 구분하는 방법 2 - <code>df</code>는 원칙 1에 위배된다. (왜냐하면 <code>gender</code>, <code>department</code>, <code>result</code>, <code>applicant_count</code>에 해당하는 변수는 하나의 컬럼을 차지하지 못함) - <code>df</code>는 원칙 2에 위배된다. (왜냐하면 하나의 행에 2개의 <code>applicant_count</code> observation이 존재함)</p>
 <p><code>예시2</code> - 아래의 자료는 tidydata가 아니다.</p>
-<div id="cell-25" class="cell" data-execution_count="52">
+<div id="cell-25" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
@@ -4093,7 +4093,7 @@ font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>).reset_index()</span>
 <span id="cb8-5">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -4126,14 +4126,14 @@ font-style: inherit;">1</span>).reset_index()</span>
 <li>이 <code>df</code>는 원칙 3에 위배된다.</li>
 </ul>
 <p><code>예시3</code> - wide df</p>
-<div id="cell-28" class="cell" data-execution_count="53">
+<div id="cell-28" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb9-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -4430,7 +4430,7 @@ font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_n
 <ul>
 <li>이건 tidydata가 아니고</li>
 </ul>
-<div id="cell-30" class="cell" data-execution_count="55">
+<div id="cell-30" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">tidydata <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> df.melt(id_vars<span class="op" style="color: #5E5E5E;
@@ -4445,7 +4445,7 @@ font-style: inherit;">lambda</span> _df: _df.Date.<span class="bu" style="color:
 background-color: null;
 font-style: inherit;">apply</span>(pd.to_datetime))</span>
 <span id="cb10-2">tidydata</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -4536,7 +4536,7 @@ font-style: inherit;">apply</span>(pd.to_datetime))</span>
 <li>이건 tidydata이다.</li>
 </ul>
 <p><code>-</code> df를 가지고 아래와 같은 그림을 그릴 수 있겠어?</p>
-<div id="cell-33" class="cell" data-execution_count="58">
+<div id="cell-33" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">tidydata.plot.line(</span>
 <span id="cb11-2">    x<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -4572,7 +4572,7 @@ font-style: inherit;">600</span></span>
 <p>중첩구조를 가지는 series일 경우 <code>.reset_index()</code>를 사용하면 쉽게 tidydata를 얻을 수 있다.</p>
 </blockquote>
 <p><code>-</code> 예시 1</p>
-<div id="cell-38" class="cell" data-execution_count="59">
+<div id="cell-38" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">dct <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {<span class="st" style="color: #20794D;
@@ -4592,7 +4592,7 @@ font-style: inherit;">50</span>}</span>
 background-color: null;
 font-style: inherit;">=</span> pd.Series(dct)</span>
 <span id="cb13-3">s</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>43052    80
 43053    90
 43054    50
@@ -4600,7 +4600,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시 2</p>
-<div id="cell-40" class="cell" data-execution_count="61">
+<div id="cell-40" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">dct <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {(<span class="st" style="color: #20794D;
@@ -4628,16 +4628,16 @@ font-style: inherit;"># (학번,학년)</span></span>
 background-color: null;
 font-style: inherit;">=</span> pd.Series(dct)</span>
 <span id="cb15-3">s</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>43052  4    80
 43053  1    90
 43054  2    50
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-41" class="cell" data-execution_count="62">
+<div id="cell-41" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">s.reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -4676,7 +4676,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시 3</p>
-<div id="cell-43" class="cell" data-execution_count="63">
+<div id="cell-43" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
@@ -4693,7 +4693,7 @@ font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]).stack().stack()</span>
 <span id="cb18-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>A  fail  female     19
          male      314
    pass  female     89
@@ -4721,9 +4721,9 @@ F  fail  female    103
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-44" class="cell" data-execution_count="64">
+<div id="cell-44" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1">df.reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -4913,7 +4913,7 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시4 <code>.reset_index()</code>는 말그대로 index를 reset 하는 명령어. 꼭 <code>pd.Series</code>에만 쓰는건 아니다.</p>
-<div id="cell-46" class="cell" data-execution_count="65">
+<div id="cell-46" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
@@ -4930,7 +4930,7 @@ font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]).stack()</span>
 <span id="cb21-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -5016,9 +5016,9 @@ font-style: inherit;">1</span>]).stack()</span>
 </div>
 </div>
 </div>
-<div id="cell-47" class="cell" data-execution_count="66">
+<div id="cell-47" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1">df.reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -5127,14 +5127,14 @@ font-style: inherit;">1</span>]).stack()</span>
 <section id="melt" class="level3">
 <h3 class="anchored" data-anchor-id="melt"><code>melt()</code></h3>
 <p><code>예시1</code>: 아래의 자료를 tidydata로 만들자</p>
-<div id="cell-50" class="cell" data-execution_count="67">
+<div id="cell-50" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb23-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -5429,9 +5429,9 @@ font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_n
 </div>
 </div>
 <p>(풀이1) <code>.melt()</code> - 실패</p>
-<div id="cell-52" class="cell" data-execution_count="68">
+<div id="cell-52" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">df.melt()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -5507,13 +5507,13 @@ font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_n
 </div>
 </div>
 <p>(풀이2) <code>.melt(id_vars=)</code> - 성공</p>
-<div id="cell-54" class="cell" data-execution_count="69">
+<div id="cell-54" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1">df.melt(id_vars<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Date'</span>)</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -5607,14 +5607,14 @@ font-style: inherit;">'Date'</span>)</span></code></pre></div>
 <p>교수님이 가장 많이 쓰는 테크닉: DataFrame을 MultiIndex를 가지는 Series로 “일부러” 변환하고 reset_index()를 시킴</p>
 </blockquote>
 <p><code>예시1</code>: 아래의 자료를 tidydata로 만들자.</p>
-<div id="cell-58" class="cell" data-execution_count="70">
+<div id="cell-58" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb26-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
@@ -5908,11 +5908,11 @@ font-style: inherit;">'https://raw.githubusercontent.com/guebin/2021DV/master/_n
 </div>
 </div>
 </div>
-<div id="cell-59" class="cell" data-execution_count="74">
+<div id="cell-59" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1">df.set_index(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Date'</span>).stack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
@@ -6000,7 +6000,7 @@ font-style: inherit;">'Date'</span>).stack().reset_index()</span></code></pre></
 </div>
 </div>
 <p><code>예시2</code>: 아래의 자료를 tidydata로 만들어라.</p>
-<div id="cell-61" class="cell" data-execution_count="75">
+<div id="cell-61" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1">df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
@@ -6017,7 +6017,7 @@ font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>])</span>
 <span id="cb28-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -6085,9 +6085,9 @@ font-style: inherit;">1</span>])</span>
 </div>
 </div>
 </div>
-<div id="cell-62" class="cell" data-execution_count="79">
+<div id="cell-62" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1">df.stack().stack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -6280,7 +6280,7 @@ font-style: inherit;">1</span>])</span>
 <section id="unstack-reset_index" class="level3">
 <h3 class="anchored" data-anchor-id="unstack-reset_index"><code>unstack() + reset_index()</code></h3>
 <p><code>예시1</code> - <code>.stack()</code>과 <code>.unstack()</code>은 반대연산</p>
-<div id="cell-65" class="cell" data-execution_count="80">
+<div id="cell-65" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
@@ -6302,7 +6302,7 @@ font-style: inherit;">"DIVERTED"</span>:[np.mean,<span class="st" style="color: 
 background-color: null;
 font-style: inherit;">"count"</span>]})</span>
 <span id="cb30-3">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -6419,9 +6419,9 @@ font-style: inherit;">"count"</span>]})</span>
 </div>
 </div>
 </div>
-<div id="cell-66" class="cell" data-execution_count="90">
+<div id="cell-66" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1">df.stack().unstack()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
@@ -6540,9 +6540,9 @@ font-style: inherit;">"count"</span>]})</span>
 </div>
 <p><code>-</code> 이 자료를 tidydata로 만들자.</p>
 <p>(풀이1) - stack 2번</p>
-<div id="cell-69" class="cell" data-execution_count="93">
+<div id="cell-69" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1">df.stack().stack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -6654,9 +6654,9 @@ font-style: inherit;">"count"</span>]})</span>
 </div>
 </div>
 <p>(풀이2) - unstack 2번</p>
-<div id="cell-71" class="cell" data-execution_count="95">
+<div id="cell-71" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1">df.unstack().unstack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="95">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -6768,7 +6768,7 @@ font-style: inherit;">"count"</span>]})</span>
 </div>
 </div>
 <p><code>예시2</code> - 아래의 자료를 tidydata로 만들어라.</p>
-<div id="cell-73" class="cell" data-execution_count="97">
+<div id="cell-73" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1">df<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>pd.read_csv(<span class="st" style="color: #20794D;
@@ -6785,7 +6785,7 @@ font-style: inherit;">0</span>,<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>])</span>
 <span id="cb34-2">df</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
 
@@ -6854,9 +6854,9 @@ font-style: inherit;">1</span>])</span>
 </div>
 </div>
 <p>(풀이1) - stack 2번</p>
-<div id="cell-75" class="cell" data-execution_count="98">
+<div id="cell-75" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1">df.stack().stack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="98">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
@@ -7046,9 +7046,9 @@ font-style: inherit;">1</span>])</span>
 </div>
 </div>
 <p>(풀이2) - unstack 1번</p>
-<div id="cell-77" class="cell" data-execution_count="99">
+<div id="cell-77" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1">df.unstack().reset_index()</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="99">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 

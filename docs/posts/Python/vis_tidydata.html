@@ -437,7 +437,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.</p>
 <p><a href="https://guebin.github.io/DV2023/posts/07wk-1.html">https://guebin.github.io/DV2023/posts/07wk-1.html</a></p>
 <p>imports</p>
-<div id="cell-3" class="cell" data-execution_count="44">
+<div id="cell-3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -464,12 +464,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>아래의 자료는 처리가 불편하다.</li>
 </ul>
-<div id="cell-11" class="cell" data-execution_count="35">
+<div id="cell-11" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])<span class="op">\</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>.stack().stack().reset_index()<span class="op">\</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>.rename({<span class="st">'level_0'</span>:<span class="st">'department'</span>,<span class="st">'level_1'</span>:<span class="st">'result'</span>,<span class="st">'level_2'</span>:<span class="st">'gender'</span>,<span class="dv">0</span>:<span class="st">'count'</span>},axis<span class="op">=</span><span class="dv">1</span>).pivot_table(index<span class="op">=</span>[<span class="st">'gender'</span>,<span class="st">'department'</span>], columns<span class="op">=</span><span class="st">'result'</span>,values<span class="op">=</span><span class="st">'count'</span>,aggfunc<span class="op">=</span><span class="bu">sum</span>)</span>
 <span id="cb2-4"><a href="#cb2-4"></a>df </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div>
 
 
@@ -559,10 +559,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p><code>-</code> 가정1: 만약에 A학과에 해당하는 결과만 뽑고 싶다면? → department가 column으로 있어야함..</p>
 <p><code>-</code> 가정2: 이 데이터를 바탕으로 합격한사람만 bar plot을 그리고 싶다면? → department, gender, pass 가 column으로 있어야함..</p>
-<div id="cell-13" class="cell" data-execution_count="36">
+<div id="cell-13" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>tidydata <span class="op">=</span> df[<span class="st">'pass'</span>].reset_index()</span>
 <span id="cb3-2"><a href="#cb3-2"></a>tidydata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -654,7 +654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="cell-14" class="cell" data-execution_count="38">
+<div id="cell-14" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>tidydata.plot.bar(</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    x<span class="op">=</span><span class="st">'gender'</span>, y<span class="op">=</span><span class="st">'pass'</span>,</span>
 <span id="cb4-3"><a href="#cb4-3"></a>    color<span class="op">=</span><span class="st">'gender'</span>,</span>
@@ -674,12 +674,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="tidydata가-아닌-예시" class="level3">
 <h3 class="anchored" data-anchor-id="tidydata가-아닌-예시">tidydata가 아닌 예시</h3>
 <p><code>예시1</code> - MultiIndex 구조를 가지면 무조건 tidydata가 아니다.</p>
-<div id="cell-18" class="cell" data-execution_count="46">
+<div id="cell-18" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])<span class="op">\</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>.stack().stack().reset_index()<span class="op">\</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>.rename({<span class="st">'level_0'</span>:<span class="st">'department'</span>,<span class="st">'level_1'</span>:<span class="st">'result'</span>,<span class="st">'level_2'</span>:<span class="st">'gender'</span>,<span class="dv">0</span>:<span class="st">'count'</span>},axis<span class="op">=</span><span class="dv">1</span>).pivot_table(index<span class="op">=</span>[<span class="st">'gender'</span>,<span class="st">'department'</span>], columns<span class="op">=</span><span class="st">'result'</span>,values<span class="op">=</span><span class="st">'count'</span>,aggfunc<span class="op">=</span><span class="bu">sum</span>)</span>
 <span id="cb6-4"><a href="#cb6-4"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -770,10 +770,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>이건 tidydata가 아니고</li>
 </ul>
-<div id="cell-20" class="cell" data-execution_count="51">
+<div id="cell-20" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>tidydata <span class="op">=</span> df.stack().reset_index().rename({<span class="dv">0</span>:<span class="st">'applicant_count'</span>},axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb7-2"><a href="#cb7-2"></a>tidydata </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -973,13 +973,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p><code>-</code> 구분하는 방법 2 - <code>df</code>는 원칙 1에 위배된다. (왜냐하면 <code>gender</code>, <code>department</code>, <code>result</code>, <code>applicant_count</code>에 해당하는 변수는 하나의 컬럼을 차지하지 못함) - <code>df</code>는 원칙 2에 위배된다. (왜냐하면 하나의 행에 2개의 <code>applicant_count</code> observation이 존재함)</p>
 <p><code>예시2</code> - 아래의 자료는 tidydata가 아니다.</p>
-<div id="cell-25" class="cell" data-execution_count="52">
+<div id="cell-25" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])<span class="op">\</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a>.stack().stack().reset_index()<span class="op">\</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>.rename({<span class="st">'level_0'</span>:<span class="st">'department'</span>,<span class="st">'level_1'</span>:<span class="st">'result'</span>,<span class="st">'level_2'</span>:<span class="st">'gender'</span>,<span class="dv">0</span>:<span class="st">'count'</span>},axis<span class="op">=</span><span class="dv">1</span>).pivot_table(index<span class="op">=</span><span class="st">'gender'</span>, columns<span class="op">=</span><span class="st">'result'</span>, values<span class="op">=</span><span class="st">'count'</span>, aggfunc<span class="op">=</span><span class="bu">sum</span>)<span class="op">\</span></span>
 <span id="cb8-4"><a href="#cb8-4"></a>.assign(pass_fail <span class="op">=</span> <span class="kw">lambda</span> df: <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x,y: (y,x),df[<span class="st">'fail'</span>],df[<span class="st">'pass'</span>]))).drop([<span class="st">'fail'</span>,<span class="st">'pass'</span>],axis<span class="op">=</span><span class="dv">1</span>).reset_index()</span>
 <span id="cb8-5"><a href="#cb8-5"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -1012,10 +1012,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>이 <code>df</code>는 원칙 3에 위배된다.</li>
 </ul>
 <p><code>예시3</code> - wide df</p>
-<div id="cell-28" class="cell" data-execution_count="53">
+<div id="cell-28" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -1312,10 +1312,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>이건 tidydata가 아니고</li>
 </ul>
-<div id="cell-30" class="cell" data-execution_count="55">
+<div id="cell-30" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>tidydata <span class="op">=</span> df.melt(id_vars<span class="op">=</span><span class="st">'Date'</span>).assign(Date <span class="op">=</span> <span class="kw">lambda</span> _df: _df.Date.<span class="bu">apply</span>(pd.to_datetime))</span>
 <span id="cb10-2"><a href="#cb10-2"></a>tidydata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="55">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <div>
 
 
@@ -1406,7 +1406,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>이건 tidydata이다.</li>
 </ul>
 <p><code>-</code> df를 가지고 아래와 같은 그림을 그릴 수 있겠어?</p>
-<div id="cell-33" class="cell" data-execution_count="58">
+<div id="cell-33" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>tidydata.plot.line(</span>
 <span id="cb11-2"><a href="#cb11-2"></a>    x<span class="op">=</span><span class="st">'Date'</span>, y<span class="op">=</span><span class="st">'value'</span>, </span>
 <span id="cb11-3"><a href="#cb11-3"></a>    color<span class="op">=</span><span class="st">'variable'</span>,</span>
@@ -1426,11 +1426,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>중첩구조를 가지는 series일 경우 <code>.reset_index()</code>를 사용하면 쉽게 tidydata를 얻을 수 있다.</p>
 </blockquote>
 <p><code>-</code> 예시 1</p>
-<div id="cell-38" class="cell" data-execution_count="59">
+<div id="cell-38" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>dct <span class="op">=</span> {<span class="st">'43052'</span>: <span class="dv">80</span>, <span class="st">'43053'</span>: <span class="dv">90</span>, <span class="st">'43054'</span>: <span class="dv">50</span>}</span>
 <span id="cb13-2"><a href="#cb13-2"></a>s <span class="op">=</span> pd.Series(dct)</span>
 <span id="cb13-3"><a href="#cb13-3"></a>s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="59">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>43052    80
 43053    90
 43054    50
@@ -1438,20 +1438,20 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시 2</p>
-<div id="cell-40" class="cell" data-execution_count="61">
+<div id="cell-40" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>dct <span class="op">=</span> {(<span class="st">'43052'</span>,<span class="dv">4</span>): <span class="dv">80</span>, (<span class="st">'43053'</span>,<span class="dv">1</span>): <span class="dv">90</span>, (<span class="st">'43054'</span>,<span class="dv">2</span>): <span class="dv">50</span>} <span class="co"># (학번,학년)</span></span>
 <span id="cb15-2"><a href="#cb15-2"></a>s <span class="op">=</span> pd.Series(dct)</span>
 <span id="cb15-3"><a href="#cb15-3"></a>s</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="61">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>43052  4    80
 43053  1    90
 43054  2    50
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-41" class="cell" data-execution_count="62">
+<div id="cell-41" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>s.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="62">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -1490,10 +1490,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시 3</p>
-<div id="cell-43" class="cell" data-execution_count="63">
+<div id="cell-43" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).stack().stack()</span>
 <span id="cb18-2"><a href="#cb18-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="63">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <pre><code>A  fail  female     19
          male      314
    pass  female     89
@@ -1521,9 +1521,9 @@ F  fail  female    103
 dtype: int64</code></pre>
 </div>
 </div>
-<div id="cell-44" class="cell" data-execution_count="64">
+<div id="cell-44" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>df.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -1713,10 +1713,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>-</code> 예시4 <code>.reset_index()</code>는 말그대로 index를 reset 하는 명령어. 꼭 <code>pd.Series</code>에만 쓰는건 아니다.</p>
-<div id="cell-46" class="cell" data-execution_count="65">
+<div id="cell-46" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>]).stack()</span>
 <span id="cb21-2"><a href="#cb21-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 
@@ -1802,9 +1802,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-47" class="cell" data-execution_count="66">
+<div id="cell-47" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>df.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
+<div class="cell-output cell-output-display" data-execution_count="17">
 <div>
 
 
@@ -1913,10 +1913,10 @@ dtype: int64</code></pre>
 <section id="melt" class="level3">
 <h3 class="anchored" data-anchor-id="melt"><code>melt()</code></h3>
 <p><code>예시1</code>: 아래의 자료를 tidydata로 만들자</p>
-<div id="cell-50" class="cell" data-execution_count="67">
+<div id="cell-50" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb23-2"><a href="#cb23-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="67">
+<div class="cell-output cell-output-display" data-execution_count="18">
 <div>
 
 
@@ -2211,9 +2211,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>(풀이1) <code>.melt()</code> - 실패</p>
-<div id="cell-52" class="cell" data-execution_count="68">
+<div id="cell-52" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>df.melt()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="68">
+<div class="cell-output cell-output-display" data-execution_count="19">
 <div>
 
 
@@ -2289,9 +2289,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>(풀이2) <code>.melt(id_vars=)</code> - 성공</p>
-<div id="cell-54" class="cell" data-execution_count="69">
+<div id="cell-54" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a>df.melt(id_vars<span class="op">=</span><span class="st">'Date'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="69">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <div>
 
 
@@ -2385,10 +2385,10 @@ dtype: int64</code></pre>
 <p>교수님이 가장 많이 쓰는 테크닉: DataFrame을 MultiIndex를 가지는 Series로 “일부러” 변환하고 reset_index()를 시킴</p>
 </blockquote>
 <p><code>예시1</code>: 아래의 자료를 tidydata로 만들자.</p>
-<div id="cell-58" class="cell" data-execution_count="70">
+<div id="cell-58" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'https://raw.githubusercontent.com/guebin/2021DV/master/_notebooks/phone.csv'</span>)</span>
 <span id="cb26-2"><a href="#cb26-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="70">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
@@ -2682,9 +2682,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-59" class="cell" data-execution_count="74">
+<div id="cell-59" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a>df.set_index(<span class="st">'Date'</span>).stack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="74">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <div>
 
 
@@ -2772,10 +2772,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>예시2</code>: 아래의 자료를 tidydata로 만들어라.</p>
-<div id="cell-61" class="cell" data-execution_count="75">
+<div id="cell-61" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</span>
 <span id="cb28-2"><a href="#cb28-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="75">
+<div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
 
@@ -2843,9 +2843,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-62" class="cell" data-execution_count="79">
+<div id="cell-62" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a>df.stack().stack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="79">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -3038,11 +3038,11 @@ dtype: int64</code></pre>
 <section id="unstack-reset_index" class="level3">
 <h3 class="anchored" data-anchor-id="unstack-reset_index"><code>unstack() + reset_index()</code></h3>
 <p><code>예시1</code> - <code>.stack()</code>과 <code>.unstack()</code>은 반대연산</p>
-<div id="cell-65" class="cell" data-execution_count="80">
+<div id="cell-65" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">'https://raw.githubusercontent.com/PacktPublishing/Pandas-Cookbook/master/data/flights.csv'</span>)<span class="op">\</span></span>
 <span id="cb30-2"><a href="#cb30-2"></a>.groupby([<span class="st">"AIRLINE"</span>,<span class="st">"WEEKDAY"</span>]).agg({<span class="st">"CANCELLED"</span>:[np.mean,<span class="st">"count"</span>],<span class="st">"DIVERTED"</span>:[np.mean,<span class="st">"count"</span>]})</span>
 <span id="cb30-3"><a href="#cb30-3"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="80">
+<div class="cell-output cell-output-display" data-execution_count="25">
 <div>
 
 
@@ -3159,9 +3159,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 </div>
-<div id="cell-66" class="cell" data-execution_count="90">
+<div id="cell-66" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1"></a>df.stack().unstack()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="90">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
@@ -3280,9 +3280,9 @@ dtype: int64</code></pre>
 </div>
 <p><code>-</code> 이 자료를 tidydata로 만들자.</p>
 <p>(풀이1) - stack 2번</p>
-<div id="cell-69" class="cell" data-execution_count="93">
+<div id="cell-69" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>df.stack().stack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="93">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <div>
 
 
@@ -3394,9 +3394,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>(풀이2) - unstack 2번</p>
-<div id="cell-71" class="cell" data-execution_count="95">
+<div id="cell-71" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1"></a>df.unstack().unstack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="95">
+<div class="cell-output cell-output-display" data-execution_count="28">
 <div>
 
 
@@ -3508,10 +3508,10 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p><code>예시2</code> - 아래의 자료를 tidydata로 만들어라.</p>
-<div id="cell-73" class="cell" data-execution_count="97">
+<div id="cell-73" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>df<span class="op">=</span>pd.read_csv(<span class="st">"https://raw.githubusercontent.com/guebin/DV2022/master/posts/Simpson.csv"</span>,index_col<span class="op">=</span><span class="dv">0</span>,header<span class="op">=</span>[<span class="dv">0</span>,<span class="dv">1</span>])</span>
 <span id="cb34-2"><a href="#cb34-2"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
+<div class="cell-output cell-output-display" data-execution_count="29">
 <div>
 
 
@@ -3580,9 +3580,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>(풀이1) - stack 2번</p>
-<div id="cell-75" class="cell" data-execution_count="98">
+<div id="cell-75" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1"></a>df.stack().stack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="98">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
 
@@ -3772,9 +3772,9 @@ dtype: int64</code></pre>
 </div>
 </div>
 <p>(풀이2) - unstack 1번</p>
-<div id="cell-77" class="cell" data-execution_count="99">
+<div id="cell-77" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>df.unstack().reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="99">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <div>
 
 
