@@ -2,12 +2,13 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Python/visualization.html",
-      "/posts/Python/vis_matplotlib.html",
+      "/posts/Statistics/SC.html",
       "/posts/Python/vis_Plotly.html",
-      "/posts/Python/vis_Seaborn.html",
       "/posts/Python/vis_tidydata.html",
-      "/posts/Python/선형대수학.html",
+      "/posts/Python/vis_Seaborn.html",
+      "/posts/Python/vis_matplotlib.html",
+      "/posts/Python/visualization.html",
+      "/posts/Linear_Algebra/선형대수학.html",
       "/posts/Python/python_1.html",
       "/posts/Paper/smartgrid1.html",
       "/posts/잡동사니/모델_성능평가지표_정리.html",

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://star77sa.github.io/index.html</loc>
-    <lastmod>2024-01-30T06:49:17.674Z</lastmod>
+    <lastmod>2024-01-30T07:54:33.103Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/post-with-code/index.html</loc>
@@ -66,11 +66,11 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Statistics/1_probability_and_counting.html</loc>
-    <lastmod>2024-01-30T06:49:26.623Z</lastmod>
+    <lastmod>2024-01-30T07:53:38.527Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Statistics/데이터_분석.html</loc>
-    <lastmod>2024-01-30T06:47:40.386Z</lastmod>
+    <lastmod>2024-01-30T07:53:43.639Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Paper/Smart_Grid/smartgrid1.html</loc>
@@ -106,7 +106,7 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/python_1.html</loc>
-    <lastmod>2024-01-30T07:49:30.899Z</lastmod>
+    <lastmod>2024-01-31T06:34:56.553Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/python_2.html</loc>
@@ -118,7 +118,7 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Linear_Algebra/선형대수학.html</loc>
-    <lastmod>2024-01-30T07:49:05.598Z</lastmod>
+    <lastmod>2024-01-31T06:34:49.494Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/python_4.html</loc>
@@ -138,23 +138,23 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/visualization.html</loc>
-    <lastmod>2024-01-29T11:55:52.814Z</lastmod>
+    <lastmod>2024-01-31T06:33:51.387Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/vis_tidydata.html</loc>
-    <lastmod>2024-01-30T06:58:23.083Z</lastmod>
+    <lastmod>2024-01-31T06:33:51.104Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/vis_Plotly.html</loc>
-    <lastmod>2024-01-30T07:01:40.954Z</lastmod>
+    <lastmod>2024-01-31T06:34:04.987Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/vis_matplotlib.html</loc>
-    <lastmod>2024-01-30T06:46:34.329Z</lastmod>
+    <lastmod>2024-01-31T06:32:28.362Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Python/vis_Seaborn.html</loc>
-    <lastmod>2024-01-30T02:34:15.894Z</lastmod>
+    <lastmod>2024-01-31T06:33:51.118Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/잡동사니/논문_영단어.html</loc>
@@ -179,5 +179,9 @@
   <url>
     <loc>https://star77sa.github.io/posts/Python/선형대수학.html</loc>
     <lastmod>2024-01-30T07:49:55.376Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/Statistics/SC.html</loc>
+    <lastmod>2024-01-31T08:42:27.106Z</lastmod>
   </url>
 </urlset>
