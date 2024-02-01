@@ -448,7 +448,7 @@ window.Quarto = {
 </nav>
 <p>최규빈 교수님 통계전산 수업 정리</p>
 <p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하겠다.</p>
-<div id="cell-2" class="cell" data-execution_count="64">
+<div id="cell-2" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -508,35 +508,32 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="how-to-generate-it">How to generate it?</h4>
 <p>평균 3인 포아송분포에서 100개 샘플을 뽑는 방법</p>
 <p>방법1)</p>
-<div id="cell-17" class="cell" data-execution_count="65">
+<div id="cell-17" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>pois <span class="op">=</span> np.random.poisson(<span class="dv">3</span>, <span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>pois</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="65">
-<pre><code>array([ 6,  6,  1,  3,  0,  4,  3,  5,  1,  6,  2,  2,  1,  6,  4,  1,  4,
-        2,  2,  7,  0,  2,  3,  5,  1,  2,  4,  2,  0,  5,  1,  0,  2,  0,
-        1,  2,  1,  3,  1,  2,  8,  0,  4,  4,  2,  1,  3,  3,  2,  5,  0,
-        0,  1,  3,  2,  5,  3,  3,  1,  8,  4,  2,  4,  2,  2,  2,  6,  3,
-        6,  1,  5,  4,  4,  2,  3,  3,  2,  6,  1, 10,  5,  6,  3,  1,  4,
-        6,  1,  2,  4,  4,  4,  4,  4,  4,  5,  2,  2,  0,  3,  0])</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="16">
+<pre><code>array([ 3,  4,  0,  7,  1,  3,  3,  5,  3,  2,  2,  6,  3,  5,  3,  2,  1,
+        4,  4,  2,  8,  3,  3,  3,  2,  0,  3,  5,  2,  2,  2,  2,  5,  4,
+        4,  7,  3,  5,  6,  2,  2,  1,  7,  3,  3,  1,  5,  5,  5,  6,  2,
+        3,  3,  3,  2,  5,  2,  6,  2,  5,  4,  0,  3,  4,  2,  0,  3,  3,
+        3,  4,  2,  3,  1,  1,  1,  5,  6,  2,  1,  3,  3,  3,  2,  7,  4,
+        2,  2,  4,  3,  1,  5,  2, 10,  6,  2,  4,  0,  3,  2,  1])</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>unique_values, count <span class="op">=</span> np.unique(pois, return_counts<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a>plt.xticks(np.arange(<span class="dv">0</span>,<span class="dv">11</span>,<span class="dv">1</span>)) <span class="co"># x축 1간격</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>plt.bar(unique_values, count)</span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a>fig <span class="op">=</span> plt.gcf()</span>
-<span id="cb4-6"><a href="#cb4-6"></a>ax <span class="op">=</span> plt.gca()</span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a>ax.set_xlim([<span class="op">-</span><span class="dv">1</span>,<span class="dv">11</span>])</span>
-<span id="cb4-9"><a href="#cb4-9"></a>plt.title(<span class="st">"pois"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="66">
-<pre><code>Text(0.5, 1.0, 'pois')</code></pre>
-</div>
+<div id="cell-18" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>plt.hist(pois)<span class="op">;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># bar plot으로 나타내는 법</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co"># unique_values, count = np.unique(pois, return_counts=True)</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co"># plt.bar(unique_values, count)</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co"># ax = plt.gca()</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co"># ax.set_xlim([-1,11])</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co"># plt.title("pois")</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co"># plt.xticks(np.arange(0,11,1)); # x축 1간격</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="SC_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="SC_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -544,17 +541,17 @@ window.Quarto = {
 <p>방법2) 이항분포의 포아송근사를 이용</p>
 <p>이론: 이항분포에서 (1) <span class="math inline">\(n→\infty\)</span> (2) <span class="math inline">\(p→0\)</span> (3) <span class="math inline">\(np=\lambda\)</span> 이면 이것은 평균이 <span class="math inline">\(\lambda\)</span> 인 포아송분포로 근사함.</p>
 <p>평균이 <span class="math inline">\(\lambda\)</span> 인 포아송분포는 <span class="math inline">\(B(n,\frac{\lambda}{n})\)</span> 로 근사할 수 있다. 이때 <span class="math inline">\(n\)</span>이 커질수록 더 정확해짐.</p>
-<div id="cell-21" class="cell" data-execution_count="115">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a>λ <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a>p <span class="op">=</span> λ<span class="op">/</span>n</span>
-<span id="cb6-5"><a href="#cb6-5"></a>X <span class="op">=</span> np.random.binomial(n, p, N)</span>
-<span id="cb6-6"><a href="#cb6-6"></a>Y <span class="op">=</span> np.random.poisson(λ, N)</span>
-<span id="cb6-7"><a href="#cb6-7"></a></span>
-<span id="cb6-8"><a href="#cb6-8"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb6-9"><a href="#cb6-9"></a>ax1.hist(X)<span class="op">;</span></span>
-<span id="cb6-10"><a href="#cb6-10"></a>ax2.hist(Y)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-21" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>λ <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>p <span class="op">=</span> λ<span class="op">/</span>n</span>
+<span id="cb5-5"><a href="#cb5-5"></a>X <span class="op">=</span> np.random.binomial(n, p, N)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>Y <span class="op">=</span> np.random.poisson(λ, N)</span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb5-9"><a href="#cb5-9"></a>ax1.hist(X)<span class="op">;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>ax2.hist(Y)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -570,24 +567,24 @@ window.Quarto = {
 <li>좀 더 세밀하게는 0.001초에 성공확률이 5.0e-5인 베르누이 시행을 1번 시행하여 1분동안 총 60000회 반복한 것으로도 이해할 수 있음. (무한반복 가능)</li>
 <li>느낌: 하여튼 (1) “엄청 작은 시간”에 (2) “엄청 작은 확률”의 베르누이 시행이 (3) “엄청 많이 독립적으로 반복” 되는 느낌을 기억!! = 포아송 프로세스</li>
 </ul>
-<div id="cell-24" class="cell" data-execution_count="173">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>λ<span class="op">=</span><span class="dv">3</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>n<span class="op">=</span><span class="dv">60000</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a>p<span class="op">=</span>λ<span class="op">/</span>n</span>
-<span id="cb7-4"><a href="#cb7-4"></a>Δt <span class="op">=</span> (<span class="dv">60</span><span class="op">/</span>n) <span class="co"># 단위가 60초니까 60</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb7-7"><a href="#cb7-7"></a>X <span class="op">=</span> [<span class="bu">sum</span>(np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,n)<span class="op">&lt;</span>p) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-24" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>λ<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>n<span class="op">=</span><span class="dv">60000</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>p<span class="op">=</span>λ<span class="op">/</span>n</span>
+<span id="cb6-4"><a href="#cb6-4"></a>Δt <span class="op">=</span> (<span class="dv">60</span><span class="op">/</span>n) <span class="co"># 단위가 60초니까 60</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>X <span class="op">=</span> [<span class="bu">sum</span>(np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,n)<span class="op">&lt;</span>p) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="182">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
-<span id="cb8-2"><a href="#cb8-2"></a></span>
-<span id="cb8-3"><a href="#cb8-3"></a>ax1.hist(X)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>ax2.hist(np.random.poisson(λ, N))<span class="op">;</span></span>
-<span id="cb8-5"><a href="#cb8-5"></a></span>
-<span id="cb8-6"><a href="#cb8-6"></a>ax1.set_title(<span class="st">"Uniform → Bernoulli → Binomial ≈ Poisson"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7"></a>ax2.set_title(<span class="st">"Poisson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="182">
+<div id="cell-25" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>ax1.hist(X)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>ax2.hist(np.random.poisson(λ, N))<span class="op">;</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a>ax1.set_title(<span class="st">"Uniform → Bernoulli → Binomial ≈ Poisson"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>ax2.set_title(<span class="st">"Poisson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>Text(0.5, 1.0, 'Poisson')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -613,18 +610,18 @@ window.Quarto = {
 <li><p>이론: <span class="math inline">\(X \sim Poi(\lambda_1), Y \sim Poi(\lambda_2), X \bot Y \Rightarrow X+Y\sim Poi(\lambda_1+\lambda_2)\)</span></p></li>
 <li><p>의미?: (1) 1분동안 맥도날드 매장에 들어오는 남자의 수는 평균이 5인 포아송 분포를 따름. (2) 1분동안 맥도날드 매장에 들어오는 여자의 수는 평균이 4.5인 포아송 분포를 따름. (3) 남자와 여자가 매장에 오는 사건은 독립 <span class="math inline">\(\rightarrow\)</span> 1분동안 맥도날드 매장에 오는 사람은 평균 9.5인 포아송 분포를 따른다는 의미</p></li>
 </ul>
-<div id="cell-29" class="cell" data-execution_count="192">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a>X <span class="op">=</span> np.random.poisson(<span class="dv">5</span>, N)</span>
-<span id="cb10-3"><a href="#cb10-3"></a>Y <span class="op">=</span> np.random.poisson(<span class="fl">4.5</span>, N)</span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>p1 <span class="op">=</span> X<span class="op">+</span>Y</span>
-<span id="cb10-6"><a href="#cb10-6"></a>p2 <span class="op">=</span> np.random.poisson(<span class="fl">9.5</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-29" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>X <span class="op">=</span> np.random.poisson(<span class="dv">5</span>, N)</span>
+<span id="cb9-3"><a href="#cb9-3"></a>Y <span class="op">=</span> np.random.poisson(<span class="fl">4.5</span>, N)</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a>p1 <span class="op">=</span> X<span class="op">+</span>Y</span>
+<span id="cb9-6"><a href="#cb9-6"></a>p2 <span class="op">=</span> np.random.poisson(<span class="fl">9.5</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="194">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
-<span id="cb11-2"><a href="#cb11-2"></a>ax1.hist(p1)</span>
-<span id="cb11-3"><a href="#cb11-3"></a>ax2.hist(p2)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-30" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a>ax1.hist(p1)</span>
+<span id="cb10-3"><a href="#cb10-3"></a>ax2.hist(p2)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -636,45 +633,45 @@ window.Quarto = {
 </section>
 <section id="평균과-분산의-추정" class="level4">
 <h4 class="anchored" data-anchor-id="평균과-분산의-추정">평균과 분산의 추정</h4>
-<div id="cell-32" class="cell" data-execution_count="208">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>λ<span class="op">=</span><span class="dv">5</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>X<span class="op">=</span>np.random.poisson(λ, N)</span>
-<span id="cb12-4"><a href="#cb12-4"></a></span>
-<span id="cb12-5"><a href="#cb12-5"></a><span class="bu">print</span>(<span class="ss">f"평균: </span><span class="sc">{λ}</span><span class="ch">\</span></span>
-<span id="cb12-6"><a href="#cb12-6"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">평균의 추정치: </span><span class="sc">{</span>np<span class="sc">.</span>mean(X)<span class="sc">}</span><span class="ch">\</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">분산: </span><span class="sc">{λ}</span><span class="ch">\</span></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">분산의 추정치: </span><span class="sc">{</span>np<span class="sc">.</span>var(X)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a>λ<span class="op">=</span><span class="dv">5</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>X<span class="op">=</span>np.random.poisson(λ, N)</span>
+<span id="cb11-4"><a href="#cb11-4"></a></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="bu">print</span>(<span class="ss">f"평균: </span><span class="sc">{λ}</span><span class="ch">\</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">평균의 추정치: </span><span class="sc">{</span>np<span class="sc">.</span>mean(X)<span class="sc">}</span><span class="ch">\</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">분산: </span><span class="sc">{λ}</span><span class="ch">\</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="ss">      </span><span class="ch">\n</span><span class="ss">분산의 추정치: </span><span class="sc">{</span>np<span class="sc">.</span>var(X)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>평균: 5      
-평균의 추정치: 5.017      
+평균의 추정치: 4.914      
 분산: 5      
-분산의 추정치: 4.910711</code></pre>
+분산의 추정치: 5.134604</code></pre>
 </div>
 </div>
 <p><code>-</code> 생각해보니까 이론적으로 평균과 분산의 값이 같아야 한다는 걸 알고 있다. 그런데 왜 추정치가 달라야하나?? 둘 중 하나만 있으면 될 것 같다.</p>
 <p>mean(X), var(X)로 <span class="math inline">\(\lambda\)</span>를 추정</p>
-<div id="cell-35" class="cell" data-execution_count="255">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>λ <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a></span>
-<span id="cb14-4"><a href="#cb14-4"></a>p1 <span class="op">=</span> [np.mean(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
-<span id="cb14-5"><a href="#cb14-5"></a>p2 <span class="op">=</span> [np.var(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-35" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a>λ <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a></span>
+<span id="cb13-4"><a href="#cb13-4"></a>p1 <span class="op">=</span> [np.mean(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
+<span id="cb13-5"><a href="#cb13-5"></a>p2 <span class="op">=</span> [np.var(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="261">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>ax1.set_xlim([<span class="fl">4.8</span>, <span class="fl">5.2</span>])</span>
-<span id="cb15-4"><a href="#cb15-4"></a>ax2.set_xlim([<span class="fl">4.8</span>, <span class="fl">5.2</span>])</span>
-<span id="cb15-5"><a href="#cb15-5"></a></span>
-<span id="cb15-6"><a href="#cb15-6"></a>ax1.set_ylim([<span class="dv">0</span>, <span class="dv">30</span>])</span>
-<span id="cb15-7"><a href="#cb15-7"></a>ax2.set_ylim([<span class="dv">0</span>, <span class="dv">30</span>])</span>
-<span id="cb15-8"><a href="#cb15-8"></a></span>
-<span id="cb15-9"><a href="#cb15-9"></a>ax1.hist(p1)</span>
-<span id="cb15-10"><a href="#cb15-10"></a>ax2.hist(p2)</span>
-<span id="cb15-11"><a href="#cb15-11"></a></span>
-<span id="cb15-12"><a href="#cb15-12"></a>ax1.set_title(<span class="st">"mean"</span>)</span>
-<span id="cb15-13"><a href="#cb15-13"></a>ax2.set_title(<span class="st">"var"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-36" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>ax1.set_xlim([<span class="fl">4.8</span>, <span class="fl">5.2</span>])</span>
+<span id="cb14-4"><a href="#cb14-4"></a>ax2.set_xlim([<span class="fl">4.8</span>, <span class="fl">5.2</span>])</span>
+<span id="cb14-5"><a href="#cb14-5"></a></span>
+<span id="cb14-6"><a href="#cb14-6"></a>ax1.set_ylim([<span class="dv">0</span>, <span class="dv">30</span>])</span>
+<span id="cb14-7"><a href="#cb14-7"></a>ax2.set_ylim([<span class="dv">0</span>, <span class="dv">30</span>])</span>
+<span id="cb14-8"><a href="#cb14-8"></a></span>
+<span id="cb14-9"><a href="#cb14-9"></a>ax1.hist(p1)</span>
+<span id="cb14-10"><a href="#cb14-10"></a>ax2.hist(p2)</span>
+<span id="cb14-11"><a href="#cb14-11"></a></span>
+<span id="cb14-12"><a href="#cb14-12"></a>ax1.set_title(<span class="st">"mean"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13"></a>ax2.set_title(<span class="st">"var"</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
