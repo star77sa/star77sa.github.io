@@ -433,6 +433,8 @@ window.Quarto = {
   <li><a href="#정규분포-요약" id="toc-정규분포-요약" class="nav-link" data-scroll-target="#정규분포-요약">정규분포 요약</a></li>
   <li><a href="#how-to-generate-it-2" id="toc-how-to-generate-it-2" class="nav-link" data-scroll-target="#how-to-generate-it-2">how to generate it?</a></li>
   <li><a href="#가설검정" id="toc-가설검정" class="nav-link" data-scroll-target="#가설검정">가설검정</a></li>
+  <li><a href="#note3-delta-method-생략" id="toc-note3-delta-method-생략" class="nav-link" data-scroll-target="#note3-delta-method-생략">note3: delta method (생략)</a></li>
+  <li><a href="#위치모수와-척도모수" id="toc-위치모수와-척도모수" class="nav-link" data-scroll-target="#위치모수와-척도모수">위치모수와 척도모수</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -470,12 +472,14 @@ window.Quarto = {
   <li><a href="#정규분포-요약" id="toc-정규분포-요약">정규분포 요약</a></li>
   <li><a href="#how-to-generate-it-2" id="toc-how-to-generate-it-2">how to generate it?</a></li>
   <li><a href="#가설검정" id="toc-가설검정">가설검정</a></li>
+  <li><a href="#note3-delta-method-생략" id="toc-note3-delta-method-생략">note3: delta method (생략)</a></li>
+  <li><a href="#위치모수와-척도모수" id="toc-위치모수와-척도모수">위치모수와 척도모수</a></li>
   </ul></li>
   </ul></li>
   </ul>
 </nav>
 <p>최규빈 교수님 통계전산 수업 정리</p>
-<p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하겠다.</p>
+<p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하였다.</p>
 <div id="cell-2" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -1278,9 +1282,22 @@ window.Quarto = {
 <pre><code>0.13666083914614557</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="note3-delta-method-생략" class="level3">
+<h3 class="anchored" data-anchor-id="note3-delta-method-생략">note3: delta method (생략)</h3>
+</section>
+<section id="위치모수와-척도모수" class="level3">
+<h3 class="anchored" data-anchor-id="위치모수와-척도모수">위치모수와 척도모수</h3>
+<p><code>-</code> 정규분포 특징 - 이론: <span class="math inline">\(Z\sim N(0,1) \Rightarrow aZ+b \sim N(b,a^2)\)</span> - 생각보다 이거 엄청 신기한 기능이에요 - 정규분포에 어떠한 상수를 더해도 정규분포, 어떠한 상수를 곱해도 정규분포, 더하고 곱해도 정규분포!</p>
+<p><code>-</code> 위치모수, 척도모수 1. 확률변수 <span class="math inline">\(Z\)</span>가 분포 A를 따를 때 <span class="math inline">\(Z+b\)</span>도 분포 A를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수를 가짐 2. 확률변수 <span class="math inline">\(Z\)</span>가 분포 B를 따를 때 <span class="math inline">\(aZ\)</span>도 분포 B를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 척도모수를 가짐 3. 확률변수 <span class="math inline">\(Z\)</span>가 분포 C를 따를 때 <span class="math inline">\(aZ+b\)</span>도 분포 C를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수와 척도모수를 가짐</p>
+<p><code>-</code> 예시: - 분포C: {{정규분포, 균등분포, 로지스틱, 이중지수, 코쉬}} - 분포A: 분포C와 동일 - 분포B: 분포C <span class="math inline">\(\cup\)</span> {{지수분포, 감마분포}} - 분포C - 분포A: 없다고 생각하세요.. - 분포C - 분포B: {{지수분포, 감마분포}}</p>
+<p>(예제1)</p>
+<p>(예제2)</p>
+<p>(예제3)</p>
+<p>. . . .</p>
+
+
 </section>
 </section>
 </section>
