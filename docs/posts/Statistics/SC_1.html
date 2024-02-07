@@ -448,6 +448,15 @@ window.Quarto = {
   <li><a href="#카이제곱-분포-요약" id="toc-카이제곱-분포-요약" class="nav-link" data-scroll-target="#카이제곱-분포-요약">카이제곱 분포 요약</a></li>
   <li><a href="#대의적-정의" id="toc-대의적-정의" class="nav-link" data-scroll-target="#대의적-정의">대의적 정의</a></li>
   <li><a href="#how-to-generate-it-3" id="toc-how-to-generate-it-3" class="nav-link" data-scroll-target="#how-to-generate-it-3">How to generate it?</a></li>
+  <li><a href="#note-표본분산의-분포" id="toc-note-표본분산의-분포" class="nav-link" data-scroll-target="#note-표본분산의-분포">note: 표본분산의 분포</a></li>
+  <li><a href="#카이제곱-분포의-합" id="toc-카이제곱-분포의-합" class="nav-link" data-scroll-target="#카이제곱-분포의-합">카이제곱 분포의 합</a></li>
+  <li><a href="#히스토그램" id="toc-히스토그램" class="nav-link" data-scroll-target="#히스토그램">히스토그램</a></li>
+  </ul></li>
+  <li><a href="#감마분포-xsimgammaalpha-beta" id="toc-감마분포-xsimgammaalpha-beta" class="nav-link" data-scroll-target="#감마분포-xsimgammaalpha-beta">감마분포: <span class="math inline">\(X\sim\Gamma(\alpha, \beta)\)</span></a>
+  <ul class="collapse">
+  <li><a href="#감마분포-요약" id="toc-감마분포-요약" class="nav-link" data-scroll-target="#감마분포-요약">감마분포 요약</a></li>
+  <li><a href="#대의적-정의alpha가-자연수일-경우" id="toc-대의적-정의alpha가-자연수일-경우" class="nav-link" data-scroll-target="#대의적-정의alpha가-자연수일-경우">대의적 정의(<span class="math inline">\(\alpha\)</span>가 자연수일 경우)</a></li>
+  <li><a href="#how-to-generate-it-4" id="toc-how-to-generate-it-4" class="nav-link" data-scroll-target="#how-to-generate-it-4">how to generate it?</a></li>
   </ul></li>
   <li><a href="#참고-검정의-형식-논리" id="toc-참고-검정의-형식-논리" class="nav-link" data-scroll-target="#참고-검정의-형식-논리">참고: 검정의 형식 논리</a></li>
   <li><a href="#분포-간의-관계식-총정리" id="toc-분포-간의-관계식-총정리" class="nav-link" data-scroll-target="#분포-간의-관계식-총정리">분포 간의 관계식 총정리</a></li>
@@ -496,6 +505,15 @@ window.Quarto = {
   <li><a href="#카이제곱-분포-요약" id="toc-카이제곱-분포-요약">카이제곱 분포 요약</a></li>
   <li><a href="#대의적-정의" id="toc-대의적-정의">대의적 정의</a></li>
   <li><a href="#how-to-generate-it-3" id="toc-how-to-generate-it-3">How to generate it?</a></li>
+  <li><a href="#note-표본분산의-분포" id="toc-note-표본분산의-분포">note: 표본분산의 분포</a></li>
+  <li><a href="#카이제곱-분포의-합" id="toc-카이제곱-분포의-합">카이제곱 분포의 합</a></li>
+  <li><a href="#히스토그램" id="toc-히스토그램">히스토그램</a></li>
+  </ul></li>
+  <li><a href="#감마분포-xsimgammaalpha-beta" id="toc-감마분포-xsimgammaalpha-beta">감마분포: <span class="math inline">\(X\sim\Gamma(\alpha, \beta)\)</span></a>
+  <ul>
+  <li><a href="#감마분포-요약" id="toc-감마분포-요약">감마분포 요약</a></li>
+  <li><a href="#대의적-정의alpha가-자연수일-경우" id="toc-대의적-정의alpha가-자연수일-경우">대의적 정의(<span class="math inline">\(\alpha\)</span>가 자연수일 경우)</a></li>
+  <li><a href="#how-to-generate-it-4" id="toc-how-to-generate-it-4">how to generate it?</a></li>
   </ul></li>
   <li><a href="#참고-검정의-형식-논리" id="toc-참고-검정의-형식-논리">참고: 검정의 형식 논리</a></li>
   <li><a href="#분포-간의-관계식-총정리" id="toc-분포-간의-관계식-총정리">분포 간의 관계식 총정리</a></li>
@@ -1409,358 +1427,188 @@ window.Quarto = {
 <section id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법" class="level4">
 <h4 class="anchored" data-anchor-id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법">자유도가 4인 카이제곱분포에서 100개의 샘플을 얻는 방법</h4>
 <p>(방법1)</p>
-<div id="cell-146" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>np.random.chisquare(<span class="dv">4</span>, <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="17">
-<pre><code>array([ 2.6332819 ,  3.79141927, 12.74338341,  5.58103908,  9.68090861,
-        2.15609178,  1.88460026,  6.89773305,  0.32215192,  4.11087292,
-        5.15365885,  2.61286967,  2.13421879,  3.20627232,  1.71010587,
-        2.38810981,  1.92050405,  7.15115331,  3.66716134,  1.92004418,
-        2.710867  ,  4.05841677,  4.1495929 ,  1.02885065,  1.31715849,
-        4.40793199,  3.50891668,  4.59709092,  2.09486953,  3.30872295,
-        2.68849987,  7.81109463,  4.94713737,  2.13761885,  2.05648624,
-        8.78078116,  5.21497642,  3.74343316,  2.12470257,  2.89829638,
-        3.96142209,  6.74324788,  6.9231318 ,  0.40483476,  0.65871527,
-        3.1321215 ,  2.91608623, 11.01423243,  3.34359653,  4.05853898,
-        9.2602815 ,  2.96892314,  1.66019532,  2.3079516 , 13.6436856 ,
-        1.4834848 ,  4.25343057,  3.74448021,  1.45690585,  9.72451937,
-        1.6227045 ,  4.07183123,  3.80774545,  7.70246331,  3.7230901 ,
-        2.16469863,  4.78077653,  7.07203214,  3.0294387 ,  4.04632108,
-        2.93912758,  1.75952959,  8.50851091,  0.75758214,  1.32851815,
-        3.45923663,  6.46198214, 10.80330728,  0.35475886,  2.09074954,
-        2.26883386,  2.86060924,  3.27725624,  9.02635909,  9.96266897,
-        1.22613202,  9.84844957,  1.39690919,  3.53555353,  6.29144314,
-        2.07251771,  1.109184  ,  4.91172413,  1.54199199, 10.14319845,
-        1.43344612,  1.44838335,  2.82271912,  1.30322577,  5.62104643])</code></pre>
+<div id="cell-146" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>np.random.chisquare(<span class="dv">4</span>, <span class="dv">100</span>)[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>array([4.23661203, 2.77348336, 5.43154643, 1.84772286, 2.23430818])</code></pre>
 </div>
 </div>
 <p>(방법2) 정규분포 <span class="math inline">\(\rightarrow\)</span> 카이제곱분포</p>
-<div id="cell-148" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>[0.866085871217612,
- 1.986254973910308,
- 2.367966755979127,
- 1.7610856952369272,
- 6.713234512404711,
- 0.6752920590572454,
- 8.460964838762775,
- 1.6468737074594013,
- 2.4370827904421746,
- 4.016090003558771,
- 1.7636595411054186,
- 13.68240143727646,
- 9.414383124559025,
- 0.4950167265997596,
- 2.667131033539649,
- 1.7671169356002387,
- 7.921219730297725,
- 2.279497358142383,
- 4.035346020242363,
- 0.5608171000023193,
- 7.83294397606377,
- 5.912235969921272,
- 2.4395785431074533,
- 2.9408447505175683,
- 2.7447045058493935,
- 5.376572078451898,
- 5.030808102543763,
- 6.255245087432637,
- 1.7439294637750111,
- 2.9111310813664244,
- 4.862074340778748,
- 1.3507768124998,
- 3.1024377238359464,
- 9.906436802573381,
- 4.411962281644951,
- 5.584573862316549,
- 2.0177073079176386,
- 5.667659715668325,
- 1.5356476855447607,
- 1.6911467556062694,
- 2.926759526843001,
- 1.0191343844897882,
- 2.855187582285342,
- 10.063423924447372,
- 4.70888083991896,
- 0.9905002218301767,
- 5.349868081592629,
- 2.379186814169443,
- 1.7987959570175618,
- 2.891443645432479,
- 0.6379777889374422,
- 5.088147439355528,
- 8.082112157267495,
- 0.8727465908463499,
- 3.308292856200618,
- 2.3674522845680417,
- 6.46660072886646,
- 3.0202657759479346,
- 3.9081331953799046,
- 2.3776470820364413,
- 6.101372999554746,
- 0.20258019193298174,
- 2.0887027100445703,
- 3.8903717972969507,
- 7.1035917648803775,
- 3.2473852270589685,
- 3.3784185410266967,
- 5.574864029100426,
- 2.0564180932337925,
- 2.6614609524380666,
- 8.441161778171823,
- 1.480907019796959,
- 10.67153747731497,
- 1.3508846503389953,
- 1.873164426620783,
- 0.5864931387908467,
- 2.2114254702478835,
- 5.230661177422979,
- 3.0705696145061165,
- 6.203201099330055,
- 0.8985836717289856,
- 5.168179642817323,
- 3.348190344939494,
- 1.44940277310216,
- 0.9244350527143104,
- 2.0357678801826524,
- 2.0801301247436355,
- 3.434783527154515,
- 10.134624758445089,
- 5.658911209848439,
- 9.651375358830613,
- 8.804458473525678,
- 0.9003317027021754,
- 3.4064687218783773,
- 4.403130205494396,
- 1.8460109285907504,
- 9.52579575506308,
- 2.774043788625814,
- 8.753983206532109,
- 1.1198463746361325]</code></pre>
+<div id="cell-148" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>[0.9470195437591595,
+ 3.1040636594475677,
+ 2.2264229504547757,
+ 5.070560026199548,
+ 5.5961173298844225]</code></pre>
 </div>
 </div>
 <p>(방법3) 지수분포 <span class="math inline">\(\rightarrow\)</span> 카이제곱분포 - 복습: <span class="math inline">\(X, Y \overset{iid}{\sim} N(0,1) \Rightarrow R^2/2 \sim Exp(1)\)</span>, where <span class="math inline">\(R^2 = X^2+Y^2\)</span> - 즉, <span class="math inline">\(2 \times \frac{R^2}{2} + 2 \times \frac{R^2}{2} = Z_1^2 + Z_2^2 + Z_3^2 + Z_4^2 \sim \chi^2(4)\)</span></p>
-<div id="cell-150" class="cell" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>[np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="op">+</span> np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)] </span>
+<div id="cell-150" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>[np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="op">+</span> np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span>
 <span id="cb78-2"><a href="#cb78-2"></a><span class="co">#표준정규분포를 4개 더한 것</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="26">
-<pre><code>[2.95105586930689,
- 2.729230765863259,
- 3.05620207894017,
- 4.050089746210544,
- 2.7147450190395728,
- 7.332999715640176,
- 1.4415489979263119,
- 2.851250253027953,
- 4.330226500805251,
- 4.2652689803404025,
- 3.9748997533682036,
- 0.44502429326575077,
- 1.4157940291457605,
- 2.811069018867669,
- 2.403542992099193,
- 9.52094573706033,
- 6.052669346339659,
- 2.053751598403901,
- 5.25990191135112,
- 3.6178292499846942,
- 2.65711884390529,
- 1.7127345428284464,
- 2.642997318262415,
- 4.385576979530919,
- 1.3351686809243786,
- 1.1381936578949159,
- 3.9351302408276663,
- 3.7771072678721174,
- 5.8849136565000135,
- 7.344338089107437,
- 5.835989845553719,
- 4.30357785820394,
- 2.440922433784129,
- 6.036798448849501,
- 3.773108135437858,
- 4.930117543656718,
- 3.808773376139852,
- 3.7723555466982956,
- 4.319606489978614,
- 7.267437812223666,
- 8.51813028592269,
- 0.71101637838352,
- 0.5362066109433363,
- 1.3808530899071885,
- 3.636259821442966,
- 2.3695677214925843,
- 2.1478982106669133,
- 4.779473662790003,
- 1.902420817723026,
- 2.4604916750384254,
- 11.744931647797646,
- 4.554217686498114,
- 3.613828405868687,
- 4.333435928648873,
- 3.0426247492210443,
- 3.8927077887849695,
- 0.10253778880372219,
- 1.072636990686805,
- 1.9248405856953412,
- 2.1615075617923885,
- 2.3438270881715586,
- 1.8190528457141801,
- 6.38447858865159,
- 2.2893746544100555,
- 2.380369232929957,
- 1.2630891198402787,
- 5.229917814180445,
- 4.185742379533833,
- 3.775368119073594,
- 3.3534777371422644,
- 2.3399550867523304,
- 3.9353804366364855,
- 3.151237394769837,
- 0.5472425937400187,
- 3.6567587663794288,
- 2.204447994155331,
- 1.3839793930930675,
- 1.6710130928442215,
- 2.9583009870413797,
- 3.836226344819137,
- 1.4933815314453258,
- 1.8596566867262612,
- 4.748421026099482,
- 0.9365609214499577,
- 4.204689512111543,
- 3.4600186023439594,
- 1.2873804586753,
- 2.622962692703421,
- 6.176571570108978,
- 2.7539449936381626,
- 6.17516390534009,
- 2.4381627634381604,
- 3.1578566032961093,
- 15.412899569395417,
- 5.092881011292919,
- 9.383168474118538,
- 1.7055012084502912,
- 6.865771353075466,
- 5.096804052298701,
- 10.145087255368264]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>[1.8829768607694999,
+ 0.9336651649834132,
+ 5.965820376025277,
+ 0.8428830673590306,
+ 8.645433131925193]</code></pre>
 </div>
 </div>
-<div id="cell-151" class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>[np.random.exponential(<span class="dv">2</span>)<span class="op">+</span>np.random.exponential(<span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
+<div id="cell-151" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>[np.random.exponential(<span class="dv">2</span>)<span class="op">+</span>np.random.exponential(<span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span>
 <span id="cb80-2"><a href="#cb80-2"></a><span class="co">#지수분포는 scale parameter를 가지기 때문에.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
-<pre><code>[3.445102762688254,
- 2.2745733215357236,
- 6.12674456253334,
- 6.100566808157696,
- 0.15734615779504602,
- 2.589556568533331,
- 0.5254751181636521,
- 5.216446610079485,
- 1.250196416582315,
- 3.466516407925865,
- 1.6593999964344643,
- 3.5469036554957123,
- 5.091348606111078,
- 1.73012951262127,
- 4.235023758162552,
- 3.9286162915455196,
- 1.5238661943335507,
- 1.7699195735192672,
- 0.5296486741740631,
- 3.6356319424250354,
- 5.612277659902676,
- 0.7476398046217876,
- 4.575591370521371,
- 5.687840203510222,
- 4.223583419547585,
- 4.473312919339339,
- 2.9934100877957497,
- 2.06213340710919,
- 1.5431308119745317,
- 3.7253252077173533,
- 2.164111661185803,
- 2.4573516594908407,
- 0.3894434419019298,
- 5.357199547074467,
- 3.260564390222627,
- 0.957614869932405,
- 3.3110458872941204,
- 3.5012824322689102,
- 3.113992543634031,
- 4.444437481277765,
- 0.3660141144559654,
- 3.79565461663846,
- 0.8134754148586095,
- 0.9618992678392659,
- 4.972878908835408,
- 0.8342280575755472,
- 1.0582898857466803,
- 1.8169515792023114,
- 10.935308435092075,
- 1.3303120705111917,
- 1.604141571596401,
- 0.5293514094353176,
- 5.835964527552978,
- 5.615708708366018,
- 4.113840735842968,
- 1.3660862459054066,
- 4.609726006200358,
- 1.8760952815047303,
- 2.5843663456317776,
- 2.0581587469051468,
- 3.6390489992101553,
- 3.446505151215384,
- 1.9958512729885345,
- 2.0065428853570193,
- 2.4394017472653156,
- 2.3295919990559266,
- 1.3926358029265087,
- 6.07549131793199,
- 4.065240511810168,
- 2.541961512721234,
- 1.3286708963048275,
- 2.428130405043261,
- 5.513335432837337,
- 0.6873239774290847,
- 4.4957989027389385,
- 3.9235365702889116,
- 5.143113001810351,
- 0.8277704480532027,
- 1.8334045023745689,
- 5.2150873846077666,
- 0.6145282206079479,
- 1.3113627346606094,
- 7.220182794039632,
- 4.908571660429928,
- 5.800074442390859,
- 4.6419128057433845,
- 8.22289211540913,
- 7.751570190865566,
- 7.4517888672676404,
- 1.7153879662813685,
- 3.8875843773052603,
- 3.005788150525871,
- 4.11143704484056,
- 2.7655155220601113,
- 7.136762732979297,
- 1.3285128606587933,
- 2.5051073981527616,
- 3.4132976289279906,
- 2.052540234290862,
- 3.4998975754389807]</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[0.8591426263189498,
+ 5.769427223696833,
+ 7.027424120087312,
+ 4.539451879434549,
+ 4.229829641106975]</code></pre>
 </div>
 </div>
-<div id="cell-152" class="cell">
+<div id="cell-152" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>N<span class="op">=</span><span class="dv">10000</span></span>
-<span id="cb82-2"><a href="#cb82-2"></a>X1 <span class="op">=</span> np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb82-2"><a href="#cb82-2"></a>X1 <span class="op">=</span> np.random.chisquare(<span class="dv">4</span>, N)</span>
+<span id="cb82-3"><a href="#cb82-3"></a>X2 <span class="op">=</span> [np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span>
+<span id="cb82-4"><a href="#cb82-4"></a>X3 <span class="op">=</span> [np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="op">+</span> np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span>
+<span id="cb82-5"><a href="#cb82-5"></a>X4 <span class="op">=</span> [np.random.exponential(<span class="dv">2</span>) <span class="op">+</span> np.random.exponential(<span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span>
+<span id="cb82-6"><a href="#cb82-6"></a></span>
+<span id="cb82-7"><a href="#cb82-7"></a>fig, ((ax1,ax2), (ax3,ax4)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
+<span id="cb82-8"><a href="#cb82-8"></a></span>
+<span id="cb82-9"><a href="#cb82-9"></a>ax1.hist(X1, label<span class="op">=</span><span class="st">'X1'</span>, bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb82-10"><a href="#cb82-10"></a>ax2.hist(X2, label<span class="op">=</span><span class="st">'X2'</span>, bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb82-11"><a href="#cb82-11"></a>ax3.hist(X3, label<span class="op">=</span><span class="st">'X3'</span>, bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb82-12"><a href="#cb82-12"></a>ax4.hist(X4, label<span class="op">=</span><span class="st">'X4'</span>, bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb82-13"><a href="#cb82-13"></a></span>
+<span id="cb82-14"><a href="#cb82-14"></a>ax1.legend()<span class="op">;</span> ax2.legend()<span class="op">;</span> ax3.legend()<span class="op">;</span> ax4.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-52-output-1.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
-<p><code>-</code> 정리하면 아래와 같이 된다. - <span class="math inline">\(Y \sim \chi^2(4)\)</span> - <span class="math inline">\(Y \overset{d}{=}Z_1^2+Z_2^2+Z_3^2+Z_4^2\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}N(0,1)\)</span> - <span class="math inline">\(Y \overset{d}{=}2\frac{Z_1^2+Z_2^2}{2}+2\frac{Z_3^2+Z_4^2}{2}\)</span>, where <span class="math inline">\(R^2_i/2\overset{iid}{\sim}Exp(1)\)</span> - <span class="math inline">\(Y \overset{d}{=} X_1 + X_2\)</span>, where <span class="math inline">\(X_1, X_2 \overset{iid}{\sim}Exp(2)\)</span></p>
-<p>마지막은 척도모수와 관련된..?</p>
+</div>
+</div>
+<p><code>-</code> 정리하면 아래와 같이 된다.</p>
+<ul>
+<li><p><span class="math inline">\(Y \sim \chi^2(4)\)</span></p></li>
+<li><p><span class="math inline">\(Y \overset{d}{=}Z_1^2+Z_2^2+Z_3^2+Z_4^2\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}N(0,1)\)</span></p></li>
+<li><p><span class="math inline">\(Y \overset{d}{=}2\frac{Z_1^2+Z_2^2}{2}+2\frac{Z_3^2+Z_4^2}{2}\)</span>, where <span class="math inline">\(R^2_i/2\overset{iid}{\sim}Exp(1)\)</span></p></li>
+<li><p><span class="math inline">\(Y \overset{d}{=} X_1 + X_2\)</span>, where <span class="math inline">\(X_1, X_2 \overset{iid}{\sim}Exp(2)\)</span> 마지막은 척도모수와 관련된..?</p></li>
+</ul>
 <p><code>-</code> 자유도가 6인 카이제곱분포 - 표준정규분포 6개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 3개를 합친것과 같다.</p>
 <p><code>-</code> 자유도가 k인 카이제곱분포 - 표준정규분포 k개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 k/2개를 합친것과 같다. (?) <span class="math inline">\(\to\)</span> 감마분포의 모티브</p>
+</section>
+</section>
+<section id="note-표본분산의-분포" class="level3">
+<h3 class="anchored" data-anchor-id="note-표본분산의-분포">note: 표본분산의 분포</h3>
+<ul>
+<li>이론: <span class="math inline">\(X_1,\dots,X_n\overset{iid}{\sim}N(0,1) \Rightarrow \frac{(n-1)S^2}{\sigma^2}\sim \chi^2(n-1)\)</span></li>
+<li>나중에 다시 다룸..</li>
+</ul>
+</section>
+<section id="카이제곱-분포의-합" class="level3">
+<h3 class="anchored" data-anchor-id="카이제곱-분포의-합">카이제곱 분포의 합</h3>
+<ul>
+<li>이론: $X^2(k_1), Y^2(k_2), XY X+Y ^2(k_1+k_2) $</li>
+</ul>
+</section>
+<section id="히스토그램" class="level3">
+<h3 class="anchored" data-anchor-id="히스토그램">히스토그램</h3>
+<ul>
+<li><p>자유도가 2인 카이제곱 = 평균이 2인 지수분포</p></li>
+<li><p>카이제곱은 자유도가 커질수록 대칭이 되어간다.</p></li>
+<li><p>중심의 위치는 자유도의 값과 비슷</p></li>
+</ul>
+</section>
+</section>
+<section id="감마분포-xsimgammaalpha-beta" class="level2">
+<h2 class="anchored" data-anchor-id="감마분포-xsimgammaalpha-beta">감마분포: <span class="math inline">\(X\sim\Gamma(\alpha, \beta)\)</span></h2>
+<section id="감마분포-요약" class="level3">
+<h3 class="anchored" data-anchor-id="감마분포-요약">감마분포 요약</h3>
+<ul>
+<li><p>X의 의미: 서로 독립인 지수분포를 <span class="math inline">\(\alpha\)</span>개 합친 것, 시간 1에 평균적으로 <span class="math inline">\(\lambda\)</span>번 발생하는 사건이 있을 때 <span class="math inline">\(\alpha\)</span>번째 사건이 발생할 때까지 걸리는 시간</p></li>
+<li><p>X의 범위: <span class="math inline">\(x\in(0,\infty)\)</span></p></li>
+<li><p>파라메터의 의미: <span class="math inline">\(\alpha=\)</span>지수분포를 더한 횟수(의 확장버전), <span class="math inline">\(\beta=\frac{1}{\lambda}=\)</span>지수분포의 평균</p></li>
+<li><p>파라메터의 범위: <span class="math inline">\(\alpha&gt;0, \beta&gt;0\)</span></p></li>
+<li><p>pdf: <span class="math inline">\(\frac{1}{\Gamma(\alpha)\beta^\alpha}x^{\alpha-1}e^{-x/\beta}\)</span></p></li>
+<li><p>mgf:</p></li>
+<li><p>E(X): <span class="math inline">\(\alpha\beta\)</span></p></li>
+<li><p>V(X): <span class="math inline">\(\alpha\beta^2\)</span></p></li>
+</ul>
+</section>
+<section id="대의적-정의alpha가-자연수일-경우" class="level3">
+<h3 class="anchored" data-anchor-id="대의적-정의alpha가-자연수일-경우">대의적 정의(<span class="math inline">\(\alpha\)</span>가 자연수일 경우)</h3>
+<ul>
+<li><p><span class="math inline">\(X\sim\Gamma(\alpha,\beta)\overset{d}{\Leftrightarrow}Z_1+\dots+Z_\alpha\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}Exp(\frac{1}{\beta})\)</span></p></li>
+<li><p><span class="math inline">\(Exp(\frac{1}{\beta})\)</span>는 평균이 <span class="math inline">\(\beta\)</span>인 지수분포</p></li>
+</ul>
+</section>
+<section id="how-to-generate-it-4" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-generate-it-4">how to generate it?</h3>
+<section id="gamma32를-1000개-생성하라." class="level4">
+<h4 class="anchored" data-anchor-id="gamma32를-1000개-생성하라."><span class="math inline">\(\Gamma(3,2)\)</span>를 1000개 생성하라.</h4>
+<div id="cell-162" class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a>a<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb83-2"><a href="#cb83-2"></a>b<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(방법1)</p>
+<div id="cell-164" class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a>np.random.gamma(a, b, <span class="dv">1000</span>)[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<pre><code>array([ 9.71933815,  7.99068886,  7.56259455, 14.96478038,  7.9842099 ])</code></pre>
+</div>
+</div>
+<p>(방법2) 지수분포 → 감마분포</p>
+<div id="cell-166" class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a>[np.<span class="bu">sum</span>(np.random.exponential(b, a)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="40">
+<pre><code>[2.206747933276282,
+ 10.457792034901699,
+ 11.763758964906064,
+ 9.883464276208098,
+ 8.29207809727784]</code></pre>
+</div>
+</div>
+<p>(방법3) 표준정규분포 이용</p>
+<div id="cell-168" class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="41">
+<pre><code>[1.026155280972991,
+ 7.265802737604822,
+ 13.894811596364615,
+ 3.4647429936297103,
+ 5.689680557729329]</code></pre>
+</div>
+</div>
+<p>(방법4) 카이제곱분포 이용</p>
+<div id="cell-170" class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a>np.random.chisquare(<span class="dv">2</span><span class="op">*</span>a, <span class="dv">1000</span>)[:<span class="dv">5</span>]</span>
+<span id="cb90-2"><a href="#cb90-2"></a><span class="co"># 방법4가 가능한 이유는 2a가 현재 자연수이고, b=2 이기 때문.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>array([ 2.7665365 , 10.11844372,  3.20742109,  4.76564108, 10.56994416])</code></pre>
+</div>
+</div>
+<p><code>-</code> 확인</p>
+<div id="cell-172" class="cell" data-execution_count="57">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>N<span class="op">=</span><span class="dv">10000</span></span>
+<span id="cb92-2"><a href="#cb92-2"></a>fig, ((ax1, ax2), (ax3, ax4)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb92-3"><a href="#cb92-3"></a>ax1.hist(np.random.gamma(a, b, N), label <span class="op">=</span> <span class="st">'X1'</span>)</span>
+<span id="cb92-4"><a href="#cb92-4"></a>ax2.hist([np.<span class="bu">sum</span>(np.random.exponential(b, a)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X2'</span>)</span>
+<span id="cb92-5"><a href="#cb92-5"></a>ax3.hist([np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X3'</span>)</span>
+<span id="cb92-6"><a href="#cb92-6"></a>ax4.hist(np.random.chisquare(<span class="dv">2</span><span class="op">*</span>a, N), label <span class="op">=</span> <span class="st">'X4'</span>)</span>
+<span id="cb92-7"><a href="#cb92-7"></a></span>
+<span id="cb92-8"><a href="#cb92-8"></a>ax1.legend()<span class="op">;</span> ax2.legend()<span class="op">;</span> ax3.legend()<span class="op">;</span> ax4.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-58-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 </section>
 </section>
