@@ -2,7 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/Statistics/SC.html",
+      "/posts/Statistics/SC_2.html",
+      "/posts/Statistics/SC_1.html",
       "/posts/Python/vis_Plotly.html",
       "/posts/Python/vis_tidydata.html",
       "/posts/Python/vis_Seaborn.html",
