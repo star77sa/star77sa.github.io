@@ -457,7 +457,11 @@ window.Quarto = {
   <li><a href="#감마분포-요약" id="toc-감마분포-요약" class="nav-link" data-scroll-target="#감마분포-요약">감마분포 요약</a></li>
   <li><a href="#대의적-정의alpha가-자연수일-경우" id="toc-대의적-정의alpha가-자연수일-경우" class="nav-link" data-scroll-target="#대의적-정의alpha가-자연수일-경우">대의적 정의(<span class="math inline">\(\alpha\)</span>가 자연수일 경우)</a></li>
   <li><a href="#how-to-generate-it-4" id="toc-how-to-generate-it-4" class="nav-link" data-scroll-target="#how-to-generate-it-4">how to generate it?</a></li>
+  <li><a href="#감마분포와-카이제곱분포의-관계" id="toc-감마분포와-카이제곱분포의-관계" class="nav-link" data-scroll-target="#감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</a></li>
+  <li><a href="#척도모수" id="toc-척도모수" class="nav-link" data-scroll-target="#척도모수">척도모수</a></li>
+  <li><a href="#감마분포의-합" id="toc-감마분포의-합" class="nav-link" data-scroll-target="#감마분포의-합">감마분포의 합</a></li>
   </ul></li>
+  <li><a href="#지수분포의-다양한-표현" id="toc-지수분포의-다양한-표현" class="nav-link" data-scroll-target="#지수분포의-다양한-표현">지수분포의 다양한 표현</a></li>
   <li><a href="#참고-검정의-형식-논리" id="toc-참고-검정의-형식-논리" class="nav-link" data-scroll-target="#참고-검정의-형식-논리">참고: 검정의 형식 논리</a></li>
   <li><a href="#분포-간의-관계식-총정리" id="toc-분포-간의-관계식-총정리" class="nav-link" data-scroll-target="#분포-간의-관계식-총정리">분포 간의 관계식 총정리</a></li>
   </ul></li>
@@ -514,7 +518,11 @@ window.Quarto = {
   <li><a href="#감마분포-요약" id="toc-감마분포-요약">감마분포 요약</a></li>
   <li><a href="#대의적-정의alpha가-자연수일-경우" id="toc-대의적-정의alpha가-자연수일-경우">대의적 정의(<span class="math inline">\(\alpha\)</span>가 자연수일 경우)</a></li>
   <li><a href="#how-to-generate-it-4" id="toc-how-to-generate-it-4">how to generate it?</a></li>
+  <li><a href="#감마분포와-카이제곱분포의-관계" id="toc-감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</a></li>
+  <li><a href="#척도모수" id="toc-척도모수">척도모수</a></li>
+  <li><a href="#감마분포의-합" id="toc-감마분포의-합">감마분포의 합</a></li>
   </ul></li>
+  <li><a href="#지수분포의-다양한-표현" id="toc-지수분포의-다양한-표현">지수분포의 다양한 표현</a></li>
   <li><a href="#참고-검정의-형식-논리" id="toc-참고-검정의-형식-논리">참고: 검정의 형식 논리</a></li>
   <li><a href="#분포-간의-관계식-총정리" id="toc-분포-간의-관계식-총정리">분포 간의 관계식 총정리</a></li>
   </ul></li>
@@ -522,7 +530,7 @@ window.Quarto = {
 </nav>
 <p>최규빈 교수님 통계전산 수업 정리</p>
 <p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하였다.</p>
-<div id="cell-2" class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1190,7 +1198,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="note2-clt">note2 (CLT)</h4>
 <ul>
 <li><p>이론: (1) <span class="math inline">\(X_1,\dots,X_n\overset{iid}{\sim}F\)</span> and (2) <span class="math inline">\(V(X_1)&lt;\infty\Rightarrow\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\overset{d}{\rightarrow}Z, \ \ \ \ Z\sim N(0,1)\)</span></p></li>
-<li><p>뒷부분은 ${X}Z’, &nbsp;&nbsp;&nbsp;Z’N(, )로 해석가능 $</p></li>
+<li><p>뒷부분은 <span class="math inline">\(\bar{X}\overset{d}{\rightarrow}Z', \ \ \ Z'\sim N(\mu, \frac{\sigma}{\sqrt{n}})\)</span>로 해석가능</p></li>
 </ul>
 <p><code>-</code> 확인</p>
 <div id="cell-104" class="cell" data-execution_count="80">
@@ -1331,9 +1339,26 @@ window.Quarto = {
 </section>
 <section id="위치모수와-척도모수" class="level3">
 <h3 class="anchored" data-anchor-id="위치모수와-척도모수">위치모수와 척도모수</h3>
-<p><code>-</code> 정규분포 특징 - 이론: <span class="math inline">\(Z\sim N(0,1) \Rightarrow aZ+b \sim N(b,a^2)\)</span> - 생각보다 이거 엄청 신기한 기능이에요 - 정규분포에 어떠한 상수를 더해도 정규분포, 어떠한 상수를 곱해도 정규분포, 더하고 곱해도 정규분포!</p>
-<p><code>-</code> 위치모수, 척도모수 1. 확률변수 <span class="math inline">\(Z\)</span>가 분포 A를 따를 때 <span class="math inline">\(Z+b\)</span>도 분포 A를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수를 가짐 2. 확률변수 <span class="math inline">\(Z\)</span>가 분포 B를 따를 때 <span class="math inline">\(aZ\)</span>도 분포 B를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 척도모수를 가짐 3. 확률변수 <span class="math inline">\(Z\)</span>가 분포 C를 따를 때 <span class="math inline">\(aZ+b\)</span>도 분포 C를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수와 척도모수를 가짐</p>
-<p><code>-</code> 예시: - 분포C: {{정규분포, 균등분포, 로지스틱, 이중지수, 코쉬}} - 분포A: 분포C와 동일 - 분포B: 분포C <span class="math inline">\(\cup\)</span> {{지수분포, 감마분포}} - 분포C - 분포A: 없다고 생각하세요.. - 분포C - 분포B: {{지수분포, 감마분포}}</p>
+<p><code>-</code> 정규분포 특징</p>
+<ul>
+<li><p>이론: <span class="math inline">\(Z\sim N(0,1) \Rightarrow aZ+b \sim N(b,a^2)\)</span></p></li>
+<li><p>생각보다 이거 엄청 신기한 기능이에요</p></li>
+<li><p>정규분포에 어떠한 상수를 더해도 정규분포, 어떠한 상수를 곱해도 정규분포, 더하고 곱해도 정규분포!</p></li>
+</ul>
+<p><code>-</code> 위치모수, 척도모수</p>
+<ol type="1">
+<li><p>확률변수 <span class="math inline">\(Z\)</span>가 분포 A를 따를 때 <span class="math inline">\(Z+b\)</span>도 분포 A를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수를 가짐</p></li>
+<li><p>확률변수 <span class="math inline">\(Z\)</span>가 분포 B를 따를 때 <span class="math inline">\(aZ\)</span>도 분포 B를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 척도모수를 가짐</p></li>
+<li><p>확률변수 <span class="math inline">\(Z\)</span>가 분포 C를 따를 때 <span class="math inline">\(aZ+b\)</span>도 분포 C를 따름 <span class="math inline">\(\Rightarrow\)</span> 분포A는 위치모수와 척도모수를 가짐</p></li>
+</ol>
+<p><code>-</code> 예시:</p>
+<ul>
+<li><p>분포C: {{정규분포, 균등분포, 로지스틱, 이중지수, 코쉬}}</p></li>
+<li><p>분포A: 분포C와 동일</p></li>
+<li><p>분포B: 분포C <span class="math inline">\(\cup\)</span> {{지수분포, 감마분포}}</p></li>
+<li><p>분포C - 분포A: 없다고 생각하세요..</p></li>
+<li><p>분포C - 분포B: {{지수분포, 감마분포}}</p></li>
+</ul>
 <p>(예제1)</p>
 <p>(예제2)</p>
 <p>(예제3)</p>
@@ -1369,7 +1394,12 @@ window.Quarto = {
 <li>2.46보다 같거나 작아야한다.</li>
 </ul>
 <p>(풀이2)</p>
-<p><span class="math inline">\(\xi = \frac{1}{30}\sum^{30}_{i=1}(x_i-7)^2\)</span>는 어떠한 분포A에서 발생한 샘플이라고 볼 수 있다. 그 A의 분포를 이론적으로 잡아보자. - 이론: <span class="math inline">\(\sum^n_{i=1}Z_i^2\sim\chi^2(n)\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}N(0,1).\)</span> 이러한 이론이 있다. - 관찰: 우리예제의 경우에는 <span class="math inline">\(H_0\)</span>가 참이라는 가정하에 <span class="math inline">\(\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span> - 주장: <span class="math inline">\(\xi\times\frac{30}{4}=\sum^{30}_{i=1}(x_i-7)^2\)</span>는 <span class="math inline">\(\chi^2(30)\)</span>에서 뽑힌 샘플이다.</p>
+<p><span class="math inline">\(\xi = \frac{1}{30}\sum^{30}_{i=1}(x_i-7)^2\)</span>는 어떠한 분포A에서 발생한 샘플이라고 볼 수 있다. 그 A의 분포를 이론적으로 잡아보자.</p>
+<ul>
+<li><p>이론: <span class="math inline">\(\sum^n_{i=1}Z_i^2\sim\chi^2(n)\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}N(0,1).\)</span> 이러한 이론이 있다.</p></li>
+<li><p>관찰: 우리예제의 경우에는 <span class="math inline">\(H_0\)</span>가 참이라는 가정하에 <span class="math inline">\(\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span></p></li>
+<li><p>주장: <span class="math inline">\(\xi\times\frac{30}{4}=\sum^{30}_{i=1}(x_i-7)^2\)</span>는 <span class="math inline">\(\chi^2(30)\)</span>에서 뽑힌 샘플이다.</p></li>
+</ul>
 <div id="cell-136" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>xi <span class="op">=</span> <span class="fl">2.72</span></span>
 <span id="cb66-2"><a href="#cb66-2"></a></span>
@@ -1444,7 +1474,11 @@ window.Quarto = {
  5.5961173298844225]</code></pre>
 </div>
 </div>
-<p>(방법3) 지수분포 <span class="math inline">\(\rightarrow\)</span> 카이제곱분포 - 복습: <span class="math inline">\(X, Y \overset{iid}{\sim} N(0,1) \Rightarrow R^2/2 \sim Exp(1)\)</span>, where <span class="math inline">\(R^2 = X^2+Y^2\)</span> - 즉, <span class="math inline">\(2 \times \frac{R^2}{2} + 2 \times \frac{R^2}{2} = Z_1^2 + Z_2^2 + Z_3^2 + Z_4^2 \sim \chi^2(4)\)</span></p>
+<p>(방법3) 지수분포 <span class="math inline">\(\rightarrow\)</span> 카이제곱분포</p>
+<ul>
+<li><p>복습: <span class="math inline">\(X, Y \overset{iid}{\sim} N(0,1) \Rightarrow R^2/2 \sim Exp(1)\)</span>, where <span class="math inline">\(R^2 = X^2+Y^2\)</span></p></li>
+<li><p>즉, <span class="math inline">\(2 \times \frac{R^2}{2} + 2 \times \frac{R^2}{2} = Z_1^2 + Z_2^2 + Z_3^2 + Z_4^2 \sim \chi^2(4)\)</span></p></li>
+</ul>
 <div id="cell-150" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>[np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="op">+</span> np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span>
 <span id="cb78-2"><a href="#cb78-2"></a><span class="co">#표준정규분포를 4개 더한 것</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1549,7 +1583,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="how-to-generate-it-4">how to generate it?</h3>
 <section id="gamma32를-1000개-생성하라." class="level4">
 <h4 class="anchored" data-anchor-id="gamma32를-1000개-생성하라."><span class="math inline">\(\Gamma(3,2)\)</span>를 1000개 생성하라.</h4>
-<div id="cell-162" class="cell" data-execution_count="36">
+<div id="cell-162" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a>a<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb83-2"><a href="#cb83-2"></a>b<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -1572,14 +1606,15 @@ window.Quarto = {
 </div>
 </div>
 <p>(방법3) 표준정규분포 이용</p>
-<div id="cell-168" class="cell" data-execution_count="41">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
-<pre><code>[1.026155280972991,
- 7.265802737604822,
- 13.894811596364615,
- 3.4647429936297103,
- 5.689680557729329]</code></pre>
+<div id="cell-168" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span>
+<span id="cb88-2"><a href="#cb88-2"></a><span class="co"># 방법3이 가능한 이유는 2a가 현재 자연수이고, b=2 이기 때문.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>[1.534278807696258,
+ 3.106678006479342,
+ 4.081251489899774,
+ 15.071812425431794,
+ 6.94872725696303]</code></pre>
 </div>
 </div>
 <p>(방법4) 카이제곱분포 이용</p>
@@ -1591,13 +1626,13 @@ window.Quarto = {
 </div>
 </div>
 <p><code>-</code> 확인</p>
-<div id="cell-172" class="cell" data-execution_count="57">
+<div id="cell-172" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>N<span class="op">=</span><span class="dv">10000</span></span>
 <span id="cb92-2"><a href="#cb92-2"></a>fig, ((ax1, ax2), (ax3, ax4)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>)</span>
 <span id="cb92-3"><a href="#cb92-3"></a>ax1.hist(np.random.gamma(a, b, N), label <span class="op">=</span> <span class="st">'X1'</span>)</span>
-<span id="cb92-4"><a href="#cb92-4"></a>ax2.hist([np.<span class="bu">sum</span>(np.random.exponential(b, a)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X2'</span>)</span>
-<span id="cb92-5"><a href="#cb92-5"></a>ax3.hist([np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X3'</span>)</span>
-<span id="cb92-6"><a href="#cb92-6"></a>ax4.hist(np.random.chisquare(<span class="dv">2</span><span class="op">*</span>a, N), label <span class="op">=</span> <span class="st">'X4'</span>)</span>
+<span id="cb92-4"><a href="#cb92-4"></a>ax2.hist([np.<span class="bu">sum</span>(np.random.exponential(b, a)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X2'</span>, color<span class="op">=</span><span class="st">'C1'</span>)</span>
+<span id="cb92-5"><a href="#cb92-5"></a>ax3.hist([np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)], label <span class="op">=</span> <span class="st">'X3'</span>, color<span class="op">=</span><span class="st">'C2'</span>)</span>
+<span id="cb92-6"><a href="#cb92-6"></a>ax4.hist(np.random.chisquare(<span class="dv">2</span><span class="op">*</span>a, N), label <span class="op">=</span> <span class="st">'X4'</span>, color<span class="op">=</span><span class="st">'C3'</span>)</span>
 <span id="cb92-7"><a href="#cb92-7"></a></span>
 <span id="cb92-8"><a href="#cb92-8"></a>ax1.legend()<span class="op">;</span> ax2.legend()<span class="op">;</span> ax3.legend()<span class="op">;</span> ax4.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -1608,8 +1643,112 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<hr>
 </section>
+</section>
+<section id="감마분포와-카이제곱분포의-관계" class="level3">
+<h3 class="anchored" data-anchor-id="감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</h3>
+<p><code>-</code> 이론: <span class="math inline">\(X\overset{d}{=}Y,\)</span> where <span class="math inline">\(X\sim\chi^2(k)\)</span> and <span class="math inline">\(Y\sim\Gamma(\frac{k}{2},2).\)</span></p>
+<div id="cell-174" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1"></a>k<span class="op">=</span><span class="dv">3</span></span>
+<span id="cb93-2"><a href="#cb93-2"></a></span>
+<span id="cb93-3"><a href="#cb93-3"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb93-4"><a href="#cb93-4"></a>ax1.hist(np.random.chisquare(k, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb93-5"><a href="#cb93-5"></a>ax2.hist(np.random.gamma(k<span class="op">/</span><span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">'C1'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-59-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="척도모수" class="level3">
+<h3 class="anchored" data-anchor-id="척도모수">척도모수</h3>
+<p><code>-</code> 감마분포도 척도모수를 가짐</p>
+<ul>
+<li>감마분포의 곱셈을 해도 감마분포가 된다</li>
+</ul>
+<div id="cell-177" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1"></a>fig, ((ax1, ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb94-2"><a href="#cb94-2"></a></span>
+<span id="cb94-3"><a href="#cb94-3"></a>ax1.hist(np.random.gamma(<span class="dv">50</span>,<span class="dv">6</span>, <span class="dv">100000</span>), bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb94-4"><a href="#cb94-4"></a>ax2.hist(np.random.gamma(<span class="dv">50</span>,<span class="dv">2</span>, <span class="dv">100000</span>)<span class="op">*</span><span class="dv">3</span>, bins<span class="op">=</span><span class="dv">50</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-60-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="감마분포의-합" class="level3">
+<h3 class="anchored" data-anchor-id="감마분포의-합">감마분포의 합</h3>
+<p><code>-</code> 이론: <span class="math inline">\(X\sim\Gamma(\alpha_1,\beta), Y\sim \Gamma(\alpha_2, \beta), \ \  X\bot Y \Rightarrow X+Y\sim \Gamma(\alpha_1 + \alpha_2, \beta)\)</span></p>
+<div id="cell-180" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1"></a>fig, ((ax1, ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb95-2"><a href="#cb95-2"></a></span>
+<span id="cb95-3"><a href="#cb95-3"></a>ax1.hist(np.random.gamma(<span class="dv">25</span>,<span class="dv">6</span>, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb95-4"><a href="#cb95-4"></a>ax2.hist(np.random.gamma(<span class="dv">6</span>,<span class="dv">6</span>, <span class="dv">10000</span>)<span class="op">+</span>np.random.gamma(<span class="dv">25</span><span class="op">-</span><span class="dv">6</span>, <span class="dv">6</span>, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">'C1'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-61-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="지수분포의-다양한-표현" class="level2">
+<h2 class="anchored" data-anchor-id="지수분포의-다양한-표현">지수분포의 다양한 표현</h2>
+<p><code>-</code> 지수분포는 다양하게 표현된다.</p>
+<ul>
+<li><p>경우1: <span class="math inline">\(X\sim Exp(\theta), f(x)=\frac{1}{\theta}e^{-\frac{x}{\theta}}\)</span></p></li>
+<li><p>경우2: <span class="math inline">\(X\sim Exp(1/\lambda), f(x)=\lambda e^{-\lambda x}\)</span></p></li>
+<li><p>경우3: <span class="math inline">\(X\sim Exp(\lambda), f(x)=\lambda e^{-\lambda x}\)</span></p></li>
+</ul>
+<p><code>-</code> 기억할 것</p>
+<ul>
+<li><p>경우1: 지수분포의 모수는 평균, 지수분포의 파라메터는 <span class="math inline">\(\theta = \frac{1}{\lambda}\)</span> 으로 정의하여 새롭게 사용</p></li>
+<li><p>경우2: 지수분포의 모수는 평균, 지수분포의 파라메터는 포아송의 <span class="math inline">\(\lambda\)</span> 를 재활용</p></li>
+<li><p>경우3: 지수분포의 모수는 평균의 역수, 지수분포의 파라메터는 포아송의 <span class="math inline">\(\lambda\)</span> 를 재활용.</p></li>
+</ul>
+<p><code>-</code> 노테이션의 숨은 의도들 (교수님 생각)</p>
+<ul>
+<li><p>경우2: 포아송분포의 파라메터도 그대로 쓰고 싶고, “지수분포의 모수 = 지수분포의 평균”과 같이 만들고 싶음</p></li>
+<li><p>경우1: 경우2에서는 <span class="math inline">\(X\sim Exp(1/\lambda)\)</span> 로 표현되어서 모수가 역수로 되어있어 헷갈림. 그냥 포아송분포의 <span class="math inline">\(\lambda\)</span> 를 버리는 편이 좋겠음. 지수분포의 평균을 의미하는 <span class="math inline">\(\theta\)</span> 를 새롭게 정의하고 이 <span class="math inline">\(\theta\)</span> 를 중심으로 pdf를 만듦</p></li>
+<li><p>경우3: 경우2에서는 <span class="math inline">\(X\sim Exp(1/\lambda)\)</span> 로 표현되어서 모수가 역수로 되어있어 헷갈림. 그냥 모수는 그대로 <span class="math inline">\(Exp(\lambda)\)</span> 를 쓰고 지수분포의 평균을 모수의 역수로 정의하는 것이 좋겠음.</p></li>
+</ul>
+<p><code>-</code> 아무튼 여러가지 방식으로 표현합니다.</p>
+<ul>
+<li><p>경우1: 줄리아, 파이썬, 위키</p></li>
+<li><p>경우2: 교수님께서 공부한 교재. 요즘은 이렇게 잘 안쓰는 것 같음</p></li>
+<li><p>경우3: R, 위키</p></li>
+</ul>
+<p><code>-</code> 교수님께서는 평균이 314인 지수분포의 pdf는 <span class="math inline">\(f(x) = \frac{1}{314} e^{-x/314}\)</span> 이다 ← 이렇게 외우셨다고 함</p>
+<section id="숙제-1" class="level4">
+<h4 class="anchored" data-anchor-id="숙제-1">숙제</h4>
+<p><code>-</code> 평균이 2인 지수분포를 이용하여 자유도가 20인 카이제곱분포를 생성하여라</p>
+<ul>
+<li><p><span class="math inline">\(\Gamma (\frac{\alpha}{2}, 2) = \chi^2(\alpha)\)</span> 이므로 <span class="math inline">\(\alpha\)</span>에 20을 대입하면 <span class="math inline">\(\Gamma (10, 2) = \chi^2(20)\)</span></p>
+<p>따라서 평균이 2인 지수분포 10개의 합이다.</p></li>
+</ul>
+<div id="cell-185" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1"></a>ax1, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
+<span id="cb96-2"><a href="#cb96-2"></a></span>
+<span id="cb96-3"><a href="#cb96-3"></a>ax1.hist([np.<span class="bu">sum</span>(np.random.exponential(<span class="dv">2</span>, <span class="dv">10</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)], bins<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb96-4"><a href="#cb96-4"></a>ax2.hist(np.random.chisquare(<span class="dv">20</span>, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>, color<span class="op">=</span><span class="st">'C1'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SC_1_files/figure-html/cell-62-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 </section>
 <section id="참고-검정의-형식-논리" class="level2">

@@ -90,7 +90,7 @@ font-style: inherit;">as</span> sps</span></code></pre></div>
 
 <p>최규빈 교수님 통계전산 수업 정리</p>
 <p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하였다.</p>
-<div id="cell-2" class="cell" data-execution_count="1">
+<div id="cell-2" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
@@ -1688,7 +1688,7 @@ font-style: inherit;">+</span>c)</span></code></pre></div>
 <h4 class="anchored" data-anchor-id="note2-clt">note2 (CLT)</h4>
 <ul>
 <li><p>이론: (1) <img src="https://latex.codecogs.com/png.latex?X_1,%5Cdots,X_n%5Coverset%7Biid%7D%7B%5Csim%7DF"> and (2) <img src="https://latex.codecogs.com/png.latex?V(X_1)%3C%5Cinfty%5CRightarrow%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Coverset%7Bd%7D%7B%5Crightarrow%7DZ,%20%5C%20%5C%20%5C%20%5C%20Z%5Csim%20N(0,1)"></p></li>
-<li><p>뒷부분은 ${X}Z’, &nbsp;&nbsp;&nbsp;Z’N(, )로 해석가능 $</p></li>
+<li><p>뒷부분은 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BX%7D%5Coverset%7Bd%7D%7B%5Crightarrow%7DZ',%20%5C%20%5C%20%5C%20Z'%5Csim%20N(%5Cmu,%20%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D)">로 해석가능</p></li>
 </ul>
 <p><code>-</code> 확인</p>
 <div id="cell-104" class="cell" data-execution_count="80">
@@ -2011,9 +2011,26 @@ font-style: inherit;"># 0.136</span></span></code></pre></div>
 </section>
 <section id="위치모수와-척도모수" class="level3">
 <h3 class="anchored" data-anchor-id="위치모수와-척도모수">위치모수와 척도모수</h3>
-<p><code>-</code> 정규분포 특징 - 이론: <img src="https://latex.codecogs.com/png.latex?Z%5Csim%20N(0,1)%20%5CRightarrow%20aZ+b%20%5Csim%20N(b,a%5E2)"> - 생각보다 이거 엄청 신기한 기능이에요 - 정규분포에 어떠한 상수를 더해도 정규분포, 어떠한 상수를 곱해도 정규분포, 더하고 곱해도 정규분포!</p>
-<p><code>-</code> 위치모수, 척도모수 1. 확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 A를 따를 때 <img src="https://latex.codecogs.com/png.latex?Z+b">도 분포 A를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 위치모수를 가짐 2. 확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 B를 따를 때 <img src="https://latex.codecogs.com/png.latex?aZ">도 분포 B를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 척도모수를 가짐 3. 확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 C를 따를 때 <img src="https://latex.codecogs.com/png.latex?aZ+b">도 분포 C를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 위치모수와 척도모수를 가짐</p>
-<p><code>-</code> 예시: - 분포C: {{정규분포, 균등분포, 로지스틱, 이중지수, 코쉬}} - 분포A: 분포C와 동일 - 분포B: 분포C <img src="https://latex.codecogs.com/png.latex?%5Ccup"> {{지수분포, 감마분포}} - 분포C - 분포A: 없다고 생각하세요.. - 분포C - 분포B: {{지수분포, 감마분포}}</p>
+<p><code>-</code> 정규분포 특징</p>
+<ul>
+<li><p>이론: <img src="https://latex.codecogs.com/png.latex?Z%5Csim%20N(0,1)%20%5CRightarrow%20aZ+b%20%5Csim%20N(b,a%5E2)"></p></li>
+<li><p>생각보다 이거 엄청 신기한 기능이에요</p></li>
+<li><p>정규분포에 어떠한 상수를 더해도 정규분포, 어떠한 상수를 곱해도 정규분포, 더하고 곱해도 정규분포!</p></li>
+</ul>
+<p><code>-</code> 위치모수, 척도모수</p>
+<ol type="1">
+<li><p>확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 A를 따를 때 <img src="https://latex.codecogs.com/png.latex?Z+b">도 분포 A를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 위치모수를 가짐</p></li>
+<li><p>확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 B를 따를 때 <img src="https://latex.codecogs.com/png.latex?aZ">도 분포 B를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 척도모수를 가짐</p></li>
+<li><p>확률변수 <img src="https://latex.codecogs.com/png.latex?Z">가 분포 C를 따를 때 <img src="https://latex.codecogs.com/png.latex?aZ+b">도 분포 C를 따름 <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 분포A는 위치모수와 척도모수를 가짐</p></li>
+</ol>
+<p><code>-</code> 예시:</p>
+<ul>
+<li><p>분포C: {{정규분포, 균등분포, 로지스틱, 이중지수, 코쉬}}</p></li>
+<li><p>분포A: 분포C와 동일</p></li>
+<li><p>분포B: 분포C <img src="https://latex.codecogs.com/png.latex?%5Ccup"> {{지수분포, 감마분포}}</p></li>
+<li><p>분포C - 분포A: 없다고 생각하세요..</p></li>
+<li><p>분포C - 분포B: {{지수분포, 감마분포}}</p></li>
+</ul>
 <p>(예제1)</p>
 <p>(예제2)</p>
 <p>(예제3)</p>
@@ -2079,7 +2096,12 @@ font-style: inherit;">0.05</span>)</span></code></pre></div>
 <li>2.46보다 같거나 작아야한다.</li>
 </ul>
 <p>(풀이2)</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cxi%20=%20%5Cfrac%7B1%7D%7B30%7D%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">는 어떠한 분포A에서 발생한 샘플이라고 볼 수 있다. 그 A의 분포를 이론적으로 잡아보자. - 이론: <img src="https://latex.codecogs.com/png.latex?%5Csum%5En_%7Bi=1%7DZ_i%5E2%5Csim%5Cchi%5E2(n)">, where <img src="https://latex.codecogs.com/png.latex?Z_i%5Coverset%7Biid%7D%7B%5Csim%7DN(0,1)."> 이러한 이론이 있다. - 관찰: 우리예제의 경우에는 <img src="https://latex.codecogs.com/png.latex?H_0">가 참이라는 가정하에 <img src="https://latex.codecogs.com/png.latex?%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)"> - 주장: <img src="https://latex.codecogs.com/png.latex?%5Cxi%5Ctimes%5Cfrac%7B30%7D%7B4%7D=%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2(30)">에서 뽑힌 샘플이다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cxi%20=%20%5Cfrac%7B1%7D%7B30%7D%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">는 어떠한 분포A에서 발생한 샘플이라고 볼 수 있다. 그 A의 분포를 이론적으로 잡아보자.</p>
+<ul>
+<li><p>이론: <img src="https://latex.codecogs.com/png.latex?%5Csum%5En_%7Bi=1%7DZ_i%5E2%5Csim%5Cchi%5E2(n)">, where <img src="https://latex.codecogs.com/png.latex?Z_i%5Coverset%7Biid%7D%7B%5Csim%7DN(0,1)."> 이러한 이론이 있다.</p></li>
+<li><p>관찰: 우리예제의 경우에는 <img src="https://latex.codecogs.com/png.latex?H_0">가 참이라는 가정하에 <img src="https://latex.codecogs.com/png.latex?%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)"></p></li>
+<li><p>주장: <img src="https://latex.codecogs.com/png.latex?%5Cxi%5Ctimes%5Cfrac%7B30%7D%7B4%7D=%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2(30)">에서 뽑힌 샘플이다.</p></li>
+</ul>
 <div id="cell-136" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1">xi <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2220,7 +2242,11 @@ font-style: inherit;">5</span>]</span></code></pre></div>
  5.5961173298844225]</code></pre>
 </div>
 </div>
-<p>(방법3) 지수분포 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 카이제곱분포 - 복습: <img src="https://latex.codecogs.com/png.latex?X,%20Y%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(0,1)%20%5CRightarrow%20R%5E2/2%20%5Csim%20Exp(1)">, where <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20X%5E2+Y%5E2"> - 즉, <img src="https://latex.codecogs.com/png.latex?2%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20+%202%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20=%20Z_1%5E2%20+%20Z_2%5E2%20+%20Z_3%5E2%20+%20Z_4%5E2%20%5Csim%20%5Cchi%5E2(4)"></p>
+<p>(방법3) 지수분포 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 카이제곱분포</p>
+<ul>
+<li><p>복습: <img src="https://latex.codecogs.com/png.latex?X,%20Y%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(0,1)%20%5CRightarrow%20R%5E2/2%20%5Csim%20Exp(1)">, where <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20X%5E2+Y%5E2"></p></li>
+<li><p>즉, <img src="https://latex.codecogs.com/png.latex?2%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20+%202%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20=%20Z_1%5E2%20+%20Z_2%5E2%20+%20Z_3%5E2%20+%20Z_4%5E2%20%5Csim%20%5Cchi%5E2(4)"></p></li>
+</ul>
 <div id="cell-150" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb78" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1">[np.random.exponential(<span class="dv" style="color: #AD0000;
 background-color: null;
@@ -2483,7 +2509,7 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="how-to-generate-it-4">how to generate it?</h3>
 <section id="gamma32를-1000개-생성하라." class="level4">
 <h4 class="anchored" data-anchor-id="gamma32를-1000개-생성하라."><img src="https://latex.codecogs.com/png.latex?%5CGamma(3,2)">를 1000개 생성하라.</h4>
-<div id="cell-162" class="cell" data-execution_count="36">
+<div id="cell-162" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb83" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1">a<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2530,7 +2556,7 @@ font-style: inherit;">5</span>]</span></code></pre></div>
 </div>
 </div>
 <p>(방법3) 표준정규분포 이용</p>
-<div id="cell-168" class="cell" data-execution_count="41">
+<div id="cell-168" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb88" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1">[np.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(np.random.normal(<span class="dv" style="color: #AD0000;
@@ -2555,13 +2581,16 @@ font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1000</span>)][:<span class="dv" style="color: #AD0000;
 background-color: null;
-font-style: inherit;">5</span>]</span></code></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="41">
-<pre><code>[1.026155280972991,
- 7.265802737604822,
- 13.894811596364615,
- 3.4647429936297103,
- 5.689680557729329]</code></pre>
+font-style: inherit;">5</span>]</span>
+<span id="cb88-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 방법3이 가능한 이유는 2a가 현재 자연수이고, b=2 이기 때문.</span></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>[1.534278807696258,
+ 3.106678006479342,
+ 4.081251489899774,
+ 15.071812425431794,
+ 6.94872725696303]</code></pre>
 </div>
 </div>
 <p>(방법4) 카이제곱분포 이용</p>
@@ -2583,7 +2612,7 @@ font-style: inherit;"># 방법4가 가능한 이유는 2a가 현재 자연수이
 </div>
 </div>
 <p><code>-</code> 확인</p>
-<div id="cell-172" class="cell" data-execution_count="57">
+<div id="cell-172" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb92" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1">N<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2613,7 +2642,11 @@ font-style: inherit;">range</span>(N)], label <span class="op" style="color: #5E
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'X2'</span>)</span>
+font-style: inherit;">'X2'</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C1'</span>)</span>
 <span id="cb92-5">ax3.hist([np.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(np.random.normal(<span class="dv" style="color: #AD0000;
@@ -2638,7 +2671,11 @@ font-style: inherit;">range</span>(N)], label <span class="op" style="color: #5E
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'X3'</span>)</span>
+font-style: inherit;">'X3'</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C2'</span>)</span>
 <span id="cb92-6">ax4.hist(np.random.chisquare(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
@@ -2647,7 +2684,11 @@ font-style: inherit;">*</span>a, N), label <span class="op" style="color: #5E5E5
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">'X4'</span>)</span>
+font-style: inherit;">'X4'</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C3'</span>)</span>
 <span id="cb92-7"></span>
 <span id="cb92-8">ax1.legend()<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2664,8 +2705,260 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 </div>
 </div>
 </div>
-<hr>
 </section>
+</section>
+<section id="감마분포와-카이제곱분포의-관계" class="level3">
+<h3 class="anchored" data-anchor-id="감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</h3>
+<p><code>-</code> 이론: <img src="https://latex.codecogs.com/png.latex?X%5Coverset%7Bd%7D%7B=%7DY,"> where <img src="https://latex.codecogs.com/png.latex?X%5Csim%5Cchi%5E2(k)"> and <img src="https://latex.codecogs.com/png.latex?Y%5Csim%5CGamma(%5Cfrac%7Bk%7D%7B2%7D,2)."></p>
+<div id="cell-174" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb93" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1">k<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span></span>
+<span id="cb93-2"></span>
+<span id="cb93-3">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb93-4">ax1.hist(np.random.chisquare(k, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)</span>
+<span id="cb93-5">ax2.hist(np.random.gamma(k<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C1'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Statistics/SC_1_files/figure-html/cell-59-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="척도모수" class="level3">
+<h3 class="anchored" data-anchor-id="척도모수">척도모수</h3>
+<p><code>-</code> 감마분포도 척도모수를 가짐</p>
+<ul>
+<li>감마분포의 곱셈을 해도 감마분포가 된다</li>
+</ul>
+<div id="cell-177" class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb94" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1">fig, ((ax1, ax2)) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb94-2"></span>
+<span id="cb94-3">ax1.hist(np.random.gamma(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)</span>
+<span id="cb94-4">ax2.hist(np.random.gamma(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">100000</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Statistics/SC_1_files/figure-html/cell-60-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="감마분포의-합" class="level3">
+<h3 class="anchored" data-anchor-id="감마분포의-합">감마분포의 합</h3>
+<p><code>-</code> 이론: <img src="https://latex.codecogs.com/png.latex?X%5Csim%5CGamma(%5Calpha_1,%5Cbeta),%20Y%5Csim%20%5CGamma(%5Calpha_2,%20%5Cbeta),%20%5C%20%5C%20%20X%5Cbot%20Y%20%5CRightarrow%20X+Y%5Csim%20%5CGamma(%5Calpha_1%20+%20%5Calpha_2,%20%5Cbeta)"></p>
+<div id="cell-180" class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb95" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1">fig, ((ax1, ax2)) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb95-2"></span>
+<span id="cb95-3">ax1.hist(np.random.gamma(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)</span>
+<span id="cb95-4">ax2.hist(np.random.gamma(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>np.random.gamma(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">25</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C1'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Statistics/SC_1_files/figure-html/cell-61-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="지수분포의-다양한-표현" class="level2">
+<h2 class="anchored" data-anchor-id="지수분포의-다양한-표현">지수분포의 다양한 표현</h2>
+<p><code>-</code> 지수분포는 다양하게 표현된다.</p>
+<ul>
+<li><p>경우1: <img src="https://latex.codecogs.com/png.latex?X%5Csim%20Exp(%5Ctheta),%20f(x)=%5Cfrac%7B1%7D%7B%5Ctheta%7De%5E%7B-%5Cfrac%7Bx%7D%7B%5Ctheta%7D%7D"></p></li>
+<li><p>경우2: <img src="https://latex.codecogs.com/png.latex?X%5Csim%20Exp(1/%5Clambda),%20f(x)=%5Clambda%20e%5E%7B-%5Clambda%20x%7D"></p></li>
+<li><p>경우3: <img src="https://latex.codecogs.com/png.latex?X%5Csim%20Exp(%5Clambda),%20f(x)=%5Clambda%20e%5E%7B-%5Clambda%20x%7D"></p></li>
+</ul>
+<p><code>-</code> 기억할 것</p>
+<ul>
+<li><p>경우1: 지수분포의 모수는 평균, 지수분포의 파라메터는 <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%20%5Cfrac%7B1%7D%7B%5Clambda%7D"> 으로 정의하여 새롭게 사용</p></li>
+<li><p>경우2: 지수분포의 모수는 평균, 지수분포의 파라메터는 포아송의 <img src="https://latex.codecogs.com/png.latex?%5Clambda"> 를 재활용</p></li>
+<li><p>경우3: 지수분포의 모수는 평균의 역수, 지수분포의 파라메터는 포아송의 <img src="https://latex.codecogs.com/png.latex?%5Clambda"> 를 재활용.</p></li>
+</ul>
+<p><code>-</code> 노테이션의 숨은 의도들 (교수님 생각)</p>
+<ul>
+<li><p>경우2: 포아송분포의 파라메터도 그대로 쓰고 싶고, “지수분포의 모수 = 지수분포의 평균”과 같이 만들고 싶음</p></li>
+<li><p>경우1: 경우2에서는 <img src="https://latex.codecogs.com/png.latex?X%5Csim%20Exp(1/%5Clambda)"> 로 표현되어서 모수가 역수로 되어있어 헷갈림. 그냥 포아송분포의 <img src="https://latex.codecogs.com/png.latex?%5Clambda"> 를 버리는 편이 좋겠음. 지수분포의 평균을 의미하는 <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> 를 새롭게 정의하고 이 <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> 를 중심으로 pdf를 만듦</p></li>
+<li><p>경우3: 경우2에서는 <img src="https://latex.codecogs.com/png.latex?X%5Csim%20Exp(1/%5Clambda)"> 로 표현되어서 모수가 역수로 되어있어 헷갈림. 그냥 모수는 그대로 <img src="https://latex.codecogs.com/png.latex?Exp(%5Clambda)"> 를 쓰고 지수분포의 평균을 모수의 역수로 정의하는 것이 좋겠음.</p></li>
+</ul>
+<p><code>-</code> 아무튼 여러가지 방식으로 표현합니다.</p>
+<ul>
+<li><p>경우1: 줄리아, 파이썬, 위키</p></li>
+<li><p>경우2: 교수님께서 공부한 교재. 요즘은 이렇게 잘 안쓰는 것 같음</p></li>
+<li><p>경우3: R, 위키</p></li>
+</ul>
+<p><code>-</code> 교수님께서는 평균이 314인 지수분포의 pdf는 <img src="https://latex.codecogs.com/png.latex?f(x)%20=%20%5Cfrac%7B1%7D%7B314%7D%20e%5E%7B-x/314%7D"> 이다 ← 이렇게 외우셨다고 함</p>
+<section id="숙제-1" class="level4">
+<h4 class="anchored" data-anchor-id="숙제-1">숙제</h4>
+<p><code>-</code> 평균이 2인 지수분포를 이용하여 자유도가 20인 카이제곱분포를 생성하여라</p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?%5CGamma%20(%5Cfrac%7B%5Calpha%7D%7B2%7D,%202)%20=%20%5Cchi%5E2(%5Calpha)"> 이므로 <img src="https://latex.codecogs.com/png.latex?%5Calpha">에 20을 대입하면 <img src="https://latex.codecogs.com/png.latex?%5CGamma%20(10,%202)%20=%20%5Cchi%5E2(20)"></p>
+<p>따라서 평균이 2인 지수분포 10개의 합이다.</p></li>
+</ul>
+<div id="cell-185" class="cell" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb96" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1">ax1, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>,<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb96-2"></span>
+<span id="cb96-3">ax1.hist([np.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">sum</span>(np.random.exponential(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>)) <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>)], bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>)</span>
+<span id="cb96-4">ax2.hist(np.random.chisquare(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10000</span>), bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'C1'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span></code></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="https://star77sa.github.io/posts/Statistics/SC_1_files/figure-html/cell-62-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<hr>
 </section>
 </section>
 <section id="참고-검정의-형식-논리" class="level2">
