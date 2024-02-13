@@ -21,5 +21,14 @@
       "/posts/Statistics/1_probability_and_counting.html",
       "/posts/잡동사니/2023-08-28-블로그.html"
     ]
+  },
+  {
+    "listing": "/posts/Statistics/SC_1.html",
+    "items": [
+      "/posts/Statistics/SC_2.html",
+      "/posts/Statistics/1_probability_and_counting.html",
+      "/posts/Statistics/데이터_분석.html",
+      "/posts/Statistics/통계_101_X_데이터_분석.html"
+    ]
   }
 ]
