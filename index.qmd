@@ -7,9 +7,9 @@ listing:
     # - "title desc"
   type: table
   categories: true
-  #feed:
-  #  items: 7
-  #  categories: []
+  feed:
+    items: 7
+    categories: []
   sort-ui: true
   filter-ui: true
 page-layout: full
