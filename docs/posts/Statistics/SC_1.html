@@ -1398,7 +1398,7 @@ window.Quarto = {
 <ul>
 <li><p>이론: <span class="math inline">\(\sum^n_{i=1}Z_i^2\sim\chi^2(n)\)</span>, where <span class="math inline">\(Z_i\overset{iid}{\sim}N(0,1).\)</span> 이러한 이론이 있다.</p></li>
 <li><p>관찰: 우리예제의 경우에는 <span class="math inline">\(H_0\)</span>가 참이라는 가정하에 <span class="math inline">\(\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span></p></li>
-<li><p>주장: <span class="math inline">\(\xi\times\frac{30}{4}=\sum^{30}_{i=1}(x_i-7)^2\)</span>는 <span class="math inline">\(\chi^2(30)\)</span>에서 뽑힌 샘플이다.</p></li>
+<li><p>주장: <span class="math inline">\(\xi\times\frac{30}{4}=\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span>는 <span class="math inline">\(\chi^2(30)\)</span>에서 뽑힌 샘플이다.</p></li>
 </ul>
 <div id="cell-136" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>xi <span class="op">=</span> <span class="fl">2.72</span></span>
@@ -1531,6 +1531,9 @@ window.Quarto = {
 <li><p><span class="math inline">\(Y \overset{d}{=}2\frac{Z_1^2+Z_2^2}{2}+2\frac{Z_3^2+Z_4^2}{2}\)</span>, where <span class="math inline">\(R^2_i/2\overset{iid}{\sim}Exp(1)\)</span></p></li>
 <li><p><span class="math inline">\(Y \overset{d}{=} X_1 + X_2\)</span>, where <span class="math inline">\(X_1, X_2 \overset{iid}{\sim}Exp(2)\)</span> 마지막은 척도모수와 관련된..?</p></li>
 </ul>
+<blockquote class="blockquote">
+<p>마지막에 독립인 두개의 지수분포를 더한 것이 아닌 하나의 지수분포에 2를 곱한것이기에 평균이 2배인 지수분포가 된 것(지수분포는 척도모수를 가진다) 독립인 두 지수분포의 합은 지수분포를 따르지 않고 하나의 지수분포에 상수를 곱한 경우에는 여전히 지수분포를 따른다!</p>
+</blockquote>
 <p><code>-</code> 자유도가 6인 카이제곱분포 - 표준정규분포 6개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 3개를 합친것과 같다.</p>
 <p><code>-</code> 자유도가 k인 카이제곱분포 - 표준정규분포 k개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 k/2개를 합친것과 같다. (?) <span class="math inline">\(\to\)</span> 감마분포의 모티브</p>
 </section>
@@ -1788,6 +1791,7 @@ window.Quarto = {
 <li>비모수 검정: 데이터가 정규분포를 따르지 않거나 등분산성을 만족하지 않을 때 사용</li>
 <li>생존분석: 사건이 발생하는 시간을 분석하는 데 사용. 생존 시간이나 사건 발생률을 비교하여 그룹 간의 차이를 확인</li>
 </ul>
+<hr>
 </section>
 <section id="분포-간의-관계식-총정리" class="level2">
 <h2 class="anchored" data-anchor-id="분포-간의-관계식-총정리">분포 간의 관계식 총정리</h2>

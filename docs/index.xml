@@ -2100,7 +2100,7 @@ font-style: inherit;">0.05</span>)</span></code></pre></div>
 <ul>
 <li><p>이론: <img src="https://latex.codecogs.com/png.latex?%5Csum%5En_%7Bi=1%7DZ_i%5E2%5Csim%5Cchi%5E2(n)">, where <img src="https://latex.codecogs.com/png.latex?Z_i%5Coverset%7Biid%7D%7B%5Csim%7DN(0,1)."> 이러한 이론이 있다.</p></li>
 <li><p>관찰: 우리예제의 경우에는 <img src="https://latex.codecogs.com/png.latex?H_0">가 참이라는 가정하에 <img src="https://latex.codecogs.com/png.latex?%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)"></p></li>
-<li><p>주장: <img src="https://latex.codecogs.com/png.latex?%5Cxi%5Ctimes%5Cfrac%7B30%7D%7B4%7D=%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2(30)">에서 뽑힌 샘플이다.</p></li>
+<li><p>주장: <img src="https://latex.codecogs.com/png.latex?%5Cxi%5Ctimes%5Cfrac%7B30%7D%7B4%7D=%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)">는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2(30)">에서 뽑힌 샘플이다.</p></li>
 </ul>
 <div id="cell-136" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1">xi <span class="op" style="color: #5E5E5E;
@@ -2457,6 +2457,9 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 <li><p><img src="https://latex.codecogs.com/png.latex?Y%20%5Coverset%7Bd%7D%7B=%7D2%5Cfrac%7BZ_1%5E2+Z_2%5E2%7D%7B2%7D+2%5Cfrac%7BZ_3%5E2+Z_4%5E2%7D%7B2%7D">, where <img src="https://latex.codecogs.com/png.latex?R%5E2_i/2%5Coverset%7Biid%7D%7B%5Csim%7DExp(1)"></p></li>
 <li><p><img src="https://latex.codecogs.com/png.latex?Y%20%5Coverset%7Bd%7D%7B=%7D%20X_1%20+%20X_2">, where <img src="https://latex.codecogs.com/png.latex?X_1,%20X_2%20%5Coverset%7Biid%7D%7B%5Csim%7DExp(2)"> 마지막은 척도모수와 관련된..?</p></li>
 </ul>
+<blockquote class="blockquote">
+<p>마지막에 독립인 두개의 지수분포를 더한 것이 아닌 하나의 지수분포에 2를 곱한것이기에 평균이 2배인 지수분포가 된 것(지수분포는 척도모수를 가진다) 독립인 두 지수분포의 합은 지수분포를 따르지 않고 하나의 지수분포에 상수를 곱한 경우에는 여전히 지수분포를 따른다!</p>
+</blockquote>
 <p><code>-</code> 자유도가 6인 카이제곱분포 - 표준정규분포 6개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 3개를 합친것과 같다.</p>
 <p><code>-</code> 자유도가 k인 카이제곱분포 - 표준정규분포 k개를 제곱하여 합친것과 같다. - 평균이 2인 지수분포 k/2개를 합친것과 같다. (?) <img src="https://latex.codecogs.com/png.latex?%5Cto"> 감마분포의 모티브</p>
 </section>
@@ -2998,6 +3001,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li>비모수 검정: 데이터가 정규분포를 따르지 않거나 등분산성을 만족하지 않을 때 사용</li>
 <li>생존분석: 사건이 발생하는 시간을 분석하는 데 사용. 생존 시간이나 사건 발생률을 비교하여 그룹 간의 차이를 확인</li>
 </ul>
+<hr>
 </section>
 <section id="분포-간의-관계식-총정리" class="level2">
 <h2 class="anchored" data-anchor-id="분포-간의-관계식-총정리">분포 간의 관계식 총정리</h2>
