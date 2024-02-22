@@ -325,13 +325,30 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Statistics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Signal Processing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../posts/Signal_Processing/signal_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">신호 및 시스템</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Statistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Statistics/1_probability_and_counting.html" class="sidebar-item-text sidebar-link">
@@ -366,13 +383,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
  <span class="menu-text">잡동사니</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/잡동사니/2023-08-28-블로그.html" class="sidebar-item-text sidebar-link">
@@ -557,6 +574,7 @@ window.Quarto = {
 <li>분해이론: 고유값분해, SVD</li>
 <li>벡터나 매트릭스의 미분..</li>
 </ul>
+<p><img src="SC_1_files/figure-html/cell-7-1-image.png" class="img-fluid"></p>
 </section>
 <section id="베르누이" class="level2">
 <h2 class="anchored" data-anchor-id="베르누이">베르누이</h2>
@@ -592,7 +610,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="how-to-generate-it">How to generate it?</h3>
 <p>평균 3인 포아송분포에서 100개 샘플을 뽑는 방법</p>
 <p>방법1)</p>
-<div id="cell-17" class="cell" data-execution_count="16">
+<div id="cell-18" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>pois <span class="op">=</span> np.random.poisson(<span class="dv">3</span>, <span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2"></a>pois</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
@@ -604,7 +622,7 @@ window.Quarto = {
         2,  2,  4,  3,  1,  5,  2, 10,  6,  2,  4,  0,  3,  2,  1])</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="17">
+<div id="cell-19" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>plt.hist(pois)<span class="op">;</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a><span class="co"># bar plot으로 나타내는 법</span></span>
@@ -625,7 +643,7 @@ window.Quarto = {
 <p>방법2) 이항분포의 포아송근사를 이용</p>
 <p>이론: 이항분포에서 (1) <span class="math inline">\(n→\infty\)</span> (2) <span class="math inline">\(p→0\)</span> (3) <span class="math inline">\(np=\lambda\)</span> 이면 이것은 평균이 <span class="math inline">\(\lambda\)</span> 인 포아송분포로 근사함.</p>
 <p>평균이 <span class="math inline">\(\lambda\)</span> 인 포아송분포는 <span class="math inline">\(B(n,\frac{\lambda}{n})\)</span> 로 근사할 수 있다. 이때 <span class="math inline">\(n\)</span>이 커질수록 더 정확해짐.</p>
-<div id="cell-21" class="cell" data-execution_count="6">
+<div id="cell-22" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>λ <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb5-3"><a href="#cb5-3"></a>n <span class="op">=</span> <span class="dv">10000</span></span>
@@ -651,7 +669,7 @@ window.Quarto = {
 <li>좀 더 세밀하게는 0.001초에 성공확률이 5.0e-5인 베르누이 시행을 1번 시행하여 1분동안 총 60000회 반복한 것으로도 이해할 수 있음. (무한반복 가능)</li>
 <li>느낌: 하여튼 (1) “엄청 작은 시간”에 (2) “엄청 작은 확률”의 베르누이 시행이 (3) “엄청 많이 독립적으로 반복” 되는 느낌을 기억!! = 포아송 프로세스</li>
 </ul>
-<div id="cell-24" class="cell" data-execution_count="7">
+<div id="cell-25" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>λ<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>n<span class="op">=</span><span class="dv">60000</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>p<span class="op">=</span>λ<span class="op">/</span>n</span>
@@ -660,7 +678,7 @@ window.Quarto = {
 <span id="cb6-6"><a href="#cb6-6"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb6-7"><a href="#cb6-7"></a>X <span class="op">=</span> [<span class="bu">sum</span>(np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,n)<span class="op">&lt;</span>p) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="8">
+<div id="cell-26" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
 <span id="cb7-2"><a href="#cb7-2"></a></span>
 <span id="cb7-3"><a href="#cb7-3"></a>ax1.hist(X)</span>
@@ -691,7 +709,7 @@ window.Quarto = {
 <li><p>이론: <span class="math inline">\(X \sim Poi(\lambda_1), Y \sim Poi(\lambda_2), X \bot Y \Rightarrow X+Y\sim Poi(\lambda_1+\lambda_2)\)</span></p></li>
 <li><p>의미?: (1) 1분동안 맥도날드 매장에 들어오는 남자의 수는 평균이 5인 포아송 분포를 따름. (2) 1분동안 맥도날드 매장에 들어오는 여자의 수는 평균이 4.5인 포아송 분포를 따름. (3) 남자와 여자가 매장에 오는 사건은 독립 <span class="math inline">\(\rightarrow\)</span> 1분동안 맥도날드 매장에 오는 사람은 평균 9.5인 포아송 분포를 따른다는 의미</p></li>
 </ul>
-<div id="cell-29" class="cell" data-execution_count="18">
+<div id="cell-30" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a>X <span class="op">=</span> np.random.poisson(<span class="dv">5</span>, N)</span>
 <span id="cb9-3"><a href="#cb9-3"></a>Y <span class="op">=</span> np.random.poisson(<span class="fl">4.5</span>, N)</span>
@@ -699,7 +717,7 @@ window.Quarto = {
 <span id="cb9-5"><a href="#cb9-5"></a>p1 <span class="op">=</span> X<span class="op">+</span>Y</span>
 <span id="cb9-6"><a href="#cb9-6"></a>p2 <span class="op">=</span> np.random.poisson(<span class="fl">9.5</span>, N)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="19">
+<div id="cell-31" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb10-2"><a href="#cb10-2"></a>ax1.hist(p1)</span>
 <span id="cb10-3"><a href="#cb10-3"></a>ax2.hist(p2)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -713,7 +731,7 @@ window.Quarto = {
 </div>
 <section id="평균과-분산의-추정" class="level4">
 <h4 class="anchored" data-anchor-id="평균과-분산의-추정">평균과 분산의 추정</h4>
-<div id="cell-32" class="cell" data-execution_count="11">
+<div id="cell-33" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a>λ<span class="op">=</span><span class="dv">5</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>X<span class="op">=</span>np.random.poisson(λ, N)</span>
@@ -731,14 +749,14 @@ window.Quarto = {
 </div>
 <p><code>-</code> 생각해보니까 이론적으로 평균과 분산의 값이 같아야 한다는 걸 알고 있다. 그런데 왜 추정치가 달라야하나?? 둘 중 하나만 있으면 될 것 같다.</p>
 <p>mean(X), var(X)로 <span class="math inline">\(\lambda\)</span>를 추정</p>
-<div id="cell-35" class="cell" data-execution_count="12">
+<div id="cell-36" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb13-2"><a href="#cb13-2"></a>λ <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb13-3"><a href="#cb13-3"></a></span>
 <span id="cb13-4"><a href="#cb13-4"></a>p1 <span class="op">=</span> [np.mean(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span>
 <span id="cb13-5"><a href="#cb13-5"></a>p2 <span class="op">=</span> [np.var(np.random.poisson(λ, N)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="13">
+<div id="cell-37" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">2</span>)</span>
 <span id="cb14-2"><a href="#cb14-2"></a></span>
 <span id="cb14-3"><a href="#cb14-3"></a>ax1.set_xlim([<span class="fl">4.8</span>, <span class="fl">5.2</span>])</span>
@@ -789,7 +807,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="평균이-10인-지수분포에서-10000개의-샘플을-뽑는-방법">평균이 10인 지수분포에서 10000개의 샘플을 뽑는 방법</h4>
 <p>방법1: 모듈 / 방법2: 포아송 프로세스 / 방법3: inverse cdf method</p>
 <p>(방법1)</p>
-<div id="cell-44" class="cell" data-execution_count="57">
+<div id="cell-45" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a>np.random.exponential(<span class="dv">10</span>, <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="57">
 <pre><code>array([ 2.81250688,  3.51950826,  9.34507485, ...,  1.21136792,
@@ -801,7 +819,7 @@ window.Quarto = {
 <li>맥도날드에 시간 1당 0.1명씩 평균적으로 방문한다. 1명 방문하는데에는 평균적으로 시간이 10이 걸린다고 볼 수 있음.</li>
 <li>따라서 언뜻 생각하면 포아송과 지수분포는 역의 관계라서 포아송 분포를 만들고 역수를 취하면 지수분포를 쉽게 만들 수 있을 것 같다.</li>
 </ul>
-<div id="cell-47" class="cell" data-execution_count="59">
+<div id="cell-48" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a>np.random.poisson(<span class="fl">0.1</span>, <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="59">
 <pre><code>array([0, 0, 0, ..., 0, 0, 1])</code></pre>
@@ -813,7 +831,7 @@ window.Quarto = {
 <li>아이디어: 극한의 베르누이로 포아송을 만들 때, 몇 번 성공했는지 관심을 가지고 카운팅 했음. <span class="math inline">\(\Rightarrow\)</span> 조금 응용해서 첫 성공까지 몇 번의 시도를 해야하는지 카운팅을 한다고 생각하면 시간 계산이 가능할 것 같다.</li>
 <li>결국 “포아송분포 <span class="math inline">\(\rightarrow\)</span> 지수분포”로 추출하는 것이 아니라 “포아송프로세스 <span class="math inline">\(\rightarrow\)</span> 지수분포”와 같은 방식으로 추출해야 한다.</li>
 </ul>
-<div id="cell-49" class="cell" data-execution_count="60">
+<div id="cell-50" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># 성공할때까지 시도하는 함수: 성공확률 → 1회 성공까지 시도한 횟수 (기하분포를 뽑는 함수!!)</span></span>
 <span id="cb19-2"><a href="#cb19-2"></a><span class="kw">def</span> try_until_you_succeed(p):</span>
 <span id="cb19-3"><a href="#cb19-3"></a>    n_of_try <span class="op">=</span> <span class="dv">0</span></span>
@@ -823,7 +841,7 @@ window.Quarto = {
 <span id="cb19-7"><a href="#cb19-7"></a>        n_of_try <span class="op">+=</span> <span class="dv">1</span></span>
 <span id="cb19-8"><a href="#cb19-8"></a>    <span class="cf">return</span> n_of_try</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-50" class="cell" data-execution_count="64">
+<div id="cell-51" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a>plt.hist([try_until_you_succeed(<span class="fl">0.1</span>) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)], bins<span class="op">=</span><span class="dv">25</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -833,7 +851,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="79">
+<div id="cell-52" class="cell" data-execution_count="79">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>λ <span class="op">=</span> <span class="fl">0.1</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>n <span class="op">=</span> <span class="dv">1000</span> <span class="co"># n-&gt;무한대. 10000이면 20분 넘게 걸려서 1000으로 줄임.</span></span>
@@ -841,7 +859,7 @@ window.Quarto = {
 <span id="cb21-5"><a href="#cb21-5"></a>Δt <span class="op">=</span> (<span class="dv">1</span><span class="op">/</span>n) <span class="co"># 단위가 시간 1이니까 </span></span>
 <span id="cb21-6"><a href="#cb21-6"></a>X <span class="op">=</span> np.array([try_until_you_succeed(p) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(N)]) <span class="op">*</span> Δt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-52" class="cell" data-execution_count="82">
+<div id="cell-53" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize <span class="op">=</span> (<span class="dv">8</span>, <span class="dv">8</span>))</span>
 <span id="cb22-2"><a href="#cb22-2"></a></span>
 <span id="cb22-3"><a href="#cb22-3"></a>ax1.hist(X)</span>
@@ -868,7 +886,7 @@ window.Quarto = {
 <li><p>아래와 같은 2개의 지수분포의 pdf를 고려하자. (평균이 1인 지수분포와 평균이 5인 지수분포) <span class="math display">\[f(x)=e^{-x}\]</span> <span class="math display">\[g(x)=\frac{1}{5}e^{-\frac{1}{5}x}\]</span></p></li>
 <li><p>각각의 pdf를 그려보면 아래와 같다.</p></li>
 </ul>
-<div id="cell-55" class="cell" data-execution_count="133">
+<div id="cell-56" class="cell" data-execution_count="133">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">100</span>)</span>
 <span id="cb23-2"><a href="#cb23-2"></a></span>
 <span id="cb23-3"><a href="#cb23-3"></a><span class="kw">def</span> fx(x):</span>
@@ -897,7 +915,7 @@ window.Quarto = {
 <li><p>아래 그래프에서 뽑은 값이 더 클 것 같다. (위 그래프는 왼쪽에 몰려있음)</p></li>
 <li><p>이번에는 각각의 cdf를 그려보자. <span class="math display">\[F(x) = \int^x_0f(\tau)d\tau = \int^x_0 e^{-\tau}d\tau=[-e^{-\tau}]^x_0 = 1-e^{-x}\]</span> <span class="math display">\[G(x) = \int^x_0g(\tau)d\tau = \int^x_0 \frac{1}{5}e^{-\tau/5}d\tau=[-e^{-\tau/5}]^x_0 = 1-e^{-x/5}\]</span></p></li>
 </ul>
-<div id="cell-58" class="cell" data-execution_count="113">
+<div id="cell-59" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">20</span>, <span class="dv">100</span>)</span>
 <span id="cb24-2"><a href="#cb24-2"></a></span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="kw">def</span> Fx(x):</span>
@@ -924,7 +942,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="cell-59" class="cell" data-execution_count="130">
+<div id="cell-60" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="dv">1</span><span class="sc">,</span> Fx(<span class="dv">1</span>)<span class="sc">}</span><span class="ss"> 위 그래프에서 약 </span><span class="sc">{</span><span class="bu">round</span>(Fx(<span class="dv">1</span>),<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%는 1보다 작다."</span>)</span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="dv">5</span><span class="sc">,</span> Fx(<span class="dv">5</span>)<span class="sc">}</span><span class="ss"> 위 그래프에서 약 </span><span class="sc">{</span><span class="bu">round</span>(Fx(<span class="dv">5</span>),<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%는 5보다 작다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -932,7 +950,7 @@ window.Quarto = {
 (5, 0.9932620530009145) 위 그래프에서 약 99.0%는 5보다 작다.</code></pre>
 </div>
 </div>
-<div id="cell-60" class="cell" data-execution_count="131">
+<div id="cell-61" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="dv">1</span><span class="sc">,</span> Gx(<span class="dv">1</span>)<span class="sc">}</span><span class="ss"> 아래 그래프에서 약 </span><span class="sc">{</span><span class="bu">round</span>(Gx(<span class="dv">1</span>),<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%는 1보다 작다."</span>)</span>
 <span id="cb27-2"><a href="#cb27-2"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="dv">5</span><span class="sc">,</span> Gx(<span class="dv">5</span>)<span class="sc">}</span><span class="ss"> 아래 그래프에서 약 </span><span class="sc">{</span><span class="bu">round</span>(Gx(<span class="dv">5</span>),<span class="dv">2</span>)<span class="op">*</span><span class="dv">100</span><span class="sc">}</span><span class="ss">%는 5보다 작다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -942,7 +960,7 @@ window.Quarto = {
 </div>
 <p><code>-</code> cdf 해석 - 위(평균이 1인 지수분포) = 5정도면 거의 cdf의 값이 1에 가까워짐. - 아래(평균이 5인 지수분포) = 5정도면 값이 0.63정도임 <span class="math inline">\(\rightarrow\)</span> 100번 뽑으면 5보다 작은게 63개 정도…</p>
 <p><code>-</code> cdf의 y축에서 랜덤변수를 발생시킨다음 <span class="math inline">\(\rightarrow \downarrow\)</span>와 같이 이동하여 <span class="math inline">\(x\)</span>축에 내린다고 생각해보자. (역함수를 구하는 것) - 위: 대부분 5이하에 떨어짐 - 아래: 약 63% 정도만 5이하에 떨어짐.</p>
-<div id="cell-62" class="cell" data-execution_count="150">
+<div id="cell-63" class="cell" data-execution_count="150">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">def</span> Finv(x): <span class="co"># 평균이 1인 지수분포 cdf의 역함수</span></span>
 <span id="cb29-2"><a href="#cb29-2"></a>    <span class="cf">return</span> <span class="op">-</span>np.log(<span class="dv">1</span><span class="op">-</span>x)</span>
 <span id="cb29-3"><a href="#cb29-3"></a></span>
@@ -990,7 +1008,7 @@ window.Quarto = {
 <li>예제1: inverse cdf를 이용하여 평균이 1인 지수분포 10000개를 생성하여 보자.</li>
 </ul>
 <p>(풀이)</p>
-<div id="cell-65" class="cell" data-execution_count="161">
+<div id="cell-66" class="cell" data-execution_count="161">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">8</span>,<span class="dv">8</span>))</span>
 <span id="cb30-2"><a href="#cb30-2"></a></span>
 <span id="cb30-3"><a href="#cb30-3"></a>u <span class="op">=</span> np.random.uniform(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">10000</span>)</span>
@@ -1073,7 +1091,7 @@ window.Quarto = {
 <p>(손풀이) <span class="math inline">\(\int^\infty_0xe^{-x}dx=??=1\)</span></p>
 <p>(손풀이2) <span class="math inline">\(\int^\infty_0xe^{-x}dx= \int^\infty_0x\times e^{-x}dx\)</span> 은 <span class="math inline">\(\lambda=1\)</span>인 지수분포의 평균이다. 따라서 답은 1.</p>
 <p>(컴퓨터를 이용한 풀이)</p>
-<div id="cell-76" class="cell" data-execution_count="4">
+<div id="cell-77" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1"></a>np.mean(np.random.exponential(<span class="dv">1</span>, <span class="dv">10000</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>1.0033097374284965</code></pre>
@@ -1084,7 +1102,7 @@ window.Quarto = {
 <h5 class="anchored">예제2: 아래를 계산하라</h5>
 <p><span class="math display">\[\int^\infty_0 x^2e^{-x}dx = ?\]</span></p>
 <p>(컴퓨터를 이용한 풀이)</p>
-<div id="cell-79" class="cell" data-execution_count="12">
+<div id="cell-80" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1"></a>np.mean((<span class="kw">lambda</span> x: x<span class="op">**</span><span class="dv">2</span>)(np.random.exponential(<span class="dv">1</span>,<span class="dv">10000</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>2.0209238762363655</code></pre>
@@ -1138,7 +1156,7 @@ window.Quarto = {
 <ul>
 <li>이론: <span class="math inline">\(X_1, \dots, X_n \overset{iid}{\sim} N(\mu, \sigma^2) \Rightarrow \frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\)</span></li>
 </ul>
-<div id="cell-93" class="cell" data-execution_count="28">
+<div id="cell-94" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1"></a>N<span class="op">=</span><span class="dv">10000000</span></span>
 <span id="cb36-2"><a href="#cb36-2"></a>n<span class="op">=</span><span class="dv">25</span> </span>
 <span id="cb36-3"><a href="#cb36-3"></a>σ<span class="op">=</span><span class="dv">5</span> </span>
@@ -1162,7 +1180,7 @@ window.Quarto = {
 <li>예제1: <span class="math inline">\(\bar{X}\)</span>는 분산이 100, 평균이 <span class="math inline">\(\mu\)</span>인 분포에서 추출한 크기가 25인 확률표본의 평균이다. 관찰된 표본의 평균이 <span class="math inline">\(\bar{x} = 67.53\)</span>일때 <span class="math inline">\(\mu\)</span>에 대한 95% 신뢰구간을 구하여라.</li>
 </ul>
 <p>(풀이1)</p>
-<div id="cell-95" class="cell" data-execution_count="32">
+<div id="cell-96" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1"></a>c <span class="op">=</span> np.quantile([np.mean(np.random.normal(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">25</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000000</span>)], <span class="fl">0.975</span>)</span>
 <span id="cb37-2"><a href="#cb37-2"></a>c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="32">
@@ -1174,7 +1192,7 @@ window.Quarto = {
 <li>뒷면해석의 일반화: <span class="math inline">\(X_1,\dots,X_{25} \overset{iid}{\sim} N(\mu,10) \Rightarrow P(\mu-3.92\leq\bar{X}\leq \mu+3.92) \approx 0.95\)</span></li>
 <li>앞면느낌의 해석: <span class="math inline">\(X_1,\dots,X_{25} \overset{iid}{\sim} N(\mu,10) \Rightarrow P(\bar{X}-3.92\leq\mu\leq \bar{X}+3.92) \approx 0.95\)</span></li>
 </ul>
-<div id="cell-97" class="cell" data-execution_count="33">
+<div id="cell-98" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1"></a>xbar <span class="op">=</span> <span class="fl">67.53</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>(xbar<span class="op">-</span>c, xbar<span class="op">+</span>c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="33">
@@ -1182,7 +1200,7 @@ window.Quarto = {
 </div>
 </div>
 <p>(풀이2)</p>
-<div id="cell-99" class="cell" data-execution_count="65">
+<div id="cell-100" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1"></a>n <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb41-2"><a href="#cb41-2"></a>σ <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb41-3"><a href="#cb41-3"></a>dist <span class="op">=</span> sps.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span>σ<span class="op">/</span>np.sqrt(n))</span>
@@ -1201,7 +1219,7 @@ window.Quarto = {
 <li><p>뒷부분은 <span class="math inline">\(\bar{X}\overset{d}{\rightarrow}Z', \ \ \ Z'\sim N(\mu, \frac{\sigma}{\sqrt{n}})\)</span>로 해석가능</p></li>
 </ul>
 <p><code>-</code> 확인</p>
-<div id="cell-104" class="cell" data-execution_count="80">
+<div id="cell-105" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1"></a>p <span class="op">=</span> <span class="fl">0.9</span></span>
 <span id="cb43-2"><a href="#cb43-2"></a>N <span class="op">=</span> <span class="dv">10000</span></span>
 <span id="cb43-3"><a href="#cb43-3"></a>n <span class="op">=</span> <span class="dv">50</span></span>
@@ -1210,7 +1228,7 @@ window.Quarto = {
 <span id="cb43-6"><a href="#cb43-6"></a>n<span class="op">=</span><span class="dv">500</span></span>
 <span id="cb43-7"><a href="#cb43-7"></a>Ybar <span class="op">=</span> [np.mean(np.random.binomial(<span class="dv">1</span>,p,n)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)] <span class="co"># 베르누이</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-105" class="cell" data-execution_count="87">
+<div id="cell-106" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1"></a>plt.hist(Xbar, bins <span class="op">=</span> <span class="dv">50</span>, label<span class="op">=</span><span class="st">'Xbar'</span>)</span>
 <span id="cb44-2"><a href="#cb44-2"></a>plt.hist(Ybar, bins <span class="op">=</span> <span class="dv">50</span>, label<span class="op">=</span><span class="st">'Ybar'</span>)<span class="op">;</span></span>
 <span id="cb44-3"><a href="#cb44-3"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1242,13 +1260,13 @@ window.Quarto = {
 <li>내가 얼마나 운이 없는 케이스인지 정확한 확률로 계산해보자. <span class="math inline">\(\to\)</span> 참치회사의 주장이 참이라고 가정하자. 그리고 그 세계에서(참치회사의 주장이 참인 세계에서) 나보다 운이 없는 케이스가 14,000,605의 경우의 수 중에서 몇개나 발생했는지 알아보자.</li>
 <li>만약에 14,000,605의 경우의 수 중에서 나보다 운이 없는 케이스가 0명이라면? 이건 참치회사가 거짓말을 하고 있다고 생각해도 무방하다.</li>
 </ul>
-<div id="cell-110" class="cell" data-execution_count="6">
+<div id="cell-111" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1"></a>np.random.normal(<span class="dv">45</span>,<span class="dv">1</span>) <span class="co"># 참치캔 하나의 무게</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>45.65559226000502</code></pre>
 </div>
 </div>
-<div id="cell-111" class="cell" data-execution_count="7">
+<div id="cell-112" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1"></a>g <span class="op">=</span> np.random.normal(<span class="dv">45</span>,<span class="dv">1</span>,<span class="dv">30</span>) <span class="co"># 참치캔 30개의 무게들</span></span>
 <span id="cb47-2"><a href="#cb47-2"></a>g</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -1260,13 +1278,13 @@ window.Quarto = {
        44.33644491, 46.91034175, 46.02706234, 43.36750549, 46.23646942])</code></pre>
 </div>
 </div>
-<div id="cell-112" class="cell" data-execution_count="8">
+<div id="cell-113" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1"></a>np.mean(g) <span class="co"># 참치캔 30개의 무게의 평균</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>44.94583794428206</code></pre>
 </div>
 </div>
-<div id="cell-113" class="cell" data-execution_count="12">
+<div id="cell-114" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1"></a>np.mean(np.array([np.mean(np.random.normal(<span class="dv">45</span>,<span class="dv">1</span>,<span class="dv">30</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">14000605</span>)]) <span class="op">&lt;</span> <span class="fl">44.50</span>) <span class="co"># p-value</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>0.0030819382448115636</code></pre>
@@ -1288,7 +1306,7 @@ window.Quarto = {
 <p>우선 <span class="math inline">\(\sigma=1\)</span>이고 참치회사의 주장이 맞다고 전제하였으므로 <span class="math inline">\(\mu=45\)</span>. <span class="math inline">\(n\)</span>은 한 박스에 포함된 참치캔의 수이므로 이 경우는 <span class="math inline">\(n=30\)</span>이다. 따라서 <span class="math inline">\(\frac{44.5-\mu}{\sigma/\sqrt{n}}\approx-2.73861\)</span>이다. 한편 <span class="math inline">\(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)\)</span> 이므로 (note1의 내용) 구하는 확률 얻기 위해서는 단지 아래만 계산하면 된다.</p>
 <p><span class="math display">\[P(Z\leq-2.73861), \ Z\sim N(0,1)\]</span></p>
 <p>이 확률은 대략적으로 0.00308 인데 이것은 자취생이 시뮬레이션으로 얻은 0.00306와 거의 비슷하다.</p>
-<div id="cell-116" class="cell" data-execution_count="17">
+<div id="cell-117" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1"></a>μ<span class="op">=</span><span class="dv">45</span></span>
 <span id="cb53-2"><a href="#cb53-2"></a>σ<span class="op">=</span><span class="dv">1</span></span>
 <span id="cb53-3"><a href="#cb53-3"></a>n<span class="op">=</span><span class="dv">30</span> </span>
@@ -1299,14 +1317,14 @@ window.Quarto = {
 </div>
 </div>
 <p>(보충학습)</p>
-<div id="cell-118" class="cell" data-execution_count="18">
+<div id="cell-119" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1"></a>dist <span class="op">=</span> sps.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb55-2"><a href="#cb55-2"></a>dist.cdf(<span class="dv">0</span>) <span class="co">#P(X≤0), where X ~ N(0,1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>0.5</code></pre>
 </div>
 </div>
-<div id="cell-119" class="cell" data-execution_count="19">
+<div id="cell-120" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1"></a>dist <span class="op">=</span> sps.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb57-2"><a href="#cb57-2"></a>dist.cdf(<span class="fl">1.96</span>) <span class="co">#P(X≤1.96), where X ~ N(0,1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="19">
@@ -1324,7 +1342,7 @@ window.Quarto = {
 <ul>
 <li>자취생의 샘플이 <span class="math inline">\(\bar{x}=44.5\)</span>가 아니라 <span class="math inline">\(\bar{x}=44.8\)</span>이었다고 할 때 p-value를 구해보라.</li>
 </ul>
-<div id="cell-122" class="cell" data-execution_count="28">
+<div id="cell-123" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1"></a>Z <span class="op">=</span> (<span class="fl">44.8</span><span class="op">-</span><span class="dv">45</span>)<span class="op">/</span>(<span class="dv">1</span><span class="op">/</span>np.sqrt(<span class="dv">30</span>))</span>
 <span id="cb59-2"><a href="#cb59-2"></a>dist <span class="op">=</span> sps.norm(loc<span class="op">=</span><span class="dv">0</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb59-3"><a href="#cb59-3"></a>dist.cdf(Z) <span class="co"># 0.136</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1371,10 +1389,10 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="motive">motive</h3>
 <p>(예제) <span class="math inline">\(X_i\overset{iid}{\sim}N(7,\sigma^2)\)</span>일 때 아래를 test 하고 싶다고 하자 <span class="math display">\[H_0: \sigma^2=4\]</span> <span class="math display">\[H_1: \sigma^2&lt;4\]</span> 30개의 샘플을 확보하여 <span class="math inline">\(\xi=\frac{1}{30}\sum^{30}_{i=1}(x_i-7)^2\)</span>를 계산하였으며 계산결과 <span class="math inline">\(\xi=2.72\)</span>가 나왔다고 하자. <span class="math inline">\(p\)</span>-value를 구하여라.</p>
 <p>(풀이1)</p>
-<div id="cell-129" class="cell" data-execution_count="2">
+<div id="cell-130" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1"></a>xis <span class="op">=</span> [np.mean((np.random.normal(<span class="dv">7</span>,<span class="dv">2</span>,<span class="dv">30</span>)<span class="op">-</span><span class="dv">7</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">14000605</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-130" class="cell" data-execution_count="4">
+<div id="cell-131" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1"></a>np.mean(np.array(xis)<span class="op">&lt;</span><span class="fl">2.72</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>0.09435406541360176</code></pre>
@@ -1384,7 +1402,7 @@ window.Quarto = {
 <li>생각보다 나올법한 확률이다.</li>
 </ul>
 <p><code>-</code> 분산이 4가 아닌 것 같다라고 주장하기 위해서는 (95%)</p>
-<div id="cell-133" class="cell" data-execution_count="6">
+<div id="cell-134" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1"></a>np.quantile(xis, <span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>2.4653042700709666</code></pre>
@@ -1400,7 +1418,7 @@ window.Quarto = {
 <li><p>관찰: 우리예제의 경우에는 <span class="math inline">\(H_0\)</span>가 참이라는 가정하에 <span class="math inline">\(\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span></p></li>
 <li><p>주장: <span class="math inline">\(\xi\times\frac{30}{4}=\sum^{30}_{i=1}(\frac{X_i-7}{2})^2\sim\chi^2(30)\)</span>는 <span class="math inline">\(\chi^2(30)\)</span>에서 뽑힌 샘플이다.</p></li>
 </ul>
-<div id="cell-136" class="cell" data-execution_count="9">
+<div id="cell-137" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1"></a>xi <span class="op">=</span> <span class="fl">2.72</span></span>
 <span id="cb66-2"><a href="#cb66-2"></a></span>
 <span id="cb66-3"><a href="#cb66-3"></a>xi<span class="op">*</span><span class="dv">30</span><span class="op">/</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1408,7 +1426,7 @@ window.Quarto = {
 <pre><code>20.400000000000002</code></pre>
 </div>
 </div>
-<div id="cell-137" class="cell" data-execution_count="11">
+<div id="cell-138" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1"></a>dist <span class="op">=</span> sps.chi2(<span class="dv">30</span>)</span>
 <span id="cb68-2"><a href="#cb68-2"></a>dist.cdf(xi<span class="op">*</span><span class="dv">30</span><span class="op">/</span><span class="dv">4</span>) <span class="co"># 시뮬레이션 값과 비슷</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -1416,14 +1434,14 @@ window.Quarto = {
 </div>
 </div>
 <p><code>-</code> 분산이 4는 아닌 것 같다라고 주장하려면? (95%)</p>
-<div id="cell-139" class="cell" data-execution_count="15">
+<div id="cell-140" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1"></a>dist.ppf(<span class="fl">0.05</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <pre><code>18.492660981953467</code></pre>
 </div>
 </div>
 <p><span class="math inline">\(\xi \times 30/4 = 18.492660981953467\)</span>라는 말이니까</p>
-<div id="cell-141" class="cell" data-execution_count="16">
+<div id="cell-142" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1"></a>dist.ppf(<span class="fl">0.05</span>) <span class="op">/</span> <span class="dv">30</span> <span class="op">*</span> <span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>2.465688130927129</code></pre>
@@ -1457,14 +1475,14 @@ window.Quarto = {
 <section id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법" class="level4">
 <h4 class="anchored" data-anchor-id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법">자유도가 4인 카이제곱분포에서 100개의 샘플을 얻는 방법</h4>
 <p>(방법1)</p>
-<div id="cell-146" class="cell" data-execution_count="5">
+<div id="cell-147" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1"></a>np.random.chisquare(<span class="dv">4</span>, <span class="dv">100</span>)[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>array([4.23661203, 2.77348336, 5.43154643, 1.84772286, 2.23430818])</code></pre>
 </div>
 </div>
 <p>(방법2) 정규분포 <span class="math inline">\(\rightarrow\)</span> 카이제곱분포</p>
-<div id="cell-148" class="cell" data-execution_count="4">
+<div id="cell-149" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>[0.9470195437591595,
@@ -1479,7 +1497,7 @@ window.Quarto = {
 <li><p>복습: <span class="math inline">\(X, Y \overset{iid}{\sim} N(0,1) \Rightarrow R^2/2 \sim Exp(1)\)</span>, where <span class="math inline">\(R^2 = X^2+Y^2\)</span></p></li>
 <li><p>즉, <span class="math inline">\(2 \times \frac{R^2}{2} + 2 \times \frac{R^2}{2} = Z_1^2 + Z_2^2 + Z_3^2 + Z_4^2 \sim \chi^2(4)\)</span></p></li>
 </ul>
-<div id="cell-150" class="cell" data-execution_count="3">
+<div id="cell-151" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1"></a>[np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="op">+</span> np.random.exponential(<span class="dv">1</span>)<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span>
 <span id="cb78-2"><a href="#cb78-2"></a><span class="co">#표준정규분포를 4개 더한 것</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
@@ -1490,7 +1508,7 @@ window.Quarto = {
  8.645433131925193]</code></pre>
 </div>
 </div>
-<div id="cell-151" class="cell" data-execution_count="2">
+<div id="cell-152" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1"></a>[np.random.exponential(<span class="dv">2</span>)<span class="op">+</span>np.random.exponential(<span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>)][:<span class="dv">5</span>]</span>
 <span id="cb80-2"><a href="#cb80-2"></a><span class="co">#지수분포는 scale parameter를 가지기 때문에.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -1501,7 +1519,7 @@ window.Quarto = {
  4.229829641106975]</code></pre>
 </div>
 </div>
-<div id="cell-152" class="cell" data-execution_count="33">
+<div id="cell-153" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1"></a>N<span class="op">=</span><span class="dv">10000</span></span>
 <span id="cb82-2"><a href="#cb82-2"></a>X1 <span class="op">=</span> np.random.chisquare(<span class="dv">4</span>, N)</span>
 <span id="cb82-3"><a href="#cb82-3"></a>X2 <span class="op">=</span> [np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">4</span>)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N)]</span>
@@ -1548,7 +1566,7 @@ window.Quarto = {
 <section id="카이제곱-분포의-합" class="level3">
 <h3 class="anchored" data-anchor-id="카이제곱-분포의-합">카이제곱 분포의 합</h3>
 <ul>
-<li>이론: $X^2(k_1), Y^2(k_2), XY X+Y ^2(k_1+k_2) $</li>
+<li>이론: <span class="math inline">\(X\sim\chi^2(k_1), Y\sim\chi^2(k_2), X\bot Y \Rightarrow X+Y \sim \chi^2(k_1+k_2)\)</span></li>
 </ul>
 </section>
 <section id="히스토그램" class="level3">
@@ -1586,19 +1604,19 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="how-to-generate-it-4">how to generate it?</h3>
 <section id="gamma32를-1000개-생성하라." class="level4">
 <h4 class="anchored" data-anchor-id="gamma32를-1000개-생성하라."><span class="math inline">\(\Gamma(3,2)\)</span>를 1000개 생성하라.</h4>
-<div id="cell-162" class="cell" data-execution_count="8">
+<div id="cell-163" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb83"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1"></a>a<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb83-2"><a href="#cb83-2"></a>b<span class="op">=</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(방법1)</p>
-<div id="cell-164" class="cell" data-execution_count="39">
+<div id="cell-165" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1"></a>np.random.gamma(a, b, <span class="dv">1000</span>)[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>array([ 9.71933815,  7.99068886,  7.56259455, 14.96478038,  7.9842099 ])</code></pre>
 </div>
 </div>
 <p>(방법2) 지수분포 → 감마분포</p>
-<div id="cell-166" class="cell" data-execution_count="40">
+<div id="cell-167" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1"></a>[np.<span class="bu">sum</span>(np.random.exponential(b, a)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="40">
 <pre><code>[2.206747933276282,
@@ -1609,7 +1627,7 @@ window.Quarto = {
 </div>
 </div>
 <p>(방법3) 표준정규분포 이용</p>
-<div id="cell-168" class="cell" data-execution_count="9">
+<div id="cell-169" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1"></a>[np.<span class="bu">sum</span>(np.random.normal(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span><span class="op">*</span>a)<span class="op">**</span><span class="dv">2</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1000</span>)][:<span class="dv">5</span>]</span>
 <span id="cb88-2"><a href="#cb88-2"></a><span class="co"># 방법3이 가능한 이유는 2a가 현재 자연수이고, b=2 이기 때문.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -1621,7 +1639,7 @@ window.Quarto = {
 </div>
 </div>
 <p>(방법4) 카이제곱분포 이용</p>
-<div id="cell-170" class="cell" data-execution_count="42">
+<div id="cell-171" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1"></a>np.random.chisquare(<span class="dv">2</span><span class="op">*</span>a, <span class="dv">1000</span>)[:<span class="dv">5</span>]</span>
 <span id="cb90-2"><a href="#cb90-2"></a><span class="co"># 방법4가 가능한 이유는 2a가 현재 자연수이고, b=2 이기 때문.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
@@ -1629,7 +1647,7 @@ window.Quarto = {
 </div>
 </div>
 <p><code>-</code> 확인</p>
-<div id="cell-172" class="cell" data-execution_count="18">
+<div id="cell-173" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1"></a>N<span class="op">=</span><span class="dv">10000</span></span>
 <span id="cb92-2"><a href="#cb92-2"></a>fig, ((ax1, ax2), (ax3, ax4)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">2</span>)</span>
 <span id="cb92-3"><a href="#cb92-3"></a>ax1.hist(np.random.gamma(a, b, N), label <span class="op">=</span> <span class="st">'X1'</span>)</span>
@@ -1651,7 +1669,7 @@ window.Quarto = {
 <section id="감마분포와-카이제곱분포의-관계" class="level3">
 <h3 class="anchored" data-anchor-id="감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</h3>
 <p><code>-</code> 이론: <span class="math inline">\(X\overset{d}{=}Y,\)</span> where <span class="math inline">\(X\sim\chi^2(k)\)</span> and <span class="math inline">\(Y\sim\Gamma(\frac{k}{2},2).\)</span></p>
-<div id="cell-174" class="cell" data-execution_count="15">
+<div id="cell-175" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1"></a>k<span class="op">=</span><span class="dv">3</span></span>
 <span id="cb93-2"><a href="#cb93-2"></a></span>
 <span id="cb93-3"><a href="#cb93-3"></a>fig, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
@@ -1672,7 +1690,7 @@ window.Quarto = {
 <ul>
 <li>감마분포의 곱셈을 해도 감마분포가 된다</li>
 </ul>
-<div id="cell-177" class="cell" data-execution_count="38">
+<div id="cell-178" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1"></a>fig, ((ax1, ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb94-2"><a href="#cb94-2"></a></span>
 <span id="cb94-3"><a href="#cb94-3"></a>ax1.hist(np.random.gamma(<span class="dv">50</span>,<span class="dv">6</span>, <span class="dv">100000</span>), bins<span class="op">=</span><span class="dv">50</span>)</span>
@@ -1689,7 +1707,7 @@ window.Quarto = {
 <section id="감마분포의-합" class="level3">
 <h3 class="anchored" data-anchor-id="감마분포의-합">감마분포의 합</h3>
 <p><code>-</code> 이론: <span class="math inline">\(X\sim\Gamma(\alpha_1,\beta), Y\sim \Gamma(\alpha_2, \beta), \ \  X\bot Y \Rightarrow X+Y\sim \Gamma(\alpha_1 + \alpha_2, \beta)\)</span></p>
-<div id="cell-180" class="cell" data-execution_count="44">
+<div id="cell-181" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1"></a>fig, ((ax1, ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb95-2"><a href="#cb95-2"></a></span>
 <span id="cb95-3"><a href="#cb95-3"></a>ax1.hist(np.random.gamma(<span class="dv">25</span>,<span class="dv">6</span>, <span class="dv">10000</span>), bins<span class="op">=</span><span class="dv">50</span>)</span>
@@ -1738,7 +1756,7 @@ window.Quarto = {
 <li><p><span class="math inline">\(\Gamma (\frac{\alpha}{2}, 2) = \chi^2(\alpha)\)</span> 이므로 <span class="math inline">\(\alpha\)</span>에 20을 대입하면 <span class="math inline">\(\Gamma (10, 2) = \chi^2(20)\)</span></p>
 <p>따라서 평균이 2인 지수분포 10개의 합이다.</p></li>
 </ul>
-<div id="cell-185" class="cell" data-execution_count="50">
+<div id="cell-186" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1"></a>ax1, ((ax1), (ax2)) <span class="op">=</span> plt.subplots(<span class="dv">2</span>,<span class="dv">1</span>)</span>
 <span id="cb96-2"><a href="#cb96-2"></a></span>
 <span id="cb96-3"><a href="#cb96-3"></a>ax1.hist([np.<span class="bu">sum</span>(np.random.exponential(<span class="dv">2</span>, <span class="dv">10</span>)) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10000</span>)], bins<span class="op">=</span><span class="dv">50</span>)</span>
@@ -1765,7 +1783,7 @@ window.Quarto = {
 </ul>
 <p><code>-</code> 포인트는 검정통계량의 분포를 잡아내는 것인데, <span class="math inline">\(H_0\)</span>가 참이라는 전제하에 시뮬레이팅 해도 되고 이론적인 분포를 손으로 유도해도 된다.</p>
 <ul>
-<li>당연히 컴퓨터가 없던 시절에는 시뮬레이팅이 불가능했으므로 “이론적으로 유도 + 통계표(?)”를 이용해서 <span class="math inline">\(p\)</span>-value를 계산해야 했다.</li>
+<li>당연히 컴퓨터가 없던 시절에는 시뮬레이팅이 불가능했으므로 “이론적으로 유도 + 통계표”를 이용해서 <span class="math inline">\(p\)</span>-value를 계산해야 했다.</li>
 </ul>
 <p><code>-</code> 다양한 분포를 공부하는 이유? 검정통계량의 이론적 분포를 잡아내기 위해서!+ <span class="math inline">\(\alpha\)</span></p>
 <ul>

@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Signal_Processing/signal_system.html",
       "/posts/Statistics/SC_2.html",
       "/posts/Statistics/SC_1.html",
       "/posts/Python/vis_Plotly.html",

@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://star77sa.github.io/index.html</loc>
-    <lastmod>2024-02-13T05:10:39.161Z</lastmod>
+    <lastmod>2024-02-13T05:10:39.000Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/post-with-code/index.html</loc>
@@ -186,10 +186,14 @@
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Statistics/SC_1.html</loc>
-    <lastmod>2024-02-16T06:29:13.142Z</lastmod>
+    <lastmod>2024-02-16T07:59:46.888Z</lastmod>
   </url>
   <url>
     <loc>https://star77sa.github.io/posts/Statistics/SC_2.html</loc>
-    <lastmod>2024-02-13T04:42:11.924Z</lastmod>
+    <lastmod>2024-02-16T08:25:52.896Z</lastmod>
+  </url>
+  <url>
+    <loc>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</loc>
+    <lastmod>2024-02-22T02:10:35.331Z</lastmod>
   </url>
 </urlset>

@@ -10,7 +10,59 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.540</generator>
-<lastBuildDate>Tue, 06 Feb 2024 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 21 Feb 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>신호 및 시스템</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="신호-및-시스템" class="level1">
+<h1>신호 및 시스템</h1>
+<p><code>-</code> 신호</p>
+<p>물리적인 현상의 본질에 대한 정보를 담고 있는 하나 이상의 변수에 관한 함수로 정의된다. 하나의 변수에 의존하면 1차원적, 함수가 두 개 혹은 그 이상의 변수에 따라 달라지면 다차원적 이라고 한다. 이미지는 가로 좌표와 세로 좌표에 따라 변하는 2차원 신호의 한 예.</p>
+<p><code>-</code> 시스템</p>
+<p>임의의 기능을 수행하기 위하여 하나 이상의 신호를 처리하여 새로운 신호를 생성하는 실체(entity)</p>
+<p>시스템 응용 - 통신 시스템, 제어 시스템, 마이크로 전자기계 시스템, 원격 센싱, 생체 신호처리, 청각 시스템</p>
+<p><code>-</code> 통신 시스템</p>
+<p>모든 통신 시스템(communication system)에는 기본적으로 세 가지 구성 요소, 즉 송신기, 채널, 수신기가 존재한다. 송신기는 공간의 어느 한 점에 위치하고, 수신기는 송신기로부터 떨어진 다른 지점에 위치하며, 채널은 그 둘을 연결하는 물리적 매체</p>
+<p>송신 신호가 채널을 통해서 전파되어감에 따라, 채널의 물리적인 특성 때문에 신호는 왜곡된다. 더욱이 잡음과 다른 원천으로부터 온 간섭 신호가 채널 출력을 변질시켜 수신 신호는 송신 신호의 왜곡된 모습의 결과로 나타난다. 수신기의 기능은, 수신 신호로부터 원래의 메시지 신호를 인식할 수 있도록 재구성하여(즉, 추정치를 만들어) 사용자에게 전달하는 것</p>
+<p>통신 시스템은 아날로그 또는 디지털 형태로 구분된다.</p>
+<p>신호처리 입장에서 보면 아날로그 시스템의 설계는 상대적으로 간단하다. 송신기는 변조기(modulator), 수신기는 복조기(demodulator)로 구성되어 있다.</p>
+<p>변조(modulation)는 메시지 신호를 채널의 전송 특성에 적합하도록 적절한 형태로 변환시키는 과정이다.</p>
+<p>보통의 경우에는, 송신 신호는 정현바송파의 진폭, 위상, 주파수의 변형된 모습으로 표현된다. 그러므로, 이들 각각을 진폭 변조, 위상 변조, 주파수 변조라 부른다. 수신기에는 이와 대응되는 진폭 복조, 위상 복조, 주파수 복조를 사용해서 원래의 메시지 신호를 추정하여 출력한다.</p>
+<p>디지털 통신 시스템은 훨씬 더 복잡하다. 메시지 신호가 음성 신호나 영상 신호와 같은 아날로그 형태이면, 송신기는 신호를 디지털 형태로 변환하기 위하여 다음과 같은 작업을 한다.</p>
+<ul>
+<li><p>샘플링(sampling): 메시지 신호를 특정 순간에서 그 진폭을 나타내는 일련의 수로 변환 <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-3-image.png" class="img-fluid"></p></li>
+<li><p>양자화(quantization): 샘플링에 의해 생성된 각각의 수를 유한 개의 이산 진폭 레벨 가운데 가장 가까운 레벨로 표현. 예를 들어 16비트 이진수로 나타내면, 각 샘플을 216개의 레벨로 표현할 수 있다. 메시지 신호가 샘플링과 양자화 과정을 모두 거치면, 시간축과 진폭출 모두 이산적으로 표현된다. <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-1-image-2.png" class="img-fluid"></p></li>
+<li><p>코딩(coding): 양자화된 샘플을 유한 개의 심벌로 이루어진 코드 워드(code word)로 표현. 예를 들면, 이진 코드의 경우 심벌은 ‘1’ 또는 ‘0’ 이다. <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-2-image-3.png" class="img-fluid"></p></li>
+</ul>
+<p>샘플링, 코딩과는 달리 양자화는 역변환이 가능하지 않다.</p>
+<p>즉, 양자화를 하게 되면 응용에 있어 항상 정보의 손실이 발생</p>
+<p>만일 디지털 컴퓨터의 경우와 같이 원래의 정보가 처음부터 이산적이라면, 위에 언급된 진행 과정은 모두 필요 없게 된다.</p>
+<p>송신기는 데이터 압축, 채널 인코딩 등과 같은 부가적인 연산을 필요로 할 수 있다.</p>
+<p>데이터 압축의 목적은 메시지 신호로부터 중복성 정보를 제거하고, 전송에 필요한 샘플당 비트의 수를 감소시켜 채널의 효율을 높이기 위한 것</p>
+<p>채널 인코딩은 채널을 통한 전송 과정에서 얻게 되는 잡음 및 간섭 신호 등으로부터 정보를 보호하기 위해 정해진 방식에 따라 코드 워드에 여분의 요소(예를 들면, 부가 심벌)를 추가한다.</p>
+<p>마지막으로, 코드화된 신호는 채널을 통한 전송을 위해 반송파(대개는 정현파)로 변조된다.</p>
+<p>수신기에서는 코딩 및 샘플링 과정이 반대로 이루어지며(즉, 각 입력과 출력 신호의 역할이 바뀌게 됨), 원래 메시지 신호의 추정치를 얻은 다음 이를 의도하는 목적지로 전달한다. 그러나 앞에서 언급한 대로 양자화는 역변환이 가능하지 않으므로, 수신기에는 이와 대응되는 것이 없다.</p>
+<p>반도체 산업의 지속적인 발달로, 디지털 통신은 아날로그 통신보다 보통 비용면에서 더 효과적이다.</p>
+<p>통신에는 두 가지 기본 모드가 있다.</p>
+<ol type="1">
+<li><p>방송(broadcasting)</p></li>
+<li><p>점대점(point-to-point) 통신.</p></li>
+</ol>
+
+
+</section>
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</guid>
+  <pubDate>Wed, 21 Feb 2024 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>[통계전산] 선형대수학</title>
   <dc:creator>고경수 </dc:creator>
@@ -76,7 +128,7 @@ font-style: inherit;">as</span> sps</span></code></pre></div>
 
  ]]></description>
   <guid>https://star77sa.github.io/posts/Statistics/SC_2.html</guid>
-  <pubDate>Tue, 06 Feb 2024 15:00:00 GMT</pubDate>
+  <pubDate>Tue, 13 Feb 2024 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[통계전산] 통계</title>
@@ -133,6 +185,7 @@ font-style: inherit;">as</span> sps</span></code></pre></div>
 <li>분해이론: 고유값분해, SVD</li>
 <li>벡터나 매트릭스의 미분..</li>
 </ul>
+<p><img src="https://star77sa.github.io/posts/Statistics/SC_1_files/figure-html/cell-7-1-image.png" class="img-fluid"></p>
 </section>
 <section id="베르누이" class="level2">
 <h2 class="anchored" data-anchor-id="베르누이">베르누이</h2>
@@ -168,7 +221,7 @@ font-style: inherit;">as</span> sps</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="how-to-generate-it">How to generate it?</h3>
 <p>평균 3인 포아송분포에서 100개 샘플을 뽑는 방법</p>
 <p>방법1)</p>
-<div id="cell-17" class="cell" data-execution_count="16">
+<div id="cell-18" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1">pois <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.random.poisson(<span class="dv" style="color: #AD0000;
@@ -186,7 +239,7 @@ font-style: inherit;">100</span>)</span>
         2,  2,  4,  3,  1,  5,  2, 10,  6,  2,  4,  0,  3,  2,  1])</code></pre>
 </div>
 </div>
-<div id="cell-18" class="cell" data-execution_count="17">
+<div id="cell-19" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1">plt.hist(pois)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
@@ -223,7 +276,7 @@ font-style: inherit;"># plt.xticks(np.arange(0,11,1)); # x축 1간격</span></sp
 <p>방법2) 이항분포의 포아송근사를 이용</p>
 <p>이론: 이항분포에서 (1) <img src="https://latex.codecogs.com/png.latex?n%E2%86%92%5Cinfty"> (2) <img src="https://latex.codecogs.com/png.latex?p%E2%86%920"> (3) <img src="https://latex.codecogs.com/png.latex?np=%5Clambda"> 이면 이것은 평균이 <img src="https://latex.codecogs.com/png.latex?%5Clambda"> 인 포아송분포로 근사함.</p>
 <p>평균이 <img src="https://latex.codecogs.com/png.latex?%5Clambda"> 인 포아송분포는 <img src="https://latex.codecogs.com/png.latex?B(n,%5Cfrac%7B%5Clambda%7D%7Bn%7D)"> 로 근사할 수 있다. 이때 <img src="https://latex.codecogs.com/png.latex?n">이 커질수록 더 정확해짐.</p>
-<div id="cell-21" class="cell" data-execution_count="6">
+<div id="cell-22" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -279,7 +332,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li>좀 더 세밀하게는 0.001초에 성공확률이 5.0e-5인 베르누이 시행을 1번 시행하여 1분동안 총 60000회 반복한 것으로도 이해할 수 있음. (무한반복 가능)</li>
 <li>느낌: 하여튼 (1) “엄청 작은 시간”에 (2) “엄청 작은 확률”의 베르누이 시행이 (3) “엄청 많이 독립적으로 반복” 되는 느낌을 기억!! = 포아송 프로세스</li>
 </ul>
-<div id="cell-24" class="cell" data-execution_count="7">
+<div id="cell-25" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1">λ<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -328,7 +381,7 @@ font-style: inherit;">in</span> <span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">range</span>(N)]</span></code></pre></div>
 </div>
-<div id="cell-25" class="cell" data-execution_count="8">
+<div id="cell-26" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -377,7 +430,7 @@ font-style: inherit;">"Poisson"</span>)</span></code></pre></div>
 <li><p>이론: <img src="https://latex.codecogs.com/png.latex?X%20%5Csim%20Poi(%5Clambda_1),%20Y%20%5Csim%20Poi(%5Clambda_2),%20X%20%5Cbot%20Y%20%5CRightarrow%20X+Y%5Csim%20Poi(%5Clambda_1+%5Clambda_2)"></p></li>
 <li><p>의미?: (1) 1분동안 맥도날드 매장에 들어오는 남자의 수는 평균이 5인 포아송 분포를 따름. (2) 1분동안 맥도날드 매장에 들어오는 여자의 수는 평균이 4.5인 포아송 분포를 따름. (3) 남자와 여자가 매장에 오는 사건은 독립 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 1분동안 맥도날드 매장에 오는 사람은 평균 9.5인 포아송 분포를 따른다는 의미</p></li>
 </ul>
-<div id="cell-29" class="cell" data-execution_count="18">
+<div id="cell-30" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -405,7 +458,7 @@ font-style: inherit;">=</span> np.random.poisson(<span class="fl" style="color: 
 background-color: null;
 font-style: inherit;">9.5</span>, N)</span></code></pre></div>
 </div>
-<div id="cell-30" class="cell" data-execution_count="19">
+<div id="cell-31" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -427,7 +480,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 </div>
 <section id="평균과-분산의-추정" class="level4">
 <h4 class="anchored" data-anchor-id="평균과-분산의-추정">평균과 분산의 추정</h4>
-<div id="cell-32" class="cell" data-execution_count="11">
+<div id="cell-33" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -501,7 +554,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 </div>
 <p><code>-</code> 생각해보니까 이론적으로 평균과 분산의 값이 같아야 한다는 걸 알고 있다. 그런데 왜 추정치가 달라야하나?? 둘 중 하나만 있으면 될 것 같다.</p>
 <p>mean(X), var(X)로 <img src="https://latex.codecogs.com/png.latex?%5Clambda">를 추정</p>
-<div id="cell-35" class="cell" data-execution_count="12">
+<div id="cell-36" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -536,7 +589,7 @@ font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">100</span>)]</span></code></pre></div>
 </div>
-<div id="cell-36" class="cell" data-execution_count="13">
+<div id="cell-37" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -615,7 +668,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <h4 class="anchored" data-anchor-id="평균이-10인-지수분포에서-10000개의-샘플을-뽑는-방법">평균이 10인 지수분포에서 10000개의 샘플을 뽑는 방법</h4>
 <p>방법1: 모듈 / 방법2: 포아송 프로세스 / 방법3: inverse cdf method</p>
 <p>(방법1)</p>
-<div id="cell-44" class="cell" data-execution_count="57">
+<div id="cell-45" class="cell" data-execution_count="57">
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1">np.random.exponential(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
@@ -631,7 +684,7 @@ font-style: inherit;">10000</span>)</span></code></pre></div>
 <li>맥도날드에 시간 1당 0.1명씩 평균적으로 방문한다. 1명 방문하는데에는 평균적으로 시간이 10이 걸린다고 볼 수 있음.</li>
 <li>따라서 언뜻 생각하면 포아송과 지수분포는 역의 관계라서 포아송 분포를 만들고 역수를 취하면 지수분포를 쉽게 만들 수 있을 것 같다.</li>
 </ul>
-<div id="cell-47" class="cell" data-execution_count="59">
+<div id="cell-48" class="cell" data-execution_count="59">
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1">np.random.poisson(<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.1</span>, <span class="dv" style="color: #AD0000;
@@ -647,7 +700,7 @@ font-style: inherit;">10000</span>)</span></code></pre></div>
 <li>아이디어: 극한의 베르누이로 포아송을 만들 때, 몇 번 성공했는지 관심을 가지고 카운팅 했음. <img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> 조금 응용해서 첫 성공까지 몇 번의 시도를 해야하는지 카운팅을 한다고 생각하면 시간 계산이 가능할 것 같다.</li>
 <li>결국 “포아송분포 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 지수분포”로 추출하는 것이 아니라 “포아송프로세스 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 지수분포”와 같은 방식으로 추출해야 한다.</li>
 </ul>
-<div id="cell-49" class="cell" data-execution_count="60">
+<div id="cell-50" class="cell" data-execution_count="60">
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># 성공할때까지 시도하는 함수: 성공확률 → 1회 성공까지 시도한 횟수 (기하분포를 뽑는 함수!!)</span></span>
@@ -693,7 +746,7 @@ font-style: inherit;">1</span></span>
 background-color: null;
 font-style: inherit;">return</span> n_of_try</span></code></pre></div>
 </div>
-<div id="cell-50" class="cell" data-execution_count="64">
+<div id="cell-51" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1">plt.hist([try_until_you_succeed(<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.1</span>) <span class="cf" style="color: #003B4F;
@@ -719,7 +772,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 </div>
 </div>
 </div>
-<div id="cell-51" class="cell" data-execution_count="79">
+<div id="cell-52" class="cell" data-execution_count="79">
 <div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1">N <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -763,7 +816,7 @@ font-style: inherit;">range</span>(N)]) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">*</span> Δt</span></code></pre></div>
 </div>
-<div id="cell-52" class="cell" data-execution_count="82">
+<div id="cell-53" class="cell" data-execution_count="82">
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -810,7 +863,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li><p>아래와 같은 2개의 지수분포의 pdf를 고려하자. (평균이 1인 지수분포와 평균이 5인 지수분포) <img src="https://latex.codecogs.com/png.latex?f(x)=e%5E%7B-x%7D"> <img src="https://latex.codecogs.com/png.latex?g(x)=%5Cfrac%7B1%7D%7B5%7De%5E%7B-%5Cfrac%7B1%7D%7B5%7Dx%7D"></p></li>
 <li><p>각각의 pdf를 그려보면 아래와 같다.</p></li>
 </ul>
-<div id="cell-55" class="cell" data-execution_count="133">
+<div id="cell-56" class="cell" data-execution_count="133">
 <div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
@@ -897,7 +950,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li><p>아래 그래프에서 뽑은 값이 더 클 것 같다. (위 그래프는 왼쪽에 몰려있음)</p></li>
 <li><p>이번에는 각각의 cdf를 그려보자. <img src="https://latex.codecogs.com/png.latex?F(x)%20=%20%5Cint%5Ex_0f(%5Ctau)d%5Ctau%20=%20%5Cint%5Ex_0%20e%5E%7B-%5Ctau%7Dd%5Ctau=%5B-e%5E%7B-%5Ctau%7D%5D%5Ex_0%20=%201-e%5E%7B-x%7D"> <img src="https://latex.codecogs.com/png.latex?G(x)%20=%20%5Cint%5Ex_0g(%5Ctau)d%5Ctau%20=%20%5Cint%5Ex_0%20%5Cfrac%7B1%7D%7B5%7De%5E%7B-%5Ctau/5%7Dd%5Ctau=%5B-e%5E%7B-%5Ctau/5%7D%5D%5Ex_0%20=%201-e%5E%7B-x/5%7D"></p></li>
 </ul>
-<div id="cell-58" class="cell" data-execution_count="113">
+<div id="cell-59" class="cell" data-execution_count="113">
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1">x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.linspace(<span class="dv" style="color: #AD0000;
@@ -994,7 +1047,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 </div>
 </div>
 </div>
-<div id="cell-59" class="cell" data-execution_count="130">
+<div id="cell-60" class="cell" data-execution_count="130">
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
@@ -1066,7 +1119,7 @@ font-style: inherit;">%는 5보다 작다."</span>)</span></code></pre></div>
 (5, 0.9932620530009145) 위 그래프에서 약 99.0%는 5보다 작다.</code></pre>
 </div>
 </div>
-<div id="cell-60" class="cell" data-execution_count="131">
+<div id="cell-61" class="cell" data-execution_count="131">
 <div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
@@ -1140,7 +1193,7 @@ font-style: inherit;">%는 5보다 작다."</span>)</span></code></pre></div>
 </div>
 <p><code>-</code> cdf 해석 - 위(평균이 1인 지수분포) = 5정도면 거의 cdf의 값이 1에 가까워짐. - 아래(평균이 5인 지수분포) = 5정도면 값이 0.63정도임 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 100번 뽑으면 5보다 작은게 63개 정도…</p>
 <p><code>-</code> cdf의 y축에서 랜덤변수를 발생시킨다음 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow%20%5Cdownarrow">와 같이 이동하여 <img src="https://latex.codecogs.com/png.latex?x">축에 내린다고 생각해보자. (역함수를 구하는 것) - 위: 대부분 5이하에 떨어짐 - 아래: 약 63% 정도만 5이하에 떨어짐.</p>
-<div id="cell-62" class="cell" data-execution_count="150">
+<div id="cell-63" class="cell" data-execution_count="150">
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">def</span> Finv(x): <span class="co" style="color: #5E5E5E;
@@ -1306,7 +1359,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li>예제1: inverse cdf를 이용하여 평균이 1인 지수분포 10000개를 생성하여 보자.</li>
 </ul>
 <p>(풀이)</p>
-<div id="cell-65" class="cell" data-execution_count="161">
+<div id="cell-66" class="cell" data-execution_count="161">
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1">fig, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -1433,7 +1486,7 @@ font-style: inherit;">"exponential"</span>)</span></code></pre></div>
 <p>(손풀이) <img src="https://latex.codecogs.com/png.latex?%5Cint%5E%5Cinfty_0xe%5E%7B-x%7Ddx=??=1"></p>
 <p>(손풀이2) <img src="https://latex.codecogs.com/png.latex?%5Cint%5E%5Cinfty_0xe%5E%7B-x%7Ddx=%20%5Cint%5E%5Cinfty_0x%5Ctimes%20e%5E%7B-x%7Ddx"> 은 <img src="https://latex.codecogs.com/png.latex?%5Clambda=1">인 지수분포의 평균이다. 따라서 답은 1.</p>
 <p>(컴퓨터를 이용한 풀이)</p>
-<div id="cell-76" class="cell" data-execution_count="4">
+<div id="cell-77" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1">np.mean(np.random.exponential(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
@@ -1448,7 +1501,7 @@ font-style: inherit;">10000</span>))</span></code></pre></div>
 <h5 class="anchored">예제2: 아래를 계산하라</h5>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cint%5E%5Cinfty_0%20x%5E2e%5E%7B-x%7Ddx%20=%20?"></p>
 <p>(컴퓨터를 이용한 풀이)</p>
-<div id="cell-79" class="cell" data-execution_count="12">
+<div id="cell-80" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1">np.mean((<span class="kw" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">lambda</span> x: x<span class="op" style="color: #5E5E5E;
@@ -1512,7 +1565,7 @@ font-style: inherit;">10000</span>)))</span></code></pre></div>
 <ul>
 <li>이론: <img src="https://latex.codecogs.com/png.latex?X_1,%20%5Cdots,%20X_n%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(%5Cmu,%20%5Csigma%5E2)%20%5CRightarrow%20%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Csim%20N(0,1)"></li>
 </ul>
-<div id="cell-93" class="cell" data-execution_count="28">
+<div id="cell-94" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1">N<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -1596,7 +1649,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li>예제1: <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BX%7D">는 분산이 100, 평균이 <img src="https://latex.codecogs.com/png.latex?%5Cmu">인 분포에서 추출한 크기가 25인 확률표본의 평균이다. 관찰된 표본의 평균이 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D%20=%2067.53">일때 <img src="https://latex.codecogs.com/png.latex?%5Cmu">에 대한 95% 신뢰구간을 구하여라.</li>
 </ul>
 <p>(풀이1)</p>
-<div id="cell-95" class="cell" data-execution_count="32">
+<div id="cell-96" class="cell" data-execution_count="32">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1">c <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.quantile([np.mean(np.random.normal(<span class="dv" style="color: #AD0000;
@@ -1626,7 +1679,7 @@ font-style: inherit;">0.975</span>)</span>
 <li>뒷면해석의 일반화: <img src="https://latex.codecogs.com/png.latex?X_1,%5Cdots,X_%7B25%7D%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(%5Cmu,10)%20%5CRightarrow%20P(%5Cmu-3.92%5Cleq%5Cbar%7BX%7D%5Cleq%20%5Cmu+3.92)%20%5Capprox%200.95"></li>
 <li>앞면느낌의 해석: <img src="https://latex.codecogs.com/png.latex?X_1,%5Cdots,X_%7B25%7D%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(%5Cmu,10)%20%5CRightarrow%20P(%5Cbar%7BX%7D-3.92%5Cleq%5Cmu%5Cleq%20%5Cbar%7BX%7D+3.92)%20%5Capprox%200.95"></li>
 </ul>
-<div id="cell-97" class="cell" data-execution_count="33">
+<div id="cell-98" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1">xbar <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -1642,7 +1695,7 @@ font-style: inherit;">+</span>c)</span></code></pre></div>
 </div>
 </div>
 <p>(풀이2)</p>
-<div id="cell-99" class="cell" data-execution_count="65">
+<div id="cell-100" class="cell" data-execution_count="65">
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1">n <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -1691,7 +1744,7 @@ font-style: inherit;">+</span>c)</span></code></pre></div>
 <li><p>뒷부분은 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7BX%7D%5Coverset%7Bd%7D%7B%5Crightarrow%7DZ',%20%5C%20%5C%20%5C%20Z'%5Csim%20N(%5Cmu,%20%5Cfrac%7B%5Csigma%7D%7B%5Csqrt%7Bn%7D%7D)">로 해석가능</p></li>
 </ul>
 <p><code>-</code> 확인</p>
-<div id="cell-104" class="cell" data-execution_count="80">
+<div id="cell-105" class="cell" data-execution_count="80">
 <div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1">p <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -1740,7 +1793,7 @@ font-style: inherit;">range</span>(N)] <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># 베르누이</span></span></code></pre></div>
 </div>
-<div id="cell-105" class="cell" data-execution_count="87">
+<div id="cell-106" class="cell" data-execution_count="87">
 <div class="sourceCode cell-code" id="cb44" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1">plt.hist(Xbar, bins <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
@@ -1790,7 +1843,7 @@ font-style: inherit;">;</span></span>
 <li>내가 얼마나 운이 없는 케이스인지 정확한 확률로 계산해보자. <img src="https://latex.codecogs.com/png.latex?%5Cto"> 참치회사의 주장이 참이라고 가정하자. 그리고 그 세계에서(참치회사의 주장이 참인 세계에서) 나보다 운이 없는 케이스가 14,000,605의 경우의 수 중에서 몇개나 발생했는지 알아보자.</li>
 <li>만약에 14,000,605의 경우의 수 중에서 나보다 운이 없는 케이스가 0명이라면? 이건 참치회사가 거짓말을 하고 있다고 생각해도 무방하다.</li>
 </ul>
-<div id="cell-110" class="cell" data-execution_count="6">
+<div id="cell-111" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1">np.random.normal(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">45</span>,<span class="dv" style="color: #AD0000;
@@ -1802,7 +1855,7 @@ font-style: inherit;"># 참치캔 하나의 무게</span></span></code></pre></d
 <pre><code>45.65559226000502</code></pre>
 </div>
 </div>
-<div id="cell-111" class="cell" data-execution_count="7">
+<div id="cell-112" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1">g <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
@@ -1824,7 +1877,7 @@ font-style: inherit;"># 참치캔 30개의 무게들</span></span>
        44.33644491, 46.91034175, 46.02706234, 43.36750549, 46.23646942])</code></pre>
 </div>
 </div>
-<div id="cell-112" class="cell" data-execution_count="8">
+<div id="cell-113" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb49-1">np.mean(g) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># 참치캔 30개의 무게의 평균</span></span></code></pre></div>
@@ -1832,7 +1885,7 @@ font-style: inherit;"># 참치캔 30개의 무게의 평균</span></span></code>
 <pre><code>44.94583794428206</code></pre>
 </div>
 </div>
-<div id="cell-113" class="cell" data-execution_count="12">
+<div id="cell-114" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1">np.mean(np.array([np.mean(np.random.normal(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">45</span>,<span class="dv" style="color: #AD0000;
@@ -1874,7 +1927,7 @@ font-style: inherit;"># p-value</span></span></code></pre></div>
 <p>우선 <img src="https://latex.codecogs.com/png.latex?%5Csigma=1">이고 참치회사의 주장이 맞다고 전제하였으므로 <img src="https://latex.codecogs.com/png.latex?%5Cmu=45">. <img src="https://latex.codecogs.com/png.latex?n">은 한 박스에 포함된 참치캔의 수이므로 이 경우는 <img src="https://latex.codecogs.com/png.latex?n=30">이다. 따라서 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B44.5-%5Cmu%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Capprox-2.73861">이다. 한편 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B%5Cbar%7BX%7D-%5Cmu%7D%7B%5Csigma/%5Csqrt%7Bn%7D%7D%5Csim%20N(0,1)"> 이므로 (note1의 내용) 구하는 확률 얻기 위해서는 단지 아래만 계산하면 된다.</p>
 <p><img src="https://latex.codecogs.com/png.latex?P(Z%5Cleq-2.73861),%20%5C%20Z%5Csim%20N(0,1)"></p>
 <p>이 확률은 대략적으로 0.00308 인데 이것은 자취생이 시뮬레이션으로 얻은 0.00306와 거의 비슷하다.</p>
-<div id="cell-116" class="cell" data-execution_count="17">
+<div id="cell-117" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1">μ<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -1915,7 +1968,7 @@ font-style: inherit;">/</span>np.sqrt(n)))</span></code></pre></div>
 </div>
 </div>
 <p>(보충학습)</p>
-<div id="cell-118" class="cell" data-execution_count="18">
+<div id="cell-119" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1">dist <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sps.norm(loc<span class="op" style="color: #5E5E5E;
@@ -1936,7 +1989,7 @@ font-style: inherit;">#P(X≤0), where X ~ N(0,1)</span></span></code></pre></di
 <pre><code>0.5</code></pre>
 </div>
 </div>
-<div id="cell-119" class="cell" data-execution_count="19">
+<div id="cell-120" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb57" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1">dist <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sps.norm(loc<span class="op" style="color: #5E5E5E;
@@ -1968,7 +2021,7 @@ font-style: inherit;">#P(X≤1.96), where X ~ N(0,1)</span></span></code></pre><
 <ul>
 <li>자취생의 샘플이 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D=44.5">가 아니라 <img src="https://latex.codecogs.com/png.latex?%5Cbar%7Bx%7D=44.8">이었다고 할 때 p-value를 구해보라.</li>
 </ul>
-<div id="cell-122" class="cell" data-execution_count="28">
+<div id="cell-123" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb59" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1">Z <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (<span class="fl" style="color: #AD0000;
@@ -2043,7 +2096,7 @@ font-style: inherit;"># 0.136</span></span></code></pre></div>
 <h3 class="anchored" data-anchor-id="motive">motive</h3>
 <p>(예제) <img src="https://latex.codecogs.com/png.latex?X_i%5Coverset%7Biid%7D%7B%5Csim%7DN(7,%5Csigma%5E2)">일 때 아래를 test 하고 싶다고 하자 <img src="https://latex.codecogs.com/png.latex?H_0:%20%5Csigma%5E2=4"> <img src="https://latex.codecogs.com/png.latex?H_1:%20%5Csigma%5E2%3C4"> 30개의 샘플을 확보하여 <img src="https://latex.codecogs.com/png.latex?%5Cxi=%5Cfrac%7B1%7D%7B30%7D%5Csum%5E%7B30%7D_%7Bi=1%7D(x_i-7)%5E2">를 계산하였으며 계산결과 <img src="https://latex.codecogs.com/png.latex?%5Cxi=2.72">가 나왔다고 하자. <img src="https://latex.codecogs.com/png.latex?p">-value를 구하여라.</p>
 <p>(풀이1)</p>
-<div id="cell-129" class="cell" data-execution_count="2">
+<div id="cell-130" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb61" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1">xis <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [np.mean((np.random.normal(<span class="dv" style="color: #AD0000;
@@ -2070,7 +2123,7 @@ font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">14000605</span>)]</span></code></pre></div>
 </div>
-<div id="cell-130" class="cell" data-execution_count="4">
+<div id="cell-131" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb62" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1">np.mean(np.array(xis)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span><span class="fl" style="color: #AD0000;
@@ -2084,7 +2137,7 @@ font-style: inherit;">2.72</span>)</span></code></pre></div>
 <li>생각보다 나올법한 확률이다.</li>
 </ul>
 <p><code>-</code> 분산이 4가 아닌 것 같다라고 주장하기 위해서는 (95%)</p>
-<div id="cell-133" class="cell" data-execution_count="6">
+<div id="cell-134" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb64" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1">np.quantile(xis, <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.05</span>)</span></code></pre></div>
@@ -2102,7 +2155,7 @@ font-style: inherit;">0.05</span>)</span></code></pre></div>
 <li><p>관찰: 우리예제의 경우에는 <img src="https://latex.codecogs.com/png.latex?H_0">가 참이라는 가정하에 <img src="https://latex.codecogs.com/png.latex?%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)"></p></li>
 <li><p>주장: <img src="https://latex.codecogs.com/png.latex?%5Cxi%5Ctimes%5Cfrac%7B30%7D%7B4%7D=%5Csum%5E%7B30%7D_%7Bi=1%7D(%5Cfrac%7BX_i-7%7D%7B2%7D)%5E2%5Csim%5Cchi%5E2(30)">는 <img src="https://latex.codecogs.com/png.latex?%5Cchi%5E2(30)">에서 뽑힌 샘플이다.</p></li>
 </ul>
-<div id="cell-136" class="cell" data-execution_count="9">
+<div id="cell-137" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb66" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1">xi <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fl" style="color: #AD0000;
@@ -2122,7 +2175,7 @@ font-style: inherit;">4</span></span></code></pre></div>
 <pre><code>20.400000000000002</code></pre>
 </div>
 </div>
-<div id="cell-137" class="cell" data-execution_count="11">
+<div id="cell-138" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb68" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1">dist <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sps.chi2(<span class="dv" style="color: #AD0000;
@@ -2144,7 +2197,7 @@ font-style: inherit;"># 시뮬레이션 값과 비슷</span></span></code></pre>
 </div>
 </div>
 <p><code>-</code> 분산이 4는 아닌 것 같다라고 주장하려면? (95%)</p>
-<div id="cell-139" class="cell" data-execution_count="15">
+<div id="cell-140" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb70" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1">dist.ppf(<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.05</span>)</span></code></pre></div>
@@ -2153,7 +2206,7 @@ font-style: inherit;">0.05</span>)</span></code></pre></div>
 </div>
 </div>
 <p><img src="https://latex.codecogs.com/png.latex?%5Cxi%20%5Ctimes%2030/4%20=%2018.492660981953467">라는 말이니까</p>
-<div id="cell-141" class="cell" data-execution_count="16">
+<div id="cell-142" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb72" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1">dist.ppf(<span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0.05</span>) <span class="op" style="color: #5E5E5E;
@@ -2197,7 +2250,7 @@ font-style: inherit;">4</span></span></code></pre></div>
 <section id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법" class="level4">
 <h4 class="anchored" data-anchor-id="자유도가-4인-카이제곱분포에서-100개의-샘플을-얻는-방법">자유도가 4인 카이제곱분포에서 100개의 샘플을 얻는 방법</h4>
 <p>(방법1)</p>
-<div id="cell-146" class="cell" data-execution_count="5">
+<div id="cell-147" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb74" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1">np.random.chisquare(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">4</span>, <span class="dv" style="color: #AD0000;
@@ -2210,7 +2263,7 @@ font-style: inherit;">5</span>]</span></code></pre></div>
 </div>
 </div>
 <p>(방법2) 정규분포 <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> 카이제곱분포</p>
-<div id="cell-148" class="cell" data-execution_count="4">
+<div id="cell-149" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb76" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1">[np.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(np.random.normal(<span class="dv" style="color: #AD0000;
@@ -2247,7 +2300,7 @@ font-style: inherit;">5</span>]</span></code></pre></div>
 <li><p>복습: <img src="https://latex.codecogs.com/png.latex?X,%20Y%20%5Coverset%7Biid%7D%7B%5Csim%7D%20N(0,1)%20%5CRightarrow%20R%5E2/2%20%5Csim%20Exp(1)">, where <img src="https://latex.codecogs.com/png.latex?R%5E2%20=%20X%5E2+Y%5E2"></p></li>
 <li><p>즉, <img src="https://latex.codecogs.com/png.latex?2%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20+%202%20%5Ctimes%20%5Cfrac%7BR%5E2%7D%7B2%7D%20=%20Z_1%5E2%20+%20Z_2%5E2%20+%20Z_3%5E2%20+%20Z_4%5E2%20%5Csim%20%5Cchi%5E2(4)"></p></li>
 </ul>
-<div id="cell-150" class="cell" data-execution_count="3">
+<div id="cell-151" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb78" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1">[np.random.exponential(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
@@ -2284,7 +2337,7 @@ font-style: inherit;">#표준정규분포를 4개 더한 것</span></span></code
  8.645433131925193]</code></pre>
 </div>
 </div>
-<div id="cell-151" class="cell" data-execution_count="2">
+<div id="cell-152" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb80" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb80-1">[np.random.exponential(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span>)<span class="op" style="color: #5E5E5E;
@@ -2313,7 +2366,7 @@ font-style: inherit;">#지수분포는 scale parameter를 가지기 때문에.</
  4.229829641106975]</code></pre>
 </div>
 </div>
-<div id="cell-152" class="cell" data-execution_count="33">
+<div id="cell-153" class="cell" data-execution_count="33">
 <div class="sourceCode cell-code" id="cb82" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb82-1">N<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2474,7 +2527,7 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 <section id="카이제곱-분포의-합" class="level3">
 <h3 class="anchored" data-anchor-id="카이제곱-분포의-합">카이제곱 분포의 합</h3>
 <ul>
-<li>이론: $X^2(k_1), Y^2(k_2), XY X+Y ^2(k_1+k_2) $</li>
+<li>이론: <img src="https://latex.codecogs.com/png.latex?X%5Csim%5Cchi%5E2(k_1),%20Y%5Csim%5Cchi%5E2(k_2),%20X%5Cbot%20Y%20%5CRightarrow%20X+Y%20%5Csim%20%5Cchi%5E2(k_1+k_2)"></li>
 </ul>
 </section>
 <section id="히스토그램" class="level3">
@@ -2512,7 +2565,7 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 <h3 class="anchored" data-anchor-id="how-to-generate-it-4">how to generate it?</h3>
 <section id="gamma32를-1000개-생성하라." class="level4">
 <h4 class="anchored" data-anchor-id="gamma32를-1000개-생성하라."><img src="https://latex.codecogs.com/png.latex?%5CGamma(3,2)">를 1000개 생성하라.</h4>
-<div id="cell-162" class="cell" data-execution_count="8">
+<div id="cell-163" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb83" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb83-1">a<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2525,7 +2578,7 @@ background-color: null;
 font-style: inherit;">2</span></span></code></pre></div>
 </div>
 <p>(방법1)</p>
-<div id="cell-164" class="cell" data-execution_count="39">
+<div id="cell-165" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb84" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb84-1">np.random.gamma(a, b, <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1000</span>)[:<span class="dv" style="color: #AD0000;
@@ -2536,7 +2589,7 @@ font-style: inherit;">5</span>]</span></code></pre></div>
 </div>
 </div>
 <p>(방법2) 지수분포 → 감마분포</p>
-<div id="cell-166" class="cell" data-execution_count="40">
+<div id="cell-167" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb86" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb86-1">[np.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(np.random.exponential(b, a)) <span class="cf" style="color: #003B4F;
@@ -2559,7 +2612,7 @@ font-style: inherit;">5</span>]</span></code></pre></div>
 </div>
 </div>
 <p>(방법3) 표준정규분포 이용</p>
-<div id="cell-168" class="cell" data-execution_count="9">
+<div id="cell-169" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb88" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb88-1">[np.<span class="bu" style="color: null;
 background-color: null;
 font-style: inherit;">sum</span>(np.random.normal(<span class="dv" style="color: #AD0000;
@@ -2597,7 +2650,7 @@ font-style: inherit;"># 방법3이 가능한 이유는 2a가 현재 자연수이
 </div>
 </div>
 <p>(방법4) 카이제곱분포 이용</p>
-<div id="cell-170" class="cell" data-execution_count="42">
+<div id="cell-171" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb90" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb90-1">np.random.chisquare(<span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
@@ -2615,7 +2668,7 @@ font-style: inherit;"># 방법4가 가능한 이유는 2a가 현재 자연수이
 </div>
 </div>
 <p><code>-</code> 확인</p>
-<div id="cell-172" class="cell" data-execution_count="18">
+<div id="cell-173" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb92" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb92-1">N<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2713,7 +2766,7 @@ font-style: inherit;">;</span> ax4.legend()</span></code></pre></div>
 <section id="감마분포와-카이제곱분포의-관계" class="level3">
 <h3 class="anchored" data-anchor-id="감마분포와-카이제곱분포의-관계">감마분포와 카이제곱분포의 관계</h3>
 <p><code>-</code> 이론: <img src="https://latex.codecogs.com/png.latex?X%5Coverset%7Bd%7D%7B=%7DY,"> where <img src="https://latex.codecogs.com/png.latex?X%5Csim%5Cchi%5E2(k)"> and <img src="https://latex.codecogs.com/png.latex?Y%5Csim%5CGamma(%5Cfrac%7Bk%7D%7B2%7D,2)."></p>
-<div id="cell-174" class="cell" data-execution_count="15">
+<div id="cell-175" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb93" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb93-1">k<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
@@ -2768,7 +2821,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <ul>
 <li>감마분포의 곱셈을 해도 감마분포가 된다</li>
 </ul>
-<div id="cell-177" class="cell" data-execution_count="38">
+<div id="cell-178" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb94" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb94-1">fig, ((ax1, ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -2817,7 +2870,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <section id="감마분포의-합" class="level3">
 <h3 class="anchored" data-anchor-id="감마분포의-합">감마분포의 합</h3>
 <p><code>-</code> 이론: <img src="https://latex.codecogs.com/png.latex?X%5Csim%5CGamma(%5Calpha_1,%5Cbeta),%20Y%5Csim%20%5CGamma(%5Calpha_2,%20%5Cbeta),%20%5C%20%5C%20%20X%5Cbot%20Y%20%5CRightarrow%20X+Y%5Csim%20%5CGamma(%5Calpha_1%20+%20%5Calpha_2,%20%5Cbeta)"></p>
-<div id="cell-180" class="cell" data-execution_count="44">
+<div id="cell-181" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb95" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb95-1">fig, ((ax1, ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -2910,7 +2963,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 <li><p><img src="https://latex.codecogs.com/png.latex?%5CGamma%20(%5Cfrac%7B%5Calpha%7D%7B2%7D,%202)%20=%20%5Cchi%5E2(%5Calpha)"> 이므로 <img src="https://latex.codecogs.com/png.latex?%5Calpha">에 20을 대입하면 <img src="https://latex.codecogs.com/png.latex?%5CGamma%20(10,%202)%20=%20%5Cchi%5E2(20)"></p>
 <p>따라서 평균이 2인 지수분포 10개의 합이다.</p></li>
 </ul>
-<div id="cell-185" class="cell" data-execution_count="50">
+<div id="cell-186" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb96" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb96-1">ax1, ((ax1), (ax2)) <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
@@ -2975,7 +3028,7 @@ font-style: inherit;">;</span></span></code></pre></div>
 </ul>
 <p><code>-</code> 포인트는 검정통계량의 분포를 잡아내는 것인데, <img src="https://latex.codecogs.com/png.latex?H_0">가 참이라는 전제하에 시뮬레이팅 해도 되고 이론적인 분포를 손으로 유도해도 된다.</p>
 <ul>
-<li>당연히 컴퓨터가 없던 시절에는 시뮬레이팅이 불가능했으므로 “이론적으로 유도 + 통계표(?)”를 이용해서 <img src="https://latex.codecogs.com/png.latex?p">-value를 계산해야 했다.</li>
+<li>당연히 컴퓨터가 없던 시절에는 시뮬레이팅이 불가능했으므로 “이론적으로 유도 + 통계표”를 이용해서 <img src="https://latex.codecogs.com/png.latex?p">-value를 계산해야 했다.</li>
 </ul>
 <p><code>-</code> 다양한 분포를 공부하는 이유? 검정통계량의 이론적 분포를 잡아내기 위해서!+ <img src="https://latex.codecogs.com/png.latex?%5Calpha"></p>
 <ul>
@@ -12245,129 +12298,6 @@ font-style: inherit;"># 레이아웃을 타이트하게.</span></span></code></p
  ]]></description>
   <guid>https://star77sa.github.io/posts/Python/vis_matplotlib.html</guid>
   <pubDate>Mon, 22 Jan 2024 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>[데이터시각화] 0. 훌륭한 시각화</title>
-  <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/Python/visualization.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.</p>
-<p>https://guebin.github.io/DV2023/</p>
-<section id="훌륭한-시각화" class="level1">
-<h1>훌륭한 시각화</h1>
-<p>Edward Tufte</p>
-<blockquote class="blockquote">
-<p>” 최소한의 잉크로 많은 정보를 전달할 수 있다면 그것이 바로 좋은 그래프이다. 작은 지면 내에서 잉크를 최대한 적게 써서 짧은 시간 안에 많은 영감을 주어야 한다. ”</p>
-</blockquote>
-<ul>
-<li>어려운 점:</li>
-</ul>
-<ol type="1">
-<li>센스부족: 센스가 없어서 hue/style을 이용하여 그룹을 구분할 생각을 못함</li>
-<li>개념부족: tidydata (=tidy dataframe, long form dataframe) 형태로 데이터를 정리할 생각을 못함</li>
-<li>코딩못함: tidydata로 데이터를 변형하는 코드를 모름</li>
-</ol>
-<ul>
-<li>해결하는 방법:</li>
-</ul>
-<ol type="1">
-<li>센스부족: 훌륭한 시각화를 많이 보면 해결할 수 있음.</li>
-<li>개념부족: tidydata에 대한 개념을 배우면 해결할 수 있음.</li>
-<li>코딩못함: 코딩공부 열심히 (시각화 코드가 중요한게 아니고, pandas를 엄청 잘해야함)</li>
-</ol>
-<section id="시각화-예시" class="level2">
-<h2 class="anchored" data-anchor-id="시각화-예시">시각화 예시</h2>
-<section id="남미국가들의-국방력" class="level3">
-<h3 class="anchored" data-anchor-id="남미국가들의-국방력">남미국가들의 국방력</h3>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-7-1-image.png" class="img-fluid"></p>
-<ul>
-<li>쓸모없는 그래픽</li>
-</ul>
-<p><code>-</code> 아래가 더 우수한 그림이다. 더 정확한 비교가 가능</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-10-1-image.png" class="img-fluid"></p>
-<p><code>-</code> 그리고 위의 그림보다 아래의 그림이 더 우수한 시각화이다.</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-12-1-image.png" class="img-fluid"></p>
-<ul>
-<li>브라질의 국방력은 모든 지표에서 1등이다. 1.군인수도 많고(왼쪽그림) 2.예산도 많이 투자하는 것 같다(가운데그림).</li>
-<li>그런데 인구로 인한 결과인 것 같다(오른쪽그림).</li>
-</ul>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-14-1-image.png" class="img-fluid"></p>
-<ul>
-<li>사실 지표들을 인구수로 나누고 보니까 1.인구당 군인수도 많지 않고(왼쪽그림) 2.인구당 국방비 지출도 3등 수준이고(가운데 그림) 3.군인당 교육투자비도 높지 않다(오른쪽그림).</li>
-<li>즉 내실이 없다는 의미</li>
-</ul>
-</section>
-<section id="스페인의-실업률" class="level3">
-<h3 class="anchored" data-anchor-id="스페인의-실업률">스페인의 실업률</h3>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-17-1-image.png" class="img-fluid"></p>
-<ul>
-<li>명암으로 왜 크기비교를 하는 것인가?</li>
-</ul>
-<p><code>-</code> 비교를 위해서는 bar plot이 더 우수하다.</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-19-1-image.png" class="img-fluid"></p>
-</section>
-<section id="은행들의-시가-총액" class="level3">
-<h3 class="anchored" data-anchor-id="은행들의-시가-총액">은행들의 시가 총액</h3>
-<p><code>-</code> 회색이 before, 검은색이 after</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-22-1-image.png" class="img-fluid"></p>
-<ul>
-<li>크기 비교는 버블로 하는 것이 아니다.</li>
-</ul>
-<p><code>-</code> 우리 눈은 작은원이 큰원의 절반정도 차지한다고 느껴진다.</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-24-1-image.png" class="img-fluid"></p>
-<p><code>-</code> 그렇지만 실제로는 아래와 같음</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-26-1-image.png" class="img-fluid"></p>
-<p><code>-</code> 버블차트는 크기를 왜곡시킨다.</p>
-</section>
-<section id="분열된-유권자들" class="level3">
-<h3 class="anchored" data-anchor-id="분열된-유권자들">분열된 유권자들</h3>
-<p><code>-</code> 하지만 아래의 버블차트는 우수하다. (왜? 크기비교 자체가 목적이 아니므로)</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-30-1-image.png" class="img-fluid"></p>
-<ul>
-<li>선거지도는 수치비교에 별로 관심이 없다.</li>
-<li>대신에 민주당표와 공화당표가 어떤 지역에 몰렸는지 파악하는 것이 중요.</li>
-<li>따라서 aes중 가장 중요한 <img src="https://latex.codecogs.com/png.latex?x,%20y">를 모두 지역정보를 표현하기 위해 투자함</li>
-</ul>
-<p><strong><em>좋은 aes 속성들</em></strong></p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-33-1-image.png" class="img-fluid"></p>
-<ul>
-<li>위로 갈수록 좋다.</li>
-</ul>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-35-1-image.png" class="img-fluid"></p>
-</section>
-<section id="스티븐-잡스의-시각화" class="level3">
-<h3 class="anchored" data-anchor-id="스티븐-잡스의-시각화">스티븐 잡스의 시각화</h3>
-<ul>
-<li>크기비교에서 3D plot은 좋지 않음</li>
-</ul>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-38-1-image.png" class="img-fluid"></p>
-<ul>
-<li>그런데 스티븐 잡스는 아래와 같이 시각화를 했음.</li>
-</ul>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-40-1-image.png" class="img-fluid"></p>
-<ul>
-<li>잘 몰라서 한 것일까? 고의로 한 것 일까?</li>
-<li>ref: https://paragraft.wordpress.com/2008/06/03/the-chart-junk-of-steve-jobs/</li>
-</ul>
-</section>
-</section>
-<section id="시각화의-정석" class="level2">
-<h2 class="anchored" data-anchor-id="시각화의-정석">시각화의 정석</h2>
-<p><code>-</code> 시간경과에 따른 변화를 보여주고 싶으면 라인플랏, 비교를 하고 싶다면 바플랏, 관계를 알고 싶다면 산점도.</p>
-<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-44-1-image.png" class="img-fluid"></p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <guid>https://star77sa.github.io/posts/Python/visualization.html</guid>
-  <pubDate>Sun, 21 Jan 2024 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
