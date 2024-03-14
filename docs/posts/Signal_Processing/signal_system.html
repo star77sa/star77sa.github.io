@@ -70,11 +70,40 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-sidebar docked nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -376,7 +405,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -388,7 +417,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#신호-및-시스템" id="toc-신호-및-시스템">신호 및 시스템</a></li>
   </ul>
 </nav>
-<section id="신호-및-시스템" class="level1">
+<section id="신호-및-시스템" class="level1 page-columns page-full">
 <h1>신호 및 시스템</h1>
 <p><code>-</code> 신호</p>
 <p>물리적인 현상의 본질에 대한 정보를 담고 있는 하나 이상의 변수에 관한 함수로 정의된다. 하나의 변수에 의존하면 1차원적, 함수가 두 개 혹은 그 이상의 변수에 따라 달라지면 다차원적 이라고 한다. 이미지는 가로 좌표와 세로 좌표에 따라 변하는 2차원 신호의 한 예.</p>
@@ -422,6 +451,104 @@ ul.task-list li input[type="checkbox"] {
 <li><p>방송(broadcasting)</p></li>
 <li><p>점대점(point-to-point) 통신.</p></li>
 </ol>
+<hr>
+<p><img src="signal_system_files/figure-html/cell-13-1-image-2.png" class="img-fluid"></p>
+<p>X축 real, Y축 imagine 인 복소평면</p>
+<p><code>-</code> 오일러 공식</p>
+<ul>
+<li><p><span class="math inline">\(e^{j\theta}=cos\theta+jsin\theta\)</span></p></li>
+<li><p>길이가 1인 막대가 실수축으로부터 <span class="math inline">\(\theta\)</span> 라디안 만큼 회전한 곳에 위치하는 값</p></li>
+<li><p>맥클로린을 이용해 증명가능, 생략</p></li>
+<li><p>오일러폼: 모든 complex를 지수함수 꼴로 나타낸 것.</p></li>
+</ul>
+<p><code>-</code> 오일러 공식을 배우는 이유</p>
+<ul>
+<li><p>곱셈을 덧셈으로 바꿀 수 있는 장점</p>
+<p><span class="math inline">\(Z_1=a_1+b_1j,\)</span></p>
+<p><span class="math inline">\(Z_2=a_2+b_2j,\)</span></p>
+<p><span class="math inline">\(Z_3=a_3+b_3j\)</span>일때 <span class="math inline">\(Z_1Z_2Z_3 = ?\)</span></p>
+<p>오일러 공식을 이용해 주어진 3개의 식을 바꿔보면</p>
+<p><span class="math inline">\(Z_1=a_1+b_1j = A_1e^{j\theta_1},\)</span></p>
+<p><span class="math inline">\(Z_2=a_2+b_2j = A_2e^{j\theta_2},\)</span></p>
+<p><span class="math inline">\(Z_3=a_3+b_3j = A_3e^{j\theta_3}\)</span>이고</p>
+<p><span class="math inline">\(Z_1Z_2Z_3 = A_1A_2A_3e^{j(\theta_1+\theta_2+\theta_3)}\)</span></p></li>
+<li><p>지수함수가 나타낼 수 있는 함수 값은 양의 실수 뿐이지만,</p>
+<p>exponential(2.7xx되는 그냥 실수 값일 뿐인) 위에 허수를 지수로 취함으로써 모든 복소수를 표현가능해짐</p>
+<p><img src="signal_system_files/figure-html/cell-15-2-image.png" class="img-fluid"></p>
+<p><img src="signal_system_files/figure-html/cell-15-1-image-2.png" class="img-fluid"></p></li>
+</ul>
+<p><code>-</code> LTI(Linear Time Invariant) System</p>
+<ul>
+<li><p>Linear = Scaling + additivity = superposition</p>
+<p>Scaling: system에 <span class="math inline">\(x_1(t)\)</span>를 넣으면 <span class="math inline">\(y_1(t)\)</span>가 나올 때, <span class="math inline">\(6\times x_1(t)\)</span>를 넣으면 <span class="math inline">\(6\times y_1(t)\)</span>가 나온다? Scaling을 만족.</p>
+<p>additivity: system에 <span class="math inline">\(x_1(t)\)</span>를 넣으면 <span class="math inline">\(y_1(t)\)</span>가 나오고 <span class="math inline">\(x_2(t)\)</span>를 넣으면 <span class="math inline">\(y_2(t)\)</span>가 나올 때 <span class="math inline">\(x_3(t) = x_1(t) + x_2(t)\)</span>를 넣으면 <span class="math inline">\(y_3(t) = y_1(t) + y_2(t)\)</span>가 나온다? additivity를 만족.</p>
+<p>superposition: <span class="math inline">\(\alpha x_1(t) + \beta x_2(t) = \alpha y_1(t) + \beta y_2(t)\)</span>를 만족할 때 superposition이라 한다.</p></li>
+<li><p>Time invariant (시불변)</p>
+<p>system에 <span class="math inline">\(x_1(t-t_0)\)</span>를 넣었을 때 <span class="math inline">\(y_1(t-t_0)\)</span>가 나오는 경우</p></li>
+</ul>
+<p><code>-</code> Why LTI systems?</p>
+<ul>
+<li>임의의 입력값을 넣어도 출력값이 예측가능한 시스템</li>
+</ul>
+<p><code>-</code> Convolution</p>
+<ul>
+<li><p><span class="math inline">\(y(t) = f(x(t), h(t))\)</span> 에서</p>
+<p><span class="math inline">\(h(t)\)</span>는 impulse response. impulse를 시스템에 넣었을 때의 output.</p>
+<p><span class="math inline">\(f()\)</span>는 convolution = 누적된 반응을 계산</p>
+<p>input 과 h(t)의 어떤 연산을 통해 출력을 계산할건데, 이 연산을 convolution 이라고 함.</p>
+<p>Signal can be expressed by sum of impulses</p>
+<p>convolution은 LTI 그 자체.</p>
+<p>LTI면 convolution으로 나타낼 수 있고, 출력을 convolution으로 나타낼 수 있다면 그 시스템은 LTI 시스템.</p></li>
+</ul>
+<p><code>-</code> Unit impulse function 단위 임펄스 함수</p>
+<p><img src="signal_system_files/figure-html/cell-20-1-image.png" class="img-fluid"></p>
+<p><span class="math display">\[\delta[n]=
+\begin{cases}
+{1,\quad\text{if n=0}}\\
+{0,\quad\text{otherwise}}
+\end{cases}\]</span></p>
+<p>단위 임펄스 함수는 수에서 1과 같은 역할을 한다. 또, 벡터에서는 단위 기저벡터와 같은 역할을 한다.</p>
+<p><code>-</code> 이산 컨볼루션</p>
+<p>단위 임펄스는 좌, 우로 평행이동이 가능하다. 가령 <span class="math inline">\(\delta[n-2]\)</span>는 <span class="math inline">\(\delta[n]\)</span>을 오른쪽으로 2만큼 shift 시킨 것</p>
+<p>이 개념을 조금만 더 확장해보면 임펄스를 이용해 임의의 신호를 분해해 표현할 수 있게 된다. 아래의 임의의 이산 신호 <span class="math inline">\(x[n]\)</span>을 보자.</p>
+<p><img src="signal_system_files/figure-html/cell-21-2-image.png" class="img-fluid"></p>
+<p>이 이산신호는 <span class="math inline">\(\delta[n]\)</span> 및 이것을 좌우로 shift한 함수들을 이용해 다음과 같이 표현할 수 있다.</p>
+<p><span class="math display">\[x[n]=\sum^\infty_{k=-\infty}x[k]\delta[n-k] \ \ \ \ (2)\]</span></p>
+<p><span class="math display">\[= \dots + x[-2]\delta[n+2] + x[-1]\delta[n+1] + x[0]\delta[n] + x[1]\delta[n-1] + x[2]\delta[n-2] +\dots\ \ \ \ (3)\]</span></p>
+<p>즉, <span class="math inline">\(x[n]\)</span>이라는 임의의 함수를 <span class="math inline">\(\delta[n-k]\)</span>라는 함수를 이용해서 분해할 수 있다.</p>
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p><img src="signal_system_files/figure-html/cell-21-1-image-2.png" class="img-fluid figure-img"></p>
+<figcaption class="margin-caption">임의의 이산함수 x[n]를 단위 임펄스 함수를 이용해 분해한 결과</figcaption>
+</figure>
+</div>
+<p>식 (3)은 <span class="math inline">\(x[n]\)</span>을 단위 임펄스 함수로 분해한 것으로 볼 수도 있고, 상수가 곱해진 신호열의 합으로 볼 수도 있다.</p>
+<p>여기서 상수는 <span class="math inline">\(x[k]\)</span>를 의미한다. <span class="math inline">\(x[k]\)</span>는 <span class="math inline">\(k\)</span>번째 함수값이라는 의미이기 때문에 더 이상 함수가 아닌 상수이다.</p>
+<p>식 (3)은 다음과 같이 기호로 표기하기도 한다.</p>
+<p><span class="math display">\[\Rightarrow x[n]*\delta[n]\]</span></p>
+<p>이 때, <span class="math inline">\(*\)</span>연산을 컨볼루션이라고 부르기도 한다.</p>
+<p>일반적으로 임의의 이산 함수 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]\)</span>에 대해 두 함수의 컨볼루션은 다음과 같다.</p>
+<p>$$x[n]*h[n] = ^{}_{k=-}x[k]h[x-k]</p>
+<p><code>-</code> 이산 컨볼루션의 성질</p>
+<ul>
+<li>교환 법칙</li>
+</ul>
+<p>두 신호 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]에 대해 다음과 같이 교환 법칙이 성립\)</span><span class="math inline">\(x[n]*h[n] = h[n]*x[n]\)</span>$</p>
+<ol type="1">
+<li>입력 신호와 시스템의 임펄스 응답의 역할을 바꾸어도 시스템의 출력은 여전히 같다는 것을 의미</li>
+<li>두 개의 시스템이 직렬로 연결되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것</li>
+</ol>
+<ul>
+<li>결합 법칙</li>
+</ul>
+<p>컨볼루션은 셋 또는 그 이상의 신호에 대해 조합된 컨볼루션의 계산 순서에 영향을 받지 않는다.</p>
+<p><span class="math display">\[(x[n]*h_1[n])*h_2[n] = x[n]*(h_1[n]*h_2[n])\]</span></p>
+<p>예를 들어 두개의 시스템이 직렬로 연결되어 있는 경우, 두 개의 시스템을 컨볼루션으로 결합한 시스템 하나로 두 개 시스템의 결합을 대체할 수 있다는 것을 의미.</p>
+<ul>
+<li>분배 법칙</li>
+</ul>
+<p><span class="math display">\[x[n]*(h_1[n]+h_2[n]) = x[n]*h_1[n]+x[n]*h_2[n]\]</span></p>
+<p>분배 법칙은 두 개의 시스템이 병렬로 연결되어 있을 경우 각 시스템의 임펄스 응답을 더한 것으로 전체 시스템을 대체할 수 있다는 것을 의미.</p>
 
 
 </section>
