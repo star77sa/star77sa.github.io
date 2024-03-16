@@ -128,12 +128,13 @@
 <p><img src="https://latex.codecogs.com/png.latex?%5CRightarrow%20x%5Bn%5D*%5Cdelta%5Bn%5D"></p>
 <p>이 때, <img src="https://latex.codecogs.com/png.latex?*">연산을 컨볼루션이라고 부르기도 한다.</p>
 <p>일반적으로 임의의 이산 함수 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">과 <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D">에 대해 두 함수의 컨볼루션은 다음과 같다.</p>
-<p>$$x[n]*h[n] = ^{}_{k=-}x[k]h[x-k]</p>
+<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*h%5Bn%5D%20=%20%5Csum%5E%7B%5Cinfty%7D_%7Bk=-%5Cinfty%7Dx%5Bk%5Dh%5Bx-k%5D"></p>
 <p><code>-</code> 이산 컨볼루션의 성질</p>
 <ul>
 <li>교환 법칙</li>
 </ul>
-<p>두 신호 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">과 <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D%EC%97%90%20%EB%8C%80%ED%95%B4%20%EB%8B%A4%EC%9D%8C%EA%B3%BC%20%EA%B0%99%EC%9D%B4%20%EA%B5%90%ED%99%98%20%EB%B2%95%EC%B9%99%EC%9D%B4%20%EC%84%B1%EB%A6%BD"><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*h%5Bn%5D%20=%20h%5Bn%5D*x%5Bn%5D">$</p>
+<p>두 신호 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">과 <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D">에 대해 다음과 같이 교환 법칙이 성립</p>
+<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*h%5Bn%5D%20=%20h%5Bn%5D*x%5Bn%5D"></p>
 <ol type="1">
 <li>입력 신호와 시스템의 임펄스 응답의 역할을 바꾸어도 시스템의 출력은 여전히 같다는 것을 의미</li>
 <li>두 개의 시스템이 직렬로 연결되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것</li>
@@ -149,8 +150,40 @@
 </ul>
 <p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*(h_1%5Bn%5D+h_2%5Bn%5D)%20=%20x%5Bn%5D*h_1%5Bn%5D+x%5Bn%5D*h_2%5Bn%5D"></p>
 <p>분배 법칙은 두 개의 시스템이 병렬로 연결되어 있을 경우 각 시스템의 임펄스 응답을 더한 것으로 전체 시스템을 대체할 수 있다는 것을 의미.</p>
+<section id="임펄스-응답impulse-response" class="level2">
+<h2 class="anchored" data-anchor-id="임펄스-응답impulse-response">임펄스 응답(impulse response)</h2>
+<section id="memoryless-system" class="level3">
+<h3 class="anchored" data-anchor-id="memoryless-system">memoryless system</h3>
+<ul>
+<li>현재만 영향을 받는다.</li>
+</ul>
+</section>
+<section id="causal-system" class="level3">
+<h3 class="anchored" data-anchor-id="causal-system">causal system</h3>
+<ul>
+<li>과거 혹은 현재만 영향을 받는다.</li>
+</ul>
+</section>
+<section id="stable-bibo-stable-system" class="level3">
+<h3 class="anchored" data-anchor-id="stable-bibo-stable-system">stable (BIBO stable) system</h3>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?%7Cx(t)%7C%3C%5Cinfty%20%5Cquad%20%5Crightarrow%20%5Cquad%20%5Csquare%20%5Cquad%20%5Crightarrow%20%5Cquad%20%7Cg(t)%7C%3C%5Cinfty"></p></li>
+<li><p>인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.</p></li>
+<li><p>발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.</p>
+<p>어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?%7Cy(t)%7C%20=%20%7C%5Cint%7Cx(%5Ctau)h(t-%5Ctau)d%5Ctau%7C%20%5Cle%20%5Cint%7B%5Ccolor%7Bred%7D%7Cx(%5Ctau)h(t-%5Ctau)%7C%7Dd%5Ctau%20=%20%5Cint%7B%5Ccolor%7Bred%7D%7Cx(%5Ctau)%7C%7Ch(t-%5Ctau)%7C%7Dd%5Ctau"></p>
+<p>적분의 절대값보다 절대값의 적분이 더 크거나 같다.</p>
+<ul>
+<li><p>모든 복소수에 대하여</p>
+<p><img src="https://latex.codecogs.com/png.latex?%7CA_1e%5E%7Bj%5Ctheta_1%7DA_2e%5E%7Bj%5Ctheta_2%7D%7C%20=%20%7CA_1A_2e%5E%7Bj(%5Ctheta_1+%5Ctheta_2)%7D%7C%20=%20%7CA_1A_2e%5E%7Bj(%5Ctheta_1+%5Ctheta_2)%7D%7C%20=%20A_1A_2"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%7CA_1e%5E%7Bj%5Ctheta_1%7D%7C%7CA_2e%5E%7Bj%5Ctheta_2%7D%7C%20=%20A_1A_2"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctherefore"> <img src="https://latex.codecogs.com/png.latex?%7Cxy%7C%20=%20%7Cx%7C%7Cy%7C"></p></li>
+</ul></li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
  ]]></description>

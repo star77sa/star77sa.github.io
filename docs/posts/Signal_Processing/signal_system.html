@@ -400,7 +400,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#신호-및-시스템" id="toc-신호-및-시스템" class="nav-link active" data-scroll-target="#신호-및-시스템">신호 및 시스템</a></li>
+  <li><a href="#신호-및-시스템" id="toc-신호-및-시스템" class="nav-link active" data-scroll-target="#신호-및-시스템">신호 및 시스템</a>
+  <ul class="collapse">
+  <li><a href="#임펄스-응답impulse-response" id="toc-임펄스-응답impulse-response" class="nav-link" data-scroll-target="#임펄스-응답impulse-response">임펄스 응답(impulse response)</a>
+  <ul class="collapse">
+  <li><a href="#memoryless-system" id="toc-memoryless-system" class="nav-link" data-scroll-target="#memoryless-system">memoryless system</a></li>
+  <li><a href="#causal-system" id="toc-causal-system" class="nav-link" data-scroll-target="#causal-system">causal system</a></li>
+  <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system" class="nav-link" data-scroll-target="#stable-bibo-stable-system">stable (BIBO stable) system</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -414,7 +422,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#신호-및-시스템" id="toc-신호-및-시스템">신호 및 시스템</a></li>
+  <li><a href="#신호-및-시스템" id="toc-신호-및-시스템">신호 및 시스템</a>
+  <ul>
+  <li><a href="#임펄스-응답impulse-response" id="toc-임펄스-응답impulse-response">임펄스 응답(impulse response)</a>
+  <ul>
+  <li><a href="#memoryless-system" id="toc-memoryless-system">memoryless system</a></li>
+  <li><a href="#causal-system" id="toc-causal-system">causal system</a></li>
+  <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system">stable (BIBO stable) system</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
 <section id="신호-및-시스템" class="level1 page-columns page-full">
@@ -528,12 +544,13 @@ window.Quarto = {
 <p><span class="math display">\[\Rightarrow x[n]*\delta[n]\]</span></p>
 <p>이 때, <span class="math inline">\(*\)</span>연산을 컨볼루션이라고 부르기도 한다.</p>
 <p>일반적으로 임의의 이산 함수 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]\)</span>에 대해 두 함수의 컨볼루션은 다음과 같다.</p>
-<p>$$x[n]*h[n] = ^{}_{k=-}x[k]h[x-k]</p>
+<p><span class="math display">\[x[n]*h[n] = \sum^{\infty}_{k=-\infty}x[k]h[x-k]\]</span></p>
 <p><code>-</code> 이산 컨볼루션의 성질</p>
 <ul>
 <li>교환 법칙</li>
 </ul>
-<p>두 신호 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]에 대해 다음과 같이 교환 법칙이 성립\)</span><span class="math inline">\(x[n]*h[n] = h[n]*x[n]\)</span>$</p>
+<p>두 신호 <span class="math inline">\(x[n]\)</span>과 <span class="math inline">\(h[n]\)</span>에 대해 다음과 같이 교환 법칙이 성립</p>
+<p><span class="math display">\[x[n]*h[n] = h[n]*x[n]\]</span></p>
 <ol type="1">
 <li>입력 신호와 시스템의 임펄스 응답의 역할을 바꾸어도 시스템의 출력은 여전히 같다는 것을 의미</li>
 <li>두 개의 시스템이 직렬로 연결되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것</li>
@@ -549,8 +566,40 @@ window.Quarto = {
 </ul>
 <p><span class="math display">\[x[n]*(h_1[n]+h_2[n]) = x[n]*h_1[n]+x[n]*h_2[n]\]</span></p>
 <p>분배 법칙은 두 개의 시스템이 병렬로 연결되어 있을 경우 각 시스템의 임펄스 응답을 더한 것으로 전체 시스템을 대체할 수 있다는 것을 의미.</p>
+<section id="임펄스-응답impulse-response" class="level2">
+<h2 class="anchored" data-anchor-id="임펄스-응답impulse-response">임펄스 응답(impulse response)</h2>
+<section id="memoryless-system" class="level3">
+<h3 class="anchored" data-anchor-id="memoryless-system">memoryless system</h3>
+<ul>
+<li>현재만 영향을 받는다.</li>
+</ul>
+</section>
+<section id="causal-system" class="level3">
+<h3 class="anchored" data-anchor-id="causal-system">causal system</h3>
+<ul>
+<li>과거 혹은 현재만 영향을 받는다.</li>
+</ul>
+</section>
+<section id="stable-bibo-stable-system" class="level3">
+<h3 class="anchored" data-anchor-id="stable-bibo-stable-system">stable (BIBO stable) system</h3>
+<ul>
+<li><p><span class="math inline">\(|x(t)|&lt;\infty \quad \rightarrow \quad \square \quad \rightarrow \quad |g(t)|&lt;\infty\)</span></p></li>
+<li><p>인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.</p></li>
+<li><p>발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.</p>
+<p>어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.</p></li>
+<li><p><span class="math inline">\(|y(t)| = |\int|x(\tau)h(t-\tau)d\tau| \le \int{\color{red}|x(\tau)h(t-\tau)|}d\tau = \int{\color{red}|x(\tau)||h(t-\tau)|}d\tau\)</span></p>
+<p>적분의 절대값보다 절대값의 적분이 더 크거나 같다.</p>
+<ul>
+<li><p>모든 복소수에 대하여</p>
+<p><span class="math inline">\(|A_1e^{j\theta_1}A_2e^{j\theta_2}| = |A_1A_2e^{j(\theta_1+\theta_2)}| = |A_1A_2e^{j(\theta_1+\theta_2)}| = A_1A_2\)</span></p>
+<p><span class="math inline">\(|A_1e^{j\theta_1}||A_2e^{j\theta_2}| = A_1A_2\)</span></p>
+<p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(|xy| = |x||y|\)</span></p></li>
+</ul></li>
+</ul>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
