@@ -408,6 +408,7 @@ window.Quarto = {
   <li><a href="#causal-system" id="toc-causal-system" class="nav-link" data-scroll-target="#causal-system">causal system</a></li>
   <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system" class="nav-link" data-scroll-target="#stable-bibo-stable-system">stable (BIBO stable) system</a></li>
   </ul></li>
+  <li><a href="#dt-convolution" id="toc-dt-convolution" class="nav-link" data-scroll-target="#dt-convolution">DT Convolution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -430,6 +431,7 @@ window.Quarto = {
   <li><a href="#causal-system" id="toc-causal-system">causal system</a></li>
   <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system">stable (BIBO stable) system</a></li>
   </ul></li>
+  <li><a href="#dt-convolution" id="toc-dt-convolution">DT Convolution</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -584,21 +586,25 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="stable-bibo-stable-system">stable (BIBO stable) system</h3>
 <ul>
 <li><p><span class="math inline">\(|x(t)|&lt;\infty \quad \rightarrow \quad \square \quad \rightarrow \quad |g(t)|&lt;\infty\)</span></p></li>
-<li><p>인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.</p></li>
+<li><p>수렴하는 인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.</p></li>
 <li><p>발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.</p>
 <p>어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.</p></li>
-<li><p><span class="math inline">\(|y(t)| = |\int|x(\tau)h(t-\tau)d\tau| \le \int{\color{red}|x(\tau)h(t-\tau)|}d\tau = \int{\color{red}|x(\tau)||h(t-\tau)|}d\tau\)</span></p>
-<p>적분의 절대값보다 절대값의 적분이 더 크거나 같다.</p>
+<li><p><span class="math inline">\(|y(t)| = |\int x(\tau)h(t-\tau)d\tau| \le \int{\color{red}|x(\tau)h(t-\tau)|}d\tau = \int{\color{red}|x(\tau)||h(t-\tau)|}d\tau\)</span> <span class="math inline">\(&lt;B\int^\infty_{-\infty}|h(t-\tau)|d\tau\)</span></p>
 <ul>
+<li><p>적분의 절대값보다 절대값의 적분이 더 크거나 같다.</p></li>
 <li><p>모든 복소수에 대하여</p>
 <p><span class="math inline">\(|A_1e^{j\theta_1}A_2e^{j\theta_2}| = |A_1A_2e^{j(\theta_1+\theta_2)}| = |A_1A_2e^{j(\theta_1+\theta_2)}| = A_1A_2\)</span></p>
 <p><span class="math inline">\(|A_1e^{j\theta_1}||A_2e^{j\theta_2}| = A_1A_2\)</span></p>
 <p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(|xy| = |x||y|\)</span></p></li>
+<li><p><span class="math inline">\(\int^\infty_{-\infty}|h(t)|dt&lt;\infty\)</span> <span class="math inline">\({\color{red}\quad \Leftrightarrow \quad BIBO}\)</span></p></li>
 </ul></li>
 </ul>
-
-
 </section>
+</section>
+<section id="dt-convolution" class="level2">
+<h2 class="anchored" data-anchor-id="dt-convolution">DT Convolution</h2>
+
+
 </section>
 </section>
 

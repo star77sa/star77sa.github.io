@@ -2887,7 +2887,7 @@
     "href": "posts/Signal_Processing/signal_system.html",
     "title": "신호 및 시스템",
     "section": "",
-    "text": "신호 및 시스템\n  \n  임펄스 응답(impulse response)\n  \n  memoryless system\n  causal system\n  stable (BIBO stable) system",
+    "text": "신호 및 시스템\n  \n  임펄스 응답(impulse response)\n  \n  memoryless system\n  causal system\n  stable (BIBO stable) system\n  \n  DT Convolution",
     "crumbs": [
       "About",
       "Posts",
@@ -2900,7 +2900,20 @@
     "href": "posts/Signal_Processing/signal_system.html#임펄스-응답impulse-response",
     "title": "신호 및 시스템",
     "section": "임펄스 응답(impulse response)",
-    "text": "임펄스 응답(impulse response)\n\nmemoryless system\n\n현재만 영향을 받는다.\n\n\n\ncausal system\n\n과거 혹은 현재만 영향을 받는다.\n\n\n\nstable (BIBO stable) system\n\n\\(|x(t)|&lt;\\infty \\quad \\rightarrow \\quad \\square \\quad \\rightarrow \\quad |g(t)|&lt;\\infty\\)\n인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.\n발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.\n어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.\n\\(|y(t)| = |\\int|x(\\tau)h(t-\\tau)d\\tau| \\le \\int{\\color{red}|x(\\tau)h(t-\\tau)|}d\\tau = \\int{\\color{red}|x(\\tau)||h(t-\\tau)|}d\\tau\\)\n적분의 절대값보다 절대값의 적분이 더 크거나 같다.\n\n모든 복소수에 대하여\n\\(|A_1e^{j\\theta_1}A_2e^{j\\theta_2}| = |A_1A_2e^{j(\\theta_1+\\theta_2)}| = |A_1A_2e^{j(\\theta_1+\\theta_2)}| = A_1A_2\\)\n\\(|A_1e^{j\\theta_1}||A_2e^{j\\theta_2}| = A_1A_2\\)\n\\(\\therefore\\) \\(|xy| = |x||y|\\)",
+    "text": "임펄스 응답(impulse response)\n\nmemoryless system\n\n현재만 영향을 받는다.\n\n\n\ncausal system\n\n과거 혹은 현재만 영향을 받는다.\n\n\n\nstable (BIBO stable) system\n\n\\(|x(t)|&lt;\\infty \\quad \\rightarrow \\quad \\square \\quad \\rightarrow \\quad |g(t)|&lt;\\infty\\)\n수렴하는 인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.\n발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.\n어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.\n\\(|y(t)| = |\\int x(\\tau)h(t-\\tau)d\\tau| \\le \\int{\\color{red}|x(\\tau)h(t-\\tau)|}d\\tau = \\int{\\color{red}|x(\\tau)||h(t-\\tau)|}d\\tau\\) \\(&lt;B\\int^\\infty_{-\\infty}|h(t-\\tau)|d\\tau\\)\n\n적분의 절대값보다 절대값의 적분이 더 크거나 같다.\n모든 복소수에 대하여\n\\(|A_1e^{j\\theta_1}A_2e^{j\\theta_2}| = |A_1A_2e^{j(\\theta_1+\\theta_2)}| = |A_1A_2e^{j(\\theta_1+\\theta_2)}| = A_1A_2\\)\n\\(|A_1e^{j\\theta_1}||A_2e^{j\\theta_2}| = A_1A_2\\)\n\\(\\therefore\\) \\(|xy| = |x||y|\\)\n\\(\\int^\\infty_{-\\infty}|h(t)|dt&lt;\\infty\\) \\({\\color{red}\\quad \\Leftrightarrow \\quad BIBO}\\)",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Signal Processing",
+      "신호 및 시스템"
+    ]
+  },
+  {
+    "objectID": "posts/Signal_Processing/signal_system.html#dt-convolution",
+    "href": "posts/Signal_Processing/signal_system.html#dt-convolution",
+    "title": "신호 및 시스템",
+    "section": "DT Convolution",
+    "text": "DT Convolution",
     "crumbs": [
       "About",
       "Posts",
