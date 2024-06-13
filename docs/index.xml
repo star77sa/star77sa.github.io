@@ -10,7 +10,24 @@
 <atom:link href="https://star77sa.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.540</generator>
-<lastBuildDate>Wed, 21 Feb 2024 15:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 12 Jun 2024 15:00:00 GMT</lastBuildDate>
+<item>
+  <title>신호 및 시스템, DSP</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/Signal_Processing/dsp.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/Signal_Processing/dsp.html</guid>
+  <pubDate>Wed, 12 Jun 2024 15:00:00 GMT</pubDate>
+</item>
 <item>
   <title>신호 및 시스템</title>
   <dc:creator>고경수 </dc:creator>
@@ -182,6 +199,22 @@
 </ul></li>
 </ul>
 </section>
+<section id="유한무한-길이의-임펄스-응답에-따른-구분" class="level3">
+<h3 class="anchored" data-anchor-id="유한무한-길이의-임펄스-응답에-따른-구분">유한/무한 길이의 임펄스 응답에 따른 구분</h3>
+<ul>
+<li><p>임펄스 응답의 길이</p>
+<ul>
+<li>유한: Finite Impulse Response(FIR)</li>
+</ul>
+<p>FIR 시스템 예시) <img src="https://latex.codecogs.com/png.latex?y%5Bn%5D%20=%20ax%5Bn%5D+bx%5Bn-1%5D"></p>
+<p>이 때 임펄스 응답) <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D=a%5Cdelta%20%5Bn%5D+b%5Cdelta%20%5Bn-1%5D"></p>
+<ul>
+<li>무한: Infinite Impulse Response(IIR)</li>
+</ul>
+<p>IIR 시스템 예시) <img src="https://latex.codecogs.com/png.latex?y%5Bn%5D%20+%20ay%5Bn-1%5D%20=%20bx%5Bn%5D"></p>
+<p>이 때 임펄스 응답) <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D=(-a)%5Enb,%5Cquad%20n%5Cge%200"></p></li>
+</ul>
+</section>
 </section>
 <section id="dt-convolution" class="level2">
 <h2 class="anchored" data-anchor-id="dt-convolution">DT Convolution</h2>
@@ -193,73 +226,6 @@
  ]]></description>
   <guid>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</guid>
   <pubDate>Wed, 21 Feb 2024 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>[통계전산] 선형대수학</title>
-  <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/Statistics/SC_2.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<p>최규빈 교수님 통계전산 수업 정리</p>
-<p>수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하였다.</p>
-<div id="cell-2" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> np</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> plt</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb1-4"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> scipy.stats <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> sps</span></code></pre></div>
-</div>
-<section id="통계-전산" class="level1">
-<h1>통계 전산</h1>
-<section id="로드맵" class="level2">
-<h2 class="anchored" data-anchor-id="로드맵">로드맵</h2>
-<p><code>-</code> 통계</p>
-<ul>
-<li>일반통계학 개념의 백업</li>
-<li>여러가지 분포리뷰, 어떠한 분포에서 샘플을 추출하는 방법</li>
-<li>수렴</li>
-<li>추정 및 검정</li>
-<li>부트스트랩</li>
-<li>선형회귀분석</li>
-</ul>
-<p><code>-</code> 선형대수학</p>
-<ul>
-<li>백터공간, rank</li>
-<li>직교행렬, 사영행렬, 양정치행렬…</li>
-<li>매트릭스를 해석하는 방식 (이미지, 데이터프레임, 변환)…</li>
-<li>분해이론: 고유값분해, SVD</li>
-<li>벡터나 매트릭스의 미분..</li>
-</ul>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section">~~</h2>
-
-
-</section>
-</section>
-
- ]]></description>
-  <guid>https://star77sa.github.io/posts/Statistics/SC_2.html</guid>
-  <pubDate>Tue, 13 Feb 2024 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[통계전산] 통계</title>

@@ -145,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">Signal Processing</a></li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">신호 및 시스템</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/dsp.html">Signal Processing</a></li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">신호 및 시스템</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -155,7 +155,7 @@ window.Quarto = {
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">Signal Processing</a></li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">신호 및 시스템</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default page-columns page-full"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Posts</li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/dsp.html">Signal Processing</a></li><li class="breadcrumb-item"><a href="../../posts/Signal_Processing/signal_system.html">신호 및 시스템</a></li></ol></nav>
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">신호 및 시스템</h1>
@@ -300,6 +300,12 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../posts/Signal_Processing/dsp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">신호 및 시스템, DSP</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../posts/Signal_Processing/signal_system.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">신호 및 시스템</span></a>
   </div>
@@ -330,7 +336,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../posts/Statistics/SC_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">[통계전산] 선형대수학</span></a>
+ <span class="menu-text">통계 전산</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -407,6 +413,7 @@ window.Quarto = {
   <li><a href="#memoryless-system" id="toc-memoryless-system" class="nav-link" data-scroll-target="#memoryless-system">memoryless system</a></li>
   <li><a href="#causal-system" id="toc-causal-system" class="nav-link" data-scroll-target="#causal-system">causal system</a></li>
   <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system" class="nav-link" data-scroll-target="#stable-bibo-stable-system">stable (BIBO stable) system</a></li>
+  <li><a href="#유한무한-길이의-임펄스-응답에-따른-구분" id="toc-유한무한-길이의-임펄스-응답에-따른-구분" class="nav-link" data-scroll-target="#유한무한-길이의-임펄스-응답에-따른-구분">유한/무한 길이의 임펄스 응답에 따른 구분</a></li>
   </ul></li>
   <li><a href="#dt-convolution" id="toc-dt-convolution" class="nav-link" data-scroll-target="#dt-convolution">DT Convolution</a></li>
   </ul></li>
@@ -430,6 +437,7 @@ window.Quarto = {
   <li><a href="#memoryless-system" id="toc-memoryless-system">memoryless system</a></li>
   <li><a href="#causal-system" id="toc-causal-system">causal system</a></li>
   <li><a href="#stable-bibo-stable-system" id="toc-stable-bibo-stable-system">stable (BIBO stable) system</a></li>
+  <li><a href="#유한무한-길이의-임펄스-응답에-따른-구분" id="toc-유한무한-길이의-임펄스-응답에-따른-구분">유한/무한 길이의 임펄스 응답에 따른 구분</a></li>
   </ul></li>
   <li><a href="#dt-convolution" id="toc-dt-convolution">DT Convolution</a></li>
   </ul></li>
@@ -598,6 +606,22 @@ window.Quarto = {
 <p><span class="math inline">\(\therefore\)</span> <span class="math inline">\(|xy| = |x||y|\)</span></p></li>
 <li><p><span class="math inline">\(\int^\infty_{-\infty}|h(t)|dt&lt;\infty\)</span> <span class="math inline">\({\color{red}\quad \Leftrightarrow \quad BIBO}\)</span></p></li>
 </ul></li>
+</ul>
+</section>
+<section id="유한무한-길이의-임펄스-응답에-따른-구분" class="level3">
+<h3 class="anchored" data-anchor-id="유한무한-길이의-임펄스-응답에-따른-구분">유한/무한 길이의 임펄스 응답에 따른 구분</h3>
+<ul>
+<li><p>임펄스 응답의 길이</p>
+<ul>
+<li>유한: Finite Impulse Response(FIR)</li>
+</ul>
+<p>FIR 시스템 예시) <span class="math inline">\(y[n] = ax[n]+bx[n-1]\)</span></p>
+<p>이 때 임펄스 응답) <span class="math inline">\(h[n]=a\delta [n]+b\delta [n-1]\)</span></p>
+<ul>
+<li>무한: Infinite Impulse Response(IIR)</li>
+</ul>
+<p>IIR 시스템 예시) <span class="math inline">\(y[n] + ay[n-1] = bx[n]\)</span></p>
+<p>이 때 임펄스 응답) <span class="math inline">\(h[n]=(-a)^nb,\quad n\ge 0\)</span></p></li>
 </ul>
 </section>
 </section>
