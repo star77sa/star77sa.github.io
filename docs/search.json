@@ -2933,5 +2933,44 @@
       "Signal Processing",
       "Signal and System, DSP"
     ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/SC_2.html",
+    "href": "posts/Linear_Algebra/SC_2.html",
+    "title": "[통계전산] 선형대수학(나중에)",
+    "section": "",
+    "text": "통계 전산\n  \n  로드맵\n  ~~\n최규빈 교수님 통계전산 수업 정리\n수업에서는 Julia를 사용하지만 필요한 부분만 Python으로 바꾸어 작성하였다.\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pandas as pd\nimport scipy.stats as sps",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "[통계전산] 선형대수학(나중에)"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/SC_2.html#로드맵",
+    "href": "posts/Linear_Algebra/SC_2.html#로드맵",
+    "title": "[통계전산] 선형대수학(나중에)",
+    "section": "로드맵",
+    "text": "로드맵\n- 통계\n\n일반통계학 개념의 백업\n여러가지 분포리뷰, 어떠한 분포에서 샘플을 추출하는 방법\n수렴\n추정 및 검정\n부트스트랩\n선형회귀분석\n\n- 선형대수학\n\n백터공간, rank\n직교행렬, 사영행렬, 양정치행렬…\n매트릭스를 해석하는 방식 (이미지, 데이터프레임, 변환)…\n분해이론: 고유값분해, SVD\n벡터나 매트릭스의 미분..",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "[통계전산] 선형대수학(나중에)"
+    ]
+  },
+  {
+    "objectID": "posts/Linear_Algebra/SC_2.html#section",
+    "href": "posts/Linear_Algebra/SC_2.html#section",
+    "title": "[통계전산] 선형대수학(나중에)",
+    "section": "~~",
+    "text": "~~",
+    "crumbs": [
+      "About",
+      "Posts",
+      "Linear Algebra",
+      "[통계전산] 선형대수학(나중에)"
+    ]
   }
 ]
