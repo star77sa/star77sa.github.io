@@ -12,7 +12,7 @@
 <generator>quarto-1.4.540</generator>
 <lastBuildDate>Wed, 12 Jun 2024 15:00:00 GMT</lastBuildDate>
 <item>
-  <title>신호 및 시스템, DSP</title>
+  <title>Signal and System, DSP</title>
   <dc:creator>고경수 </dc:creator>
   <link>https://star77sa.github.io/posts/Signal_Processing/dsp.html</link>
   <description><![CDATA[ 
@@ -21,211 +21,219 @@
 
 
 
-
-
-
- ]]></description>
-  <guid>https://star77sa.github.io/posts/Signal_Processing/dsp.html</guid>
-  <pubDate>Wed, 12 Jun 2024 15:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>신호 및 시스템</title>
-  <dc:creator>고경수 </dc:creator>
-  <link>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="신호-및-시스템" class="level1 page-columns page-full">
-<h1>신호 및 시스템</h1>
-<p><code>-</code> 신호</p>
-<p>물리적인 현상의 본질에 대한 정보를 담고 있는 하나 이상의 변수에 관한 함수로 정의된다. 하나의 변수에 의존하면 1차원적, 함수가 두 개 혹은 그 이상의 변수에 따라 달라지면 다차원적 이라고 한다. 이미지는 가로 좌표와 세로 좌표에 따라 변하는 2차원 신호의 한 예.</p>
-<p><code>-</code> 시스템</p>
-<p>임의의 기능을 수행하기 위하여 하나 이상의 신호를 처리하여 새로운 신호를 생성하는 실체(entity)</p>
-<p>시스템 응용 - 통신 시스템, 제어 시스템, 마이크로 전자기계 시스템, 원격 센싱, 생체 신호처리, 청각 시스템</p>
-<p><code>-</code> 통신 시스템</p>
-<p>모든 통신 시스템(communication system)에는 기본적으로 세 가지 구성 요소, 즉 송신기, 채널, 수신기가 존재한다. 송신기는 공간의 어느 한 점에 위치하고, 수신기는 송신기로부터 떨어진 다른 지점에 위치하며, 채널은 그 둘을 연결하는 물리적 매체</p>
-<p>송신 신호가 채널을 통해서 전파되어감에 따라, 채널의 물리적인 특성 때문에 신호는 왜곡된다. 더욱이 잡음과 다른 원천으로부터 온 간섭 신호가 채널 출력을 변질시켜 수신 신호는 송신 신호의 왜곡된 모습의 결과로 나타난다. 수신기의 기능은, 수신 신호로부터 원래의 메시지 신호를 인식할 수 있도록 재구성하여(즉, 추정치를 만들어) 사용자에게 전달하는 것</p>
-<p>통신 시스템은 아날로그 또는 디지털 형태로 구분된다.</p>
-<p>신호처리 입장에서 보면 아날로그 시스템의 설계는 상대적으로 간단하다. 송신기는 변조기(modulator), 수신기는 복조기(demodulator)로 구성되어 있다.</p>
-<p>변조(modulation)는 메시지 신호를 채널의 전송 특성에 적합하도록 적절한 형태로 변환시키는 과정이다.</p>
-<p>보통의 경우에는, 송신 신호는 정현바송파의 진폭, 위상, 주파수의 변형된 모습으로 표현된다. 그러므로, 이들 각각을 진폭 변조, 위상 변조, 주파수 변조라 부른다. 수신기에는 이와 대응되는 진폭 복조, 위상 복조, 주파수 복조를 사용해서 원래의 메시지 신호를 추정하여 출력한다.</p>
-<p>디지털 통신 시스템은 훨씬 더 복잡하다. 메시지 신호가 음성 신호나 영상 신호와 같은 아날로그 형태이면, 송신기는 신호를 디지털 형태로 변환하기 위하여 다음과 같은 작업을 한다.</p>
 <ul>
-<li><p>샘플링(sampling): 메시지 신호를 특정 순간에서 그 진폭을 나타내는 일련의 수로 변환 <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-3-image.png" class="img-fluid"></p></li>
-<li><p>양자화(quantization): 샘플링에 의해 생성된 각각의 수를 유한 개의 이산 진폭 레벨 가운데 가장 가까운 레벨로 표현. 예를 들어 16비트 이진수로 나타내면, 각 샘플을 216개의 레벨로 표현할 수 있다. 메시지 신호가 샘플링과 양자화 과정을 모두 거치면, 시간축과 진폭출 모두 이산적으로 표현된다. <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-1-image-2.png" class="img-fluid"></p></li>
-<li><p>코딩(coding): 양자화된 샘플을 유한 개의 심벌로 이루어진 코드 워드(code word)로 표현. 예를 들면, 이진 코드의 경우 심벌은 ‘1’ 또는 ‘0’ 이다. <img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-6-2-image-3.png" class="img-fluid"></p></li>
+<li><p>샘플링(sampling): 메시지 신호를 특정 순간에서 그 진폭을 나타내는 일련의 수로 변환 <img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-1-3-image.png" class="img-fluid"></p></li>
+<li><p>양자화(quantization): 샘플링에 의해 생성된 각각의 수를 유한 개의 이산 진폭 레벨 가운데 가장 가까운 레벨로 표현. 예를 들어 16비트 이진수로 나타내면, 각 샘플을 216개의 레벨로 표현할 수 있다. 메시지 신호가 샘플링과 양자화 과정을 모두 거치면, 시간축과 진폭출 모두 이산적으로 표현된다. <img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-1-1-image-2.png" class="img-fluid"></p></li>
+<li><p>코딩(coding): 양자화된 샘플을 유한 개의 심벌로 이루어진 코드 워드(code word)로 표현. 예를 들면, 이진 코드의 경우 심벌은 ‘1’ 또는 ‘0’ 이다. <img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-1-2-image-3.png" class="img-fluid"></p></li>
 </ul>
 <p>샘플링, 코딩과는 달리 양자화는 역변환이 가능하지 않다.</p>
 <p>즉, 양자화를 하게 되면 응용에 있어 항상 정보의 손실이 발생</p>
 <p>만일 디지털 컴퓨터의 경우와 같이 원래의 정보가 처음부터 이산적이라면, 위에 언급된 진행 과정은 모두 필요 없게 된다.</p>
-<p>송신기는 데이터 압축, 채널 인코딩 등과 같은 부가적인 연산을 필요로 할 수 있다.</p>
-<p>데이터 압축의 목적은 메시지 신호로부터 중복성 정보를 제거하고, 전송에 필요한 샘플당 비트의 수를 감소시켜 채널의 효율을 높이기 위한 것</p>
-<p>채널 인코딩은 채널을 통한 전송 과정에서 얻게 되는 잡음 및 간섭 신호 등으로부터 정보를 보호하기 위해 정해진 방식에 따라 코드 워드에 여분의 요소(예를 들면, 부가 심벌)를 추가한다.</p>
-<p>마지막으로, 코드화된 신호는 채널을 통한 전송을 위해 반송파(대개는 정현파)로 변조된다.</p>
-<p>수신기에서는 코딩 및 샘플링 과정이 반대로 이루어지며(즉, 각 입력과 출력 신호의 역할이 바뀌게 됨), 원래 메시지 신호의 추정치를 얻은 다음 이를 의도하는 목적지로 전달한다. 그러나 앞에서 언급한 대로 양자화는 역변환이 가능하지 않으므로, 수신기에는 이와 대응되는 것이 없다.</p>
-<p>반도체 산업의 지속적인 발달로, 디지털 통신은 아날로그 통신보다 보통 비용면에서 더 효과적이다.</p>
-<p>통신에는 두 가지 기본 모드가 있다.</p>
-<ol type="1">
-<li><p>방송(broadcasting)</p></li>
-<li><p>점대점(point-to-point) 통신.</p></li>
-</ol>
-<hr>
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-13-1-image-2.png" class="img-fluid"></p>
-<p>X축 real, Y축 imagine 인 복소평면</p>
-<p><code>-</code> 오일러 공식</p>
+<p>input signal <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> system <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> output signal</p>
+<section id="오일러-공식" class="level3">
+<h3 class="anchored" data-anchor-id="오일러-공식">오일러 공식</h3>
 <ul>
-<li><p><img src="https://latex.codecogs.com/png.latex?e%5E%7Bj%5Ctheta%7D=cos%5Ctheta+jsin%5Ctheta"></p></li>
-<li><p>길이가 1인 막대가 실수축으로부터 <img src="https://latex.codecogs.com/png.latex?%5Ctheta"> 라디안 만큼 회전한 곳에 위치하는 값</p></li>
-<li><p>맥클로린을 이용해 증명가능, 생략</p></li>
-<li><p>오일러폼: 모든 complex를 지수함수 꼴로 나타낸 것.</p></li>
+<li><img src="https://latex.codecogs.com/png.latex?e%5E%7Bj%5Ctheta%7D=cos%5Ctheta+jsin%5Ctheta"></li>
 </ul>
-<p><code>-</code> 오일러 공식을 배우는 이유</p>
+<p><img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-4-1-image-2.png" class="img-fluid"></p>
+<p>복소평면에 나타내면 다음과 같음. 길이가 1인 막대기</p>
+<p><img src="https://latex.codecogs.com/png.latex?2e%5E%7Bj%5Ctheta%7D">라면? 길이가 2인 막대기. (길이가 2배 늘어남)</p>
+<p><img src="https://latex.codecogs.com/png.latex?A%5Ctimes%20e%5E%7Bj%5Ctheta%7D"> 와 같은 지수함수의 형태로 모든 수를 나타낼 수 있다.</p>
+<p><code>-</code> 오일러 공식 예제 - 크기와 각도 구하기</p>
 <ul>
-<li><p>곱셈을 덧셈으로 바꿀 수 있는 장점</p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_1=a_1+b_1j,"></p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_2=a_2+b_2j,"></p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_3=a_3+b_3j">일때 <img src="https://latex.codecogs.com/png.latex?Z_1Z_2Z_3%20=%20?"></p>
-<p>오일러 공식을 이용해 주어진 3개의 식을 바꿔보면</p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_1=a_1+b_1j%20=%20A_1e%5E%7Bj%5Ctheta_1%7D,"></p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_2=a_2+b_2j%20=%20A_2e%5E%7Bj%5Ctheta_2%7D,"></p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_3=a_3+b_3j%20=%20A_3e%5E%7Bj%5Ctheta_3%7D">이고</p>
-<p><img src="https://latex.codecogs.com/png.latex?Z_1Z_2Z_3%20=%20A_1A_2A_3e%5E%7Bj(%5Ctheta_1+%5Ctheta_2+%5Ctheta_3)%7D"></p></li>
-<li><p>지수함수가 나타낼 수 있는 함수 값은 양의 실수 뿐이지만,</p>
-<p>exponential(2.7xx되는 그냥 실수 값일 뿐인) 위에 허수를 지수로 취함으로써 모든 복소수를 표현가능해짐</p>
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-15-2-image.png" class="img-fluid"></p>
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-15-1-image-2.png" class="img-fluid"></p></li>
-</ul>
-<p><code>-</code> LTI(Linear Time Invariant) System</p>
-<ul>
-<li><p>Linear = Scaling + additivity = superposition</p>
-<p>Scaling: system에 <img src="https://latex.codecogs.com/png.latex?x_1(t)">를 넣으면 <img src="https://latex.codecogs.com/png.latex?y_1(t)">가 나올 때, <img src="https://latex.codecogs.com/png.latex?6%5Ctimes%20x_1(t)">를 넣으면 <img src="https://latex.codecogs.com/png.latex?6%5Ctimes%20y_1(t)">가 나온다? Scaling을 만족.</p>
-<p>additivity: system에 <img src="https://latex.codecogs.com/png.latex?x_1(t)">를 넣으면 <img src="https://latex.codecogs.com/png.latex?y_1(t)">가 나오고 <img src="https://latex.codecogs.com/png.latex?x_2(t)">를 넣으면 <img src="https://latex.codecogs.com/png.latex?y_2(t)">가 나올 때 <img src="https://latex.codecogs.com/png.latex?x_3(t)%20=%20x_1(t)%20+%20x_2(t)">를 넣으면 <img src="https://latex.codecogs.com/png.latex?y_3(t)%20=%20y_1(t)%20+%20y_2(t)">가 나온다? additivity를 만족.</p>
-<p>superposition: <img src="https://latex.codecogs.com/png.latex?%5Calpha%20x_1(t)%20+%20%5Cbeta%20x_2(t)%20=%20%5Calpha%20y_1(t)%20+%20%5Cbeta%20y_2(t)">를 만족할 때 superposition이라 한다.</p></li>
-<li><p>Time invariant (시불변)</p>
-<p>system에 <img src="https://latex.codecogs.com/png.latex?x_1(t-t_0)">를 넣었을 때 <img src="https://latex.codecogs.com/png.latex?y_1(t-t_0)">가 나오는 경우</p></li>
-</ul>
-<p><code>-</code> Why LTI systems?</p>
-<ul>
-<li>임의의 입력값을 넣어도 출력값이 예측가능한 시스템</li>
-</ul>
-<p><code>-</code> Convolution</p>
-<ul>
-<li><p><img src="https://latex.codecogs.com/png.latex?y(t)%20=%20f(x(t),%20h(t))"> 에서</p>
-<p><img src="https://latex.codecogs.com/png.latex?h(t)">는 impulse response. impulse를 시스템에 넣었을 때의 output.</p>
-<p><img src="https://latex.codecogs.com/png.latex?f()">는 convolution = 누적된 반응을 계산</p>
-<p>input 과 h(t)의 어떤 연산을 통해 출력을 계산할건데, 이 연산을 convolution 이라고 함.</p>
-<p>Signal can be expressed by sum of impulses</p>
-<p>convolution은 LTI 그 자체.</p>
-<p>LTI면 convolution으로 나타낼 수 있고, 출력을 convolution으로 나타낼 수 있다면 그 시스템은 LTI 시스템.</p></li>
-</ul>
-<p><code>-</code> Unit impulse function 단위 임펄스 함수</p>
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-20-1-image.png" class="img-fluid"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn%5D=%0A%5Cbegin%7Bcases%7D%0A%7B1,%5Cquad%5Ctext%7Bif%20n=0%7D%7D%5C%5C%0A%7B0,%5Cquad%5Ctext%7Botherwise%7D%7D%0A%5Cend%7Bcases%7D"></p>
-<p>단위 임펄스 함수는 수에서 1과 같은 역할을 한다. 또, 벡터에서는 단위 기저벡터와 같은 역할을 한다.</p>
-<p><code>-</code> 이산 컨볼루션</p>
-<p>단위 임펄스는 좌, 우로 평행이동이 가능하다. 가령 <img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn-2%5D">는 <img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn%5D">을 오른쪽으로 2만큼 shift 시킨 것</p>
-<p>이 개념을 조금만 더 확장해보면 임펄스를 이용해 임의의 신호를 분해해 표현할 수 있게 된다. 아래의 임의의 이산 신호 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">을 보자.</p>
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-21-2-image.png" class="img-fluid"></p>
-<p>이 이산신호는 <img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn%5D"> 및 이것을 좌우로 shift한 함수들을 이용해 다음과 같이 표현할 수 있다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D=%5Csum%5E%5Cinfty_%7Bk=-%5Cinfty%7Dx%5Bk%5D%5Cdelta%5Bn-k%5D%20%5C%20%5C%20%5C%20%5C%20(2)"></p>
-<p><img src="https://latex.codecogs.com/png.latex?=%20%5Cdots%20+%20x%5B-2%5D%5Cdelta%5Bn+2%5D%20+%20x%5B-1%5D%5Cdelta%5Bn+1%5D%20+%20x%5B0%5D%5Cdelta%5Bn%5D%20+%20x%5B1%5D%5Cdelta%5Bn-1%5D%20+%20x%5B2%5D%5Cdelta%5Bn-2%5D%20+%5Cdots%5C%20%5C%20%5C%20%5C%20(3)"></p>
-<p>즉, <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">이라는 임의의 함수를 <img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn-k%5D">라는 함수를 이용해서 분해할 수 있다.</p>
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p><img src="https://star77sa.github.io/posts/Signal_Processing/signal_system_files/figure-html/cell-21-1-image-2.png" class="img-fluid figure-img"></p>
-<figcaption class="margin-caption">임의의 이산함수 x[n]를 단위 임펄스 함수를 이용해 분해한 결과</figcaption>
-</figure>
-</div>
-<p>식 (3)은 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">을 단위 임펄스 함수로 분해한 것으로 볼 수도 있고, 상수가 곱해진 신호열의 합으로 볼 수도 있다.</p>
-<p>여기서 상수는 <img src="https://latex.codecogs.com/png.latex?x%5Bk%5D">를 의미한다. <img src="https://latex.codecogs.com/png.latex?x%5Bk%5D">는 <img src="https://latex.codecogs.com/png.latex?k">번째 함수값이라는 의미이기 때문에 더 이상 함수가 아닌 상수이다.</p>
-<p>식 (3)은 다음과 같이 기호로 표기하기도 한다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?%5CRightarrow%20x%5Bn%5D*%5Cdelta%5Bn%5D"></p>
-<p>이 때, <img src="https://latex.codecogs.com/png.latex?*">연산을 컨볼루션이라고 부르기도 한다.</p>
-<p>일반적으로 임의의 이산 함수 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">과 <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D">에 대해 두 함수의 컨볼루션은 다음과 같다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*h%5Bn%5D%20=%20%5Csum%5E%7B%5Cinfty%7D_%7Bk=-%5Cinfty%7Dx%5Bk%5Dh%5Bx-k%5D"></p>
-<p><code>-</code> 이산 컨볼루션의 성질</p>
-<ul>
-<li>교환 법칙</li>
-</ul>
-<p>두 신호 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D">과 <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D">에 대해 다음과 같이 교환 법칙이 성립</p>
-<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*h%5Bn%5D%20=%20h%5Bn%5D*x%5Bn%5D"></p>
-<ol type="1">
-<li>입력 신호와 시스템의 임펄스 응답의 역할을 바꾸어도 시스템의 출력은 여전히 같다는 것을 의미</li>
-<li>두 개의 시스템이 직렬로 연결되는 경우 연결 순서를 바꾸어도 전체 시스템은 동일하다는 것</li>
-</ol>
-<ul>
-<li>결합 법칙</li>
-</ul>
-<p>컨볼루션은 셋 또는 그 이상의 신호에 대해 조합된 컨볼루션의 계산 순서에 영향을 받지 않는다.</p>
-<p><img src="https://latex.codecogs.com/png.latex?(x%5Bn%5D*h_1%5Bn%5D)*h_2%5Bn%5D%20=%20x%5Bn%5D*(h_1%5Bn%5D*h_2%5Bn%5D)"></p>
-<p>예를 들어 두개의 시스템이 직렬로 연결되어 있는 경우, 두 개의 시스템을 컨볼루션으로 결합한 시스템 하나로 두 개 시스템의 결합을 대체할 수 있다는 것을 의미.</p>
-<ul>
-<li>분배 법칙</li>
-</ul>
-<p><img src="https://latex.codecogs.com/png.latex?x%5Bn%5D*(h_1%5Bn%5D+h_2%5Bn%5D)%20=%20x%5Bn%5D*h_1%5Bn%5D+x%5Bn%5D*h_2%5Bn%5D"></p>
-<p>분배 법칙은 두 개의 시스템이 병렬로 연결되어 있을 경우 각 시스템의 임펄스 응답을 더한 것으로 전체 시스템을 대체할 수 있다는 것을 의미.</p>
-<section id="임펄스-응답impulse-response" class="level2">
-<h2 class="anchored" data-anchor-id="임펄스-응답impulse-response">임펄스 응답(impulse response)</h2>
-<section id="memoryless-system" class="level3">
-<h3 class="anchored" data-anchor-id="memoryless-system">memoryless system</h3>
-<ul>
-<li>현재만 영향을 받는다.</li>
+<li><p><img src="https://latex.codecogs.com/png.latex?1+e%5E%7Bj5t%7D">를 지수형식으로 나타내라.</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?1+e%5E%7Bj5t%7D=1+cos(5t)+jsin(5t)"></p>
+<p>여기서 <img src="https://latex.codecogs.com/png.latex?1+cos(5t)">가 실수부, <img src="https://latex.codecogs.com/png.latex?jsin(5t)">가 허수부</p>
+<p><img src="https://latex.codecogs.com/png.latex?Ae%5E%7Bj%5Ctheta%7D"> 꼴로 나타내야 하므로 크기와 각도를 구하면 된다.</p>
+<p>크기: <img src="https://latex.codecogs.com/png.latex?A=%5Csqrt%7B(1+cos(5t))%5E2+sin%5E2(5t)%7D"></p>
+<p>각도: <img src="https://latex.codecogs.com/png.latex?%5Ctheta=%7Btan%7D%5E%7B-1%7D(%5Cfrac%7Bsin(5t)%7D%7B1+cos(5t)%7D)"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5CRightarrow"> <img src="https://latex.codecogs.com/png.latex?A=%5Csqrt%7B(1+cos(5t))%5E2+sin%5E2(5t)%7De%5E%7Bjtan%5E%7B-1%7D(%5Cfrac%7Bsin(5t)%7D%7B1+cos(5t)%7D)%7D"></p></li>
 </ul>
 </section>
-<section id="causal-system" class="level3">
-<h3 class="anchored" data-anchor-id="causal-system">causal system</h3>
+<section id="causal" class="level3">
+<h3 class="anchored" data-anchor-id="causal">Causal</h3>
 <ul>
-<li>과거 혹은 현재만 영향을 받는다.</li>
+<li><p>입력이 있고나서 출력이 나오면 causal.</p></li>
+<li><p>출력이 입력보다 먼저 나오면 non-causal</p></li>
+</ul>
+<p><code>-</code> 예제</p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?y(t)=x(3t)"></p>
+<p>t=1일 때 <img src="https://latex.codecogs.com/png.latex?y(1)=x(3)">, 1초의 입장에서 3초는 미래다. 3초때의 입력이 1초에 나오므로 causal이 아니다.</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?y(t)=x(t)cos(t+1)"></p>
+<p>t=1일 때 <img src="https://latex.codecogs.com/png.latex?y(1)=x(1)cos(2)">, 1초에 2초의 코사인이 쓰였으므로 non-causal이다? (X)</p>
+<p><img src="https://latex.codecogs.com/png.latex?cos(2)">는 그냥 값일 뿐. x만 봤을 때 1초의 입력값이 1초에 나왔으므로 causal이 맞다.</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?y(t)=x(-t)"></p>
+<p>이것저것 넣어보면 된다.</p>
+<p>t=1일 때 <img src="https://latex.codecogs.com/png.latex?y(1)=x(-1)"></p>
+<p>t=-1일 때 <img src="https://latex.codecogs.com/png.latex?y(-1)=x(1)">: -1초 입장에서는 1초는 미래. non-causal!</p></li>
 </ul>
 </section>
-<section id="stable-bibo-stable-system" class="level3">
-<h3 class="anchored" data-anchor-id="stable-bibo-stable-system">stable (BIBO stable) system</h3>
+<section id="lti-system" class="level3">
+<h3 class="anchored" data-anchor-id="lti-system">LTI System</h3>
+<p><code>-</code> LTI (Linear Time Invariant)</p>
 <ul>
-<li><p><img src="https://latex.codecogs.com/png.latex?%7Cx(t)%7C%3C%5Cinfty%20%5Cquad%20%5Crightarrow%20%5Cquad%20%5Csquare%20%5Cquad%20%5Crightarrow%20%5Cquad%20%7Cg(t)%7C%3C%5Cinfty"></p></li>
-<li><p>수렴하는 인풋이 시스템에 들어갔을 때 그 아웃풋 역시 발산하지 않는다.</p></li>
-<li><p>발산하는 인풋을 넣었을 때는 그 아웃풋이 발산하는 발산하지 않든 BIBO라 이야기 할 수 없다.</p>
-<p>어떤 bounded 된 input에 대해서든 bounded 된 아웃풋이 나와야 BIBO라 할 수 있다.</p></li>
-<li><p><img src="https://latex.codecogs.com/png.latex?%7Cy(t)%7C%20=%20%7C%5Cint%20x(%5Ctau)h(t-%5Ctau)d%5Ctau%7C%20%5Cle%20%5Cint%7B%5Ccolor%7Bred%7D%7Cx(%5Ctau)h(t-%5Ctau)%7C%7Dd%5Ctau%20=%20%5Cint%7B%5Ccolor%7Bred%7D%7Cx(%5Ctau)%7C%7Ch(t-%5Ctau)%7C%7Dd%5Ctau"> <img src="https://latex.codecogs.com/png.latex?%3CB%5Cint%5E%5Cinfty_%7B-%5Cinfty%7D%7Ch(t-%5Ctau)%7Cd%5Ctau"></p>
+<li><p>Linear = Scaling + Additivity = superposition</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Calpha%20x_1(t)+%5Cbeta%20x_2(t)">를 시스템에 넣었을 때 <img src="https://latex.codecogs.com/png.latex?%5Calpha%20y_1(t)+%5Cbeta%20y_2(t)">가 나오면 Linear system</p></li>
+<li><p>Time Invariant</p>
+<p>x가 time shift가 됐을 때, y도 time shift가 돼야 함.</p>
+<p><img src="https://latex.codecogs.com/png.latex?x(t)%5Crightarrow%20y(t),%5Cquad%20x(t-t_0)%5Crightarrow%20y(t-t_0)"></p>
 <ul>
-<li><p>적분의 절대값보다 절대값의 적분이 더 크거나 같다.</p></li>
-<li><p>모든 복소수에 대하여</p>
-<p><img src="https://latex.codecogs.com/png.latex?%7CA_1e%5E%7Bj%5Ctheta_1%7DA_2e%5E%7Bj%5Ctheta_2%7D%7C%20=%20%7CA_1A_2e%5E%7Bj(%5Ctheta_1+%5Ctheta_2)%7D%7C%20=%20%7CA_1A_2e%5E%7Bj(%5Ctheta_1+%5Ctheta_2)%7D%7C%20=%20A_1A_2"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%7CA_1e%5E%7Bj%5Ctheta_1%7D%7C%7CA_2e%5E%7Bj%5Ctheta_2%7D%7C%20=%20A_1A_2"></p>
-<p><img src="https://latex.codecogs.com/png.latex?%5Ctherefore"> <img src="https://latex.codecogs.com/png.latex?%7Cxy%7C%20=%20%7Cx%7C%7Cy%7C"></p></li>
-<li><p><img src="https://latex.codecogs.com/png.latex?%5Cint%5E%5Cinfty_%7B-%5Cinfty%7D%7Ch(t)%7Cdt%3C%5Cinfty"> <img src="https://latex.codecogs.com/png.latex?%7B%5Ccolor%7Bred%7D%5Cquad%20%5CLeftrightarrow%20%5Cquad%20BIBO%7D"></p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?y=x(-2t+2)">는 TI인가?</p>
+<p>x의 <img src="https://latex.codecogs.com/png.latex?t_0"> shift: <img src="https://latex.codecogs.com/png.latex?x(-2t+2-t_0)"></p>
+<p>y의 <img src="https://latex.codecogs.com/png.latex?t_0"> shift: <img src="https://latex.codecogs.com/png.latex?y(t-t_0)=x(-2(t-t_0)+2)=x(-2t+2-2t_0)"></p>
+<p>둘이 값이 다르므로 TI가 아니다.</p></li>
+</ul></li>
+<li><p>왜 LTI System을 다루는가?:</p>
+<p>예측 가능성, 수학적 단순성, 푸리에 변환과 라플라스 변환의 적용 가능, 안정성과 응답 특성 분석, 중첩 원리 적용 등…</p></li>
+</ul>
+</section>
+<section id="convolution" class="level3">
+<h3 class="anchored" data-anchor-id="convolution">Convolution</h3>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?y(t)=f(x(t),h(t))"> 여기서 <img src="https://latex.codecogs.com/png.latex?h(t)">는 impulse response!</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?h(t)">가 뭐냐?</p>
+<p><img src="https://latex.codecogs.com/png.latex?x_1(t)%5Crightarrow%5Csquare%5Crightarrow%20y_1(t)"> 이러한 시스템에서</p>
+<p>특별히 <img src="https://latex.codecogs.com/png.latex?x_1(t)=%5Cdelta(t)">일 때의 출력값 <img src="https://latex.codecogs.com/png.latex?y_1(t)=h(t)">라고 표기한다.</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cdelta%5Bn%5D=%20%5Cbegin%7Bcases%7D%0A%20%201,%5Cquad%20n=0%5C%5C%0A%20%200,%5Cquad%20otherwise%0A%20%20%5Cend%7Bcases%7D"></p></li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-15-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?y(t)=f(x(t),h(t))%5Cleftarrow"> (여기서 f가 컨볼루션)</p>
+<p><img src="https://latex.codecogs.com/png.latex?h(t)">를 안다는 것은 피아노 한 건반(delta function)을 쳤을 때를 안다는 것</p>
+<p>이것을 알면 오케스트라 전체(임의의 입력)가 연주할 때도 알 수 있다. predictable</p></li>
+<li><p>convolution = calculation of accumulated reaction</p>
+<p><img src="https://latex.codecogs.com/png.latex?y%5Bn%5D%20=%20%5Csum%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7Dx%5Bk%5Dh%5Bn-k%5D=x%5Bn%5D*h%5Bn%5D"></p>
+<p><img src="https://latex.codecogs.com/png.latex?(y%5Bn%5D=...+x%5B-1%5D%5Cdelta%5Bn+1%5D+x%5B0%5D%5Cdelta%5Bn%5D+x%5B1%5D%5Cdelta%5Bn-1%5D+...)"></p>
+<p>여기서 <img src="https://latex.codecogs.com/png.latex?%5Csum%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7D">가 additivity, <img src="https://latex.codecogs.com/png.latex?x%5Bk%5D">가 scaling, <img src="https://latex.codecogs.com/png.latex?h%5Bn-k%5D">에서 <img src="https://latex.codecogs.com/png.latex?-k">가 time invariant</p>
+<p>컨볼루션은 LTI 그 자체</p></li>
+<li><p>연속시간 컨볼루션 (CT Convolution)</p>
+<p><img src="https://latex.codecogs.com/png.latex?x(t)=%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7Dx(%5Ctau)%5Cdelta(t-%5Ctau)d%5Ctau"></p>
+<p><img src="https://latex.codecogs.com/png.latex?y(t)=%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7Dx(%5Ctau)h(t-%5Ctau)d%5Ctau=f(x(t),h(t))=x(t)*h(t)"></p>
+<ul>
+<li>오직 LTI 시스템에서만 이렇게 나타낼 수 있다. Scaling / Additivity / Time Invariant</li>
 </ul></li>
 </ul>
 </section>
-<section id="유한무한-길이의-임펄스-응답에-따른-구분" class="level3">
-<h3 class="anchored" data-anchor-id="유한무한-길이의-임펄스-응답에-따른-구분">유한/무한 길이의 임펄스 응답에 따른 구분</h3>
+<section id="impulse-response" class="level3">
+<h3 class="anchored" data-anchor-id="impulse-response">Impulse response</h3>
+<p><code>-</code> <img src="https://latex.codecogs.com/png.latex?h(t)">를 안다는 건 그 시스템을 안다는 것</p>
 <ul>
-<li><p>임펄스 응답의 길이</p>
-<ul>
-<li>유한: Finite Impulse Response(FIR)</li>
-</ul>
-<p>FIR 시스템 예시) <img src="https://latex.codecogs.com/png.latex?y%5Bn%5D%20=%20ax%5Bn%5D+bx%5Bn-1%5D"></p>
-<p>이 때 임펄스 응답) <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D=a%5Cdelta%20%5Bn%5D+b%5Cdelta%20%5Bn-1%5D"></p>
-<ul>
-<li>무한: Infinite Impulse Response(IIR)</li>
-</ul>
-<p>IIR 시스템 예시) <img src="https://latex.codecogs.com/png.latex?y%5Bn%5D%20+%20ay%5Bn-1%5D%20=%20bx%5Bn%5D"></p>
-<p>이 때 임펄스 응답) <img src="https://latex.codecogs.com/png.latex?h%5Bn%5D=(-a)%5Enb,%5Cquad%20n%5Cge%200"></p></li>
+<li><p>output? <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> <img src="https://latex.codecogs.com/png.latex?y(t)">를 컨볼루션으로 계산해냈다.</p></li>
+<li><p>memoryless? 입력이 들어간 순간만 반응 (<img src="https://latex.codecogs.com/png.latex?t=0">에만 값이 있어야함)</p></li>
+<li><p>causal? 과거 혹은 현재의 입력에만 영향을 받는다. (<img src="https://latex.codecogs.com/png.latex?t%5Cge%200">에 값이 있어야 함. t보다 큰 부분에 있는 경우는 이전의 입력이 현재에 영향을 주는 상황)</p></li>
+<li><p>stable? Bounded Input이 들어갔다고 했을 때 Bounded Output이 나오면 BIBO Stable</p>
+<p>BIBO <img src="https://latex.codecogs.com/png.latex?%5Cleftrightarrow%20%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7D%7Ch(t)%7Cdt%3C%5Cinfty"> 동치</p></li>
 </ul>
 </section>
+<section id="기본-주파수fundamental-frequency" class="level3">
+<h3 class="anchored" data-anchor-id="기본-주파수fundamental-frequency">기본 주파수(fundamental frequency)</h3>
+<ul>
+<li><p>fundamental period의 역수</p></li>
+<li><p>어떤 <img src="https://latex.codecogs.com/png.latex?T%3E0,%5Cquad%20x(t+T)%20%5Cquad%5Cforall%20t"> <img src="https://latex.codecogs.com/png.latex?%5Cquad"> 주기 T</p>
+<p>가장 작은 주기가 fundamental period (예를 들어 코사인 함수는 <img src="https://latex.codecogs.com/png.latex?2%5Cpi">, <img src="https://latex.codecogs.com/png.latex?4%5Cpi"> 다 주기가 되지만 가장 작은 <img src="https://latex.codecogs.com/png.latex?2%5Cpi">가 fundamental period)</p></li>
+</ul>
 </section>
-<section id="dt-convolution" class="level2">
-<h2 class="anchored" data-anchor-id="dt-convolution">DT Convolution</h2>
+<section id="푸리에-급수" class="level3">
+<h3 class="anchored" data-anchor-id="푸리에-급수">푸리에 급수</h3>
+<ul>
+<li><p>Fourier series: Approximation for a periodic signal</p>
+<p>periodic signal is composed of sinusoids.</p>
+<p><img src="https://latex.codecogs.com/png.latex?x_%7BT_0%7D(t)=...+a_%7B-2%7De%5E%7Bj(-2)w_0t%7D+a_%7B-1%7De%5E%7Bj(-1)w_0t%7D+a_0+a_1e%5E%7Bjw_0t%7D+..."></p>
+<ul>
+<li><p>모든 주기 신호를 다 표현 가능한가? → 전부는 아니지만 생각할만한 건 다 표현가능</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?T_0">가 주어진다면 일대일 대응, 주어지지 않는다면 X</p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?e%5E%7Bjkw_0t%7D">는 벡터다</p></li>
+<li><p>푸리에 시리즈를 배우는 이유? 각각 다른 주파수를 이용해 신호를 보내는데</p>
+<p>(필터를 써서?) 필요한 신호만 남기고 나머지를 죽임</p></li>
+</ul></li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Signal_Processing/dsp_files/figure-html/cell-22-1-image.png" class="img-fluid"></p>
+</section>
+<section id="푸리에-변환" class="level3">
+<h3 class="anchored" data-anchor-id="푸리에-변환">푸리에 변환</h3>
+<p><code>-</code> Fourier Transform(FT)</p>
+<ul>
+<li><p>시간 도메인에서 정의된 신호를 주파수 도메인으로 변환하는 과정</p>
+<p><img src="https://latex.codecogs.com/png.latex?X(w)=%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7Dx(t)e%5E%7B-jwt%7Ddt"></p></li>
+</ul>
+<p><code>-</code> Inverse Fourier Transform(IFT)</p>
+<ul>
+<li><p>주파수 도메인에서 정의된 신호를 다시 시간 도메인으로 변환하는 과정</p>
+<p><img src="https://latex.codecogs.com/png.latex?x(t)=%5Cfrac%7B1%7D%7B2%5Cpi%7D%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7DX(w)e%5E%7Bjwt%7Ddw"></p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?x(t)%5CLeftrightarrow%20X(w)"> 서로 변환 가능!</p></li>
+</ul>
+</section>
+<section id="푸리에-변환표" class="level3">
+<h3 class="anchored" data-anchor-id="푸리에-변환표">푸리에 변환표</h3>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?%5Cdelta(t)%20%5CLeftrightarrow%201"></p></li>
+<li><p><img src="https://latex.codecogs.com/png.latex?x(t)*h(t)%5CLeftrightarrow%20X(w)H(w)"></p></li>
+<li><p>Duality, <img src="https://latex.codecogs.com/png.latex?X(t)%5CLeftrightarrow%202%5Cpi%20x(-w)"></p></li>
+<li><p>다양한 변환이 있으나 생략</p></li>
+</ul>
+</section>
+<section id="parseval의-정리" class="level3">
+<h3 class="anchored" data-anchor-id="parseval의-정리">Parseval의 정리</h3>
+<ul>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7D%7Cx(t)%7C%5E2dt=%5Cfrac%7B1%7D%7B2%5Cpi%7D%5Cint%5E%7B%5Cinfty%7D_%7B-%5Cinfty%7D%7CX(w)%7C%5E2dw"></li>
+</ul>
+</section>
+<section id="이산시간-푸리에-급수-dtfs" class="level3">
+<h3 class="anchored" data-anchor-id="이산시간-푸리에-급수-dtfs">이산시간 푸리에 급수 (DTFS)</h3>
+<ul>
+<li><p>연속시간: <img src="https://latex.codecogs.com/png.latex?x_%7BT_0%7D(t)=%5Csum%5E%7B%5Cinfty%7D_%7Bk=-%5Cinfty%7Da_ke%5E%7Bjkw_0t%7D"></p></li>
+<li><p>이산시간: <img src="https://latex.codecogs.com/png.latex?x_N%5Bn%5D=%5Csum_%7Bk=%3CN%3E%7Da_ke%5E%7Bjk%5Cfrac%7B2%5Cpi%7D%7BN%7Dn%7D">,</p>
+<p><img src="https://latex.codecogs.com/png.latex?k=%3CN%3E:">연속된 N개의 정수를 골라라 / <img src="https://latex.codecogs.com/png.latex?W_N=e%5E%7B-j(%5Cfrac%7B2%5Cpi%7D%7BN%7D)%7D">으로 쓰기도 함</p></li>
+</ul>
+</section>
+<section id="이산시간-푸리에-변환dtft" class="level3">
+<h3 class="anchored" data-anchor-id="이산시간-푸리에-변환dtft">이산시간 푸리에 변환(DTFT)</h3>
+<ul>
+<li><p>DTFT: <img src="https://latex.codecogs.com/png.latex?X(%5COmega)=%5Csum%5E%7B%5Cinfty%7D_%7Bn=-%5Cinfty%7Dx%5Bn%5De%5E%7B-j%5COmega%20n%7D,%5COmega%20=%20k%5Cfrac%7B2%5Cpi%7D%7BN%7D"></p></li>
+<li><p>IDTFT: <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D=%5Cfrac%7B1%7D%7B2%5Cpi%7D%5Cint_2%5Cpi%20X(%5COmega)e%5E%7Bj%5COmega%20n%7Dd%5COmega"></p>
+<p>DTFT는 주기성을 가짐. <img src="https://latex.codecogs.com/png.latex?X(%5COmega)=X(%5COmega%20+2%5Cpi)"></p></li>
+</ul>
+</section>
+<section id="이산-푸리에-변환-dft" class="level3">
+<h3 class="anchored" data-anchor-id="이산-푸리에-변환-dft">이산 푸리에 변환 (DFT)</h3>
+<ul>
+<li><p>CTFT C <img src="https://latex.codecogs.com/png.latex?%5CLeftrightarrow"> C <img src="https://latex.codecogs.com/png.latex?(X(w))"></p></li>
+<li><p>DTFT D <img src="https://latex.codecogs.com/png.latex?%5CLeftrightarrow"> C <img src="https://latex.codecogs.com/png.latex?(X(%5COmega))"></p></li>
+<li><p>DFT D <img src="https://latex.codecogs.com/png.latex?%5CLeftrightarrow"> D</p>
+<p>DFT의 정의: <img src="https://latex.codecogs.com/png.latex?0"> ~ <img src="https://latex.codecogs.com/png.latex?N-1"> 까지 값을 가지는 <img src="https://latex.codecogs.com/png.latex?x%5Bn%5D"> 을 DTFT한 다음 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B2%5Cpi%7D%7BN%7D"> 간격으로 (<img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B2%5Cpi%7D%7BN%7Dk,%20k=0,...,N-1)"> 샘플링</p>
+<p>아무 시작점에서 N개를 고르는 것이 아닌 무조건 0부터 N-1 까지다.</p></li>
+</ul>
+</section>
+<section id="z-transform" class="level3">
+<h3 class="anchored" data-anchor-id="z-transform">Z Transform</h3>
+<ul>
+<li><p>DTFT를 확장</p></li>
+<li><p>ROC: sum이 수렴하도록 하는 z의 range of value, 원처럼 생김</p>
+<ul>
+<li><p>poll: 발산하게 하거나 <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7B0%7D"></p></li>
+<li><p>zero: 0이 되도록 하거나 0으로 수렴하게끔 하는 값</p></li>
+</ul></li>
+</ul>
+<hr>
+<ul>
+<li><p>디리클레 조건</p></li>
+<li><p>시스템 해석, IIR, FIR필터 설계</p></li>
+<li><p>미니멈 페이즈 시스템, 올패스 필터</p></li>
+<li><p>리니어 페이즈</p></li>
+<li><p>system function(H(z)), 다이렉트 폼</p></li>
+<li><p>Signal Flow Graph, 필터 구조, Transposed form</p></li>
+<li><p>Pulse Invariance, Aliasing, 라플라스변환, Z변환</p></li>
+<li><p>Circular Convolution</p></li>
+<li><p>오버랩 애드, 오버랩 세이브</p></li>
+</ul>
 
 
-</section>
 </section>
 
  ]]></description>
-  <guid>https://star77sa.github.io/posts/Signal_Processing/signal_system.html</guid>
-  <pubDate>Wed, 21 Feb 2024 15:00:00 GMT</pubDate>
+  <guid>https://star77sa.github.io/posts/Signal_Processing/dsp.html</guid>
+  <pubDate>Wed, 12 Jun 2024 15:00:00 GMT</pubDate>
 </item>
 <item>
   <title>[통계전산] 통계</title>
@@ -12395,6 +12403,129 @@ font-style: inherit;"># 레이아웃을 타이트하게.</span></span></code></p
  ]]></description>
   <guid>https://star77sa.github.io/posts/Python/vis_matplotlib.html</guid>
   <pubDate>Mon, 22 Jan 2024 15:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>[데이터시각화] 0. 훌륭한 시각화</title>
+  <dc:creator>고경수 </dc:creator>
+  <link>https://star77sa.github.io/posts/Python/visualization.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>전북대학교 통계학과 최규빈 교수님 강의 정리내용입니다.</p>
+<p>https://guebin.github.io/DV2023/</p>
+<section id="훌륭한-시각화" class="level1">
+<h1>훌륭한 시각화</h1>
+<p>Edward Tufte</p>
+<blockquote class="blockquote">
+<p>” 최소한의 잉크로 많은 정보를 전달할 수 있다면 그것이 바로 좋은 그래프이다. 작은 지면 내에서 잉크를 최대한 적게 써서 짧은 시간 안에 많은 영감을 주어야 한다. ”</p>
+</blockquote>
+<ul>
+<li>어려운 점:</li>
+</ul>
+<ol type="1">
+<li>센스부족: 센스가 없어서 hue/style을 이용하여 그룹을 구분할 생각을 못함</li>
+<li>개념부족: tidydata (=tidy dataframe, long form dataframe) 형태로 데이터를 정리할 생각을 못함</li>
+<li>코딩못함: tidydata로 데이터를 변형하는 코드를 모름</li>
+</ol>
+<ul>
+<li>해결하는 방법:</li>
+</ul>
+<ol type="1">
+<li>센스부족: 훌륭한 시각화를 많이 보면 해결할 수 있음.</li>
+<li>개념부족: tidydata에 대한 개념을 배우면 해결할 수 있음.</li>
+<li>코딩못함: 코딩공부 열심히 (시각화 코드가 중요한게 아니고, pandas를 엄청 잘해야함)</li>
+</ol>
+<section id="시각화-예시" class="level2">
+<h2 class="anchored" data-anchor-id="시각화-예시">시각화 예시</h2>
+<section id="남미국가들의-국방력" class="level3">
+<h3 class="anchored" data-anchor-id="남미국가들의-국방력">남미국가들의 국방력</h3>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-7-1-image.png" class="img-fluid"></p>
+<ul>
+<li>쓸모없는 그래픽</li>
+</ul>
+<p><code>-</code> 아래가 더 우수한 그림이다. 더 정확한 비교가 가능</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-10-1-image.png" class="img-fluid"></p>
+<p><code>-</code> 그리고 위의 그림보다 아래의 그림이 더 우수한 시각화이다.</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-12-1-image.png" class="img-fluid"></p>
+<ul>
+<li>브라질의 국방력은 모든 지표에서 1등이다. 1.군인수도 많고(왼쪽그림) 2.예산도 많이 투자하는 것 같다(가운데그림).</li>
+<li>그런데 인구로 인한 결과인 것 같다(오른쪽그림).</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-14-1-image.png" class="img-fluid"></p>
+<ul>
+<li>사실 지표들을 인구수로 나누고 보니까 1.인구당 군인수도 많지 않고(왼쪽그림) 2.인구당 국방비 지출도 3등 수준이고(가운데 그림) 3.군인당 교육투자비도 높지 않다(오른쪽그림).</li>
+<li>즉 내실이 없다는 의미</li>
+</ul>
+</section>
+<section id="스페인의-실업률" class="level3">
+<h3 class="anchored" data-anchor-id="스페인의-실업률">스페인의 실업률</h3>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-17-1-image.png" class="img-fluid"></p>
+<ul>
+<li>명암으로 왜 크기비교를 하는 것인가?</li>
+</ul>
+<p><code>-</code> 비교를 위해서는 bar plot이 더 우수하다.</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-19-1-image.png" class="img-fluid"></p>
+</section>
+<section id="은행들의-시가-총액" class="level3">
+<h3 class="anchored" data-anchor-id="은행들의-시가-총액">은행들의 시가 총액</h3>
+<p><code>-</code> 회색이 before, 검은색이 after</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-22-1-image.png" class="img-fluid"></p>
+<ul>
+<li>크기 비교는 버블로 하는 것이 아니다.</li>
+</ul>
+<p><code>-</code> 우리 눈은 작은원이 큰원의 절반정도 차지한다고 느껴진다.</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-24-1-image.png" class="img-fluid"></p>
+<p><code>-</code> 그렇지만 실제로는 아래와 같음</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-26-1-image.png" class="img-fluid"></p>
+<p><code>-</code> 버블차트는 크기를 왜곡시킨다.</p>
+</section>
+<section id="분열된-유권자들" class="level3">
+<h3 class="anchored" data-anchor-id="분열된-유권자들">분열된 유권자들</h3>
+<p><code>-</code> 하지만 아래의 버블차트는 우수하다. (왜? 크기비교 자체가 목적이 아니므로)</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-30-1-image.png" class="img-fluid"></p>
+<ul>
+<li>선거지도는 수치비교에 별로 관심이 없다.</li>
+<li>대신에 민주당표와 공화당표가 어떤 지역에 몰렸는지 파악하는 것이 중요.</li>
+<li>따라서 aes중 가장 중요한 <img src="https://latex.codecogs.com/png.latex?x,%20y">를 모두 지역정보를 표현하기 위해 투자함</li>
+</ul>
+<p><strong><em>좋은 aes 속성들</em></strong></p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-33-1-image.png" class="img-fluid"></p>
+<ul>
+<li>위로 갈수록 좋다.</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-35-1-image.png" class="img-fluid"></p>
+</section>
+<section id="스티븐-잡스의-시각화" class="level3">
+<h3 class="anchored" data-anchor-id="스티븐-잡스의-시각화">스티븐 잡스의 시각화</h3>
+<ul>
+<li>크기비교에서 3D plot은 좋지 않음</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-38-1-image.png" class="img-fluid"></p>
+<ul>
+<li>그런데 스티븐 잡스는 아래와 같이 시각화를 했음.</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-40-1-image.png" class="img-fluid"></p>
+<ul>
+<li>잘 몰라서 한 것일까? 고의로 한 것 일까?</li>
+<li>ref: https://paragraft.wordpress.com/2008/06/03/the-chart-junk-of-steve-jobs/</li>
+</ul>
+</section>
+</section>
+<section id="시각화의-정석" class="level2">
+<h2 class="anchored" data-anchor-id="시각화의-정석">시각화의 정석</h2>
+<p><code>-</code> 시간경과에 따른 변화를 보여주고 싶으면 라인플랏, 비교를 하고 싶다면 바플랏, 관계를 알고 싶다면 산점도.</p>
+<p><img src="https://star77sa.github.io/posts/Python/visualization_files/figure-html/cell-44-1-image.png" class="img-fluid"></p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <guid>https://star77sa.github.io/posts/Python/visualization.html</guid>
+  <pubDate>Sun, 21 Jan 2024 15:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -16,4 +16,4 @@ about:
 ---
 **About this blog**
 
-I will post my studies on machine learning, deep learning, and energy data analysis on my blog.
+I will post my studies on machine learning, deep learning, and computer vision on my blog.
