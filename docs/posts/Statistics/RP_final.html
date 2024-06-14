@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -373,7 +402,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stochasticrandom-process" id="toc-stochasticrandom-process" class="nav-link active" data-scroll-target="#stochasticrandom-process">Stochastic(Random) Process</a></li>
+  <li><a href="#stationary-random-process" id="toc-stationary-random-process" class="nav-link" data-scroll-target="#stationary-random-process">Stationary Random Process</a></li>
+  <li><a href="#poisson-process" id="toc-poisson-process" class="nav-link" data-scroll-target="#poisson-process">Poisson Process</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -381,10 +418,104 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-
+<nav id="TOC-body" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#stochasticrandom-process" id="toc-stochasticrandom-process">Stochastic(Random) Process</a></li>
+  <li><a href="#stationary-random-process" id="toc-stationary-random-process">Stationary Random Process</a></li>
+  <li><a href="#poisson-process" id="toc-poisson-process">Poisson Process</a></li>
+  </ul>
+</nav>
 <p><img src="RP_final_files/figure-html/cell-1-1-image.png" class="img-fluid"></p>
+<section id="stochasticrandom-process" class="level3">
+<h3 class="anchored" data-anchor-id="stochasticrandom-process">Stochastic(Random) Process</h3>
+<ul>
+<li><p>Sequence of R.V.</p></li>
+<li><p>R.V. with independent parameter <span class="math inline">\(t\)</span></p></li>
+<li><p>A discrete-time random process <span class="math inline">\(X_n(X[n])\)</span></p></li>
+<li><p>A continuous time random process <span class="math inline">\(X_t(X(t))\)</span></p></li>
+<li><p>시간이 <span class="math inline">\(t=t_1\)</span>로 고정돼있으면, <span class="math inline">\(X(t_1)\)</span>은 random variable 이다.</p>
+<p>R.P. sampling → R.V.</p></li>
+</ul>
+<p><code>-</code> Statistics of a R.P.</p>
+<p>Suppose <span class="math inline">\(X(t_1)\)</span> and <span class="math inline">\(X(t_2)\)</span> are the R.V.’s measured at <span class="math inline">\(t=t_1\)</span> and <span class="math inline">\(t_2\)</span>, then</p>
+<ul>
+<li><p>Marginal density function: <span class="math inline">\(f_X(x,t_1)\)</span></p></li>
+<li><p>Joint density function: <span class="math inline">\(f_{X(t_1)X(t_2)}(x,t_1)\)</span></p></li>
+<li><p>Mean or expected value of a R.P.: <span class="math inline">\(E[X(t)]=\eta (t)\)</span></p></li>
+<li><p>Covariance function: <span class="math inline">\(C_X(t_1,t_2)=E[(X(t_1)-\eta (t_1))(X(t_2)-\eta (t_2))^*]\)</span></p>
+<p>R.P.의 평균은 여전히 시간 <span class="math inline">\(t\)</span> 에 대한 함수이다. <span class="math inline">\(\eta (t)\)</span></p>
+<p>또한, autocorrelation, covariance, and distribution 모두 시간에 dependent 하다.</p></li>
+</ul>
+</section>
+<section id="stationary-random-process" class="level3">
+<h3 class="anchored" data-anchor-id="stationary-random-process">Stationary Random Process</h3>
+<ul>
+<li><p>Random process 그 자체로는 정상성(stationarity)에 대한 어떤 가정도 하지 않으며 시간에 따라 통계적 특성(평균, 분산 등…)이 변할 수 있다.</p></li>
+<li><p>정상 확률 과정(stationary random process): 시간이나 공간의 변화에 따라 그 통계적 특성이 일정하게 유지. 즉, 어느 시간에서 측정하던지 통계적 특성(평균, 분산, 공분산 등)이 일정</p></li>
+<li><p>R.P.의 분포는 시간에 의존하는 함수인데 몇몇 케이스에서는 시간에 독립. 이러한 케이스가 stationary process</p></li>
+</ul>
+<p><code>-</code> Strict-Sense Stationary(SSS)</p>
+<ul>
+<li><p>확률 과정의 모든 통계적 성질이 시간 이동에 대해 불변</p>
+<p><span class="math inline">\(f_X(x,t)=f_X(x)\)</span></p>
+<p><span class="math inline">\(f_X(x_1,x_2,t_1,t_2)=f_X(x_1,x_2,0,\tau),\quad \tau=t_2-t_1\)</span></p>
+<p><span class="math inline">\(f_X(x_1,x_2,...,x_n,t_1,t_2,...,t_n)=f_X(x_1,x_2,...x_n,t_1+c,t_2+c,...,t_n+c)\)</span></p></li>
+</ul>
+<p><code>-</code> Wide-Sense Stationary(WSS)</p>
+<ul>
+<li><p>평균이 시간에 독립, 자기상관 함수가 <strong>두 시점 간의 시간차이</strong>에만 의존</p>
+<p>과정 <span class="math inline">\(X(t)\)</span> 의 기대값 <span class="math inline">\(E[X(t)]\)</span> 이 모든 시간 <span class="math inline">\(t\)</span> 에 대해 상수. 즉, <span class="math inline">\(E[X(t)]=\mu\)</span>, 여기서 <span class="math inline">\(\mu\)</span>는 상수</p>
+<p>두 시간 포인트 <span class="math inline">\(t\)</span> 와 <span class="math inline">\(t+\tau\)</span> 사이의 자기상관은 <span class="math inline">\(\tau\)</span> 에만 의존하며 <span class="math inline">\(t\)</span> 의 절대적 위치에는 의존하지 않는다. 즉, <span class="math inline">\(E[X(t_1)X^*(t_2)]=E[X(t+\tau)X^*(t)]=R_X(\tau)\)</span></p></li>
+</ul>
+<p>SSS는 WSS지만 WSS는 SSS가 아닐 수 있다.</p>
+<p>Freezing <span class="math inline">\(t=t^*\)</span> in a random process <span class="math inline">\(X(t)\)</span> results in a random variable, i.e., <span class="math inline">\(X(t^*)\)</span> is a random variable. → TRUE</p>
+</section>
+<section id="poisson-process" class="level3">
+<h3 class="anchored" data-anchor-id="poisson-process">Poisson Process</h3>
+<ul>
+<li><p>포아송 분포는 단위 시간에서 어떤 사건이 몇 번 발생할 것인가를 표현하는 이산 확률 분포.</p></li>
+<li><p>포아송 프로세스는 어떤 사건의 발생횟수가 포아송 분포를 따르는 확률 과정 (시간에 따라 그 확률이 변한다)</p></li>
+<li><p>A process of arrivals in continuous time is called <strong>Poisson process</strong> with rate <span class="math inline">\(\lambda\)</span> if following two conditions hold:</p>
+<ul>
+<li><p>interval of length <span class="math inline">\(t\)</span>에서 발생하는 사건의 수는 <span class="math inline">\(\text{Pois}(\lambda t)\)</span> random variable이다.</p></li>
+<li><p>겹치지 않는 구간에서의 발생하는 사건의 수는 서로 독립이다. 예를 들어 구간 (0,10), [10, 12), [15,<span class="math inline">\(\infty\)</span>)는 서로 독립이다.</p></li>
+</ul></li>
+<li><p>Poisson process: t 시간동안 발생하는 사건의 수를 나타내는 확률 과정.</p></li>
+<li><p>포아송 프로세스는 증가의 정상성(주어진 시간 간격에서의 사건 수가 해당 시간 간격의 위치에 상관없이 동일한 분포를 가짐)은 만족하지만 전통적인 의미의 Strict Stationarity를 만족하지 않는다.</p></li>
+<li><p>포아송 프로세스는 시간 차 <span class="math inline">\(\tau\)</span>에 의존하지 않고 <span class="math inline">\(t_1, t_2\)</span>에 의존한다. → WSS가 아니다!</p></li>
+</ul>
+<p><code>?</code> 시간 차 <span class="math inline">\(\tau\)</span>에 의존했으면 겹치건 말건 길이가 같으면 동일한 프로세스여야 하는데 겹치면 자기상관이 달라지므로.. <span class="math inline">\(t_1, t_2\)</span>에 의존한다?</p>
+<p><code>-</code> Memoryless Properties</p>
+<ul>
+<li><span class="math inline">\(P(L_n&gt;t+l|L_n&gt;t)=\frac{P(L_n&gt;t+l, L_n&gt;t)}{P(L_n&gt;t)}=\frac{e^{-\lambda(t+l)}}{e^{-\lambda t}}=e^{-\lambda l}\)</span></li>
+</ul>
+<p><code>-</code> Properties of Poisson process</p>
+<ul>
+<li><p>두개의 독립인 포아송 프로세스들에 대해</p>
+<p><span class="math inline">\(N_1(t):\)</span> Poisson processes of rate <span class="math inline">\(\lambda_1\)</span></p>
+<p><span class="math inline">\(N_2(t):\)</span> Poisson processes of rate <span class="math inline">\(\lambda_2\)</span> 일 때,</p>
+<p><span class="math inline">\(N(t)=N_1(t)+N_2(t)\)</span>의 Poisson process of rate는 <span class="math inline">\(\lambda_1 + \lambda_2\)</span> 이다.</p></li>
+</ul>
+<p><code>-</code> Properties of 2 <span class="math inline">\(^{nd}\)</span> order Statistics of Random Process</p>
+<ul>
+<li><p><span class="math inline">\(X(t)\)</span>와 <span class="math inline">\(Y(t)\)</span>의 Cross-correlation:</p>
+<p><span class="math display">\[R_{XY}(t_1,t_2)=E[X(t_1)Y^*(t_2)]\]</span></p>
+<p><span class="math inline">\(X(t)\)</span>와 <span class="math inline">\(Y(t)\)</span>의 Cross-covariance:</p>
+<p><span class="math display">\[C_{XY}(t_1, t_2)=E[(X(t_1)-\eta _X(t_1))(Y(t_2)-\eta_Y(t_2))^*]\]</span></p></li>
+<li><p>Property 1: <span class="math inline">\(R_{XX}(t,t)=E[|X(t)|^2]\ge 0\)</span> (두 시점이 같은 경우)</p></li>
+<li><p>Property 2: <span class="math inline">\(R_{XX}(t_1,t_2)\)</span>는 positive semi-definite function. (두 시점이 다른 경우)</p></li>
+<li><p>Jointly WSS processes: 만약 <span class="math inline">\(X(t)\)</span> 와 <span class="math inline">\(Y(t)\)</span> 가 둘다 WSS고, cross-correlation이 오직 두 random variables의 시간 차이에만 의존한다면 (<span class="math inline">\(R_{XY}(t_1,t_2)=R_{XY}(t_1-t_2)\)</span>)</p>
+<p>→ <span class="math inline">\(X(t)\)</span>와 <span class="math inline">\(Y(t)\)</span> 는 jointly WSS다.</p></li>
+</ul>
+<p><code>?</code> Correlation과 Independent의 관계: independent면 uncorr. 하지만 uncorr이여도 independent 하지 않을 수 있음. 다만 <span class="math inline">\(Cov(X, Y)=0\)</span> 으로 인해 <span class="math inline">\(E[XY]=E[X]E[Y]\)</span> 는 두 경우 다 성립</p>
+<p><code>Quiz</code> Inter-arrival times of a Poisson process of rate <span class="math inline">\(\lambda\)</span> are i.i.d. exponential random variables, where the mean of inter-arrival time is <span class="math inline">\(\lambda\)</span>?</p>
+<p>→ False. <span class="math inline">\(\frac{1}{\lambda}\)</span>이다.</p>
+<p><code>?</code> 포아송 프로세스의 분포가 지수함수? 포아송과 포아송 프로세스의 관계? 지수 분포는???</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
