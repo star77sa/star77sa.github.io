@@ -410,7 +410,7 @@ window.Quarto = {
   <li><a href="#stationary-random-process" id="toc-stationary-random-process" class="nav-link" data-scroll-target="#stationary-random-process">Stationary Random Process</a></li>
   <li><a href="#poisson-process" id="toc-poisson-process" class="nav-link" data-scroll-target="#poisson-process">Poisson Process</a></li>
   <li><a href="#gaussian-random-process" id="toc-gaussian-random-process" class="nav-link" data-scroll-target="#gaussian-random-process">Gaussian Random Process</a></li>
-  <li><a href="#lec-14-노션만-보고-정리.-강의자료-한번-더-체크" id="toc-lec-14-노션만-보고-정리.-강의자료-한번-더-체크" class="nav-link" data-scroll-target="#lec-14-노션만-보고-정리.-강의자료-한번-더-체크">~ Lec 14 노션만 보고 정리. 강의자료 한번 더 체크//</a></li>
+  <li><a href="#brownian-motion-processwiener-process" id="toc-brownian-motion-processwiener-process" class="nav-link" data-scroll-target="#brownian-motion-processwiener-process">Brownian motion process(Wiener process)</a></li>
   </ul>
 </nav>
     </div>
@@ -428,7 +428,7 @@ window.Quarto = {
   <li><a href="#stationary-random-process" id="toc-stationary-random-process">Stationary Random Process</a></li>
   <li><a href="#poisson-process" id="toc-poisson-process">Poisson Process</a></li>
   <li><a href="#gaussian-random-process" id="toc-gaussian-random-process">Gaussian Random Process</a></li>
-  <li><a href="#lec-14-노션만-보고-정리.-강의자료-한번-더-체크" id="toc-lec-14-노션만-보고-정리.-강의자료-한번-더-체크">~ Lec 14 노션만 보고 정리. 강의자료 한번 더 체크//</a></li>
+  <li><a href="#brownian-motion-processwiener-process" id="toc-brownian-motion-processwiener-process">Brownian motion process(Wiener process)</a></li>
   </ul>
 </nav>
 <p><img src="RP_final_files/figure-html/cell-1-1-image.png" class="img-fluid"></p>
@@ -527,9 +527,29 @@ window.Quarto = {
 </section>
 <section id="gaussian-random-process" class="level3">
 <h3 class="anchored" data-anchor-id="gaussian-random-process">Gaussian Random Process</h3>
+<ul>
+<li><p><span class="math inline">\(X(t)\)</span>가 가우시안 랜덤 프로세스이려면, 모든 유한한 시간 지점 집합에서의 샘플이 다변수 정규 분포를 따라야 한다.</p>
+<ol type="1">
+<li><p>임의의 시간 지점에서의 가우시안 분포:</p>
+<p>임의의 시간 <span class="math inline">\(t\)</span> 에서의 값 <span class="math inline">\(X(t)\)</span> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로 <span class="math inline">\(X(t)\sim N(\mu(t), \sigma ^2(t))\)</span> 로 나타낼 수 있으며, 여기서 <span class="math inline">\(\mu(t)\)</span> 는 시간 <span class="math inline">\(t\)</span>에서의 평균이고, <span class="math inline">\(\sigma^2(t)\)</span>는 분산이다.</p></li>
+<li><p>임의의 유한한 시간 지점 집합 <span class="math inline">\(\{t_1, t_2, ..., t_k\}\)</span> 에 대해, 벡터 <span class="math inline">\(\bold{X}=[X(t_1),X(t_2),...,X(t_k)]^T\)</span> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로, 벡터 <span class="math inline">\(\bold{X}\)</span>는 다변수 정규 분포 <span class="math inline">\(N(\mu, \sum)\)</span> 를 따른다. 여기서 <span class="math inline">\(\mu\)</span>는 평균 벡터, <span class="math inline">\(\sum\)</span>는 공분산 행렬이다.</p></li>
+<li><p>평균 함수와 공분산 함수:</p>
+<p>가우시안 랜덤 프로세스는 평균 함수 <span class="math inline">\(m(t)= \bold{E}[X(t)]\)</span> 와 공분산 함수 <span class="math inline">\(k(t,t')=\bold{E}[(X(t)-m(t))(X(t')-m(t'))]\)</span> 로 완전히 정의된다.</p></li>
+</ol></li>
+<li><p>WSS 가우시안 프로세스는 SSS 가우시안 프로세스이다.</p></li>
+<li><p>White Gaussian Noise: 평균이 0이고 자기공분산이 디랙 델타 함수를 따르는 stationary Gaussian stochastic process이다.</p></li>
+</ul>
 </section>
-<section id="lec-14-노션만-보고-정리.-강의자료-한번-더-체크" class="level1">
-<h1>~ Lec 14 노션만 보고 정리. 강의자료 한번 더 체크//</h1>
+<section id="brownian-motion-processwiener-process" class="level3">
+<h3 class="anchored" data-anchor-id="brownian-motion-processwiener-process">Brownian motion process(Wiener process)</h3>
+<ol type="1">
+<li><p>독립 증분: 시간 간격 <span class="math inline">\([s,t]\)</span> 에서의 과정 변화량 <span class="math inline">\(W(t)-W(s)\)</span> 는 그 간격의 길이(t-s)에만 의존하고, 선택된 시간 간격에 독립적</p></li>
+<li><p>정규 증분: 증분 <span class="math inline">\(W(t)-W(s)\)</span> 는 평균이 0이고 분산이 <span class="math inline">\(t-s\)</span> 인 정규 분포를 따른다.</p></li>
+<li><p>연속 경로: 브라우니안 모션의 경로는 연속적 (불연속 점이 없다)</p></li>
+<li><p>시작 조건: <span class="math inline">\(W(0)=0\)</span> 에서 시작한다.</p></li>
+</ol>
 
 
 </section>

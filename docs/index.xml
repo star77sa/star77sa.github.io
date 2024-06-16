@@ -117,9 +117,29 @@
 </section>
 <section id="gaussian-random-process" class="level3">
 <h3 class="anchored" data-anchor-id="gaussian-random-process">Gaussian Random Process</h3>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?X(t)">가 가우시안 랜덤 프로세스이려면, 모든 유한한 시간 지점 집합에서의 샘플이 다변수 정규 분포를 따라야 한다.</p>
+<ol type="1">
+<li><p>임의의 시간 지점에서의 가우시안 분포:</p>
+<p>임의의 시간 <img src="https://latex.codecogs.com/png.latex?t"> 에서의 값 <img src="https://latex.codecogs.com/png.latex?X(t)"> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로 <img src="https://latex.codecogs.com/png.latex?X(t)%5Csim%20N(%5Cmu(t),%20%5Csigma%20%5E2(t))"> 로 나타낼 수 있으며, 여기서 <img src="https://latex.codecogs.com/png.latex?%5Cmu(t)"> 는 시간 <img src="https://latex.codecogs.com/png.latex?t">에서의 평균이고, <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2(t)">는 분산이다.</p></li>
+<li><p>임의의 유한한 시간 지점 집합 <img src="https://latex.codecogs.com/png.latex?%5C%7Bt_1,%20t_2,%20...,%20t_k%5C%7D"> 에 대해, 벡터 <img src="https://latex.codecogs.com/png.latex?%5Cbold%7BX%7D=%5BX(t_1),X(t_2),...,X(t_k)%5D%5ET"> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로, 벡터 <img src="https://latex.codecogs.com/png.latex?%5Cbold%7BX%7D">는 다변수 정규 분포 <img src="https://latex.codecogs.com/png.latex?N(%5Cmu,%20%5Csum)"> 를 따른다. 여기서 <img src="https://latex.codecogs.com/png.latex?%5Cmu">는 평균 벡터, <img src="https://latex.codecogs.com/png.latex?%5Csum">는 공분산 행렬이다.</p></li>
+<li><p>평균 함수와 공분산 함수:</p>
+<p>가우시안 랜덤 프로세스는 평균 함수 <img src="https://latex.codecogs.com/png.latex?m(t)=%20%5Cbold%7BE%7D%5BX(t)%5D"> 와 공분산 함수 <img src="https://latex.codecogs.com/png.latex?k(t,t')=%5Cbold%7BE%7D%5B(X(t)-m(t))(X(t')-m(t'))%5D"> 로 완전히 정의된다.</p></li>
+</ol></li>
+<li><p>WSS 가우시안 프로세스는 SSS 가우시안 프로세스이다.</p></li>
+<li><p>White Gaussian Noise: 평균이 0이고 자기공분산이 디랙 델타 함수를 따르는 stationary Gaussian stochastic process이다.</p></li>
+</ul>
 </section>
-<section id="lec-14-노션만-보고-정리.-강의자료-한번-더-체크" class="level1">
-<h1>~ Lec 14 노션만 보고 정리. 강의자료 한번 더 체크//</h1>
+<section id="brownian-motion-processwiener-process" class="level3">
+<h3 class="anchored" data-anchor-id="brownian-motion-processwiener-process">Brownian motion process(Wiener process)</h3>
+<ol type="1">
+<li><p>독립 증분: 시간 간격 <img src="https://latex.codecogs.com/png.latex?%5Bs,t%5D"> 에서의 과정 변화량 <img src="https://latex.codecogs.com/png.latex?W(t)-W(s)"> 는 그 간격의 길이(t-s)에만 의존하고, 선택된 시간 간격에 독립적</p></li>
+<li><p>정규 증분: 증분 <img src="https://latex.codecogs.com/png.latex?W(t)-W(s)"> 는 평균이 0이고 분산이 <img src="https://latex.codecogs.com/png.latex?t-s"> 인 정규 분포를 따른다.</p></li>
+<li><p>연속 경로: 브라우니안 모션의 경로는 연속적 (불연속 점이 없다)</p></li>
+<li><p>시작 조건: <img src="https://latex.codecogs.com/png.latex?W(0)=0"> 에서 시작한다.</p></li>
+</ol>
 
 
 </section>
