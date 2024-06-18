@@ -411,6 +411,10 @@ window.Quarto = {
   <li><a href="#poisson-process" id="toc-poisson-process" class="nav-link" data-scroll-target="#poisson-process">Poisson Process</a></li>
   <li><a href="#gaussian-random-process" id="toc-gaussian-random-process" class="nav-link" data-scroll-target="#gaussian-random-process">Gaussian Random Process</a></li>
   <li><a href="#brownian-motion-processwiener-process" id="toc-brownian-motion-processwiener-process" class="nav-link" data-scroll-target="#brownian-motion-processwiener-process">Brownian motion process(Wiener process)</a></li>
+  <li><a href="#random-walk" id="toc-random-walk" class="nav-link" data-scroll-target="#random-walk">Random Walk</a></li>
+  <li><a href="#cyclostationary-processes" id="toc-cyclostationary-processes" class="nav-link" data-scroll-target="#cyclostationary-processes">Cyclostationary Processes</a></li>
+  <li><a href="#markov-process" id="toc-markov-process" class="nav-link" data-scroll-target="#markov-process">Markov Process</a></li>
+  <li><a href="#lec-17-18-19-20-추가-정리" id="toc-lec-17-18-19-20-추가-정리" class="nav-link" data-scroll-target="#lec-17-18-19-20-추가-정리">Lec 17, 18, 19, 20 추가 정리</a></li>
   </ul>
 </nav>
     </div>
@@ -429,6 +433,10 @@ window.Quarto = {
   <li><a href="#poisson-process" id="toc-poisson-process">Poisson Process</a></li>
   <li><a href="#gaussian-random-process" id="toc-gaussian-random-process">Gaussian Random Process</a></li>
   <li><a href="#brownian-motion-processwiener-process" id="toc-brownian-motion-processwiener-process">Brownian motion process(Wiener process)</a></li>
+  <li><a href="#random-walk" id="toc-random-walk">Random Walk</a></li>
+  <li><a href="#cyclostationary-processes" id="toc-cyclostationary-processes">Cyclostationary Processes</a></li>
+  <li><a href="#markov-process" id="toc-markov-process">Markov Process</a></li>
+  <li><a href="#lec-17-18-19-20-추가-정리" id="toc-lec-17-18-19-20-추가-정리">Lec 17, 18, 19, 20 추가 정리</a></li>
   </ul>
 </nav>
 <p><img src="RP_final_files/figure-html/cell-1-1-image.png" class="img-fluid"></p>
@@ -533,10 +541,10 @@ window.Quarto = {
 <li><p>임의의 시간 지점에서의 가우시안 분포:</p>
 <p>임의의 시간 <span class="math inline">\(t\)</span> 에서의 값 <span class="math inline">\(X(t)\)</span> 는 가우시안 분포를 따른다.</p>
 <p>수학적으로 <span class="math inline">\(X(t)\sim N(\mu(t), \sigma ^2(t))\)</span> 로 나타낼 수 있으며, 여기서 <span class="math inline">\(\mu(t)\)</span> 는 시간 <span class="math inline">\(t\)</span>에서의 평균이고, <span class="math inline">\(\sigma^2(t)\)</span>는 분산이다.</p></li>
-<li><p>임의의 유한한 시간 지점 집합 <span class="math inline">\(\{t_1, t_2, ..., t_k\}\)</span> 에 대해, 벡터 <span class="math inline">\(\bold{X}=[X(t_1),X(t_2),...,X(t_k)]^T\)</span> 는 가우시안 분포를 따른다.</p>
-<p>수학적으로, 벡터 <span class="math inline">\(\bold{X}\)</span>는 다변수 정규 분포 <span class="math inline">\(N(\mu, \sum)\)</span> 를 따른다. 여기서 <span class="math inline">\(\mu\)</span>는 평균 벡터, <span class="math inline">\(\sum\)</span>는 공분산 행렬이다.</p></li>
+<li><p>임의의 유한한 시간 지점 집합 <span class="math inline">\(\{t_1, t_2, ..., t_k\}\)</span> 에 대해, 벡터 <span class="math inline">\(X=[X(t_1),X(t_2),...,X(t_k)]^T\)</span> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로, 벡터 <span class="math inline">\(X\)</span>는 다변수 정규 분포 <span class="math inline">\(N(\mu, \sum)\)</span> 를 따른다. 여기서 <span class="math inline">\(\mu\)</span>는 평균 벡터, <span class="math inline">\(\sum\)</span>는 공분산 행렬이다.</p></li>
 <li><p>평균 함수와 공분산 함수:</p>
-<p>가우시안 랜덤 프로세스는 평균 함수 <span class="math inline">\(m(t)= \bold{E}[X(t)]\)</span> 와 공분산 함수 <span class="math inline">\(k(t,t')=\bold{E}[(X(t)-m(t))(X(t')-m(t'))]\)</span> 로 완전히 정의된다.</p></li>
+<p>가우시안 랜덤 프로세스는 평균 함수 <span class="math inline">\(m(t)= E[X(t)]\)</span> 와 공분산 함수 <span class="math inline">\(k(t,t')=E[(X(t)-m(t))(X(t')-m(t'))]\)</span> 로 완전히 정의된다.</p></li>
 </ol></li>
 <li><p>WSS 가우시안 프로세스는 SSS 가우시안 프로세스이다.</p></li>
 <li><p>White Gaussian Noise: 평균이 0이고 자기공분산이 디랙 델타 함수를 따르는 stationary Gaussian stochastic process이다.</p></li>
@@ -550,6 +558,116 @@ window.Quarto = {
 <li><p>연속 경로: 브라우니안 모션의 경로는 연속적 (불연속 점이 없다)</p></li>
 <li><p>시작 조건: <span class="math inline">\(W(0)=0\)</span> 에서 시작한다.</p></li>
 </ol>
+<ul>
+<li><p><span class="math inline">\(W(t)\)</span> : white Gaussian noise process, <span class="math inline">\(W(t)\)</span>는 staionary Gaussian stochastic process with <span class="math inline">\(E[W(t)]=0,\quad R_W(t_1, t_2)=\eta_0 \delta(t_1-t_2)\)</span></p></li>
+<li><p>Brownian은 Starionary 하지 않다.</p></li>
+</ul>
+</section>
+<section id="random-walk" class="level3">
+<h3 class="anchored" data-anchor-id="random-walk">Random Walk</h3>
+<ul>
+<li><p>the person randomly moves one step, either to the right(with probability <span class="math inline">\(p\)</span>) or to the left. (<span class="math inline">\(1-p\)</span>)</p></li>
+<li><p>Brownian motion은 1차원 랜덤 워크의 연속적인 확장으로 볼 수 있다. 랜덤 워크는 이산적인 단계로 이동하는 반며 브라운 운동은 연속적인 시간에서 연속적인 움직임을 나타낸다.</p></li>
+</ul>
+</section>
+<section id="cyclostationary-processes" class="level3">
+<h3 class="anchored" data-anchor-id="cyclostationary-processes">Cyclostationary Processes</h3>
+<p>periodically stationary</p>
+<ul>
+<li><p>SSCS(Strict Sense Cyclostationary): any integer <span class="math inline">\(m\)</span>,</p>
+<p><span class="math inline">\(f_X(x_1,x_2,...,x_n,t_1,t_2,...,t_n)=f_X(x_1,x_2,...,x_n,t_1+mT,t_2+mT,...,t_n+mT)\)</span></p></li>
+<li><p>WSCS(Wide Sense Cyclostationary): any integer <span class="math inline">\(m\)</span>,</p>
+<p><span class="math inline">\(\eta(t+mT)=\eta(t),\)</span></p>
+<p><span class="math inline">\(R_X(t_1+mT,t_2+mT)=R_X(t_1,t_2)\)</span></p></li>
+<li><p>SSS 이면 SSCS인가? → True.</p>
+<p>SSS는 모든 시간 이동에 대해 분포가 동일하므로 특정 주기 <span class="math inline">\(T\)</span>에 대해서도 동일하다. 반대로 SSCS는 특정 주기 <span class="math inline">\(T\)</span>에 대해서만 분포가 주기적이기 때문에 모든 시간 이동에 대해 동일한 분포를 가지진 않으므로 SSS가 아니다.</p></li>
+<li><p>WSS 이면 WSCS인가? → True.</p>
+<p>위와 동일하게 WSS면 WSCS이다. 반대로 WSCS면 WSS이지 않을 수 있다.</p></li>
+<li><p>Shifted process <span class="math inline">\(Y(t)=X(t-\Theta), \Theta\)</span> is R.V. uniform in the interval <span class="math inline">\((0,T)\)</span>, independent of <span class="math inline">\(X(t)\)</span></p>
+<p>(여기서 <span class="math inline">\(\Theta\)</span> 는 구간 (0, T) 내의 값들 중에서 무작위로 선택, 하지만 일단 <span class="math inline">\(\Theta\)</span> 가 선택되면, 그 값은 모든 시간 <span class="math inline">\(t\)</span> 에 대해 동일하게 적용. 식 <span class="math inline">\(Y(t)=X(t-\Theta)\)</span> 에서 <span class="math inline">\(\Theta\)</span> 는 고정된 값처럼 동작. <span class="math inline">\(Y(t)\)</span>는 모든 <span class="math inline">\(t\)</span>에 대해 동일한 <span class="math inline">\(\Theta\)</span>값을 사용하여 <span class="math inline">\(X(t)\)</span>를 변환)</p>
+<ul>
+<li><p>If <span class="math inline">\(X(t)\)</span> is SSS, then <span class="math inline">\(Y(t)\)</span> is also SSS? → True</p></li>
+<li><p>If <span class="math inline">\(X(t)\)</span> is SSCS, then <span class="math inline">\(Y(t)\)</span> is also SSCS? → True</p></li>
+<li><p>If <span class="math inline">\(X(t)\)</span> is SSCS, then <span class="math inline">\(Y(t)\)</span> is also SSS? → True</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="markov-process" class="level3">
+<h3 class="anchored" data-anchor-id="markov-process">Markov Process</h3>
+<ul>
+<li><p>Markov Process: 현재 상태가 미래에 영향을 미치는 유일한 요소</p>
+<p><span class="math inline">\(P(X(t_n)\le x_n|X(t), t\le t_{n-1})=P(X(t_n)\le x_n|X(t_{n-1}))\)</span></p></li>
+<li><p>Equivalence: Markov property is equivalent to the conditional independence of the past and the future given the present</p>
+<p>Conditional independence of the past and future given the present</p>
+<p><span class="math inline">\(f_{X(t_1)...X(t_{n-1})X(t_{n+1})X(t_{n+k})|X(t_n)}(x_1,...,x_{n-1},x_{n+1},...,x_{n+k}|x_n)\)</span></p>
+<p><span class="math inline">\(= f_{X(t_1)...X(t_{n-1})|X(t_n)}(x_1,...,x_{n-1}|x_n) f_{X(t_n+1)...X(t_{n+k})|X(t_n)}(x_{n+1},...,x_{n+k}|x_n)\)</span></p>
+<p>과거와 미래 두 파트가 독립</p></li>
+<li><p>Discrete-valued Markov processes = Markov Chains</p></li>
+<li><p>Discrete-time Markov Chain (Discrete-time, Discrete state(value))</p>
+<p><span class="math inline">\(P(X_{n+1}=j|X_n=i,X_{n-1}=i_{n-1},...,X_0=i_0)=P(X_{n+1}=j|X_n=i)=P_{ij}\)</span></p>
+<p><img src="RP_final_files/figure-html/cell-28-1-image-2.png" class="img-fluid"></p></li>
+<li><p>Check-out Counter Example</p>
+<p><img src="RP_final_files/figure-html/cell-28-2-image-3.png" class="img-fluid"></p></li>
+<li><p>Chapman-Kolmogorov Equations (for a finite Markov chain)</p>
+<p><span class="math inline">\(P_{ij}(n+m)=\sum^{K}_{k=0}P_{ik}(n)P_{kj}(m),\quad P(n+m)=P(n)P(m)\)</span></p></li>
+</ul>
+<p><span class="math inline">\(\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad i\rightarrow j\)</span> 로 가는 모든 경우의 수</p>
+<ul>
+<li><p><span class="math inline">\(n\)</span>-step transition probabilities</p>
+<ul>
+<li><p>State occupancy probabilities, given initial state <span class="math inline">\(i\)</span>,</p>
+<p><span class="math inline">\(P_{ij}(n)=P(X_n=j|X_0=i)=\sum^{K}_{k=0}P_{ik}(n-1)p_{kj}\)</span></p>
+<p><img src="RP_final_files/figure-html/cell-28-3-image.png" class="img-fluid"></p>
+<p>시작은 i, 끝은 j</p>
+<p>그 사이에 n-1 steps는 아무렇게나 움직이다가 마지막 직전 1 step은 j로 향해야 한다.</p></li>
+<li><p>With random initial state,</p>
+<p><span class="math inline">\(P(X_n=j)=\sum^{K}_{i=0}P(X_0=i)P_{ij}(n)\)</span></p>
+<p>위 보다 시작점의 경우의 수가 많아짐.</p></li>
+</ul></li>
+</ul>
+<p><code>Quiz</code> A Markov process is a random process in which the future states depend on both the current state and the past states?</p>
+<p>→ False. 오직 current state에만 영향을 받음.</p>
+<ul>
+<li><p>Recurrent states: 다른 상태에 가도 항상 다시 돌아오는 상태</p></li>
+<li><p>Transient states: 다른 상태로 가면 돌아오지 못하는 상태 <span class="math inline">\(n\rightarrow \infty, \quad P(X_n=i)=0\)</span></p></li>
+</ul>
+<p><img src="RP_final_files/figure-html/cell-30-1-image.png" class="img-fluid"></p>
+<ul>
+<li>Periodic states:</li>
+</ul>
+<p><img src="RP_final_files/figure-html/cell-31-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>Steady-state Convergence Theorem</p>
+<p>Markov Chain에서 상태 분포가 수렴하는 이론</p>
+<p><span class="math inline">\(\text{lim}_{n\rightarrow\infty}P_{ij}(n)=\pi_j\)</span></p>
+<p>initial conditions(state)에 의존하지 않음. independent</p>
+<p><span class="math inline">\(\text{lim}_{n\rightarrow\infty}P(X_n=j|X_0=i)=\pi_j\)</span></p>
+<p>수렴 조건 두가지</p>
+<ol type="1">
+<li><p>Recurrent state are all in a single class. - 모든 상태가 서로 연결되어 있어야 함(재귀가능)</p></li>
+<li><p>Single recurrent class is not periodic. - 단일 재귀 클래스가 주기성을 갖지 않음</p></li>
+</ol></li>
+<li><p>Balance Equations</p>
+<p><span class="math inline">\(P_{ij}(n)=\sum_kP_{ik}(n-1)p_{kj}\)</span></p>
+<ul>
+<li><p>Take the limit as <span class="math inline">\(n\rightarrow\infty\)</span></p>
+<p><span class="math inline">\(\pi_j=\sum_k\pi_kp_{kj}\quad \forall j,\quad\sum_k\pi_j=1\)</span></p></li>
+</ul></li>
+<li><p>Frequency interpretation</p>
+<p>Frequency of transitions <span class="math inline">\(k\rightarrow j: \pi_kp_{kj}\)</span></p>
+<p>Frequency of transitions into <span class="math inline">\(j:\sum_k\pi_kp_{kj}\)</span></p>
+<p><img src="RP_final_files/figure-html/cell-33-1-image.png" class="img-fluid"></p></li>
+<li><p>Birth-death Processes</p>
+<p>Markov chain with birth and death (add and subtract)</p>
+<p><img src="RP_final_files/figure-html/cell-34-1-image.png" class="img-fluid"></p>
+<p><span class="math inline">\(\pi_0=\pi_0(1-p_0)+\pi_1q_1\rightarrow\pi_0p_0=\pi_1q_1\)</span></p></li>
+</ul>
+<p><code>Quiz</code> The steady-state probabilities of a Markov process are independent of the initial state. <span class="math inline">\(\rightarrow\)</span> True</p>
+<hr>
+</section>
+<section id="lec-17-18-19-20-추가-정리" class="level1">
+<h1>Lec 17, 18, 19, 20 추가 정리</h1>
 
 
 </section>

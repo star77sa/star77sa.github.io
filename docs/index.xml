@@ -123,10 +123,10 @@
 <li><p>임의의 시간 지점에서의 가우시안 분포:</p>
 <p>임의의 시간 <img src="https://latex.codecogs.com/png.latex?t"> 에서의 값 <img src="https://latex.codecogs.com/png.latex?X(t)"> 는 가우시안 분포를 따른다.</p>
 <p>수학적으로 <img src="https://latex.codecogs.com/png.latex?X(t)%5Csim%20N(%5Cmu(t),%20%5Csigma%20%5E2(t))"> 로 나타낼 수 있으며, 여기서 <img src="https://latex.codecogs.com/png.latex?%5Cmu(t)"> 는 시간 <img src="https://latex.codecogs.com/png.latex?t">에서의 평균이고, <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2(t)">는 분산이다.</p></li>
-<li><p>임의의 유한한 시간 지점 집합 <img src="https://latex.codecogs.com/png.latex?%5C%7Bt_1,%20t_2,%20...,%20t_k%5C%7D"> 에 대해, 벡터 <img src="https://latex.codecogs.com/png.latex?%5Cbold%7BX%7D=%5BX(t_1),X(t_2),...,X(t_k)%5D%5ET"> 는 가우시안 분포를 따른다.</p>
-<p>수학적으로, 벡터 <img src="https://latex.codecogs.com/png.latex?%5Cbold%7BX%7D">는 다변수 정규 분포 <img src="https://latex.codecogs.com/png.latex?N(%5Cmu,%20%5Csum)"> 를 따른다. 여기서 <img src="https://latex.codecogs.com/png.latex?%5Cmu">는 평균 벡터, <img src="https://latex.codecogs.com/png.latex?%5Csum">는 공분산 행렬이다.</p></li>
+<li><p>임의의 유한한 시간 지점 집합 <img src="https://latex.codecogs.com/png.latex?%5C%7Bt_1,%20t_2,%20...,%20t_k%5C%7D"> 에 대해, 벡터 <img src="https://latex.codecogs.com/png.latex?X=%5BX(t_1),X(t_2),...,X(t_k)%5D%5ET"> 는 가우시안 분포를 따른다.</p>
+<p>수학적으로, 벡터 <img src="https://latex.codecogs.com/png.latex?X">는 다변수 정규 분포 <img src="https://latex.codecogs.com/png.latex?N(%5Cmu,%20%5Csum)"> 를 따른다. 여기서 <img src="https://latex.codecogs.com/png.latex?%5Cmu">는 평균 벡터, <img src="https://latex.codecogs.com/png.latex?%5Csum">는 공분산 행렬이다.</p></li>
 <li><p>평균 함수와 공분산 함수:</p>
-<p>가우시안 랜덤 프로세스는 평균 함수 <img src="https://latex.codecogs.com/png.latex?m(t)=%20%5Cbold%7BE%7D%5BX(t)%5D"> 와 공분산 함수 <img src="https://latex.codecogs.com/png.latex?k(t,t')=%5Cbold%7BE%7D%5B(X(t)-m(t))(X(t')-m(t'))%5D"> 로 완전히 정의된다.</p></li>
+<p>가우시안 랜덤 프로세스는 평균 함수 <img src="https://latex.codecogs.com/png.latex?m(t)=%20E%5BX(t)%5D"> 와 공분산 함수 <img src="https://latex.codecogs.com/png.latex?k(t,t')=E%5B(X(t)-m(t))(X(t')-m(t'))%5D"> 로 완전히 정의된다.</p></li>
 </ol></li>
 <li><p>WSS 가우시안 프로세스는 SSS 가우시안 프로세스이다.</p></li>
 <li><p>White Gaussian Noise: 평균이 0이고 자기공분산이 디랙 델타 함수를 따르는 stationary Gaussian stochastic process이다.</p></li>
@@ -140,6 +140,116 @@
 <li><p>연속 경로: 브라우니안 모션의 경로는 연속적 (불연속 점이 없다)</p></li>
 <li><p>시작 조건: <img src="https://latex.codecogs.com/png.latex?W(0)=0"> 에서 시작한다.</p></li>
 </ol>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?W(t)"> : white Gaussian noise process, <img src="https://latex.codecogs.com/png.latex?W(t)">는 staionary Gaussian stochastic process with <img src="https://latex.codecogs.com/png.latex?E%5BW(t)%5D=0,%5Cquad%20R_W(t_1,%20t_2)=%5Ceta_0%20%5Cdelta(t_1-t_2)"></p></li>
+<li><p>Brownian은 Starionary 하지 않다.</p></li>
+</ul>
+</section>
+<section id="random-walk" class="level3">
+<h3 class="anchored" data-anchor-id="random-walk">Random Walk</h3>
+<ul>
+<li><p>the person randomly moves one step, either to the right(with probability <img src="https://latex.codecogs.com/png.latex?p">) or to the left. (<img src="https://latex.codecogs.com/png.latex?1-p">)</p></li>
+<li><p>Brownian motion은 1차원 랜덤 워크의 연속적인 확장으로 볼 수 있다. 랜덤 워크는 이산적인 단계로 이동하는 반며 브라운 운동은 연속적인 시간에서 연속적인 움직임을 나타낸다.</p></li>
+</ul>
+</section>
+<section id="cyclostationary-processes" class="level3">
+<h3 class="anchored" data-anchor-id="cyclostationary-processes">Cyclostationary Processes</h3>
+<p>periodically stationary</p>
+<ul>
+<li><p>SSCS(Strict Sense Cyclostationary): any integer <img src="https://latex.codecogs.com/png.latex?m">,</p>
+<p><img src="https://latex.codecogs.com/png.latex?f_X(x_1,x_2,...,x_n,t_1,t_2,...,t_n)=f_X(x_1,x_2,...,x_n,t_1+mT,t_2+mT,...,t_n+mT)"></p></li>
+<li><p>WSCS(Wide Sense Cyclostationary): any integer <img src="https://latex.codecogs.com/png.latex?m">,</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ceta(t+mT)=%5Ceta(t),"></p>
+<p><img src="https://latex.codecogs.com/png.latex?R_X(t_1+mT,t_2+mT)=R_X(t_1,t_2)"></p></li>
+<li><p>SSS 이면 SSCS인가? → True.</p>
+<p>SSS는 모든 시간 이동에 대해 분포가 동일하므로 특정 주기 <img src="https://latex.codecogs.com/png.latex?T">에 대해서도 동일하다. 반대로 SSCS는 특정 주기 <img src="https://latex.codecogs.com/png.latex?T">에 대해서만 분포가 주기적이기 때문에 모든 시간 이동에 대해 동일한 분포를 가지진 않으므로 SSS가 아니다.</p></li>
+<li><p>WSS 이면 WSCS인가? → True.</p>
+<p>위와 동일하게 WSS면 WSCS이다. 반대로 WSCS면 WSS이지 않을 수 있다.</p></li>
+<li><p>Shifted process <img src="https://latex.codecogs.com/png.latex?Y(t)=X(t-%5CTheta),%20%5CTheta"> is R.V. uniform in the interval <img src="https://latex.codecogs.com/png.latex?(0,T)">, independent of <img src="https://latex.codecogs.com/png.latex?X(t)"></p>
+<p>(여기서 <img src="https://latex.codecogs.com/png.latex?%5CTheta"> 는 구간 (0, T) 내의 값들 중에서 무작위로 선택, 하지만 일단 <img src="https://latex.codecogs.com/png.latex?%5CTheta"> 가 선택되면, 그 값은 모든 시간 <img src="https://latex.codecogs.com/png.latex?t"> 에 대해 동일하게 적용. 식 <img src="https://latex.codecogs.com/png.latex?Y(t)=X(t-%5CTheta)"> 에서 <img src="https://latex.codecogs.com/png.latex?%5CTheta"> 는 고정된 값처럼 동작. <img src="https://latex.codecogs.com/png.latex?Y(t)">는 모든 <img src="https://latex.codecogs.com/png.latex?t">에 대해 동일한 <img src="https://latex.codecogs.com/png.latex?%5CTheta">값을 사용하여 <img src="https://latex.codecogs.com/png.latex?X(t)">를 변환)</p>
+<ul>
+<li><p>If <img src="https://latex.codecogs.com/png.latex?X(t)"> is SSS, then <img src="https://latex.codecogs.com/png.latex?Y(t)"> is also SSS? → True</p></li>
+<li><p>If <img src="https://latex.codecogs.com/png.latex?X(t)"> is SSCS, then <img src="https://latex.codecogs.com/png.latex?Y(t)"> is also SSCS? → True</p></li>
+<li><p>If <img src="https://latex.codecogs.com/png.latex?X(t)"> is SSCS, then <img src="https://latex.codecogs.com/png.latex?Y(t)"> is also SSS? → True</p></li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="markov-process" class="level3">
+<h3 class="anchored" data-anchor-id="markov-process">Markov Process</h3>
+<ul>
+<li><p>Markov Process: 현재 상태가 미래에 영향을 미치는 유일한 요소</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(X(t_n)%5Cle%20x_n%7CX(t),%20t%5Cle%20t_%7Bn-1%7D)=P(X(t_n)%5Cle%20x_n%7CX(t_%7Bn-1%7D))"></p></li>
+<li><p>Equivalence: Markov property is equivalent to the conditional independence of the past and the future given the present</p>
+<p>Conditional independence of the past and future given the present</p>
+<p><img src="https://latex.codecogs.com/png.latex?f_%7BX(t_1)...X(t_%7Bn-1%7D)X(t_%7Bn+1%7D)X(t_%7Bn+k%7D)%7CX(t_n)%7D(x_1,...,x_%7Bn-1%7D,x_%7Bn+1%7D,...,x_%7Bn+k%7D%7Cx_n)"></p>
+<p><img src="https://latex.codecogs.com/png.latex?=%20f_%7BX(t_1)...X(t_%7Bn-1%7D)%7CX(t_n)%7D(x_1,...,x_%7Bn-1%7D%7Cx_n)%20f_%7BX(t_n+1)...X(t_%7Bn+k%7D)%7CX(t_n)%7D(x_%7Bn+1%7D,...,x_%7Bn+k%7D%7Cx_n)"></p>
+<p>과거와 미래 두 파트가 독립</p></li>
+<li><p>Discrete-valued Markov processes = Markov Chains</p></li>
+<li><p>Discrete-time Markov Chain (Discrete-time, Discrete state(value))</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(X_%7Bn+1%7D=j%7CX_n=i,X_%7Bn-1%7D=i_%7Bn-1%7D,...,X_0=i_0)=P(X_%7Bn+1%7D=j%7CX_n=i)=P_%7Bij%7D"></p>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-28-1-image-2.png" class="img-fluid"></p></li>
+<li><p>Check-out Counter Example</p>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-28-2-image-3.png" class="img-fluid"></p></li>
+<li><p>Chapman-Kolmogorov Equations (for a finite Markov chain)</p>
+<p><img src="https://latex.codecogs.com/png.latex?P_%7Bij%7D(n+m)=%5Csum%5E%7BK%7D_%7Bk=0%7DP_%7Bik%7D(n)P_%7Bkj%7D(m),%5Cquad%20P(n+m)=P(n)P(m)"></p></li>
+</ul>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%5Cquad%20i%5Crightarrow%20j"> 로 가는 모든 경우의 수</p>
+<ul>
+<li><p><img src="https://latex.codecogs.com/png.latex?n">-step transition probabilities</p>
+<ul>
+<li><p>State occupancy probabilities, given initial state <img src="https://latex.codecogs.com/png.latex?i">,</p>
+<p><img src="https://latex.codecogs.com/png.latex?P_%7Bij%7D(n)=P(X_n=j%7CX_0=i)=%5Csum%5E%7BK%7D_%7Bk=0%7DP_%7Bik%7D(n-1)p_%7Bkj%7D"></p>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-28-3-image.png" class="img-fluid"></p>
+<p>시작은 i, 끝은 j</p>
+<p>그 사이에 n-1 steps는 아무렇게나 움직이다가 마지막 직전 1 step은 j로 향해야 한다.</p></li>
+<li><p>With random initial state,</p>
+<p><img src="https://latex.codecogs.com/png.latex?P(X_n=j)=%5Csum%5E%7BK%7D_%7Bi=0%7DP(X_0=i)P_%7Bij%7D(n)"></p>
+<p>위 보다 시작점의 경우의 수가 많아짐.</p></li>
+</ul></li>
+</ul>
+<p><code>Quiz</code> A Markov process is a random process in which the future states depend on both the current state and the past states?</p>
+<p>→ False. 오직 current state에만 영향을 받음.</p>
+<ul>
+<li><p>Recurrent states: 다른 상태에 가도 항상 다시 돌아오는 상태</p></li>
+<li><p>Transient states: 다른 상태로 가면 돌아오지 못하는 상태 <img src="https://latex.codecogs.com/png.latex?n%5Crightarrow%20%5Cinfty,%20%5Cquad%20P(X_n=i)=0"></p></li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-30-1-image.png" class="img-fluid"></p>
+<ul>
+<li>Periodic states:</li>
+</ul>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-31-1-image.png" class="img-fluid"></p>
+<ul>
+<li><p>Steady-state Convergence Theorem</p>
+<p>Markov Chain에서 상태 분포가 수렴하는 이론</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Blim%7D_%7Bn%5Crightarrow%5Cinfty%7DP_%7Bij%7D(n)=%5Cpi_j"></p>
+<p>initial conditions(state)에 의존하지 않음. independent</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctext%7Blim%7D_%7Bn%5Crightarrow%5Cinfty%7DP(X_n=j%7CX_0=i)=%5Cpi_j"></p>
+<p>수렴 조건 두가지</p>
+<ol type="1">
+<li><p>Recurrent state are all in a single class. - 모든 상태가 서로 연결되어 있어야 함(재귀가능)</p></li>
+<li><p>Single recurrent class is not periodic. - 단일 재귀 클래스가 주기성을 갖지 않음</p></li>
+</ol></li>
+<li><p>Balance Equations</p>
+<p><img src="https://latex.codecogs.com/png.latex?P_%7Bij%7D(n)=%5Csum_kP_%7Bik%7D(n-1)p_%7Bkj%7D"></p>
+<ul>
+<li><p>Take the limit as <img src="https://latex.codecogs.com/png.latex?n%5Crightarrow%5Cinfty"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cpi_j=%5Csum_k%5Cpi_kp_%7Bkj%7D%5Cquad%20%5Cforall%20j,%5Cquad%5Csum_k%5Cpi_j=1"></p></li>
+</ul></li>
+<li><p>Frequency interpretation</p>
+<p>Frequency of transitions <img src="https://latex.codecogs.com/png.latex?k%5Crightarrow%20j:%20%5Cpi_kp_%7Bkj%7D"></p>
+<p>Frequency of transitions into <img src="https://latex.codecogs.com/png.latex?j:%5Csum_k%5Cpi_kp_%7Bkj%7D"></p>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-33-1-image.png" class="img-fluid"></p></li>
+<li><p>Birth-death Processes</p>
+<p>Markov chain with birth and death (add and subtract)</p>
+<p><img src="https://star77sa.github.io/posts/Statistics/RP_final_files/figure-html/cell-34-1-image.png" class="img-fluid"></p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Cpi_0=%5Cpi_0(1-p_0)+%5Cpi_1q_1%5Crightarrow%5Cpi_0p_0=%5Cpi_1q_1"></p></li>
+</ul>
+<p><code>Quiz</code> The steady-state probabilities of a Markov process are independent of the initial state. <img src="https://latex.codecogs.com/png.latex?%5Crightarrow"> True</p>
+<hr>
+</section>
+<section id="lec-17-18-19-20-추가-정리" class="level1">
+<h1>Lec 17, 18, 19, 20 추가 정리</h1>
 
 
 </section>
